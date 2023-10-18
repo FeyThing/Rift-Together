@@ -1,5 +1,3 @@
-AddComponentPostInit("builder", BuilderINIT)
-
 local nefbadge = GLOBAL.require "widgets/nefbadge"
 
 local function onstatusdisplaysconstruct(self)

@@ -18,7 +18,7 @@ local function OnPickup(inst)
 end	
 
 
-local function toground(inst)
+local function to_ground(inst)
     if inst.AnimState:IsCurrentAnimation("idle_loop") then
 		inst.AnimState:SetFrame(math.random(inst.AnimState:GetCurrentAnimationNumFrames()) - 1)
     end
@@ -45,7 +45,7 @@ local function fn()
 		inst.Light:SetColour(0/255,255/255,255/255)
 		inst.Light:Enable(true)
 
-	inst:AddTag("light")
+		inst:AddTag("light")
 
         if not TheWorld.ismastersim then
             return inst
@@ -68,7 +68,7 @@ local function fn()
 
 		inst:AddComponent("inspectable")
 		inst:AddComponent("inventoryitem")
-		toground(inst)
+		to_ground(inst)
 		
 		inst.components.inventoryitem.atlasname = "images/inventoryimages/nanotech.xml"
 
@@ -91,8 +91,8 @@ local function fn()
 	end
 	
 
-	--local base = Prefab( "common/inventory/nanotech", fn, assets, prefabs)
+	--local base = Prefab( "nanotech", fn, assets, prefabs)
 
 
-return Prefab( "common/inventory/nanotech", fn, assets, prefabs)
+return Prefab( "nanotech", fn, assets, prefabs)
 	

@@ -68,7 +68,7 @@ local function fn()
     return inst
 end
 
-return Prefab("common/inventory/nanocrate", fn, assets)
+return Prefab("nanocrate", fn, assets)
 
 
 

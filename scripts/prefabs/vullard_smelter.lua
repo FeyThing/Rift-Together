@@ -154,5 +154,5 @@ end
         return inst
     end
 
-    return Prefab("common/vullard_smelter", init, assets),
-		MakePlacer("common/vullard_smelter_placer", "vullard_smelter", "vullard_smelter", "idle")
+    return Prefab("vullard_smelter", init, assets),
+		MakePlacer("vullard_smelter_placer", "vullard_smelter", "vullard_smelter", "idle")

@@ -62,4 +62,4 @@ local function fn()
     return inst
 end
 
-return Prefab("common/inventory/shockmod", fn, assets, prefabs)
+return Prefab("shockmod", fn, assets, prefabs)

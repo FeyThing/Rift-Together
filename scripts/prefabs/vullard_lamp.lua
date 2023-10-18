@@ -150,7 +150,7 @@ local function fn(Sim)
     return inst
 end
 
-return Prefab("common/objects/vullard_lamp", fn, assets),
-MakePlacer("common/vullard_lamp_placer", "vullard_post", "vullard_post_build", "idle", false, false, true)
+return Prefab("vullard_lamp", fn, assets),
+MakePlacer("vullard_lamp_placer", "vullard_post", "vullard_post_build", "idle", false, false, true)
   
 

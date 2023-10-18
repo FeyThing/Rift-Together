@@ -1,34 +1,27 @@
 GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) end})
 
--- Import the engine.
-modimport("engine.lua")
-
-Load "chatinputscreen"
-Load "consolescreen"
-Load "textedit"
-
 local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 local containers = require "containers"
 local smelterrecipe = require "smelterrecipe"
-local GROUND = GLOBAL.GROUND
 
+GLOBAL.CHEATS_ENABLED = true
 
-modimport("init/rnc_prefabs.lua")
-modimport("init/rnc_assets.lua")
+local ToLoad = require("to_load")
+PrefabFiles = ToLoad.Prefabs
+Assets = ToLoad.Assets
+for k, v in ipairs(ToLoad.MiniMaps) do
+    AddMinimapAtlas(v)
+end
+
+GLOBAL.UpvalueHacker = require("tools/upvaluehacker")
+
 modimport("init/rnc_tuning.lua")
 modimport("init/rnc_strings.lua")
 modimport("init/rnc_recipes.lua")
 modimport("init/rnc_players.lua")
 modimport("init/nefarious_widget.lua")
-
-modimport("postinit/components/ambientsound.lua")
---modimport("postinit/radiation_stats.lua")
-
---[[if GetModConfigData("Show Gieger Meter") == 1 then
-	table.insert(Assets, Asset("ANIM", "anim/status_radiation.zip"))
-	modimport("init/gieger_widget.lua")
-end]]
+modimport("scripts/patches.lua")
 
 ---sound---
 
@@ -58,8 +51,6 @@ modimport("scripts/util/ratchet_dodge")
 -- Add mod character to mod character list. Also specify a gender. Possible genders are MALE, FEMALE, ROBOT, NEUTRAL, and PLURAL.
 AddModCharacter("ratchet", "MALE", skin_modes)
 AddModCharacter("nefarious", "MALE")
-
-
 
 local params = {}
 

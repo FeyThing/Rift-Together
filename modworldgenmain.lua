@@ -1,17 +1,20 @@
-local require = GLOBAL.require
+env._G = GLOBAL
+local env = env
+local modimport = modimport
+local AddRoomPreInit = AddRoomPreInit
+local AddTaskSetPreInit = AddTaskSetPreInit
+local GetModConfigData = GetModConfigData
 
-GLOBAL.require("map/terrain")
-GLOBAL.require("tilemanager")
+_G.setfenv(1, _G)
 
-local GROUND = GLOBAL.GROUND
-local Layouts = GLOBAL.require("map/layouts").Layouts
-local StaticLayout = GLOBAL.require("map/static_layout")
+require("map/terrain")
+require("tilemanager")
 
-modimport("scripts/util/utils_worldgen")
+local Layouts = require("map/layouts").Layouts
+local StaticLayout = require("map/static_layout")
+
 modimport("scripts/rnc_tiles")
 modimport("scripts/map/tasks/torreniv")
-
-local TORRENIV_GROUND_TYPES = GLOBAL.TORRENIV_GROUND_TYPES
 
 local function GenerateCrystalsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
@@ -49,38 +52,33 @@ if GetModConfigData("Nanotech Crates") == 1 then
 	GenerateForRoom("CrappyForest", 0.015)			
 end
 
+local TORRENIV_GROUND_TYPES =
+{
+    WORLD_TILES.IMPASSABLE, WORLD_TILES.GRASS, WORLD_TILES.FOREST, WORLD_TILES.ROCKY, WORLD_TILES.DIRT, -- 1, 2, 3, 4, 5
+    WORLD_TILES.JUNK, WORLD_TILES.OCEAN_COASTAL, WORLD_TILES.OCEAN_COASTAL_SHORE, WORLD_TILES.OCEAN_BRINEPOOL, -- 6, 7, 8, 9
+}
 
-GLOBAL.terrain.filter.raritanium_crystals = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.JUNK}
-GLOBAL.terrain.filter.nanocrate = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER}
+local filters = {
+	["raritanium_crystals"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER, WORLD_TILES.JUNK},
+	["nanocrate"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER},
+	["torren_grass"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER, WORLD_TILES.JUNK},
+	["torren_cactus"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER, WORLD_TILES.JUNK},
+	["torrenivdesert_pillar"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER,WORLD_TILES.JUNK, WORLD_TILES.MUD, WORLD_TILES.DIRT},
+	["torrenivdesert_pillar_small"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER,WORLD_TILES.JUNK, WORLD_TILES.MUD, WORLD_TILES.DIRT}
+}
 
-
-GLOBAL.terrain.filter.torren_grass = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.JUNK}
-GLOBAL.terrain.filter.torren_cactus = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.JUNK}
-GLOBAL.terrain.filter.torrenivdesert_pillar = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER,GLOBAL.GROUND.JUNK, GLOBAL.GROUND.MUD, GLOBAL.GROUND.DIRT}
-GLOBAL.terrain.filter.torrenivdesert_pillar_small = {GLOBAL.GROUND.ROAD, GLOBAL.GROUND.WOODFLOOR, GLOBAL.GROUND.CARPET, GLOBAL.GROUND.CHECKER, GLOBAL.GROUND.JUNK, GLOBAL.GROUND.MUD, GLOBAL.GROUND.DIRT}
-
+for k, v in pairs(filters) do
+	terrain.filter[k] = v
+end
 
 Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
 Layouts["gunkywateringhole"].ground_types = TORRENIV_GROUND_TYPES
 
 
 if GetModConfigData("Torren IV") == 1 then
-
-
 	AddTaskSetPreInit("default", function(taskset)
-			table.insert(taskset.tasks, "Torren IV")
-	end)
-	
-	AddTaskSetPreInit("default", function(taskset)
-			table.insert(taskset.tasks, "Torren Wastes")
-	end)
-	
-	AddTaskSetPreInit("default", function(taskset)
-			table.insert(taskset.tasks, "Torren Wastes Crags")
+		table.insert(taskset.tasks, "Torren IV")
+		table.insert(taskset.tasks, "Torren Wastes")
+		table.insert(taskset.tasks, "Torren Wastes Crags")
 	end)
 end
-
-
-
-
----ChangeTileRenderOrder(WORLD_TILES.JUNK, WORLD_TILES.DIRT_NOISE,true)

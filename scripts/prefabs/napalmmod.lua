@@ -62,4 +62,4 @@ local function fn()
     return inst
 end
 
-return Prefab("common/inventory/napalmmod", fn, assets, prefabs)
+return Prefab("napalmmod", fn, assets, prefabs)

@@ -4,31 +4,24 @@ local Assets = {
 }
 
 local function OnEquip(inst, owner)
-	-- This will override symbol "swap_body" of the equipping player with your custom build symbol.
-	-- Here's what this function is overriding:
-	-- owner.AnimState:OverrideSymbol(Player's_symbol, Your_build(*.zip_filename), Symbol_from_your_build(name_of_subfolder_with_art)
     owner.AnimState:OverrideSymbol("swap_hat", "commando_helmet", "swap_hat")
 	
-	-- Show/Hide some of the layers of the character while equipping the hat.
 	owner.AnimState:Show("HAT")
 	owner.AnimState:Show("HAIR_HAT")
 	owner.AnimState:Hide("HAIR_NOHAT")
 	owner.AnimState:Hide("HAIR")
 	
-	-- If the equipping guy is the player, do some additional stuff.
 	if owner:HasTag("player") then
 		owner.AnimState:Hide("HEAD")
 		owner.AnimState:Show("HEAD_HAT")
 	end
 	
-	-- If we should lose usage percent over time while wearing the hat - start dropping the percentage when we're equipping the hat.
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StartConsuming()
 	end
 end
 
 local function OnUnequip(inst, owner) 
-
 	owner.AnimState:ClearOverrideSymbol("swap_hat")
 	
 	owner.AnimState:Hide("HAT")
@@ -47,7 +40,6 @@ local function OnUnequip(inst, owner)
 end
 
 local function MainFunction()
-	-- Functions which are performed both on Client and Server start here.
     local inst = CreateEntity()
     
     inst.entity:AddTransform()
@@ -56,17 +48,11 @@ local function MainFunction()
 	inst.entity:AddSoundEmitter()
 
     MakeInventoryPhysics(inst)
-
 	
-	local minimap = inst.entity:AddMiniMapEntity()
-	--minimap:SetIcon("commando_helmet.tex")
-	
-
     inst.AnimState:SetBank("commando_helmet")
     inst.AnimState:SetBuild("commando_helmet")
     inst.AnimState:PlayAnimation("anim")
 
-	--[[ TAGS ]]--
 	inst:AddTag("HASRADIOACTIVE")
     inst:AddTag("commando_helmet")
 	inst:AddTag("waterproofer")
@@ -82,7 +68,6 @@ local function MainFunction()
 	
     inst:AddComponent("inspectable")
 
-	-- Allow "trading" the hat - used for giving the hat to Pigmen.
     inst:AddComponent("tradable")
 
     inst:AddComponent("inventoryitem")
@@ -111,4 +96,4 @@ local function MainFunction()
     return inst
 end
 
-return  Prefab("common/inventory/commando_helmet", MainFunction, Assets)
+return  Prefab("commando_helmet", MainFunction, Assets)

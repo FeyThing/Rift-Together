@@ -278,5 +278,5 @@ local function fn(Sim)
 	return inst
 end
 
-return Prefab( "common/junkpile", fn, assets, prefabs ) 
+return Prefab( "junkpile", fn, assets, prefabs ) 
 

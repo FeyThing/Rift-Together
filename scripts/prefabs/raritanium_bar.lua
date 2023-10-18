@@ -52,4 +52,4 @@ local function fn()
     return inst
 end
 
-return Prefab("common/inventory/raritanium_bar", fn, assets, prefabs)
+return Prefab("raritanium_bar", fn, assets, prefabs)

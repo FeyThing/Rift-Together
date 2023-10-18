@@ -1,5 +1,4 @@
 local itemstat = {
-
 	raritaniumore = {
 		stacksize = 6,
 		newitem = "raritanium_bar",

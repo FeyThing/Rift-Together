@@ -1,0 +1,104 @@
+local env = env
+local AddBrainPostInit = AddBrainPostInit
+local AddStategraphPostInit = AddStategraphPostInit
+local AddPrefabPostInit = AddPrefabPostInit
+local AddComponentPostInit = AddComponentPostInit
+local AddStategraphState = AddStategraphState
+local AddGlobalClassPostConstruct = AddGlobalClassPostConstruct
+local AddPlayerPostInit = AddPlayerPostInit
+_G.setfenv(1, _G)
+
+local GenericPlayerFn = require("patches/prefabs/player")
+
+local PATCHES = 
+{
+	COMPONENTS = {
+		"ambientsound",
+	},
+	
+	REPLICAS = {
+		--"builder_replica",
+		--"combat_replica",
+	},
+
+	PREFABS = {
+		chess = {"knight", "bishop", "rook"},
+		--prefab_template = "spider",
+	},
+
+	PLAYERS = {
+		--"prefab_template", --"wilson"
+	},
+	STATEGRAPHS = { --it's creating new one
+		--"wilson",
+		--"wilsonghost",
+	},
+	STATES = { --it's patches
+		--"hound",
+		--"monkeyqueen",
+		--"wilson",
+	},
+	BRAINS = {
+		--brain_template = "powdermonkeybrain",
+	},
+}
+
+
+for i, prefab in ipairs(PATCHES.PLAYERS) do
+	PATCHES.PREFABS[prefab] = prefab
+end
+
+local function patch(prefab, fn)
+	AddPrefabPostInit(prefab, fn)
+end
+	
+for path, data in pairs(PATCHES.PREFABS) do
+	local fn = require("patches/prefabs/"..path)
+	
+	if type(data) == "string" then
+		patch(data, function(inst) fn(inst, data) end)
+	else
+		for _, pref in ipairs(data) do
+			patch(pref, function(inst) fn(inst, pref) end)
+		end
+	end
+end
+
+AddPlayerPostInit(GenericPlayerFn)
+
+for _, name in ipairs(PATCHES.STATEGRAPHS) do
+	AddStategraphPostInit(name, require("patches/stategraphs/"..name))
+end
+
+local function patchbrain(prefab, fn)
+	AddBrainPostInit(prefab, fn)
+end
+
+for path, data in pairs(PATCHES.BRAINS) do
+	local fn = require("patches/brains/"..path)
+	
+	if type(data) == "string" then
+		patchbrain(data, function(inst) fn(inst, data) end)
+	else
+		for _, pref in ipairs(data) do
+			patchbrain(pref, function(inst) fn(inst, pref) end)
+		end
+	end
+end
+
+for _, file in ipairs(PATCHES.COMPONENTS) do
+	local fn = require("patches/components/"..file)
+	AddComponentPostInit(file, fn)
+end
+
+for _, file in ipairs(PATCHES.REPLICAS) do
+	local fn = require("patches_client/components/"..file)
+	AddClassPostConstruct("components/"..file, fn)
+end
+
+for _, file in ipairs(PATCHES.STATES) do
+	local server_states = require("patches/states/"..file)
+	for i, state in ipairs(server_states) do
+		AddStategraphState(file, state)
+	end
+end

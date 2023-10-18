@@ -48,4 +48,4 @@ local function fn(Sim)
     return inst
 end
 
-return Prefab("common/inventory/nanoboost", fn, assets)
+return Prefab("nanoboost", fn, assets)
