@@ -1,0 +1,14 @@
+Idle Animations
+---Line 2131
+
+Action handlers attack --788
+
+something about a run at line 1063
+
+7673 ---attack
+
+---8699 run
+
+
+
+---12062 jump

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="symbol_e5abc48">
+        <file id="0" name="symbol_e5abc48/symbol_e5abc48-0.png" width="228" height="152" pivot_x="0.495612" pivot_y="0.281911"/>
+    </folder>
+    <entity id="0" name="nanoboost">
+        <animation id="0" name="anim_90s" length="67" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="34">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="67">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="flowers_01">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="3.3" y="-37.75" angle="0"/>
+                </key>
+                <key id="1" time="34" spin="0">
+                    <object folder="0" file="0" x="3.3" y="-37.75" angle="0"/>
+                </key>
+                <key id="2" time="67" spin="0">
+                    <object folder="0" file="0" x="3.3" y="-37.75" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
