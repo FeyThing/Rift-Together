@@ -1,7 +1,6 @@
 local assets =
 {
 	Asset("ANIM", "anim/nanoboost.zip"),
-    Asset( "ATLAS", "images/inventoryimages/nanoboost.xml" ),
 }
 
 local function fn(Sim)
@@ -25,7 +24,7 @@ local function fn(Sim)
     inst.entity:SetPristine()
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.atlasname = "images/inventoryimages/nanoboost.xml"
+    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     inst:AddComponent("stackable")
 	inst.components.stackable.maxsize = TUNING.STACK_SIZE_LARGEITEM

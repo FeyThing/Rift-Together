@@ -243,7 +243,6 @@ local function getstatus(inst)
     return inst.charged and "CHARGED" or nil
 end
 
-
 local function OnStartFollowing(inst, data)
     if inst.leadertask ~= nil then
         inst.leadertask:Cancel()
@@ -279,8 +278,6 @@ local function OnStopFollowing(inst)
         end
     end
 end
-
-
 
 local function fncommon(bank, build, morphlist, custombrain, tag, data)
 	data = data or {}
@@ -324,13 +321,11 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
         return inst
     end
 
-
 	inst.sounds = sounds
 
     inst:AddComponent("locomotor") -- locomotor must be constructed before the stategraph
 
     inst:SetStateGraph("SGhound")
-
 
 	inst.components.locomotor:SetAllowPlatformHopping(true)
 
@@ -370,8 +365,6 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
     inst.components.sleeper:SetWakeTest(ShouldWakeUp)
     inst:ListenForEvent("newcombattarget", OnNewTarget)
 
-    
-
     inst:WatchWorldState("stopday", OnStopDay)
     inst.OnEntitySleep = OnEntitySleep
 
@@ -393,7 +386,6 @@ end
 local function fnrobomutt()
     local inst = fncommon("hound", "hound_robomutt", nil, nil, "hound_robomutt", false)
 
-
     if not TheWorld.ismastersim then
         return inst
     end
@@ -409,51 +401,49 @@ local function fnrobomutt()
     inst.components.health:SetMaxHealth(300)
 
 	inst.components.combat.bonusdamagefn = function(inst, target, damage, weapon)
-				return not (target:HasTag("shockabsorbers") or (target.components.inventory ~= nil and target.components.inventory:IsInsulated()))
-					and 20 * (target.components.moisture ~= nil and target.components.moisture:GetMoisturePercent() or (target:GetIsWet() and 1 or 0))
-					or 0				
-			end
-			
-			inst:ListenForEvent("death", function(inst)
-				SpawnPrefab("wx78_big_spark"):AlignToTarget(inst)
-				local x,y,z = inst.Transform:GetWorldPosition()
-				local ents = TheSim:FindEntities(x, y, z, 4, {}, NO_TAGS) 
-				for _,ent in pairs(ents) do
-					if ent.components.health then					
-						if ent:HasTag("player") then
-							if not (ent.components.inventory and ent.components.inventory:IsInsulated()) then
-								ent.components.combat:GetAttacked(inst, -10)
-								ent.sg:GoToState("electrocute")
-							end
-						else
-							if ent ~= nil and ent.components.health ~= nil and not (ent:HasTag("structure") or ent:HasTag("wall")) then
-								ent.components.combat:GetAttacked(inst, -5)								
-							end
-						end
-					end
-					if ent.setcharged then 
-						ent:setcharged()
-					end
-				end
-			end)
-			
-			inst.shockvictim = function(inst, attacker)
-				if attacker and attacker.components.health and not attacker.components.health:IsDead() then
-					SpawnPrefab("electrichitsparks"):AlignToTarget(inst, attacker, true)					
-				end
-			end
-			
-			inst:ListenForEvent("onattackother", function(inst, data)
-				if math.random() <= 0.15 and data.target then
-					inst:shockvictim(data.target)
-					data.target.components.health:DoDelta(-5*2)
-				end
-			end)
+        return not (target:HasTag("shockabsorbers") or (target.components.inventory ~= nil and target.components.inventory:IsInsulated()))
+            and 20 * (target.components.moisture ~= nil and target.components.moisture:GetMoisturePercent() or (target:GetIsWet() and 1 or 0))
+            or 0				
+    end
+    
+    inst:ListenForEvent("death", function(inst)
+        SpawnPrefab("wx78_big_spark"):AlignToTarget(inst)
+        local x,y,z = inst.Transform:GetWorldPosition()
+        local ents = TheSim:FindEntities(x, y, z, 4, {}, NO_TAGS) 
+        for _,ent in pairs(ents) do
+            if ent.components.health then					
+                if ent:HasTag("player") then
+                    if not (ent.components.inventory and ent.components.inventory:IsInsulated()) then
+                        ent.components.combat:GetAttacked(inst, -10)
+                        ent.sg:GoToState("electrocute")
+                    end
+                else
+                    if ent ~= nil and ent.components.health ~= nil and not (ent:HasTag("structure") or ent:HasTag("wall")) then
+                        ent.components.combat:GetAttacked(inst, -5)								
+                    end
+                end
+            end
+            if ent.setcharged then 
+                ent:setcharged()
+            end
+        end
+    end)
+    
+    inst.shockvictim = function(inst, attacker)
+        if attacker and attacker.components.health and not attacker.components.health:IsDead() then
+            SpawnPrefab("electrichitsparks"):AlignToTarget(inst, attacker, true)					
+        end
+    end
+    
+    inst:ListenForEvent("onattackother", function(inst, data)
+        if math.random() <= 0.15 and data.target then
+            inst:shockvictim(data.target)
+            data.target.components.health:DoDelta(-5*2)
+        end
+    end)
 
     return inst
 end
-
-
 
 return Prefab("hound_robomutt", fnrobomutt, assets, prefabs)
 

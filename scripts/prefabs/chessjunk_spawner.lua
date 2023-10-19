@@ -20,7 +20,6 @@ SetSharedLootTable("chess_junk",
     {'trinket_6',      0.60},   
 })
 
-
 local MAXHITS = 6
 
 local function SpawnScion(pos, friendly, style, player)
@@ -62,11 +61,11 @@ local function OnPlayerRepaired(inst, player)
 end
 
 local function OnRepaired(inst, doer)
-if doer:HasTag("mechagenius") then 
-MAXHITS = 4
-else
-MAXHITS = 6
-end
+    if doer:HasTag("mechagenius") then 
+        MAXHITS = 4
+    else
+        MAXHITS = 6
+    end
     if inst.components.workable.workleft < MAXHITS then
         inst.SoundEmitter:PlaySound("dontstarve/common/chesspile_repair")
         inst.AnimState:PlayAnimation("hit"..inst.style)

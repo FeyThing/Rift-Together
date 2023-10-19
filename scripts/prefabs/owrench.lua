@@ -1,26 +1,23 @@
-local containers = require "containers"
-local containers = require "containers"
+local assets =
+{
+	Asset("ANIM", "anim/owrench.zip"),
+	Asset("ANIM", "anim/swap_owrench.zip"),
+	Asset("ANIM", "anim/ui_ratchet_3x1.zip"),
 
-local function IsCryo(item)
-    return item.prefab == "cryomod"
-end
+}
 
-local function IsNapalm(item)
-    return item.prefab == "napalmmod"
-end
+local prefabs =
+{
+    "electrichitsparks",
+}
 
-local function IsShock(item)
-    return item.prefab == "shockmod"
-end
+local function IsCryo(item) return item.prefab == "cryomod" end
+local function IsNapalm(item) return item.prefab == "napalmmod" end
+local function IsShock(item) return item.prefab == "shockmod" end
 
-
-local function omega_modifiers(inst, attacker, target)	
-	
---- Cryo Modification
-
-if inst.components.container ~= nil and inst.components.container:FindItem(IsCryo) ~= nil then
-			--inst.components.container:ConsumeByName("cryomod", 1)			
-if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() then
+local function CryoModification(inst, attacker, target)
+    --inst.components.container:ConsumeByName("cryomod", 1)			
+    if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() then
         target.components.sleeper:WakeUp()
     end
 
@@ -46,16 +43,13 @@ if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() the
     end
 end
 
-
---- Napalm Modification
-
-if inst.components.container ~= nil and inst.components.container:FindItem(IsNapalm) ~= nil then
-			--inst.components.container:ConsumeByName("napalmmod", 1)	
-		SpawnPrefab("firesplash_fx").Transform:SetPosition(target.Transform:GetWorldPosition())	
-if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() then
+local function NapalmModification(inst, attacker, target)
+    --inst.components.container:ConsumeByName("napalmmod", 1)	
+    SpawnPrefab("firesplash_fx").Transform:SetPosition(target.Transform:GetWorldPosition())	
+    if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() then
         target.components.sleeper:WakeUp()
     end	
-	
+    
     if target.components.burnable ~= nil and not target.components.burnable:IsBurning() then
         if target.components.freezable ~= nil and target.components.freezable:IsFrozen() then
             target.components.freezable:Unfreeze()
@@ -78,65 +72,55 @@ if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() the
                 end
             end
         end
-	end	
+    end	
 
     if target.components.combat ~= nil then
         target.components.combat:SuggestTarget(attacker)
     end
 
-attacker.SoundEmitter:PlaySound("dontstarve/wilson/fireball_explo")
+    attacker.SoundEmitter:PlaySound("dontstarve/wilson/fireball_explo")
 
-
-if target.components.freezable ~= nil then
+    if target.components.freezable ~= nil then
         target.components.freezable:AddColdness(-1) --Does this break ice staff?
         if target.components.freezable:IsFrozen() then
             target.components.freezable:Unfreeze()
         end
     end
 
-
     target:PushEvent("attacked", { attacker = attacker, damage = 0, weapon = inst })
 end
 
-
---- Shock Modification
-
-if inst.components.container ~= nil and inst.components.container:FindItem(IsShock) ~= nil then
-			--inst.components.container:ConsumeByName("shockmod", 1)	
-			
-if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() then
+local function ShockModification(inst, attacker, target)
+    --inst.components.container:ConsumeByName("shockmod", 1)	
+    if target.components.sleeper ~= nil and target.components.sleeper:IsAsleep() then
         target.components.sleeper:WakeUp()
     end
 
-if target ~= nil and target:IsValid() and attacker ~= nil and attacker:IsValid() then		
+    if target ~= nil and target:IsValid() and attacker ~= nil and attacker:IsValid() then		
         SpawnPrefab("electrichitsparks"):AlignToTarget(target, attacker, true)		
     end
-	if target.components.health and not target.components.health:IsDead() then
-				target.components.health:DoDelta(-10)
-			end
-	
-if target:HasTag("wet") then
-		target.components.combat:GetAttacked(attacker, 8, inst)--8 is the bonus damage + the normal weapon damage
-	end
-
-end
-	
+    if target.components.health and not target.components.health:IsDead() then
+        target.components.health:DoDelta(-10)
+    end
+    
+    if target:HasTag("wet") then
+        target.components.combat:GetAttacked(attacker, 8, inst)--8 is the bonus damage + the normal weapon damage
+    end
 end
 
-	
+local function omega_modifiers(inst, attacker, target)	
+    if inst.components.container ~= nil and inst.components.container:FindItem(IsCryo) ~= nil then
+        CryoModification(inst, attacker, target)
+    end
 
-local assets =
-{
-	Asset("ANIM", "anim/owrench.zip"),
-	Asset("ANIM", "anim/swap_owrench.zip"),
-	Asset("ANIM", "anim/ui_ratchet_3x1.zip"),
+    if inst.components.container ~= nil and inst.components.container:FindItem(IsNapalm) ~= nil then
+        NapalmModification(inst, attacker, target)
+    end
 
-}
-
-local prefabs =
-{
-    "electrichitsparks",
-}
+    if inst.components.container ~= nil and inst.components.container:FindItem(IsShock) ~= nil then
+        ShockModification(inst, attacker, target)
+    end
+end
 
 local function onequip(inst, owner) 
     owner.AnimState:OverrideSymbol("swap_object", "swap_owrench", "swap_owrench")
@@ -162,15 +146,12 @@ local function OnEquipToModel(inst, owner)
     end
 end
 
-
 local function OnAttack(inst, attacker, target)
-
- if target:HasTag("chess") then
-		target.components.combat:GetAttacked(attacker, 100, inst)--100 is the bonus damage + the normal weapon damage
+    if target:HasTag("chess") then
+		target.components.combat:GetAttacked(attacker, 100, inst)
 	end
 
-omegamodifier(inst, attacker, target)
-		
+    omegamodifier(inst, attacker, target)	
 end
 
 
@@ -210,15 +191,14 @@ local function fn(Sim)
     
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.imagename = "owrench"
-	inst.components.inventoryitem.atlasname = "images/inventoryimages/owrench.xml"
+    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
-    
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)
-	inst.components.equippable.restrictedtag = "veldin_mechanic"
     inst.components.equippable:SetOnUnequip(onunequip)
 	inst.components.equippable:SetOnEquipToModel(OnEquipToModel)  
-	
+    inst.components.equippable.restrictedtag = "veldin_mechanic"
+
 	inst:AddComponent("container")
 	inst.components.container:WidgetSetup("owrench")
 

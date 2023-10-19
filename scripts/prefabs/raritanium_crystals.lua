@@ -38,7 +38,6 @@ local function CurrentlyWorking(inst, worker, workleft)
 end
 
 local function prerock_fn(bank, build, anim, icon)
---entirely copied from rocks.lua
 	local inst = CreateEntity()
 
 	inst.entity:AddTransform()
@@ -101,4 +100,4 @@ local function raritanium_crystals_fn()
 end
 
 
-return Prefab( "forest/objects/raritanium_crystals", raritanium_crystals_fn, assets, prefabs)
+return Prefab( "raritanium_crystals", raritanium_crystals_fn, assets, prefabs)

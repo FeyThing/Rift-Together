@@ -86,8 +86,8 @@
 		value = WORLD_TILES.DESERTSAND_NOISE,
 		contents = {
 			countprefabs= {
-			raritaniumspawner = function() return math.random(1,2) end,
-			burntground_faded = function() return math.random(3,5) end,
+				raritaniumspawner = function() return math.random(1,2) end,
+				burntground_faded = function() return math.random(3,5) end,
 			},
 			distributepercent = 0.1,
 			distributeprefabs =

@@ -3,7 +3,6 @@ local containers = require "containers"
 local assets =
 {
     Asset("ANIM", "anim/cryomod.zip"),
-	Asset("ATLAS", "images/inventoryimages/cryomod.xml"),
 }
 
 
@@ -13,13 +12,11 @@ local prefabs =
 }
 
 local function Onfueled(inst)
+    local installed = inst.components.container ~= nil and inst:HasTag("weaponmod")
 
-local installed = inst.components.container ~= nil and inst:HasTag("weaponmod")
-
-if installed ~= nil and inst.components.fueled ~= nil then	
-inst.components.fueled:StartConsuming()
-end
-
+    if installed ~= nil and inst.components.fueled ~= nil then	
+        inst.components.fueled:StartConsuming()
+    end
 end
 
 local function fn()
@@ -41,7 +38,6 @@ local function fn()
         return inst
     end
 
-
     inst:AddComponent("inspectable")
 
     inst:AddComponent("fueled")
@@ -52,10 +48,9 @@ local function fn()
 	Onfueled(inst)
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.atlasname = "images/inventoryimages/cryomod.xml"
+    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     MakeHauntableLaunch(inst)
-	
 
     return inst
 end

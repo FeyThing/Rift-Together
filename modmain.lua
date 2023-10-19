@@ -26,7 +26,7 @@ modimport("scripts/main/patches.lua")
 
 TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.RATCHET = { "owrench" }
 TUNING.STARTING_ITEM_IMAGE_OVERRIDE["owrench"] = {
-   atlas = "images/inventoryimages/owrench.xml",
+   atlas = "images/rnc_inventoryimages.xml",
    image = "owrench.tex",
 }
 

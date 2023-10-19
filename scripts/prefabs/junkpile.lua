@@ -37,7 +37,6 @@ local loots =
 RESETTIME = TUNING.TOTAL_DAY_TIME * 3
 RANDTIME = TUNING.TOTAL_DAY_TIME 
 
-
 local function ondug(inst, worker)
      inst.SoundEmitter:PlaySound("dontstarve/common/lightning_rod_craft")
     local pt = Point(inst.Transform:GetWorldPosition())    
@@ -68,8 +67,6 @@ end
 
 local function OnEntitySleep(inst)
 end
-
-
 
 local function makeemptyfn(inst)
     -- adjust art for empty
@@ -204,9 +201,9 @@ local function fn(Sim)
 
 	inst.entity:SetPristine()
 
-        if not TheWorld.ismastersim then
-            return inst
-        end
+    if not TheWorld.ismastersim then
+        return inst
+    end
 
     -------------------
 	inst:AddComponent("workable")
@@ -264,7 +261,6 @@ local function fn(Sim)
             land(inst)        
         end
     end)
-
 
     MakeSnowCovered(inst)
 

@@ -21,7 +21,7 @@ local nefenergy  = Class(Badge, function(self, owner)
     self.circleframe:GetAnimState():SetBuild("status_meter")
     self.circleframe:GetAnimState():PlayAnimation("frame")
 
-	self.icon = self.underNumber:AddChild(Image("images/inventoryimages/bolt-1.xml", "bolt-1.tex"))
+	self.icon = self.underNumber:AddChild(Image("images/rnc_inventoryimages.xml", "bolt-1.tex"))
 	local icon = 1*0.2
 	self.icon:SetScale(icon, icon, icon)
 
@@ -37,13 +37,13 @@ function nefenergy:SetPercent(val, max,owner)
 	val = val or 0
 
 	if val >= 0.75 then
-		self.icon:SetTexture("images/inventoryimages/bolt-4.xml", "bolt-4.tex")
+		self.icon:SetTexture("images/rnc_inventoryimages.xml", "bolt-4.tex")	
 	elseif val>=0.5 then
-		self.icon:SetTexture("images/inventoryimages/bolt-3.xml", "bolt-3.tex")		
+		self.icon:SetTexture("images/rnc_inventoryimages.xml", "bolt-3.tex")	
 	elseif val>=0.25 then
-		self.icon:SetTexture("images/inventoryimages/bolt-2.xml", "bolt-2.tex")	
+		self.icon:SetTexture("images/rnc_inventoryimages.xml", "bolt-2.tex")	
 	else
-		self.icon:SetTexture("images/inventoryimages/bolt-1.xml", "bolt-1.tex")	
+		self.icon:SetTexture("images/rnc_inventoryimages.xml", "bolt-1.tex")	
 	end
 	
 	self.anim:GetAnimState():SetPercent("anim", 1 - val)

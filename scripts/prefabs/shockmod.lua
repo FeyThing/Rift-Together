@@ -3,7 +3,6 @@ local containers = require "containers"
 local assets =
 {
     Asset("ANIM", "anim/shockmod.zip"),
-	Asset("ATLAS", "images/inventoryimages/shockmod.xml"),
 }
 
 
@@ -13,13 +12,11 @@ local prefabs =
 }
 
 local function Onfueled(inst)
+    local installed = inst.components.container ~= nil and inst:HasTag("weaponmod")
 
-local installed = inst.components.container ~= nil and inst:HasTag("weaponmod")
-
-if installed ~= nil then	
-inst.components.fueled:StartConsuming()
-end
-
+    if installed ~= nil then	
+        inst.components.fueled:StartConsuming()
+    end
 end
 
 local function fn()
@@ -43,7 +40,6 @@ local function fn()
         return inst
     end
 
-
     inst:AddComponent("inspectable")
 
     inst:AddComponent("fueled")
@@ -54,10 +50,9 @@ local function fn()
 	Onfueled(inst)
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.atlasname = "images/inventoryimages/shockmod.xml"
+    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     MakeHauntableLaunch(inst)
-	
 
     return inst
 end

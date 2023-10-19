@@ -13,10 +13,6 @@ local function fn()
 	inst.entity:AddSoundEmitter()
     inst.entity:AddNetwork()
 
-	--inst.Transform:SetScale(1, 3, 1) 
-	
-	
-
     inst.AnimState:SetBank("mud_puddle")
     inst.AnimState:SetBuild("mud_puddle")
     inst.AnimState:PlayAnimation("idle", true)
@@ -27,8 +23,6 @@ local function fn()
 	inst:AddTag("NOCLICK")
 	inst:SetDeployExtraSpacing(2)
 	
-	--inst.no_wet_prefix = true
-	
 	inst.entity:SetPristine()
 
     if not TheWorld.ismastersim then
@@ -37,7 +31,6 @@ local function fn()
 	
 	inst:AddComponent("unevenground")			
     inst.components.unevenground.radius = 1.5	
-
 	
     return inst
 end

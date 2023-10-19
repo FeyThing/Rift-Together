@@ -6,18 +6,6 @@ local assets =
 
 local INTENSITY = 0.6
 
---------------------------------------------------------------------------------------------------
-
---//CONTENT//
---1. Light fades
---2. Light effects
---3. Trades
---4. Miscellaneous
---5. Fn
-
---------------------------------------------------------------------------------------------------
---1. Light fades
-
 local function fadein(inst)
     inst.components.fader:StopAll()
     inst.AnimState:PlayAnimation("on")
@@ -28,7 +16,6 @@ local function fadein(inst)
     inst.AnimState:Show("GLOW")        
     inst.lighton = true
 	inst.components.fader:Fade(0, INTENSITY, 3+math.random()*2, function(v) inst.Light:SetIntensity(v) end)
-          
 end
 
 local function fadeout(inst)
@@ -39,7 +26,6 @@ local function fadeout(inst)
     inst.AnimState:Hide("GLOW")        
     inst.lighton = false
 	inst.components.fader:Fade(INTENSITY, 0, .75+math.random()*1, function(v) inst.Light:SetIntensity(v) end)
-    
 end
 
 local function updatelight(inst)
@@ -55,8 +41,6 @@ local function updatelight(inst)
        
     end
 end
-
-
 
 local function GetStatus(inst)
     return not inst.lighton and "ON" or nil
@@ -87,9 +71,6 @@ local function onload(inst, data)
 		end
     end
 end
-
------------------------------------------------------------------------------------------------------------------
---5. fn
 
 local function fn(Sim)
     local inst = CreateEntity()
@@ -151,6 +132,6 @@ local function fn(Sim)
 end
 
 return Prefab("vullard_lamp", fn, assets),
-MakePlacer("vullard_lamp_placer", "vullard_post", "vullard_post_build", "idle", false, false, true)
+    MakePlacer("vullard_lamp_placer", "vullard_post", "vullard_post_build", "idle", false, false, true)
   
 

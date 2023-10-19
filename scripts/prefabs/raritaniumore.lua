@@ -1,21 +1,22 @@
 local assets =
 {
     Asset("ANIM", "anim/raritaniumore.zip"),
-	Asset("ATLAS", "images/inventoryimages/raritaniumore.xml"),
 }
-
-local function shine(inst)
-    inst.task = nil
-    inst.AnimState:PlayAnimation("sparkle")
-    inst.AnimState:PushAnimation("idle")
-    inst.task = inst:DoTaskInTime(4 + math.random() * 5, shine)
-end
-
 
 local prefabs =
 {
 
 }
+
+local function shine(inst)
+    if inst.task then
+        inst.task:Cancel()
+        inst.task = nil
+    end
+    inst.AnimState:PlayAnimation("sparkle")
+    inst.AnimState:PushAnimation("idle")
+    inst.task = inst:DoTaskInTime(4 + math.random() * 5, shine)
+end
 
 local function fn()
     local inst = CreateEntity()
@@ -47,7 +48,7 @@ local function fn()
 
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.atlasname = "images/inventoryimages/raritaniumore.xml"
+    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     MakeHauntableLaunch(inst)
 	shine(inst)

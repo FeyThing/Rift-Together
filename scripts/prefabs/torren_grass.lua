@@ -17,7 +17,7 @@ local prefabs =
     "cutgrass",
     "dug_grass",
     "grassgekko",
-    "grasspartfx",
+    "torren_grasspartfx",
 }
 
 local function canmorph(inst)
@@ -140,7 +140,7 @@ local function onmorphtimer(inst, data)
                 gekko.Transform:SetPosition(x, y, z)
                 gekko.sg:GoToState("emerge")
 
-                local partfx = SpawnPrefab("grasspartfx")
+                local partfx = SpawnPrefab("torren_grasspartfx")
                 partfx.Transform:SetPosition(x, y, z)
                 partfx.Transform:SetRotation(inst.Transform:GetRotation())
                 partfx.AnimState:SetMultColour(inst.AnimState:GetMultColour())
@@ -288,7 +288,7 @@ local function torren_grasspart_fn()
     inst.entity:AddNetwork()
 
     inst.AnimState:SetBank("torren_grass")
-    inst.AnimState:SetBuild("torren_torren_grass")
+    inst.AnimState:SetBuild("torren_grass")
     inst.AnimState:PlayAnimation("torren_grass_part")
     inst.AnimState:SetFinalOffset(1)
 
@@ -310,4 +310,4 @@ end
 
 return torren_grass("torren_grass", 0),
        torren_grass("depleted_torren_grass", 1),
-       Prefab("grasspartfx", torren_grasspart_fn, torren_grasspart_assets)
+       Prefab("torren_grasspartfx", torren_grasspart_fn, torren_grasspart_assets)

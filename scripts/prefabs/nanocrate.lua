@@ -62,7 +62,6 @@ local function fn()
     inst.components.workable:SetWorkLeft(1)
     inst.components.workable:SetOnFinishCallback(onhammered)	
 	
-	
     MakeSmallPropagator(inst)
 
     return inst
