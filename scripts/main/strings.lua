@@ -56,7 +56,7 @@ local strings = {
 
 				TORREN_GRASS = "It's a strange patch of grass.",
 				TORREN_CACTUS = "It's a large cactus.",
-				LUMINOUSTREES = "It's a glowing tree.",
+				LUMINOUSTREE = "It's a glowing tree.",
 
 				NANOBOOST = "That looks refreshing.",
 
@@ -116,7 +116,7 @@ local strings = {
 
 		TORREN_GRASS = "Alien Grass",
 		TORREN_CACTUS = "Cactus",
-		LUMINOUSTREES= "Luminous Tree",
+		LUMINOUSTREE = "Luminous Tree",
 
 		NANOBOOST = "Nanotech Boost",
 
