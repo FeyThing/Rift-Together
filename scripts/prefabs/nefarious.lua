@@ -114,11 +114,6 @@ local common_postinit = function(inst)
 	inst:AddTag("solana_galaxy_resident")
 	inst:AddTag("robot")
 	inst:AddTag("chesskiller")
-
-	inst:AddComponent("nefkeyhandler")
-	inst.components.nefkeyhandler:AddActionListener("nefarious", TUNING.STEALTH.KEY, "STEALTH")
-    inst.components.nefkeyhandler:AddActionListener("nefarious", TUNING.COMBAT.KEY, "COMBAT")
-	inst.components.nefkeyhandler:AddActionListener("nefarious", TUNING.SHIELDING.KEY, "SHIELDING")
 end
 
 local master_postinit = function(inst)

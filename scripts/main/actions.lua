@@ -1,5 +1,4 @@
 AddAction("RATCHET_DODGE" , STRINGS.ACTIONS.DODGE_RATCHET , function(act, data)
-	--local inst = act.doer
     act.doer:PushEvent("ratchet_redirect_locomote", {pos = act.pos or Vector3(act.target.Transform:GetWorldPosition())})
     return true
 end)

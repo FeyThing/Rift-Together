@@ -203,7 +203,6 @@ local function fn(Sim)
 	inst.components.container:WidgetSetup("owrench")
 
     MakeHauntableLaunch(inst)
-    
 	
     return inst
 end

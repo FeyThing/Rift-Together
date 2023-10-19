@@ -86,10 +86,9 @@ local function MainFunction()
 	inst:AddComponent("waterproofer")
     inst.components.waterproofer:SetEffectiveness(0.2)
 
-    inst:AddComponent("radioactive")	
-	inst.components.radioactive.aura = TUNING.RADIATION_SMALL
+    -- inst:AddComponent("radioactive")	
+	-- inst.components.radioactive.aura = TUNING.RADIATION_SMALL
 	
-
     MakeHauntableLaunch(inst)
 
     return inst
