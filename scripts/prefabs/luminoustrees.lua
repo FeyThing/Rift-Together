@@ -567,9 +567,7 @@ local function luminoustree(name, stage, data)
         inst.AnimState:SetBuild("luminoustree_build")
         inst:SetPrefabName("luminoustree")
         inst:AddTag("luminoustree") -- for plantregrowth
-
  
-
         MakeSnowCoveredPristine(inst)
 
         inst.entity:SetPristine()
