@@ -56,6 +56,7 @@ local strings = {
 
 				TORREN_GRASS = "It's a strange patch of grass.",
 				TORREN_CACTUS = "It's a large cactus.",
+				LUMINOUSTREES = "It's a glowing tree.",
 
 				NANOBOOST = "That looks refreshing.",
 
@@ -112,8 +113,10 @@ local strings = {
 		RARITANIUM_BAR= "Refined Raritanium",
 		RARITANIUM_CRYSTALS= "Raritanium",
 		SCRAPMETAL = "Scrap Metal",
+
 		TORREN_GRASS = "Alien Grass",
 		TORREN_CACTUS = "Cactus",
+		LUMINOUSTREES= "Luminous Tree",
 
 		NANOBOOST = "Nanotech Boost",
 

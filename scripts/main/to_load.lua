@@ -30,6 +30,7 @@ return {
 		"raritaniummeteor",
 		"raritaniumspawner",
 		"radiation_clouds",
+		"luminoustrees",
 	},
 
 	Assets = {
