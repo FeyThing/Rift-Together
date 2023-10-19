@@ -36,7 +36,7 @@ end
 
 local function oneat(inst, food)
 	if food and food.components.edible then
-		inst.components.nefarious_energy:DoDelta(2);
+		inst.components.nefarious_energy:DoDelta(2)
 	end
 	
 	if food and food.components.edible and food.prefab == "nanoboost" then

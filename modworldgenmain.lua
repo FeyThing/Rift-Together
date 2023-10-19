@@ -13,7 +13,7 @@ require("tilemanager")
 local Layouts = require("map/layouts").Layouts
 local StaticLayout = require("map/static_layout")
 
-modimport("scripts/rnc_tiles")
+modimport("scripts/main/tiles")
 modimport("scripts/map/tasks/torreniv")
 
 local function GenerateCrystalsForRoom(room, factor)

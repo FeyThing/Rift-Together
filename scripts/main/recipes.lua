@@ -1,14 +1,3 @@
-	local Ingredient = GLOBAL.Ingredient
-	local RECIPETABS = GLOBAL.RECIPETABS
-	local TECH_INGREDIENT = GLOBAL.TECH_INGREDIENT
-	local TECH = GLOBAL.TECH
-	
-	local CRAFTING_FILTERS = GLOBAL.CRAFTING_FILTERS
-	local CHARACTER_INGREDIENT = GLOBAL.CHARACTER_INGREDIENT
-	local CONSTRUCTION_PLANS = GLOBAL.CONSTRUCTION_PLANS
-	
-	---------------Recipes-------------
-
 AddRecipe2("owrench",
         {Ingredient("raritaniumore", 8, "images/inventoryimages/raritaniumore.xml"), Ingredient("nanotech", 6, "images/inventoryimages/nanotech.xml"), Ingredient("gears", 4)},
         TECH.NONE,

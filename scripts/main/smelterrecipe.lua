@@ -1,4 +1,4 @@
-local itemstat = {
+return {
 	raritaniumore = {
 		stacksize = 6,
 		newitem = "raritanium_bar",
@@ -119,9 +119,4 @@ local itemstat = {
 		newitem = "moonglass",
 		returnamount = 2,
 	},
-		
-	
-	
 }
-return itemstat
-

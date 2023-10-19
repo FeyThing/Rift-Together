@@ -1,5 +1,5 @@
 require "prefabutil"
-local smelterrecipe = require "smelterrecipe"
+local smelterrecipe = require "main/smelterrecipe"
 
 local assets = {
 	Asset("ANIM", "anim/vullard_smelter.zip"),

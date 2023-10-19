@@ -1,11 +1,6 @@
-local Vector3 = GLOBAL.Vector3
-local ACTIONS = GLOBAL.ACTIONS
-local ActionHandler = GLOBAL.ActionHandler
-local id = "RATCHET_DODGE" 
-local name = STRINGS.RATCHETSTRINGS[3] 
-AddAction(id, name, function(act, data)
+AddAction("RATCHET_DODGE" , STRINGS.ACTIONS.DODGE_RATCHET , function(act, data)
 	--local inst = act.doer
-    act.doer:PushEvent("ratchet_redirect_locomote", {pos = act.pos or GLOBAL.Vector3(act.target.Transform:GetWorldPosition())})
+    act.doer:PushEvent("ratchet_redirect_locomote", {pos = act.pos or Vector3(act.target.Transform:GetWorldPosition())})
     return true
 end)
 

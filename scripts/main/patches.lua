@@ -5,6 +5,7 @@ local AddPrefabPostInit = AddPrefabPostInit
 local AddComponentPostInit = AddComponentPostInit
 local AddStategraphState = AddStategraphState
 local AddGlobalClassPostConstruct = AddGlobalClassPostConstruct
+local AddClassPostConstruct = AddClassPostConstruct
 local AddPlayerPostInit = AddPlayerPostInit
 _G.setfenv(1, _G)
 
@@ -23,6 +24,7 @@ local PATCHES =
 
 	PREFABS = {
 		chess = {"knight", "bishop", "rook"},
+		player_classified = "player_classified",
 		--prefab_template = "spider",
 	},
 
@@ -31,15 +33,18 @@ local PATCHES =
 	},
 	STATEGRAPHS = { --it's creating new one
 		--"wilson",
-		--"wilsonghost",
 	},
 	STATES = { --it's patches
-		--"hound",
-		--"monkeyqueen",
 		--"wilson",
 	},
 	BRAINS = {
 		--brain_template = "powdermonkeybrain",
+	},
+	WIDGETS = {
+		"statusdisplays",
+	},
+	SCREENS = {
+
 	},
 }
 
@@ -74,6 +79,10 @@ local function patchbrain(prefab, fn)
 	AddBrainPostInit(prefab, fn)
 end
 
+local function patchclass(prefab, fn)
+	AddClassPostConstruct(prefab, fn)
+end
+
 for path, data in pairs(PATCHES.BRAINS) do
 	local fn = require("patches/brains/"..path)
 	
@@ -92,8 +101,18 @@ for _, file in ipairs(PATCHES.COMPONENTS) do
 end
 
 for _, file in ipairs(PATCHES.REPLICAS) do
-	local fn = require("patches_client/components/"..file)
-	AddClassPostConstruct("components/"..file, fn)
+	local fn = require("patches/components/"..file)
+	patchclass("components/"..file, fn)
+end
+
+for _, file in ipairs(PATCHES.WIDGETS) do
+	local fn = require("patches/widgets/"..file)
+	patchclass("widgets/"..file, fn)
+end
+
+for _, file in ipairs(PATCHES.SCREENS) do
+	local fn = require("patches/screens/"..file)
+	patchclass("screens/"..file, fn)
 end
 
 for _, file in ipairs(PATCHES.STATES) do

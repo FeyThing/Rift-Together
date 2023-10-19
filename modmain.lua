@@ -3,11 +3,11 @@ GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) en
 local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 local containers = require "containers"
-local smelterrecipe = require "smelterrecipe"
+local smelterrecipe = require "main/smelterrecipe"
 
 GLOBAL.CHEATS_ENABLED = true
 
-local ToLoad = require("to_load")
+local ToLoad = require("main/to_load")
 PrefabFiles = ToLoad.Prefabs
 Assets = ToLoad.Assets
 for k, v in ipairs(ToLoad.MiniMaps) do
@@ -16,12 +16,10 @@ end
 
 GLOBAL.UpvalueHacker = require("tools/upvaluehacker")
 
-modimport("init/rnc_tuning.lua")
-modimport("init/rnc_strings.lua")
-modimport("init/rnc_recipes.lua")
-modimport("init/rnc_players.lua")
-modimport("init/nefarious_widget.lua")
-modimport("scripts/patches.lua")
+modimport("scripts/main/tuning.lua")
+modimport("scripts/main/strings.lua")
+modimport("scripts/main/recipes.lua")
+modimport("scripts/main/patches.lua")
 
 ---sound---
 
@@ -109,7 +107,6 @@ params.vullard_smelter =
 }
 
 function params.vullard_smelter.itemtestfn(container, item, slot)
-
 	return smelterrecipe[item.prefab] and (slot == 1 or slot == 2 and container.inst.on)
 end	
 
@@ -117,8 +114,3 @@ for k, v in pairs(params) do
     containers.params[k] = v
     containers.MAXITEMSLOTS = math.max(containers.MAXITEMSLOTS, v.widget.slotpos ~= nil and #v.widget.slotpos or 0)
 end
-
-
-
-
-
