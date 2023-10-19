@@ -1,3 +1,4 @@
+local Containers = require "containers"
 local SmelterRecipes = require "main/smelterrecipe"
 
 local params = {
@@ -54,6 +55,6 @@ local params = {
 }
 
 for k, v in pairs(params) do
-    containers.params[k] = v
-    containers.MAXITEMSLOTS = math.max(containers.MAXITEMSLOTS, v.widget.slotpos ~= nil and #v.widget.slotpos or 0)
+    Containers.params[k] = v
+    Containers.MAXITEMSLOTS = math.max(Containers.MAXITEMSLOTS, v.widget.slotpos ~= nil and #v.widget.slotpos or 0)
 end

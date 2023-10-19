@@ -5,7 +5,7 @@
 			distributepercent = 0.07,
 			distributeprefabs =
 			{
-				chessjunk = 0.1,
+				chessjunk_spawner = 0.1,
 				lava_pond = 0.1,
 				nanocrate = 0.25,
 				scrapmetal = 0.33,
@@ -31,7 +31,7 @@
 			distributepercent = 0.05,
 			distributeprefabs =
 			{
-				chessjunk = 0.1,
+				chessjunk_spawner = 0.1,
 				rock_avocado_bush = 0.1,
 				torren_cactus = 0.33,
 				succulent_plant = 0.3,
@@ -53,8 +53,8 @@
 		value = WORLD_TILES.JUNK_NOISE,
 		contents = {
 			countprefabs= {
-			scrapmound = function() return math.random(1,2) end,
-			vullard_smelter = 1
+				scrapmound = function() return math.random(1,2) end,
+				vullard_smelter = 1
 			},
 			distributepercent = 0.07,
 			distributeprefabs =
@@ -62,7 +62,7 @@
 				raritanium_crystals = 0.1,
 				nanocrate = 0.25,
 								
-				chessjunk = 0.15,
+				chessjunk_spawner = 0.15,
 				scrapmound = 0.01,
 				junkpile = 4,
 				scrapmetal = 0.6,
@@ -194,7 +194,7 @@
 				marsh_tree = .5,
 				succulent_plant = 0.3,
 				
-				chessjunk = 0.1,				
+				chessjunk_spawner = 0.1,				
 				
 				torrenivdesert_pillar = 0.1,
 				torrenivdesert_pillar_small = 1,

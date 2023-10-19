@@ -4,20 +4,9 @@ local assets = {
     Asset("SCRIPT", "scripts/prefabs/player_common.lua"),
 }
 
--- Your character's stats
-TUNING.ratchet_HEALTH = 100
-TUNING.ratchet_HUNGER = 150
-TUNING.ratchet_SANITY = 200
-
--- Custom starting inventory
-TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.ratchet = {
-	"owrench",
-	"nanoboost",
-}
-
 local start_inv = {}
 for k, v in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
-    start_inv[string.lower(k)] = v.ratchet
+    start_inv[string.lower(k)] = v.RATCHET
 end
 local prefabs = FlattenTree(start_inv, true)
 
@@ -152,9 +141,9 @@ local master_postinit = function(inst)
     --inst.talker_path_override = "dontstarve_DLC001/characters/"
 		
 	-- Stats	
-	inst.components.health:SetMaxHealth(TUNING.ratchet_HEALTH)
-	inst.components.hunger:SetMax(TUNING.ratchet_HUNGER)
-	inst.components.sanity:SetMax(TUNING.ratchet_SANITY)
+	inst.components.health:SetMaxHealth(TUNING.RATCHET_HEALTH)
+	inst.components.hunger:SetMax(TUNING.RATCHET_HUNGER)
+	inst.components.sanity:SetMax(TUNING.RATCHET_SANITY)
 	
 	
     inst.components.sanity:SetPlayerGhostImmunity(true)

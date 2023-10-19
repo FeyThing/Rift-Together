@@ -8,7 +8,7 @@ end
 
 local function CreateMod(name, bank, build, anim, fuellevel)
     local assets = {
-        Asset("ANIM", "anim/"..byukd..".zip"),
+        Asset("ANIM", "anim/"..build..".zip"),
     }
     local prefabs = {}
     local function fn()

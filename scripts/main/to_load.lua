@@ -54,9 +54,6 @@ return {
 		Asset( "IMAGE", "images/avatars/self_inspect_ratchet.tex" ),
 		Asset( "ATLAS", "images/avatars/self_inspect_ratchet.xml" ),
 		
-		Asset( "IMAGE", "images/names_ratchet.tex" ),
-		Asset( "ATLAS", "images/names_ratchet.xml" ),
-		
 		Asset( "IMAGE", "images/names_gold_ratchet.tex" ),
 		Asset( "ATLAS", "images/names_gold_ratchet.xml" ),
 		

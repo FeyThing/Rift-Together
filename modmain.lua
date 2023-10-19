@@ -15,6 +15,7 @@ end
 
 GLOBAL.UpvalueHacker = require("tools/upvaluehacker")
 
+modimport("scripts/main/utils.lua")
 modimport("scripts/main/tuning.lua")
 modimport("scripts/main/strings.lua")
 modimport("scripts/main/recipes.lua")
@@ -22,15 +23,6 @@ modimport("scripts/main/patches.lua")
 modimport("scripts/main/actions.lua")
 modimport("scripts/main/characters.lua")
 modimport("scripts/main/containers.lua")
-
----sound---
-
-
-TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.RATCHET = { "owrench" }
-TUNING.STARTING_ITEM_IMAGE_OVERRIDE["owrench"] = {
-   atlas = "images/rnc_inventoryimages.xml",
-   image = "owrench.tex",
-}
 
 -----------------------
 modimport("scripts/stategraphs/SGannihilator")

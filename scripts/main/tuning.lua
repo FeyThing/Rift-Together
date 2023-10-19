@@ -24,8 +24,26 @@ local wilson_sanity = 200
 local calories_per_day = 75
 
 local wilson_attack_period = 0.4 --prevents players
+local atlas = "images/rnc_inventoryimages.xml"
 
 local tunings = {
+    GAMEMODE_STARTING_ITEMS = {
+        DEFAULT = {
+            RATCHET = { "owrench", "nanoboost" },
+            NEFARIOUS = {},
+        },
+    },
+
+    STARTING_ITEM_IMAGE_OVERRIDE = {
+        owrench = {
+            atlas = atlas,
+            image = "owrench.tex",
+        },
+        nanoboost = {
+            atlas = atlas,
+            image = "nanoboost.tex",
+        },
+    },
     NEFARIOUS_ENERGY = 100,
     NEFARIOUS_ENERGY_COST = 1,
     
@@ -82,6 +100,4 @@ local tunings = {
     RAD_SANITY_SCALE = .05, -- sanity hit = radiation hit * RAD_SANITY_SCALE  set to 0 to turn off
 }
 
-for k, v in pairs(tunings) do
-    TUNING[k] = v
-end
+TransferTable(tunings, TUNING)

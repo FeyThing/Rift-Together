@@ -8,12 +8,9 @@ local assets = {
 local prefabs = {
 }
 
-TUNING.GAMEMODE_STARTING_ITEMS.DEFAULT.nefarious = {		
-}
-
 local start_inv = {}
 for k, v in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
-    start_inv[string.lower(k)] = v.nefarious
+    start_inv[string.lower(k)] = v.NEFARIOUS
 end
 local prefabs = FlattenTree(start_inv, true)
 

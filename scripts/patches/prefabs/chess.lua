@@ -4,7 +4,9 @@ local function OnDeath(inst, data)
 		local fx = SpawnPrefab("small_puff")
 		fx.Transform:SetPosition(x, y, z)
 		fx.Transform:SetScale(1.5, 1.5, 1.5)		 			
-		SpawnPrefab("chessjunk"..(inst.prefab == "knight" and 5 or inst.prefab == "bishop" and 4 or 6)).Transform:SetPosition(x, y, z)
+		local junk = SpawnPrefab("chessjunk"..(inst.prefab == "knight" and 2 or inst.prefab == "bishop" and 1 or 3))
+		junk.Transform:SetPosition(x, y, z)
+		junk:SetLessLoot()
 	end
 end
 

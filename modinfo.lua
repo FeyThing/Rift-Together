@@ -1,6 +1,6 @@
 name = "Ratchet and Clank: Rift Together"
 description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
-author = "XenoMind"
+author = "XenoMind, Asura"
 version = "1.2.6"
 
 forumthread = "/files/file/950-extended-sample-character/"
@@ -19,7 +19,7 @@ icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
 server_filter_tags = {
-    "character", "environment", "worldgen", "item"
+    "character", "environment", "worldgen", "item", "ratchet", "clank", "nefarious",
 }
 
 local function CreateEnableOption(name, default, label, hover)

@@ -24,7 +24,8 @@ local PATCHES =
 
 	PREFABS = {
 		chess = {"knight", "bishop", "rook"},
-		player_classified = "player_classified",
+		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
+		--player_classified = "player_classified",
 		--prefab_template = "spider",
 	},
 
