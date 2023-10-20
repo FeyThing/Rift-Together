@@ -44,6 +44,29 @@ local tunings = {
             image = "nanoboost.tex",
         },
     },
+
+    CHARACTERS_RADIATION = {
+        WILSON = 100,
+        WILLOW = 100,
+        WENDY = 80,
+        WOLFGANG = 150,
+        WX78 = 0,
+        WICKERBOTTOM = 100,
+        WES = 55,
+        WAXWELL = 120,
+        WOODIE = 150,
+        WATHGRITHR = 150,
+        WEBBER = 200,
+        WINONA = 100,
+        WORTOX = 150, 
+        WORMWOOD = 200, 
+        WARLY = 100, 
+        WURT = 100, 
+        WALTER = 100, 
+        WANDA = 100,
+        WONKEY = 100, 
+    },
+
     NEFARIOUS_ENERGY = 100,
     NEFARIOUS_ENERGY_COST = 1,
     
@@ -98,6 +121,26 @@ local tunings = {
     AREA_RAD_CHECK_INTERVAL = .5, -- How frequently radiation checks for nearby entities to infect
     
     RAD_SANITY_SCALE = .05, -- sanity hit = radiation hit * RAD_SANITY_SCALE  set to 0 to turn off
+
+    RADIATION_THRESH = {
+        IRRITATED = {
+            PRE = .35,
+            POST = .375,
+        },
+        PAIN = {
+            PRE = .55,
+            POST = .575,
+        },
+        SUFFERING = {
+            PRE = .75,
+            POST = .775,
+        },
+        DYING = {
+            PRE = .85,
+            POST = .875,
+        },
+    },
+    RADIATION_AURA_SEACH_RANGE = 16,
 }
 
 TransferTable(tunings, TUNING)

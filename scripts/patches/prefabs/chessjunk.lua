@@ -22,7 +22,7 @@ return function(inst)
     local _OnLoad = inst.OnLoad
     inst.OnLoad = function(inst, data)
         if data and data.lessloot then
-            inst:SetLessLootTable()
+            inst:SetLessLoot()
         end
         return _OnLoad(inst, data)
     end

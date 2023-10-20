@@ -40,18 +40,13 @@ local strings = {
 					GHOST = "TO-DO",
 				},
 
-				ANNOUNCE_IRRITATED = "I feel sore.",
-				ANNOUNCE_PAIN = "My entire body hurts.",
-				ANNOUNCE_SUFFERING = "It's so painful.",
-				ANNOUNCE_DYING = "No! I must leave! I cannot take it anymore.",
-
 				OWRENCH = "It's an oversized wrench.",
 				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
 				RARITANIUMORE = "Hey, this could help!",
 				RARITANIUM_BAR= "Now it's more useful!",
-				RARITANIUM_CRYSTALS= "Looks like some sort of crystal formation.",
+				RARITANIUM_CRYSTALS = "Looks like some sort of crystal formation.",
 				SCRAPMETAL = "Pieces of metal litter the ground.",
 
 				TORREN_GRASS = "It's a strange patch of grass.",
@@ -60,13 +55,18 @@ local strings = {
 
 				NANOBOOST = "That looks refreshing.",
 
-				HOUND_ROBOMUTT= "Their teeth are sharp!",
+				HOUND_ROBOMUTT = "Their teeth are sharp!",
 
-				VULLARD_LAMP= "Looks like someone made them with scrap.",
+				VULLARD_LAMP = "Looks like someone made them with scrap.",
 				SCRAPMOUND = "I hear something coming from it.",
-				JUNKPILE= "I should be careful touching it with bare hands.",
-				VULLARD_SMELTER= "That's incredibly hot! I could maybe make something with this.",
+				JUNKPILE = "I should be careful touching it with bare hands.",
+				VULLARD_SMELTER = "That's incredibly hot! I could maybe make something with this.",
 			},
+			
+			ANNOUNCE_IRRITATED = "I feel sore.",
+			ANNOUNCE_PAIN = "My entire body hurts.",
+			ANNOUNCE_SUFFERING = "It's so painful.",
+			ANNOUNCE_DYING = "No! I must leave! I cannot take it anymore.",
 		},
 
 		RATCHET = {

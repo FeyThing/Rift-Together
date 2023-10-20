@@ -15,6 +15,9 @@ local PATCHES =
 {
 	COMPONENTS = {
 		"ambientsound",
+		"edible",
+		"equippable",
+		"wisecracker",
 	},
 	
 	REPLICAS = {
@@ -25,7 +28,7 @@ local PATCHES =
 	PREFABS = {
 		chess = {"knight", "bishop", "rook"},
 		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
-		--player_classified = "player_classified",
+		player_classified = "player_classified",
 		--prefab_template = "spider",
 	},
 

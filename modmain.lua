@@ -24,6 +24,8 @@ modimport("scripts/main/actions.lua")
 modimport("scripts/main/characters.lua")
 modimport("scripts/main/containers.lua")
 
+AddReplicableComponent("radiation")
+
 -----------------------
 modimport("scripts/stategraphs/SGannihilator")
 modimport("scripts/util/nefarious_powers")

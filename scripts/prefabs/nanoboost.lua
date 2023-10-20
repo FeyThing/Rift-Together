@@ -35,6 +35,7 @@ local function fn(Sim)
 
 	inst:AddComponent("edible")
     inst.components.edible.healthvalue = 5
+    inst.components.edible.radiationvalue = -100
     inst.components.edible.hungervalue = 20
     inst.components.edible.sanityvalue = 30		
     inst.components.edible.foodtype = FOODTYPE.GENERIC

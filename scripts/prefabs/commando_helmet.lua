@@ -75,6 +75,7 @@ local function MainFunction()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
+	inst.components.equippable:SetRadiationProtectPercent(10.2)
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
