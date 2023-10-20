@@ -12,6 +12,7 @@ local prefabs =
 {
     "charcoal",
     "log",
+	"luminous_fruit",
     "tree_petal_fx_chop",
 }
 
@@ -62,6 +63,9 @@ SetSharedLootTable("luminoustree_tall",
     {"log", 1.0},
     {"log", 1.0},
     {"log", 1.0},
+	{"luminous_fruit", 1.0},
+	{"luminous_fruit", .3},
+	{"luminous_fruit", .3},
 
 })
 
@@ -551,6 +555,7 @@ local function luminoustree(name, stage, data)
         inst.entity:AddTransform()
         inst.entity:AddAnimState()
         inst.entity:AddSoundEmitter()
+		inst.entity:AddLight()
         inst.entity:AddMiniMapEntity()
         inst.entity:AddNetwork()
 
@@ -565,8 +570,14 @@ local function luminoustree(name, stage, data)
 
         inst.AnimState:SetBank("luminoustree")
         inst.AnimState:SetBuild("luminoustree_build")
+		inst.AnimState:SetSymbolBloom("coconut")
+		inst.AnimState:SetSymbolLightOverride("coconut", .5)
+		inst.AnimState:SetLightOverride(.1)
         inst:SetPrefabName("luminoustree")
         inst:AddTag("luminoustree") -- for plantregrowth
+		
+		inst.Light:SetColour(.5, .65, .65)
+        inst.Light:Enable(false)
  
         MakeSnowCoveredPristine(inst)
 
