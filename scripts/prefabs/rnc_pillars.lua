@@ -2,7 +2,6 @@ local assets =
 {
     Asset("ANIM", "anim/pillar_torrenivdesert.zip"),
     Asset("ANIM", "anim/pillar_torrenivdesert_small.zip"),
-	Asset("ANIM", "anim/pillar_junk.zip"),
 }
 
 local function MakePillar(name, bank, build, anim, loop)
@@ -22,7 +21,7 @@ local function MakePillar(name, bank, build, anim, loop)
         inst.MiniMapEntity:SetIcon("pillar_torrenivdesert.tex")
     
         inst.AnimState:SetBank(bank)
-        inst.AnimState:SetBuild(build)
+        inst.AnimState:SetBuild("pillar_torrenivdesert")
         inst.AnimState:PlayAnimation("idle", true)
     
         inst.entity:SetPristine()

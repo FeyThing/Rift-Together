@@ -207,3 +207,29 @@
 			},
 		},
 	})	
+	
+AddRoom("Torren IV Fertile",  {
+		colour={r=0.3,g=0.2,b=0.1,a=0.3},
+		value = WORLD_TILES.DESERTFERTILE_NOISE,
+		contents = {
+			distributepercent = 0.13,
+
+			distributeprefabs =
+			{
+				raritanium_crystals = 0.2,
+								
+				butterfly = .5,				
+				flower = .2,				
+
+				torren_cactus = 0.33,
+				fireflies = 0.33,
+				torren_grass = .25,
+				succulent_plant = 0.3,
+				luminoustree = 6,				
+				
+				torrenivdesert_pillar = 0.1,
+				torrenivdesert_pillar_small = 1,
+
+			},
+		},
+	})	

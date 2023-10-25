@@ -90,6 +90,9 @@ return {
 		--items
 		Asset("ATLAS", "images/rnc_inventoryimages.xml"),
 		Asset("IMAGE", "images/rnc_inventoryimages.tex"),
+		
+		Asset("ATLAS", "images/rnc_map_icons.xml"),
+		Asset("IMAGE", "images/rnc_map_icons.tex"),
 	},
 
 	MiniMaps = {

@@ -68,3 +68,11 @@ local function GetTileFordesertsandNoise(noise)
 end
 
 NOISES[WORLD_TILES.DESERTSAND_NOISE] = GetTileFordesertsandNoise
+
+AddTile("DESERTFERTILE_NOISE", "NOISE")
+
+local function GetTileFordesertfertileNoise(noise)
+    return noise < .6 and WORLD_TILES.FOREST or WORLD_TILES.DESERTSAND
+end
+
+NOISES[WORLD_TILES.DESERTFERTILE_NOISE] = GetTileFordesertfertileNoise

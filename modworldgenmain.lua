@@ -80,5 +80,6 @@ if GetModConfigData("Torren IV") == 1 then
 		table.insert(taskset.tasks, "Torren IV")
 		table.insert(taskset.tasks, "Torren Wastes")
 		table.insert(taskset.tasks, "Torren Wastes Crags")
+		table.insert(taskset.tasks, "Torren Wastes Fertile")
 	end)
 end
