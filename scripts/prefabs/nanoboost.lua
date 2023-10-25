@@ -42,9 +42,6 @@ local function fn(Sim)
 
     inst:AddComponent("inspectable")
 	
-	--inst:AddComponent("radiation")
-	--inst.components.radiation:Dodelta(-100)
-	
     return inst
 end
 

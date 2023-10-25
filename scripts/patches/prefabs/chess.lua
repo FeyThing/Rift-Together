@@ -11,5 +11,10 @@ local function OnDeath(inst, data)
 end
 
 return function(inst)
+	--CLIENT
+	if not TheWorld.ismastersim then
+		return
+	end
+	--SERVER
 	inst:ListenForEvent("death", OnDeath)
 end

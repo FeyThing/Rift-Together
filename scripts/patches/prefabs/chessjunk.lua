@@ -12,6 +12,11 @@ local function SetLessLoot(inst)
 end
 
 return function(inst)
+    --CLIENT
+    if not TheWorld.ismastersim then
+        return
+    end
+    --SERVER
 	inst.SetLessLoot = SetLessLoot
 
     local _OnSave = inst.OnSave

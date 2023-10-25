@@ -47,11 +47,13 @@ return function(self)
         end
     end
 
-    if self.onradiationdelta == nil then
-        self.onradiationdelta = function(owner, data) self:RadiationDelta(data) end
-        self.inst:ListenForEvent("radiationdelta", self.onradiationdelta, self.owner)
-        self:SetRadiationPercent(self.owner.replica.radiation:GetPercent())
-    end
+    self.inst:DoTaskInTime(0, function()
+        if self.onradiationdelta == nil then
+            self.onradiationdelta = function(owner, data) self:RadiationDelta(data) end
+            self.inst:ListenForEvent("radiationdelta", self.onradiationdelta, self.owner)
+            self:SetRadiationPercent(self.owner.replica.radiation:GetPercent())
+        end
+    end)
 
     if self.owner.prefab == "nefarious" then
 		self.energyhud = self:AddChild(NefBadge(self, self.owner))

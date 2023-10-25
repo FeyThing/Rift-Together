@@ -66,7 +66,9 @@ return function(inst)
 
     inst:DoStaticTaskInTime(0, RegisterNetListeners)
     
+    --CLIENT
     if not TheWorld.ismastersim then
-        return inst
+        return
     end
+    --SERVER
 end
