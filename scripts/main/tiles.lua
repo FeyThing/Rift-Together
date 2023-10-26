@@ -1,13 +1,40 @@
 local NOISES = require("noisetilefunctions")
+local ChangeTileRenderOrder = ChangeTileRenderOrder
 
 local TORRENIV_OCEAN_COLOR =
 {
     primary_color =        {153, 76, 0,  28},
-    secondary_color =      {102,  51, 0, 0},
+    secondary_color =      {102,  51, 0, 90},
     secondary_color_dusk = {51,  25, 0, 80},
     minimap_color =        {132,  67,  13,  51},
 }
 
+local TORRENIV_WAVETINTS =
+{
+    rust = {1,  0.20,   0.10},
+	--toxic = {0.40,  0.62,   0.50},  for later use
+}
+
+AddTile("OCEAN_RUST", "OCEAN",
+    {
+		ground_name = "Hazardous Waste", 
+	},
+    {
+        name = "cave",
+        noise_texture = "levels/textures/ocean_noise.tex",
+        runsound="dontstarve/movement/run_marsh",
+        walksound="dontstarve/movement/walk_marsh",
+        snowsound="dontstarve/movement/run_ice",
+        mudsound = "dontstarve/movement/run_mud",
+        ocean_depth = "SHALLOW",
+        colors = TORRENIV_OCEAN_COLOR,
+        wavetint = TORRENIV_WAVETINTS.rust,
+    },
+    {
+        name = "map_edge",
+        noise_texture = "levels/textures/mini_water_coral.tex",
+    }
+)
 
 AddTile("JUNK", "LAND",
 	{
@@ -76,3 +103,4 @@ local function GetTileFordesertfertileNoise(noise)
 end
 
 NOISES[WORLD_TILES.DESERTFERTILE_NOISE] = GetTileFordesertfertileNoise
+
