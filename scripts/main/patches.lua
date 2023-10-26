@@ -7,9 +7,11 @@ local AddStategraphState = AddStategraphState
 local AddGlobalClassPostConstruct = AddGlobalClassPostConstruct
 local AddClassPostConstruct = AddClassPostConstruct
 local AddPlayerPostInit = AddPlayerPostInit
+local AddPrefabPostInitAny = AddPrefabPostInitAny
 _G.setfenv(1, _G)
 
 local GenericPlayerFn = require("patches/prefabs/player")
+local AnyFn = require("patches/prefabs/any")
 
 local PATCHES = 
 {
@@ -18,6 +20,7 @@ local PATCHES =
 		"edible",
 		"equippable",
 		"wisecracker",
+		"wavemanager",
 	},
 	
 	REPLICAS = {
@@ -74,6 +77,7 @@ for path, data in pairs(PATCHES.PREFABS) do
 end
 
 AddPlayerPostInit(GenericPlayerFn)
+AddPrefabPostInitAny(AnyFn)
 
 for _, name in ipairs(PATCHES.STATEGRAPHS) do
 	AddStategraphPostInit(name, require("patches/stategraphs/"..name))

@@ -126,7 +126,7 @@
 				
 				butterfly = .5,				
 				flower = .3,
-				luminoustrees = 3,
+				luminoustree = 3,
 												
 				torren_grass = 1,
 				marsh_tree = 1,
@@ -187,7 +187,7 @@
 				pond_cave = 0.1,
 				butterfly = .5,				
 				flower = .2,
-				luminoustrees = 3,				
+				luminoustree = 3,				
 
 				torren_cactus = 0.33,
 				fireflies = 0.33,

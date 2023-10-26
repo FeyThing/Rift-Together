@@ -33,6 +33,7 @@ return {
 		"luminoustrees",
 		"luminous_fruit",
 		"rarisword",
+		"toxic_oceanbubbles",
 	},
 
 	Assets = {

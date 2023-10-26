@@ -54,7 +54,7 @@ local Radiation = Class(function(self, inst)
 
     self._oldisdying = self:IsNotDying()
     self._oldpercent = self:GetPercent()
-
+    
     self.inst:StartUpdatingComponent(self)
 end,
 nil,
@@ -217,7 +217,7 @@ end
 function Radiation:OnUpdate(dt)
     if not (self.inst.components.health:IsInvincible() or
             self.inst:HasTag("spawnprotection") or
-            self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
+            self.inst.sg and self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
             self.inst.is_teleporting or
             (self.ignore and self.redirect == nil)) then
         self:Recalc(dt)
@@ -232,48 +232,48 @@ local RECALC_MUST_TAGS = { "radiationaura" }
 local RECALC_CANT_TAGS = { "FX", "NOCLICK", "DECOR","INLIMBO" }
 function Radiation:Recalc(dt)
     local aura_delta = 0
-    local x, y, z = self.inst.Transform:GetWorldPosition()
-    local ents = TheSim:FindEntities(x, y, z, TUNING.RADIATION_AURA_SEACH_RANGE, RECALC_MUST_TAGS, RECALC_CANT_TAGS)
-    for i, v in ipairs(ents) do
-        if v.components.radiationaura ~= nil and v ~= self.inst then
-            local is_aura_immune = false
-            if self.radiation_aura_immunities ~= nil then
-                for tag, _ in pairs(self.radiation_aura_immunities) do
-                    if v:HasTag(tag) then
-                        is_aura_immune = true
-                        break
-                    end
-                end
-            end
+    -- local x, y, z = self.inst.Transform:GetWorldPosition()
+    -- local ents = TheSim:FindEntities(x, y, z, TUNING.RADIATION_AURA_SEACH_RANGE, RECALC_MUST_TAGS, RECALC_CANT_TAGS)
+    -- for i, v in ipairs(ents) do
+    --     if v.components.radiationaura ~= nil and v ~= self.inst then
+    --         local is_aura_immune = false
+    --         if self.radiation_aura_immunities ~= nil then
+    --             for tag, _ in pairs(self.radiation_aura_immunities) do
+    --                 if v:HasTag(tag) then
+    --                     is_aura_immune = true
+    --                     break
+    --                 end
+    --             end
+    --         end
 
-            if not is_aura_immune then
-                local aura_val = v.components.radiationaura:GetAura(self.inst)
-                aura_delta = aura_delta + aura_val
-            end
-        end
-    end
+    --         if not is_aura_immune then
+    --             local aura_val = v.components.radiationaura:GetAura(self.inst)
+    --             aura_delta = aura_delta + aura_val
+    --         end
+    --     end
+    -- end
 
-    local mount = self.inst.components.rider:IsRiding() and self.inst.components.rider:GetMount() or nil
-    if mount ~= nil and mount.components.radiationaura ~= nil then
-        local aura_val = mount.components.radiationaura:GetAura(self.inst)
-        aura_delta = aura_delta + aura_val
-    end
+    -- local mount = self.inst.components.rider and self.inst.components.rider:IsRiding() and self.inst.components.rider:GetMount() or nil
+    -- if mount ~= nil and mount.components.radiationaura ~= nil then
+    --     local aura_val = mount.components.radiationaura:GetAura(self.inst)
+    --     aura_delta = aura_delta + aura_val
+    -- end
 
-    self.rate = (aura_delta + self.externalmodifiers:Get()) - self.resistance
+    -- self.rate = (aura_delta + self.externalmodifiers:Get()) - self.resistance
 
-    if self.custom_rate_fn ~= nil then
-        self.rate = self.rate + self.custom_rate_fn(self.inst, dt)
-    end
+    -- if self.custom_rate_fn ~= nil then
+    --     self.rate = self.rate + self.custom_rate_fn(self.inst, dt)
+    -- end
 
-    self.rate = self.rate * self.rate_modifier
-    self.ratescale =
-        (self.rate > .2 and RATE_SCALE.INCREASE_HIGH) or
-        (self.rate > .1 and RATE_SCALE.INCREASE_MED) or
-        (self.rate > .01 and RATE_SCALE.INCREASE_LOW) or
-        (self.rate < -.3 and RATE_SCALE.DECREASE_HIGH) or
-        (self.rate < -.1 and RATE_SCALE.DECREASE_MED) or
-        (self.rate < -.02 and RATE_SCALE.DECREASE_LOW) or
-        RATE_SCALE.NEUTRAL
+    -- self.rate = self.rate * self.rate_modifier
+    -- self.ratescale =
+    --     (self.rate > .2 and RATE_SCALE.INCREASE_HIGH) or
+    --     (self.rate > .1 and RATE_SCALE.INCREASE_MED) or
+    --     (self.rate > .01 and RATE_SCALE.INCREASE_LOW) or
+    --     (self.rate < -.3 and RATE_SCALE.DECREASE_HIGH) or
+    --     (self.rate < -.1 and RATE_SCALE.DECREASE_MED) or
+    --     (self.rate < -.02 and RATE_SCALE.DECREASE_LOW) or
+    --     RATE_SCALE.NEUTRAL
 
     self:DoDelta(self.rate * dt, true)
 end
