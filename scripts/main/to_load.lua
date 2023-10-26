@@ -32,6 +32,7 @@ return {
 		"radiation_clouds",
 		"luminoustrees",
 		"luminous_fruit",
+		"rarisword",
 	},
 
 	Assets = {

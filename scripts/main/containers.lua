@@ -27,6 +27,26 @@ local params = {
             return item:HasTag("rnc_mod") --item.prefab == "cryomod" or item.prefab == "napalmmod" or item.prefab == "shockmod"
         end,
     },
+	    rarisword =
+    {
+        widget =
+        {
+            slotpos =
+            {
+                Vector3(0,  5,  0),
+            },
+
+            animbank = "ui_alterguardianhat_1x1",
+            animbuild = "ui_alterguardianhat_1x1",
+            pos = Vector3(0, 30, 0),
+        },
+        --usespecificslotsforitems = true,
+        type = "hand_inv",
+        excludefromcrafting = true,
+        itemtestfn = function(container, item, slot)
+            return item:HasTag("rnc_mod") 
+        end,
+    },
     vullard_smelter = 
 	{
 		widget = 

@@ -28,3 +28,9 @@ AddRecipe2("nanoboost",
 		TECH.NONE, 
         {atlas=atlas},
 		{builder_tag="solana_galaxy_resident"},{"CHARACTER","RESTORATION"})
+		
+AddRecipe2("rarisword", 
+		{ Ingredient("purplegem", 1), Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 3) }, 
+		TECH.SCIENCE_TWO, 
+        {atlas=atlas},
+		{"CHARACTER","WEAPONS"})
