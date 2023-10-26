@@ -13,8 +13,8 @@
 		<Element name="napalmmod.tex" u1="0.61428125" u2="0.6718515625" v2="0.999" v1="0.877953125" variant="" />
 		<Element name="owrench.tex" u1="0.6015859375" u2="0.65915625" v2="0.875953125" v1="0.75490625" variant="" />
 		<Element name="rarisword.tex" u1="0.495140625" u2="0.5488046875" v2="0.75290625" v1="0.635765625" variant="" />
-		<Element name="raritanium_bar.tex" u1="0.5508046875" u2="0.608375" v2="0.75290625" v1="0.631859375" variant="" />
+		<Element name="raritanium_bar.tex" u1="0.5508046875" u2="0.608375" v2="0.75290625" v1="0.690453125" variant="" />
 		<Element name="raritaniumore.tex" u1="0.6738515625" u2="0.731421875" v2="0.999" v1="0.877953125" variant="" />
-		<Element name="shockmod.tex" u1="0.66115625" u2="0.71775" v2="0.875953125" v1="0.756859375" variant="" />
+		<Element name="shockmod.tex" u1="0.495140625" u2="0.551734375" v2="0.633765625" v1="0.514671875" variant="" />
 	</Elements>
 </Atlas>
