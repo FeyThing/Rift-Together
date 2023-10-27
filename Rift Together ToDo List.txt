@@ -3,11 +3,39 @@ Rift Together list before release.
 -----Note must at least get 80% done before release. 24/30 listed------
 Progress 3/30
 
+
+
+Coding
+----------------
+
+Canyon Biome
+- Add biolum trees fruits need slight radiation curing properties (Not complete curing. Tiny, around 5) 
+
+Junk Biome
+- Change RoboMutt Spawn to an area spawner inside of junk biome instead of mounds. Spawn from Junk pillars, rifts?
+- Repurpose the robomutts junk mounds (I don't know what it should be repurposed to. But I'll think of something.)
+- Add new Raritanium weapon schematics. Currently the Crystalass is available and must be removed from teir 2 science recipes.
+-  fix light bug on junk lamps or vullard lamps
+
+Rifts
+
+- Add random very Radioactive Rifts to spawn ever once and a while to have a random chance of spewing either enemies, or resources. Such as robomutts, nanotech crates, raritanium, moonrocks, and the likes. Basic resources only.
+
+Characters
+
+- Fix Nefarious's jank code inregards to his combat, shield, and stealth mode. Change keypresses to a power selection wheel. And add client-side statograph for his annihilators.
+
+Raritanium Weapons and equipment
+- Change commando helmet into a respirator with radiation nullifying effects.
+
+
+Art
+----------------
+
 Raritanium Weapons and equipment
 
 - 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(Almost done, UI just needs custom art)
- 
-
+- Change commando helmet into a respirator
 
 Nef annihilator Animations
 
@@ -23,13 +51,9 @@ Canyon Biome
 
 Junk Biome
 
-- Add Abandoned houses
-- Change RoboMutt Spawn to an area spawner inside of junk biome instead of mounds. Spawn from Junk pillars, rifts?
-- Repurpose the robomutts junk mounds 
-- Add Vullard NPC setpiece with "Gone dumpster diving sign" and move smelter to said setpiece
-- Add new Raritanium weapon schematics in junk piles for raritanium weapons. 
-- Make new art for Vullard Lamp post, and fix light bug
-- Fix smelter to use 2 both slots instead of one
+- Add Abandoned houses 
+- Add Vullard NPC setpiece with "Gone dumpster diving sign" and move smelter to said setpiece 
+- Make new art for Vullard Lamp post
 
 
 Radiation Mechanic
@@ -47,7 +71,7 @@ Tiles
 
 Rifts
 
-- Add random very Radioactive Rifts to spawn ever once and a while to have a random chance of spewing either enemies, or resources.
+- Add random very Radioactive Rifts art and animations.
 
 Sound
 
