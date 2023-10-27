@@ -1,0 +1,119 @@
+Rift Together list before release.
+
+-----Note must at least get 80% done before release. 24/30 listed------
+Progress 3/30
+
+Raritanium Weapons and equipment
+
+- 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(Almost done, UI just needs custom art)
+ 
+
+
+Nef annihilator Animations
+
+- Replace Nef Annihilator animation with the angry emote.
+- Add symbols to show invisible equipment when in annihilator mode
+- Finish all annihilator animations or add placeholders
+
+Canyon Biome
+
+- Add biolum trees with temp rad curing food.(Mostly-Complete. Needs slight polishing and fruits need to be slightly rad curing)
+- Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
+- Replace ponds with new ponds with new fishing possibilities for nanotech and raritanium renewal
+
+Junk Biome
+
+- Add Abandoned houses
+- Change RoboMutt Spawn to an area spawner inside of junk biome instead of mounds. Spawn from Junk pillars, rifts?
+- Repurpose the robomutts junk mounds 
+- Add Vullard NPC setpiece with "Gone dumpster diving sign" and move smelter to said setpiece
+- Add new Raritanium weapon schematics in junk piles for raritanium weapons. 
+- Make new art for Vullard Lamp post, and fix light bug
+- Fix smelter to use 2 both slots instead of one
+
+
+Radiation Mechanic
+
+- Implement Radiation (Finished by Asura)
+- Add Radioactive barrels scattered inside the lake, cove and mandatory 1 or 2 of them in Junk biome. (Next to do)
+- Temp make nanoboosts cure radiation (Complete)
+
+Tiles
+
+- Create Murky Water Tile (done)
+- Make a new sand tile to replace the shipwrecked beach placeholder tile
+- Create a new metallic platform tile for the vullard npc to stand on when he is finished.
+
+
+Rifts
+
+- Add random very Radioactive Rifts to spawn ever once and a while to have a random chance of spewing either enemies, or resources.
+
+Sound
+
+- Custom sound for Nef
+- Custom sound for Ratchet
+- Custom sound for Qwark
+
+
+Characters 
+
+- Add Qwark
+- Remake Ratchet's character Art (In progress)
+- Touch up nefarious's character Art
+- Remake all big portraits
+- Write all character dialogue
+
+
+Main Logo
+
+- Make animated Rift Together logo
+
+
+
+-----------
+
+Future Plans
+
+Junk Biome
+
+- Instead of a shovel. Drill, for digging through special rock for raritanium.
+- Vending Machine that spawns only on the vullard NPCs setpiece
+
+
+NPCs
+
+- Vullard NPC you must find before he appears to sell you blueprints or trade
+
+Items
+
+- Raritanium fishing rod (allows fishing in radioactive ponds and lakes)
+
+Armor
+
+- O2 mask (to slow radiation and provides some waterproofing)
+
+
+Mechanics
+
+- Add new raritanium hull tag which adds resistance to all damage except from magic weapons and raritanium made weapons(both mobs and player made RT armors)
+
+Sound
+
+- Add Radiation geiger meter ticks when infected possibly
+
+
+TorrenIV
+
+-Add Oil Feilds
+- Impure tar pits on land (irradiated). Acquired with drill.
+
+
+Character
+
+-Add Rivet
+-Clank?
+
+
+
+

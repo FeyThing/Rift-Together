@@ -29,7 +29,7 @@ local function fn()
     MakeInventoryPhysics(inst)
 
     inst.AnimState:SetBuild("raritanium_bar")
-    inst.AnimState:SetBank("flint")
+    inst.AnimState:SetBank("raritanium_bar")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("raritanium_bar")
