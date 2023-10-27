@@ -211,7 +211,7 @@ local function torren_grass(name, stage)
 
         inst.MiniMapEntity:SetIcon("torren_grass.tex")
 
-        inst.AnimState:SetBank("torren_grass")
+        inst.AnimState:SetBank("grass")
         inst.AnimState:SetBuild("torren_grass")
         inst.AnimState:PlayAnimation("idle", true)
 
@@ -287,7 +287,7 @@ local function torren_grasspart_fn()
     inst.entity:AddSoundEmitter()
     inst.entity:AddNetwork()
 
-    inst.AnimState:SetBank("torren_grass")
+    inst.AnimState:SetBank("grass")
     inst.AnimState:SetBuild("torren_grass")
     inst.AnimState:PlayAnimation("torren_grass_part")
     inst.AnimState:SetFinalOffset(1)

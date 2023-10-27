@@ -32,25 +32,22 @@ local Radiation = Class(function(self, inst)
     self.inst = inst
     self.max = 100
     self.current = 0
+	self.lastpos = Vector3(0, 0, 0)
 
     self.rate = 0
     self.ratescale = RATE_SCALE.NEUTRAL
     self.rate_modifier = 1
     
     self.dying = false
-    self.resistance = 0.05
+    self.resistance = 0.15
 
-    self.dapperness = 0
 	self.externalmodifiers = SourceModifierList(self.inst, 0, SourceModifierList.additive)
-    self.night_drain_mult = 1
     self.health_state = STATES.NONE
     self.penalty = 0
 
     self.radiation_penalties = {}
 
     self.custom_rate_fn = nil
-
-    --self.radiation_aura_immunities = nil -- protects against specific auras, like Wendy with the ghosts
 
     self._oldisdying = self:IsNotDying()
     self._oldpercent = self:GetPercent()
@@ -96,20 +93,6 @@ function Radiation:RecalculatePenalty()
     self.penalty = penalty
 
     self:DoDelta(0)
-end
-
-function Radiation:AddAuraImmunity(tag)
-	if self.radiation_aura_immunities == nil then
-		self.radiation_aura_immunities = {}
-	end
-	self.radiation_aura_immunities[tag] = true
-end
-
-function Radiation:RemoveAuraImmunity(tag)
-	self.radiation_aura_immunities[tag] = nil
-	if next(self.radiation_aura_immunities) == nil then
-		self.radiation_aura_immunities = nil
-	end
 end
 
 function Radiation:SetResistance(resistance)
@@ -173,7 +156,15 @@ function Radiation:DoDelta(delta, overtime)
     end
 
     self:TryAnnounce()
-
+    if self.inst.AnimState then
+        self.inst.AnimState:SetAddColour(0,Remap(self:GetPercent(),0,1,0,.65),0,1)
+        if self:GetPercent() > .65 then
+            self.inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+        elseif self:GetPercent() < .35 then
+            self.inst.AnimState:ClearBloomEffectHandle()
+        end
+        self.inst.AnimState:SetLightOverride(Remap(self:GetPercent(),0,1,0,.2))
+    end
     if self.dying and self:GetPercent() <= TUNING.RADIATION_THRESH.DYING.PRE then --30
         self.dying = false
     elseif not self.dying and self:GetPercent() >= TUNING.RADIATION_THRESH.DYING.POST then --35
@@ -215,65 +206,43 @@ function Radiation:TryAnnounce()
 end
 
 function Radiation:OnUpdate(dt)
-    if not (self.inst.components.health:IsInvincible() or
-            self.inst:HasTag("spawnprotection") or
-            self.inst.sg and self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
-            self.inst.is_teleporting or
-            (self.ignore and self.redirect == nil)) then
-        self:Recalc(dt)
-    else
-        --Disable arrows
-        self.rate = 0
-        self.ratescale = RATE_SCALE.NEUTRAL
+	local map = TheWorld.Map
+	
+    if not map then 
+        return 
     end
+
+	local x, y, z = self.inst.Transform:GetWorldPosition()
+	local pos = Vector3(map:GetTileCenterPoint(x, y, z))
+    local radiation = TheWorld.components.radiation_manager:GetRadiationAtPoint(pos.x, pos.y, pos.z)
+	if self.current > 0 or radiation ~= 0 then
+        self.lastpos = pos
+        if not (self.inst.components.health:IsInvincible() or
+                self.inst:HasTag("spawnprotection") or
+                self.inst.sg and self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
+                self.inst.is_teleporting or
+                (self.ignore and self.redirect == nil)) then
+            self:Recalc(dt, radiation)
+        else
+            --Disable arrows
+            self.rate = 0
+            self.ratescale = RATE_SCALE.NEUTRAL
+        end
+	end
 end
 
-local RECALC_MUST_TAGS = { "radiationaura" }
-local RECALC_CANT_TAGS = { "FX", "NOCLICK", "DECOR","INLIMBO" }
-function Radiation:Recalc(dt)
-    local aura_delta = 0
-    -- local x, y, z = self.inst.Transform:GetWorldPosition()
-    -- local ents = TheSim:FindEntities(x, y, z, TUNING.RADIATION_AURA_SEACH_RANGE, RECALC_MUST_TAGS, RECALC_CANT_TAGS)
-    -- for i, v in ipairs(ents) do
-    --     if v.components.radiationaura ~= nil and v ~= self.inst then
-    --         local is_aura_immune = false
-    --         if self.radiation_aura_immunities ~= nil then
-    --             for tag, _ in pairs(self.radiation_aura_immunities) do
-    --                 if v:HasTag(tag) then
-    --                     is_aura_immune = true
-    --                     break
-    --                 end
-    --             end
-    --         end
+function Radiation:Recalc(dt, radiation)
+    self.rate = (radiation + self.externalmodifiers:Get() - self.resistance) * self.rate_modifier
 
-    --         if not is_aura_immune then
-    --             local aura_val = v.components.radiationaura:GetAura(self.inst)
-    --             aura_delta = aura_delta + aura_val
-    --         end
-    --     end
-    -- end
-
-    -- local mount = self.inst.components.rider and self.inst.components.rider:IsRiding() and self.inst.components.rider:GetMount() or nil
-    -- if mount ~= nil and mount.components.radiationaura ~= nil then
-    --     local aura_val = mount.components.radiationaura:GetAura(self.inst)
-    --     aura_delta = aura_delta + aura_val
-    -- end
-
-    -- self.rate = (aura_delta + self.externalmodifiers:Get()) - self.resistance
-
-    -- if self.custom_rate_fn ~= nil then
-    --     self.rate = self.rate + self.custom_rate_fn(self.inst, dt)
-    -- end
-
-    -- self.rate = self.rate * self.rate_modifier
-    -- self.ratescale =
-    --     (self.rate > .2 and RATE_SCALE.INCREASE_HIGH) or
-    --     (self.rate > .1 and RATE_SCALE.INCREASE_MED) or
-    --     (self.rate > .01 and RATE_SCALE.INCREASE_LOW) or
-    --     (self.rate < -.3 and RATE_SCALE.DECREASE_HIGH) or
-    --     (self.rate < -.1 and RATE_SCALE.DECREASE_MED) or
-    --     (self.rate < -.02 and RATE_SCALE.DECREASE_LOW) or
-    --     RATE_SCALE.NEUTRAL
+    local prc = self.rate/10
+    self.ratescale =
+        (prc > .2 and RATE_SCALE.INCREASE_HIGH) or
+        (prc > .5 and RATE_SCALE.INCREASE_MED) or
+        (prc > .01 and RATE_SCALE.INCREASE_LOW) or
+        (prc < -.3 and RATE_SCALE.DECREASE_HIGH) or
+        (prc < -.1 and RATE_SCALE.DECREASE_MED) or
+        (prc < -.01 and RATE_SCALE.DECREASE_LOW) or
+        RATE_SCALE.NEUTRAL
 
     self:DoDelta(self.rate * dt, true)
 end

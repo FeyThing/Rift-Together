@@ -20,6 +20,7 @@ local PATCHES =
 		"edible",
 		"equippable",
 		"wisecracker",
+		"combat",
 		"wavemanager",
 	},
 	
@@ -32,6 +33,7 @@ local PATCHES =
 		chess = {"knight", "bishop", "rook"},
 		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
 		player_classified = "player_classified",
+		world = "world",
 		--prefab_template = "spider",
 	},
 
