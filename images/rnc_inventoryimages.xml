@@ -2,19 +2,22 @@
 <Atlas>
 	<Texture filename="rnc_inventoryimages.tex" />
 	<Elements>
-		<Element name="bolt-1.tex" u1="0.001" u2="0.2460703125" v2="0.999" v1="0.502953125" variant="" />
-		<Element name="bolt-2.tex" u1="0.2480703125" u2="0.493140625" v2="0.999" v1="0.502953125" variant="" />
-		<Element name="bolt-3.tex" u1="0.001" u2="0.2460703125" v2="0.500953125" v1="0.00490625" variant="" />
-		<Element name="bolt-4.tex" u1="0.2480703125" u2="0.493140625" v2="0.500953125" v1="0.00490625" variant="" />
-		<Element name="commando_helmet.tex" u1="0.495140625" u2="0.5527109375" v2="0.999" v1="0.877953125" variant="" />
-		<Element name="cryomod.tex" u1="0.5547109375" u2="0.61228125" v2="0.999" v1="0.877953125" variant="" />
-		<Element name="nanoboost.tex" u1="0.495140625" u2="0.540015625" v2="0.875953125" v1="0.764671875" variant="" />
-		<Element name="nanotech.tex" u1="0.542015625" u2="0.5995859375" v2="0.875953125" v1="0.75490625" variant="" />
-		<Element name="napalmmod.tex" u1="0.61428125" u2="0.6718515625" v2="0.999" v1="0.877953125" variant="" />
-		<Element name="owrench.tex" u1="0.6015859375" u2="0.65915625" v2="0.875953125" v1="0.75490625" variant="" />
-		<Element name="rarisword.tex" u1="0.495140625" u2="0.5488046875" v2="0.75290625" v1="0.635765625" variant="" />
-		<Element name="raritanium_bar.tex" u1="0.5508046875" u2="0.608375" v2="0.75290625" v1="0.690453125" variant="" />
-		<Element name="raritaniumore.tex" u1="0.6738515625" u2="0.731421875" v2="0.999" v1="0.877953125" variant="" />
-		<Element name="shockmod.tex" u1="0.495140625" u2="0.551734375" v2="0.633765625" v1="0.514671875" variant="" />
+		<Element name="bolt-1.tex" u1="0.48928125" u2="0.731421875" v2="0.999" v1="0.50490625" variant="" />
+		<Element name="bolt-2.tex" u1="0.3750234375" u2="0.6171640625" v2="0.50290625" v1="0.0088125" variant="" />
+		<Element name="bolt-3.tex" u1="0.001" u2="0.243140625" v2="0.999" v1="0.50490625" variant="" />
+		<Element name="bolt-4.tex" u1="0.245140625" u2="0.48728125" v2="0.999" v1="0.50490625" variant="" />
+		<Element name="cryomod.tex" u1="0.001" u2="0.055640625" v2="0.50290625" v1="0.3838125" variant="" />
+		<Element name="luminousfruit.tex" u1="0.057640625" u2="0.11228125" v2="0.50290625" v1="0.38771875" variant="" />
+		<Element name="luminousfruit_cooked.tex" u1="0.001" u2="0.059546875" v2="0.3818125" v1="0.28615625" variant="" />
+		<Element name="nanoboost.tex" u1="0.001" u2="0.0429453125" v2="0.28415625" v1="0.174828125" variant="" />
+		<Element name="nanotech.tex" u1="0.11428125" u2="0.168921875" v2="0.50290625" v1="0.3838125" variant="" />
+		<Element name="napalmmod.tex" u1="0.061546875" u2="0.1161875" v2="0.3818125" v1="0.26271875" variant="" />
+		<Element name="owrench.tex" u1="0.001" u2="0.055640625" v2="0.172828125" v1="0.053734375" variant="" />
+		<Element name="radiation_icon.tex" u1="0.170921875" u2="0.3730234375" v2="0.50290625" v1="0.124046875" variant="" />
+		<Element name="rarisword.tex" u1="0.1181875" u2="0.168921875" v2="0.3818125" v1="0.266625" variant="" />
+		<Element name="raritanium_bar.tex" u1="0.0449453125" u2="0.0995859375" v2="0.26071875" v1="0.20021875" variant="" />
+		<Element name="raritaniumore.tex" u1="0.1015859375" u2="0.1562265625" v2="0.26071875" v1="0.141625" variant="" />
+		<Element name="respiratormask.tex" u1="0.057640625" u2="0.118140625" v2="0.139625" v1="0.03615625" variant="" />
+		<Element name="shockmod.tex" u1="0.120140625" u2="0.1738046875" v2="0.122046875" v1="0.00490625" variant="" />
 	</Elements>
 </Atlas>

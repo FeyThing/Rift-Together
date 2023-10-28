@@ -1,20 +1,21 @@
 local Assets = {
-    Asset("ANIM", "anim/commando_helmet.zip"),
+    Asset("ANIM", "anim/respiratormask.zip"),
     
 }
 
 local function OnEquip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_hat", "commando_helmet", "swap_hat")
+    owner.AnimState:OverrideSymbol("swap_hat", "respiratormask", "swap_hat")
 	
-	owner.AnimState:Show("HAT")
-	owner.AnimState:Show("HAIR_HAT")
-	owner.AnimState:Hide("HAIR_NOHAT")
-	owner.AnimState:Hide("HAIR")
+        owner.AnimState:Show("HAT")
+    --[[owner.AnimState:Hide("HAIR_HAT")
+        owner.AnimState:Show("HAIR_NOHAT")
+        owner.AnimState:Show("HAIR")
 	
 	if owner:HasTag("player") then
-		owner.AnimState:Hide("HEAD")
-		owner.AnimState:Show("HEAD_HAT")
-	end
+        owner.AnimState:Show("HEAD")
+        owner.AnimState:Hide("HEAD_HAT")
+
+	end]]
 	
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StartConsuming()
@@ -25,14 +26,14 @@ local function OnUnequip(inst, owner)
 	owner.AnimState:ClearOverrideSymbol("swap_hat")
 	
 	owner.AnimState:Hide("HAT")
-	owner.AnimState:Hide("HAIR_HAT")
+	--[[owner.AnimState:Hide("HAIR_HAT")
 	owner.AnimState:Show("HAIR_NOHAT")
 	owner.AnimState:Show("HAIR")
 	
 	if owner:HasTag("player") then
 		owner.AnimState:Show("HEAD")
 		owner.AnimState:Hide("HEAD_HAT")
-	end
+	end]]
 	
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StopConsuming()
@@ -49,12 +50,12 @@ local function MainFunction()
 
     MakeInventoryPhysics(inst)
 	
-    inst.AnimState:SetBank("commando_helmet")
-    inst.AnimState:SetBuild("commando_helmet")
+    inst.AnimState:SetBank("respiratormask")
+    inst.AnimState:SetBuild("respiratormask")
     inst.AnimState:PlayAnimation("anim")
 
 	inst:AddTag("HASRADIOACTIVE")
-    inst:AddTag("commando_helmet")
+    inst:AddTag("respiratormask")
 	inst:AddTag("waterproofer")
 	
 	MakeInventoryFloatable(inst, "small", 0.1, 1.12)
@@ -71,6 +72,7 @@ local function MainFunction()
     inst:AddComponent("tradable")
 
     inst:AddComponent("inventoryitem")
+	inst.components.inventoryitem.imagename = "respiratormask"
 	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
     inst:AddComponent("equippable")
@@ -95,4 +97,4 @@ local function MainFunction()
     return inst
 end
 
-return  Prefab("commando_helmet", MainFunction, Assets)
+return  Prefab("respiratormask", MainFunction, Assets)

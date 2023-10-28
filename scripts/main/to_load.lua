@@ -16,7 +16,7 @@ return {
 		"raritanium_bar",
 		"raritaniumore",
 		"rnc_mods",
-		"commando_helmet",
+		"respiratormask",
 		"hound_robomutt",
 		"vullard_lamp",
 		"vullard_smelter",

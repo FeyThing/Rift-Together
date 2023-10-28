@@ -42,6 +42,8 @@ local strings = {
 
 				OWRENCH = "It's an oversized wrench.",
 				
+				RESPIRATORMASK = "Maybe it'll provide some protection.",
+				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
 				RARITANIUMORE = "Hey, this could help!",
@@ -53,9 +55,9 @@ local strings = {
 				TORREN_CACTUS = "It's a large cactus.",
 				LUMINOUSTREE = "It's a glowing tree.",
 				LUMINOUS_FRUIT = "Doesn't look too appetizing.",
-				LUMINOUS_FRUIT_COOKED = "It might taste better now that it's cooked.",
+				LUMINOUS_FRUIT_COOKED = "It may taste better now that it's cooked.",
 
-				NANOBOOST = "That looks refreshing.",
+				NANOBOOST = "Looks refreshing.",
 
 				HOUND_ROBOMUTT = "Their teeth are sharp!",
 
@@ -79,7 +81,7 @@ local strings = {
 				NAPALMMOD = "Let's add heat to it!",
 				SHOCKMOD = "Let's electrify it!",
 
-				COMMANDO_HELMET = "Should provide some great protection!",
+				RESPIRATORMASK = "Should provide some great protection against that radiation!",
 
 				NANOTECH = "Nanotech, just what the doctor ordered.",
 				NANOCRATE = "This could patch me up!",
@@ -87,10 +89,10 @@ local strings = {
 				RARITANIUM_CRYSTALS = "That looks like raritanium.",
 				SCRAPMETAL = "Maybe I could make use of this scrap.",
 
-				HOUND_ROBOMUTT = "Not these thing again.",
+				HOUND_ROBOMUTT = "Oh no, not these things again.",
 
 				VULLARD_LAMP = "Huh, seems like the work of vullards.",
-				SCRAPMOUND = "Oh no, not more scrap metal.",
+				SCRAPMOUND = "Maybe if I bust it open, I'll find something of use.",
 				JUNKPILE = "That's your typical vullard pile of junk.",
 				VULLARD_SMELTER = "Oh hey, reminds me of home. Maybe I can make use of the scrap around here.",
 			},
@@ -107,7 +109,7 @@ local strings = {
 		NAPALMMOD = "Napalm Modification",
 		SHOCKMOD = "Shock Modification",
 
-		COMMANDO_HELMET = "Commando helmet",
+		RESPIRATORMASK = "Respirator",
 
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
@@ -120,6 +122,7 @@ local strings = {
 		TORREN_CACTUS = "Cactus",
 		LUMINOUSTREE = "Luminous Tree",
 		LUMINOUS_FRUIT = "Luminous Fruit",
+		LUMINOUS_FRUIT_COOKED = "Roasted Luminous Fruit",
 
 		NANOBOOST = "Nanotech Boost",
 
@@ -141,11 +144,11 @@ local strings = {
 		NAPALMMOD = "Adds fire damage to modifiable weapons.",
 		SHOCKMOD = "Adds electric damage to modifiable weapons.",
 
-		COMMANDO_HELMET = "First issue commando Helmet.",
+		RESPIRATORMASK = "First issue commando Helmet.",
 
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 
-		NANOBOOST = "A energy restoring drink!",
+		NANOBOOST = "An energy restoring drink!",
 	},
 	ACTIONS = {
 		DODGE_RATCHET = "Dodge"
