@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 8/30
+Progress 14/30
 
 
 
@@ -9,17 +9,17 @@ Coding
 ----------------
 
 Canyon Biome
-- Add biolum trees fruits need slight radiation curing properties (Not complete curing. Tiny, around 5) 
+- Add biolum trees fruits need slight radiation curing properties (Not complete curing. Tiny, around 5) --DONE
 
 Junk Biome
-- Change RoboMutt Spawn to an area spawner inside of junk biome instead of mounds. Spawn from Junk pillars, rifts?
-- Repurpose the robomutts junk mounds (I don't know what it should be repurposed to. But I'll think of something.)
-- Add new Raritanium weapon schematics. Currently the Crystalass is available and must be removed from teir 2 science recipes.
--  fix light bug on junk lamps or vullard lamps
+- Change RoboMutt Spawn to an area spawner inside of junk biome instead of mounds. Spawn from Junk pillars, rifts?--DONE
+- Repurpose the robomutts junk mounds (I don't know what it should be repurposed to. But I'll think of something.)--DONE
+- Add new Raritanium weapon schematics. Currently the Crystalass is available and must be removed from teir 2 science recipes.--DONE
+-  fix light bug on junk lamps or vullard lamps--DONE
 
 Rifts
 
-- Add random very Radioactive Rifts to spawn ever once and a while to have a random chance of spewing either enemies, or resources. Such as robomutts, nanotech crates, raritanium, moonrocks, and the likes. Basic resources only.
+- Add random very Radioactive Rifts to spawn ever once and a while to have a random chance of spewing either enemies, or resources. Such as robomutts, nanotech crates, raritanium, moonrocks, and the likes. Basic resources only.--DONE
 
 Characters
 

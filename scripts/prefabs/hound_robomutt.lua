@@ -61,7 +61,7 @@ local function OnNewTarget(inst, data)
     end
 end
 
-local RETARGET_CANT_TAGS = { "wall", "scrapmound", "hound", "houndfriend" }
+local RETARGET_CANT_TAGS = { "wall", "hound", "houndfriend" }
 local function retargetfn(inst)
     local leader = inst.components.follower.leader
     if leader ~= nil and leader.sg ~= nil and leader.sg:HasStateTag("statue") then
@@ -336,6 +336,8 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
 
     inst:AddComponent("health")
     inst.components.health:SetMaxHealth(300)
+    inst:AddComponent("herdmember")
+    inst.components.herdmember:SetHerdPrefab("hound_robomuttherd")
 
     inst:AddComponent("sanityaura")
     inst.components.sanityaura.aura = -TUNING.SANITYAURA_MED

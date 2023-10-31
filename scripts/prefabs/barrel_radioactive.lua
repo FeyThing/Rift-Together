@@ -15,7 +15,7 @@ local function onhammered(inst)
     inst:Remove()
 end
 
-local function MakeBarrel(name, land)
+local function MakeBarrel(name)
     local function fn()
         local inst = CreateEntity()
         inst.entity:AddTransform()
@@ -27,10 +27,11 @@ local function MakeBarrel(name, land)
 
         --inst.MiniMapEntity:SetIcon("barrel_radioactive.tex")
 
-        MakeObstaclePhysics(inst, 0.5)
+        MakeWaterObstaclePhysics(inst, 0.80, 2, 0.75)
 
+        MakeInventoryFloatable(inst, "med", nil, 0.85)
 
-		inst.Light:SetFalloff(0.7)
+        inst.Light:SetFalloff(0.7)
 		inst.Light:SetIntensity(1)
 		inst.Light:SetRadius(0.5)
 		inst.Light:SetColour(25/255,255/255,100/255)
@@ -39,7 +40,7 @@ local function MakeBarrel(name, land)
         inst.AnimState:SetBank("radioactive_barrel")
         inst.AnimState:SetBuild("radioactive_barrel")
 
-        inst.AnimState:PlayAnimation(land and "idle" or "idle_water", true)
+        inst.AnimState:PlayAnimation("idle", true)
         
         inst.entity:SetPristine()
 
@@ -47,26 +48,27 @@ local function MakeBarrel(name, land)
             return inst
         end
 
+        local land_time = (POPULATING and math.random()*5*FRAMES) or 0
+        inst:DoTaskInTime(land_time, function(inst)
+            inst.components.floater:OnLandedServer()
+        end)
+
         inst:AddComponent("inspectable")
         
-       if land then
-            inst.components.inspectable.nameoverride = "barrel_radioactive"
-        end
-
 		inst:AddComponent("workable")
 		inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
 		inst.components.workable:SetWorkLeft(5)
 		inst.components.workable:SetOnFinishCallback(onhammered)
 
 		inst:AddComponent("radiationspreader")
-		
+        inst.components.radiationspreader:SetRadius(2)
 
-   
+        inst:ListenForEvent("floater_startfloating", function(inst) inst.AnimState:PlayAnimation("idle_water", true) end)
+
         return inst
     end
 
     return Prefab(name, fn, assets, prefabs)
 end
 
-return MakeBarrel("barrel_radioactive"),
-       MakeBarrel("barrel_radioactive_land", true)
+return MakeBarrel("barrel_radioactive")

@@ -63,7 +63,7 @@ local strings = {
 				HOUND_ROBOMUTT = "Their teeth are sharp!",
 
 				VULLARD_LAMP = "Looks like someone made them with scrap.",
-				SCRAPMOUND = "I hear something coming from it.",
+				SCRAPROCK = "I hear something coming from it.",
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could maybe make something with this.",
 			},
@@ -93,7 +93,7 @@ local strings = {
 				HOUND_ROBOMUTT = "Oh no, not these things again.",
 
 				VULLARD_LAMP = "Huh, seems like the work of vullards.",
-				SCRAPMOUND = "Maybe if I bust it open, I'll find something of use.",
+				SCRAPROCK = "Maybe if I bust it open, I'll find something of use.",
 				JUNKPILE = "That's your typical vullard pile of junk.",
 				VULLARD_SMELTER = "Oh hey, reminds me of home. Maybe I can make use of the scrap around here.",
 			},
@@ -131,7 +131,7 @@ local strings = {
 		HOUND_ROBOMUTT = "RoboMutt",
 
 		VULLARD_LAMP = "Junk Lamp",
-		SCRAPMOUND = "Scrap Mound",
+		SCRAPROCK = "Scrap Mound",
 		JUNKPILE = "Junk Pile",
 		VULLARD_SMELTER = "Smelter",
 	},

@@ -7,7 +7,6 @@ return {
 		"nefarious_none",
 		"forcefieldfx1",
 		"chessjunk_spawner",
-		"wx78_big_spark",
 		"sparks",
 		"nanocrate",
 		"nanotech",
@@ -20,7 +19,7 @@ return {
 		"hound_robomutt",
 		"vullard_lamp",
 		"vullard_smelter",
-		"scrapmound",
+		"scraprock",
 		"scrapmetal",
 		"junkpile",
 		"torren_pillars",
@@ -35,6 +34,9 @@ return {
 		"rarisword",
 		"toxic_oceanbubbles",
 		"barrel_radioactive",
+		"hound_robomuttherd",
+		"dimensional_rift",
+		"radiation_dust",
 	},
 
 	Assets = {

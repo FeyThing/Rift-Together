@@ -28,17 +28,13 @@ local function fadeout(inst)
 	inst.components.fader:Fade(INTENSITY, 0, .75+math.random()*1, function(v) inst.Light:SetIntensity(v) end)
 end
 
-local function updatelight(inst)
-    if not TheWorld.state.isday then
+local function updatelight(inst, phase)
+    if phase == "day" then
+        inst:DoTaskInTime(math.random()*2, function() fadeout(inst) end)            
+    else
         if not inst.lighton then
             inst:DoTaskInTime(math.random()*2, function() fadein(inst) end)
         end
-
-    elseif TheWorld.state.isday then
-        if inst.lighton then
-            inst:DoTaskInTime(math.random()*2, function() fadeout(inst) end)            
-        end
-       
     end
 end
 
@@ -49,7 +45,7 @@ end
 local function onbuilt(inst)
     inst.AnimState:PlayAnimation("place")
     inst.AnimState:PushAnimation("idle", true)
-    inst:DoTaskInTime(0, function() updatelight(inst) end)
+    inst:DoTaskInTime(0, function() updatelight(inst, TheWorld.state.phase) end)
 end
 
 
@@ -111,9 +107,8 @@ local function fn(Sim)
     end
     
     inst:AddComponent("fader")
-    inst:WatchWorldState("iscavedusk", function() updatelight(inst) end)
-    inst:WatchWorldState("iscaveday", function() updatelight(inst) end)
-    
+    inst:WatchWorldState("phase", function(src,phase) updatelight(inst, phase) end)
+
     inst:AddComponent("hauntable")
     inst.components.hauntable:SetHauntValue(TUNING.HAUNT_TINY)
 

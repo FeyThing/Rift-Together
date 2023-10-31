@@ -5,4 +5,5 @@ return function(inst)
 	end
 	--SERVER
 	inst:AddComponent("radiation_manager")
+	inst:AddComponent("dimensionalrifts")
 end
