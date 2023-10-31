@@ -109,6 +109,28 @@ AddTile("DESERTSAND", "LAND",
 	
 )
 
+AddTile("LUSH", "LAND",
+	{
+		ground_name 	= "Lush Forest",
+	},
+	{
+		name			= "lush",
+		noise_texture	= "levels/textures/ground_noise_lush.tex",
+		runsound="dontstarve/movement/run_woods",
+        walksound="dontstarve/movement/walk_woods",
+        snowsound="dontstarve/movement/run_snow",
+        mudsound="dontstarve/movement/run_mud",
+		ocean_depth = "BASIC",
+		colors = TORRENIV_OCEAN_COLOR,
+	},
+	{
+		name 			= "map_edge",
+		noise_texture	= "levels/textures/mini_forest_noise.tex",
+	
+	}
+	
+)
+
 AddTile("JUNK_NOISE", "NOISE")
 
 local function GetTileForJunkNoise(noise)
@@ -128,7 +150,7 @@ NOISES[WORLD_TILES.DESERTSAND_NOISE] = GetTileFordesertsandNoise
 AddTile("DESERTFERTILE_NOISE", "NOISE")
 
 local function GetTileFordesertfertileNoise(noise)
-    return noise < .6 and WORLD_TILES.FOREST or WORLD_TILES.DESERTSAND
+    return noise < .6 and WORLD_TILES.LUSH or WORLD_TILES.DESERTSAND
 end
 
 NOISES[WORLD_TILES.DESERTFERTILE_NOISE] = GetTileFordesertfertileNoise
