@@ -50,6 +50,7 @@ local strings = {
 				RARITANIUM_BAR= "Now it's more useful!",
 				RARITANIUM_CRYSTALS = "Looks like some sort of crystal formation.",
 				SCRAPMETAL = "Pieces of metal litter the ground.",
+				BARREL_RADIOACTIVE = "I don't want to get too close.",
 
 				TORREN_GRASS = "It's a strange patch of grass.",
 				TORREN_CACTUS = "It's a large cactus.",
@@ -117,6 +118,7 @@ local strings = {
 		RARITANIUM_BAR= "Refined Raritanium",
 		RARITANIUM_CRYSTALS= "Raritanium",
 		SCRAPMETAL = "Scrap Metal",
+		BARREL_RADIOACTIVE = "Metal Drum",
 
 		TORREN_GRASS = "Alien Grass",
 		TORREN_CACTUS = "Cactus",
@@ -156,4 +158,7 @@ local strings = {
 }
 
 TransferTable(strings, STRINGS)
+
+
+
 

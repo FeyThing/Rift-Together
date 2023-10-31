@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 3/30
+Progress 8/30
 
 
 
@@ -26,7 +26,7 @@ Characters
 - Fix Nefarious's jank code inregards to his combat, shield, and stealth mode. Change keypresses to a power selection wheel. And add client-side statograph for his annihilators.
 
 Raritanium Weapons and equipment
-- Change commando helmet into a respirator with radiation nullifying effects.
+- Change commando helmet into a respirator with radiation nullifying effects. (done by Asura)
 
 
 Art
@@ -34,8 +34,8 @@ Art
 
 Raritanium Weapons and equipment
 
-- 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(Almost done, UI just needs custom art)
-- Change commando helmet into a respirator
+- 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(UI needs custom art)
+- Change commando helmet into a respirator (done)
 
 Nef annihilator Animations
 
@@ -45,7 +45,7 @@ Nef annihilator Animations
 
 Canyon Biome
 
-- Add biolum trees with temp rad curing food.(Mostly-Complete. Needs slight polishing and fruits need to be slightly rad curing)
+- Add biolum trees with temp rad curing food.(Mostly-Complete. Needs slight polishing)
 - Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
 - Replace ponds with new ponds with new fishing possibilities for nanotech and raritanium renewal
 
@@ -58,9 +58,9 @@ Junk Biome
 
 Radiation Mechanic
 
-- Implement Radiation (Finished by Asura)
-- Add Radioactive barrels scattered inside the lake, cove and mandatory 1 or 2 of them in Junk biome. (Next to do)
-- Temp make nanoboosts cure radiation (Complete)
+- Implement Radiation (done by Asura)
+- Add Radioactive barrels scattered inside the lake, cove and mandatory 1 or 2 of them in Junk biome. (done)
+- Temp make nanoboosts cure radiation (done)
 
 Tiles
 
@@ -71,7 +71,7 @@ Tiles
 
 Rifts
 
-- Add random very Radioactive Rifts art and animations.
+- Add random very Radioactive Rifts art and animations (done)
 
 Sound
 
@@ -83,7 +83,7 @@ Sound
 Characters 
 
 - Add Qwark
-- Remake Ratchet's character Art (In progress)
+- Remake Ratchet's character Art (done)
 - Touch up nefarious's character Art
 - Remake all big portraits
 - Write all character dialogue
