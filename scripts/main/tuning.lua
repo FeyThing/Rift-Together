@@ -141,6 +141,12 @@ local tunings = {
         },
     },
     RADIATION_AURA_SEACH_RANGE = 16,
+
+    ROBOMUTTHERD = {
+        MAX = 3,
+        DELAY = 1420,
+        VARIANCE = 560,
+    }
 }
 
 TransferTable(tunings, TUNING)

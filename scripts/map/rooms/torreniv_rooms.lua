@@ -53,7 +53,7 @@
 		value = WORLD_TILES.JUNK_NOISE,
 		contents = {
 			countprefabs= {
-				scrapmound = function() return math.random(1,2) end,
+				hound_robomuttherd = function() return math.random(1,2) end,
 				vullard_smelter = 1
 			},
 			distributepercent = 0.07,
@@ -63,7 +63,8 @@
 				nanocrate = 0.25,
 								
 				chessjunk_spawner = 0.15,
-				scrapmound = 0.01,
+				hound_robomuttherd = 0.01,
+				scraprock = 3,
 				junkpile = 4,
 				scrapmetal = 0.6,
 				vullard_lamp = 0.1,

@@ -236,8 +236,8 @@ function Radiation:Recalc(dt, radiation)
 
     local prc = self.rate/10
     self.ratescale =
-        (prc > .2 and RATE_SCALE.INCREASE_HIGH) or
-        (prc > .5 and RATE_SCALE.INCREASE_MED) or
+        (prc > .5 and RATE_SCALE.INCREASE_HIGH) or
+        (prc > .2 and RATE_SCALE.INCREASE_MED) or
         (prc > .01 and RATE_SCALE.INCREASE_LOW) or
         (prc < -.3 and RATE_SCALE.DECREASE_HIGH) or
         (prc < -.1 and RATE_SCALE.DECREASE_MED) or

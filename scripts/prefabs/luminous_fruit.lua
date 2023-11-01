@@ -59,7 +59,6 @@ local function fn()
     inst:AddTag("show_spoilage")
     inst:AddTag("treeseed")
 
- 
     inst:AddTag("cookable")
 
     MakeInventoryFloatable(inst, "small", 0.15)
@@ -83,7 +82,9 @@ local function fn()
     inst:AddComponent("edible")
     inst.components.edible.hungervalue = TUNING.CALORIES_TINY
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
-    inst.components.edible.foodtype = FOODTYPE.RAW
+    inst.components.edible.foodtype = FOODTYPE.VEGGIE
+    inst.components.edible.secondaryfoodtype = FOODTYPE.BERRY
+    inst.components.edible.radiationvalue = -5
 
     inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
@@ -102,7 +103,7 @@ local function fn()
     inst:AddComponent("forcecompostable")
     inst.components.forcecompostable.brown = true
 
-    MakeHauntableLaunchAndIgnite(inst)
+    MakeHauntableLaunchAndPerish(inst)
 
     --inst.OnLoad = OnLoad
 
@@ -134,8 +135,9 @@ local function cooked()
     inst:AddComponent("edible")
     inst.components.edible.hungervalue = TUNING.CALORIES_TINY
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
-    inst.components.edible.foodtype = FOODTYPE.BERRY
-	
+    inst.components.edible.foodtype = FOODTYPE.VEGGIE
+    inst.components.edible.secondaryfoodtype = FOODTYPE.BERRY
+    inst.components.edible.radiationvalue = -5
 
     inst:AddComponent("tradable")
 
@@ -157,7 +159,7 @@ local function cooked()
     inst:AddComponent("forcecompostable")
     inst.components.forcecompostable.brown = true
 
-    MakeHauntableLaunch(inst)
+    MakeHauntableLaunchAndPerish(inst)
 
     return inst
 end
