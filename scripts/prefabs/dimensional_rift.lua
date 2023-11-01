@@ -440,15 +440,15 @@ end
 
 local function OnPortalSleep(inst)
     inst.SoundEmitter:KillSound(AMBIENT_SOUND_LOOP_NAME)
-<<<<<<< HEAD
+
 	if inst._fx then
         inst._fx:Remove()
         inst._fx = nil
         inst.highlightchildren = nil
     end
-=======
+
     inst.components.timer:PauseTimer(PORTALLOOT_TIMER_NAME)
->>>>>>> 73b9a6c99457d3b209fb7a6b4fd735b707e4b5f0
+
 end
 
 local function OnPortalWake(inst)
@@ -653,7 +653,7 @@ local function portalfn()
     return inst
 end
 
-<<<<<<< HEAD
+
 local function portalfxfn()
     local inst = CreateEntity()
 
@@ -698,7 +698,5 @@ RIFTPORTAL_FNS.CreateRiftPortalDefinition("dimensional_rift", {
 
 return Prefab("dimensional_rift",    portalfn,   assets, prefabs),
 	   Prefab("dimensional_rift_fx", portalfxfn, assets, prefabs)
-=======
-return Prefab("dimensional_rift", portalfn, assets, prefabs)
->>>>>>> 73b9a6c99457d3b209fb7a6b4fd735b707e4b5f0
+
 
