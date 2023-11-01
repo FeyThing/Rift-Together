@@ -147,7 +147,7 @@ end
 
 local function OnAttack(inst, attacker, target)
     if target:HasTag("chess") then
-		target.components.combat:GetAttacked(attacker, 50, inst)
+		target.components.combat:GetAttacked(attacker, 40, inst)
 	end
 
     omega_modifiers(inst, attacker, target)	
@@ -178,7 +178,7 @@ local function fn(Sim)
     inst:AddTag("sharp")
 
     inst:AddComponent("weapon")
-	inst.components.weapon:SetDamage(35)
+	inst.components.weapon:SetDamage(48)
     inst.components.weapon:SetOnAttack(OnAttack)
     -------    
 

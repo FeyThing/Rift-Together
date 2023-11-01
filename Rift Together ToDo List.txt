@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 15/30
+Progress 16/30
 
 
 
@@ -47,7 +47,7 @@ Canyon Biome
 
 - Add biolum trees with temp rad curing food.(Mostly-Complete. Needs slight polishing)
 - Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
-- Replace ponds with new ponds with new fishing possibilities for nanotech and raritanium renewal
+- Replace ponds with new ponds with new fishing possibilities for nanotech and raritanium renewal (done)
 
 Junk Biome
 

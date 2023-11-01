@@ -37,6 +37,7 @@ return {
 		"hound_robomuttherd",
 		"dimensional_rift",
 		"radiation_dust",
+		"irradiated_pond",
 	},
 
 	Assets = {
