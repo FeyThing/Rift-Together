@@ -54,7 +54,7 @@ local function noarmor(inst)
 			return		
 		end		
 		
-		if item.components.equippable.equipslot == EQUIPSLOTS.HEAD and not (item.prefab == "ruinshat") and not (item.prefab == "flowerhat") and not (item.prefab == "eyebrellahat") and not (item.prefab == "kelphat") 
+		if item.components.equippable.equipslot == EQUIPSLOTS.HEAD and not (item.prefab == "ruinshat") and not (item.prefab == "flowerhat") and not (item.prefab == "eyebrellahat") and not (item.prefab == "kelphat") and not (item.prefab == "respiratormask") 
 		or item.components.equippable.equipslot == EQUIPSLOTS.BODY and item.components.armor then		
 			self:DropItem(item)
 			self:GiveItem(item)

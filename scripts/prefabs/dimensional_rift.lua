@@ -3,7 +3,9 @@ local assets =
     Asset("ANIM", "anim/dimensional_rift.zip"),
 }
 
-local prefabs = {}
+local prefabs = {
+"dimensional_rift_fx",
+}
 
 ------ Constants ---------------------------------------------------------------
 
@@ -30,11 +32,24 @@ local function SetMaxMinimapStatus(inst)
     inst.icon.MiniMapEntity:SetPriority(22)
 end
 
+local function SpawnStageFx(inst)
+    local scale = inst._stage * 0.5
+
+    local fx = SpawnPrefab("statue_transition")
+    fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
+    fx.Transform:SetScale(scale, scale, scale)
+
+    return fx
+end
+
 local function GetStageUpTime(inst)
     return 900 + TUNING.RIFT_SHADOW1_STAGEUP_RANDOM_TIME * math.random()
 end
 
 local function Initialize(inst)
+
+	inst:SpawnStageFx()
+
     inst.SoundEmitter:PlaySound("rifts2/shadow_rift/groundcrack_expand")
 
     local duration, speed, scale, max_dist = unpack(SHAKE_PARAMS_BY_STAGE[inst._stage])
@@ -49,6 +64,12 @@ local function TryStageUp(inst)
     if inst._stage < TUNING.RIFT_SHADOW1_MAXSTAGE then
         local next_stage = inst._stage + 1
         inst._stage = next_stage
+		
+		if inst._fx then
+            inst._fx:PlayStage(next_stage)
+        end
+
+        inst:SpawnStageFx()
 
         inst.Physics:SetCylinder(PHYSICS_SIZE_BY_STAGE[next_stage], 6)
 
@@ -86,6 +107,10 @@ local function ClosePortal(inst)
     else
         inst.AnimState:PlayAnimation("disappear")
         inst.SoundEmitter:PlaySound("rifts/portal/portal_disappear")
+		
+		if inst._fx then
+            inst._fx:Disappear()
+        end
 
         local time = inst.AnimState:GetCurrentAnimationLength() - inst.AnimState:GetCurrentAnimationTime() + FRAMES
         inst.components.timer:StartTimer("be_removed", time)
@@ -106,15 +131,48 @@ local function OnTimerDone(inst, data)
     end
 end
 
+----------------------------------------------------------------------------------
+
+local function CreateParticleFx(inst)
+    local fx = SpawnPrefab("dimensional_rift_fx")
+    inst:AddChild(fx)
+
+    return fx
+end
+
+local function ParticlePlayStage(inst, stage, load)
+    if load then
+        inst.AnimState:PlayAnimation("particle_"..stage.."_loop", true)
+    else
+        inst.AnimState:PlayAnimation("particle_"..stage.."_pre")
+        inst.AnimState:PushAnimation("particle_"..stage.."_loop", true)
+    end
+end
+
+local function ParticleDisappear(inst)
+    inst.AnimState:PlayAnimation("particle_disappear")
+end
+
 --------------------------------------------------------------------------------
 
 local function OnPortalSleep(inst)
     inst.SoundEmitter:KillSound(AMBIENT_SOUND_LOOP_NAME)
+	if inst._fx then
+        inst._fx:Remove()
+        inst._fx = nil
+        inst.highlightchildren = nil
+    end
 end
 
 local function OnPortalWake(inst)
     inst.SoundEmitter:PlaySound(AMBIENT_SOUND_PATH, AMBIENT_SOUND_LOOP_NAME)
     inst.SoundEmitter:SetParameter(AMBIENT_SOUND_LOOP_NAME, AMBIENT_SOUND_PARAM_NAME, AMBIENT_SOUND_STAGE_TO_INTENSITY[inst._stage])
+	
+	if not inst._fx then
+        inst._fx = CreateParticleFx(inst)
+        inst._fx:PlayStage(inst._stage, true)
+        inst.highlightchildren = {inst._fx}
+    end
 end
 
 --------------------------------------------------------------------------------
@@ -137,8 +195,14 @@ local function OnPortalLoad(inst, data)
         if data.finished then
             inst.AnimState:PlayAnimation("disappear")
             inst.components.timer:StartTimer("be_removed", 5)
+			if inst._fx then
+                inst._fx:Disappear()
+            end
         else
             inst.AnimState:PlayAnimation("stage_"..inst._stage.."_loop", true)
+			if inst._fx then
+                inst._fx:PlayStage(inst._stage, true)
+            end
         end
     end
 end
@@ -217,6 +281,10 @@ local function portalfn()
     inst:AddTag("dimensional_rift")
 
     inst.entity:SetPristine()
+	
+	inst._fx = CreateParticleFx(inst)
+    inst.highlightchildren = {inst._fx}    
+    inst.highlightoverride = {0.15, 0, 0}
 
     if not TheWorld.ismastersim then
         return inst
@@ -242,7 +310,39 @@ local function portalfn()
 
     inst.TryStageUp = TryStageUp
 
+	inst.SpawnStageFx = SpawnStageFx
     inst.SetMaxMinimapStatus = SetMaxMinimapStatus
+
+    return inst
+end
+
+local function portalfxfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddAnimState()
+    inst.entity:AddNetwork()
+
+    local animstate = inst.AnimState
+    animstate:SetBank("dimensional_rift")
+    animstate:SetBuild("dimensional_rift")
+    animstate:PlayAnimation("particle_1_pre")
+    animstate:PushAnimation("particle_1_loop", true)
+
+    inst.AnimState:SetLightOverride(1)
+
+    inst:AddTag("FX")
+    inst:AddTag("NOCLICK")
+    inst:AddTag("NOBLOCK")
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    inst.PlayStage = ParticlePlayStage
+    inst.Disappear = ParticleDisappear
 
     return inst
 end
@@ -258,5 +358,6 @@ RIFTPORTAL_FNS.CreateRiftPortalDefinition("dimensional_rift", {
     Affinity = RIFTPORTAL_CONST.AFFINITY.NONE,
 })
 
-return Prefab("dimensional_rift",    portalfn,   assets, prefabs)
+return Prefab("dimensional_rift",    portalfn,   assets, prefabs),
+	   Prefab("dimensional_rift_fx", portalfxfn, assets, prefabs)
 
