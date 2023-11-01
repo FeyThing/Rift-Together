@@ -63,26 +63,23 @@ end
 function RiftSpawner:SpawnRift(forced_pos)
     local rift_prefab = "dimensional_rift"
 
-    local pos = Vector3(0, 0, 0)
+    local x,y,z
     if forced_pos then
-        pos.x, pos.z = forced_pos.x, forced_pos.z
+        x, z = forced_pos.x, forced_pos.z
     else
-        local x1, y1, z1 = ThePlayer.Transform:GetWorldPosition()
-        if x1 then
-            pos = Vector3(self._map:GetTileCenterPoint(x1, y1, z1))
-        end
+        x, y, z = self._map:FindBestSpawningPointForArena(function() return true end)
     end
 
-    if not pos.x then
+    if not x then
         return nil
     end
 
-    if self:IsPointNearPreviousSpawn(pos.x, pos.z) then
+    if self:IsPointNearPreviousSpawn(x, z) then
         return nil
     end
 
     local rift = SpawnPrefab(rift_prefab)
-    rift.Transform:SetPosition(pos.x, 0, pos.z)
+    rift.Transform:SetPosition(x, 0, z)
 
     self:AddRiftToPool(rift, rift_prefab)
 
@@ -90,12 +87,12 @@ function RiftSpawner:SpawnRift(forced_pos)
 end
 
 function RiftSpawner:TryToSpawnRift(forced_pos)
-    local rift
     if self.rifts_count < TUNING.MAXIMUM_RIFTS_COUNT then
-        rift = self:SpawnRift(forced_pos)
+        self._map:StartFindingGoodArenaPoints()
+        self.inst:DoTaskInTime(1, function()
+            self:SpawnRift(forced_pos)
+        end)
     end
-
-    return rift
 end
 
 function RiftSpawner:OnRiftTimerDone()
