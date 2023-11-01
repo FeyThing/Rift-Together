@@ -2,6 +2,12 @@ local Radiation = Class(function(self, inst)
     self.inst = inst
 
     self._isdying = net_bool(inst.GUID, "radiation._isdying")
+    if inst:HasTag('player') then
+        self.snowfx = SpawnPrefab("radiation_dust")
+        self.snowfx.entity:SetParent(inst.entity)
+        self.snowfx.particles_per_tick = 200
+        self.snowfx:PostInit()
+    end
 
     if TheWorld.ismastersim then
         self.classified = inst.player_classified

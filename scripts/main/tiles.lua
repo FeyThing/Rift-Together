@@ -125,8 +125,7 @@ AddTile("LUSH", "LAND",
 	},
 	{
 		name 			= "map_edge",
-		noise_texture	= "levels/textures/mini_forest_noise.tex",
-	
+		noise_texture	= "levels/textures/ground_noise_lush.tex",
 	}
 	
 )
