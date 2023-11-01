@@ -127,26 +127,26 @@ local FIREEVENT_TIME = 3
 -- to break up the spawn of objects with behaviour.
 local PORTAL_LOOT_PREFABS =
 {
-    cutgrass                            = 5.0,
-    dug_bananabush                      = "MONKEYISLAND_PORTAL_BANANABUSHWEIGHT",
-    dug_monkeytail                      = "MONKEYISLAND_PORTAL_MONKEYTAILWEIGHT",
-	lightcrab                           = "MONKEYISLAND_PORTAL_LIGHTCRABWEIGHT",
+    nanotech                            = 5.0,
+    petals                      		= "MONKEYISLAND_PORTAL_BANANABUSHWEIGHT",
+    trinket_4                     		 = "MONKEYISLAND_PORTAL_MONKEYTAILWEIGHT",
+	rarttaniumore                       = "MONKEYISLAND_PORTAL_LIGHTCRABWEIGHT",
     monkeyisland_portal_fxloot          = 10.0,
-    palmcone_seed                       = "MONKEYISLAND_PORTAL_PALMCONE_SEEDWEIGHT",
-    powder_monkey                       = "MONKEYISLAND_PORTAL_POWDERMONKEYWEIGHT",
-    rocks                               = 5.0,
+    moonrocknugget                      = "MONKEYISLAND_PORTAL_PALMCONE_SEEDWEIGHT",
+    hound_robomutt                       = "MONKEYISLAND_PORTAL_POWDERMONKEYWEIGHT",
+    wetgoop                             = 5.0,
     twigs                               = 5.0,
 }
 
 local PORTAL_LOOT_FXYOFFSET =
 {
-    cutgrass        = 0.25,
-    dug_bananabush  = 0.40,
-    dug_monkeytail  = 0.40,
-    lightcrab       = 0.25,
-    palmcone_seed   = 0.25,
-    powder_monkey   = 1.80,
-    rocks           = 0.25,
+    nanotech        = 0.25,
+    petals 			 = 0.40,
+    trinket_4 		 = 0.40,
+    rarttaniumore   = 0.25,
+    moonrocknugget   = 0.25,
+    hound_robomutt   = 1.80,
+    wetgoop           = 0.25,
     twigs           = 0.25,
 }
 
@@ -312,15 +312,15 @@ end
 
 local function fire_portal_event(inst)
     local portal_event_spawns = {
-        "cutgrass",
-        "cutgrass",
-        "dug_bananabush",
-        "dug_monkeytail",
-        "palmcone_seed",
-        "palmcone_seed",
-        "powder_monkey",
-        "rocks",
-        "rocks",
+        "nanotech",
+        "nanotech",
+        "petals",
+        "trinket_4",
+        "moonrocknugget",
+        "hound_robomutt",
+        "hound_robomutt",
+        "wetgoop",
+        "wetgoop",
         "twigs",
         "twigs",
     }

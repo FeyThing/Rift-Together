@@ -30,7 +30,7 @@ local sounds =
 
 SetSharedLootTable( 'hound_robomutt',
 {
-    {'trinket_6', 		1.0},
+    {'trinket_6', 		0.5},
 	{'raritaniumore', 0.325},
     
 })

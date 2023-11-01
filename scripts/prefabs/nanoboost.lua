@@ -15,6 +15,8 @@ local function fn(Sim)
     inst.AnimState:SetBuild("nanoboost")
     inst.AnimState:PlayAnimation("anim")
 	
+	MakeInventoryFloatable(inst, "med", 0.05, {0.65, 0.5, 0.65})
+	
 	--inst:AddTag("rejuvenation")
 
     if not TheWorld.ismastersim then
