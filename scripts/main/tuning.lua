@@ -50,7 +50,7 @@ local tunings = {
         WILLOW = 100,
         WENDY = 80,
         WOLFGANG = 150,
-        WX78 = 0,
+        WX78 = 200,
         WICKERBOTTOM = 100,
         WES = 55,
         WAXWELL = 120,
@@ -66,6 +66,7 @@ local tunings = {
         WANDA = 100,
         WONKEY = 100, 
     },
+    ROBOT_RADIATION_RESISTANCE = .35,
 
     NEFARIOUS_ENERGY = 100,
     NEFARIOUS_ENERGY_COST = 1,
@@ -146,7 +147,11 @@ local tunings = {
         MAX = 3,
         DELAY = 1420,
         VARIANCE = 560,
-    }
+    },
+
+    DIMENSIONAL_RIFTS = {
+        MAX_AMOUNT = 3,
+    },
 }
 
 TransferTable(tunings, TUNING)

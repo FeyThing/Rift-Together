@@ -21,7 +21,7 @@ local function InitEnvelope()
     EnvelopeManager:AddColourEnvelope(
         COLOUR_ENVELOPE_NAME,
         {   { 0,    IntColour(0, 255, 0, 0) },
-            { .5,   IntColour(0, 255, 0, 127) },
+            { .5,   IntColour(0, 255, 0, 200) },
             { 1,    IntColour(0, 255, 0, 0) },
         }
     )
@@ -65,7 +65,7 @@ local function fn()
     local effect = inst.entity:AddVFXEffect()
     effect:InitEmitters(1)
     effect:SetRenderResources(0, TEXTURE, SHADER)
-    effect:SetMaxNumParticles(0, 1000)
+    effect:SetMaxNumParticles(0, 3000)
     effect:SetMaxLifetime(0, MAX_LIFETIME)
     effect:SetColourEnvelope(0, COLOUR_ENVELOPE_NAME)
     effect:SetScaleEnvelope(0, SCALE_ENVELOPE_NAME)
@@ -75,13 +75,13 @@ local function fn()
     effect:SetAcceleration(0, 0, .0001, 0)
     effect:SetDragCoefficient(0, .0001)
     effect:EnableDepthTest(0, false)
+    effect:SetGroundPhysics(0, true)
 
     -----------------------------------------------------
 
-    local rng = math.random
     local tick_time = TheSim:GetTickTime()
 
-    local desired_particles_per_second = 0--300
+    local desired_particles_per_second = 0
     inst.particles_per_tick = desired_particles_per_second * tick_time
 
     inst.num_particles_to_emit = inst.particles_per_tick
@@ -94,21 +94,18 @@ local function fn()
 
     local function emit_fn()
         local x, y, z = inst.Transform:GetWorldPosition()
+        local maxradiation = TheWorld.components.radiation_manager:GetRadiationAtPoint(x, y, z)
         local px, py, pz = emitter_shape()
         py = py + halfheight -- otherwise the particles appear under the ground
         x = x + px
         z = z + pz
 
         -- don't spawn particles over water
-        if not TileGroupManager:IsImpassableTile(map:GetTileAtPoint(x, y, z)) then
-            local vx = .03 * (math.random() - .5)
+        local radiation = TheWorld.components.radiation_manager:GetRadiationAtPoint(x, y, z)
+        if radiation > 0 then
+            local vx = .01 * (math.random() - .5) * UnitRand()
             local vy = 0
-            local vz = .03 * (math.random() - .5)
-            if worldstate.isday and GetTemperatureAtXZ(x, z) > TUNING.WILDFIRE_THRESHOLD then
-                vx = vx * .1
-                vy = .01
-                vz = vz * .1
-            end
+            local vz = .01 * (math.random() - .5) * UnitRand()
 
             local lifetime = MIN_LIFETIME + (MAX_LIFETIME - MIN_LIFETIME) * UnitRand()
 
@@ -117,7 +114,7 @@ local function fn()
                 lifetime,           -- lifetime
                 px, py, pz,         -- position
                 vx, vy, vz          -- velocity
-           )
+            )
         end
     end
 

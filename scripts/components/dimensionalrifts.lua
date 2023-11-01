@@ -44,7 +44,7 @@ function RiftSpawner:OnRiftRemoved(rift)
         self.rifts_count = self.rifts_count - 1
 
         if self.spawnmode ~= 1 and not self._worldsettingstimer:ActiveTimerExists(RIFTSPAWN_TIMERNAME) then
-            if self.rifts_count < TUNING.MAXIMUM_RIFTS_COUNT then
+            if self.rifts_count < TUNING.DIMENSIONAL_RIFTS.MAX_AMOUNT then
                 self._worldsettingstimer:StartTimer(RIFTSPAWN_TIMERNAME, TUNING.RIFTS_SPAWNDELAY)
             end
         end
@@ -87,7 +87,7 @@ function RiftSpawner:SpawnRift(forced_pos)
 end
 
 function RiftSpawner:TryToSpawnRift(forced_pos)
-    if self.rifts_count < TUNING.MAXIMUM_RIFTS_COUNT then
+    if self.rifts_count < TUNING.DIMENSIONAL_RIFTS.MAX_AMOUNT then
         self._map:StartFindingGoodArenaPoints()
         self.inst:DoTaskInTime(1, function()
             self:SpawnRift(forced_pos)
@@ -100,12 +100,12 @@ function RiftSpawner:OnRiftTimerDone()
         return
     end
 
-    if self.rifts_count < TUNING.MAXIMUM_RIFTS_COUNT then
+    if self.rifts_count < TUNING.DIMENSIONAL_RIFTS.MAX_AMOUNT then
         local spawned_rift = self:SpawnRift()
 
         if not spawned_rift then
             self._worldsettingstimer:StartTimer(RIFTSPAWN_TIMERNAME, TUNING.TOTAL_DAY_TIME)
-        elseif (self.rifts_count + 1) < TUNING.MAXIMUM_RIFTS_COUNT then
+        elseif (self.rifts_count + 1) < TUNING.DIMENSIONAL_RIFTS.MAX_AMOUNT then
             self._worldsettingstimer:StartTimer(RIFTSPAWN_TIMERNAME, TUNING.RIFTS_SPAWNDELAY)
         end
     end
