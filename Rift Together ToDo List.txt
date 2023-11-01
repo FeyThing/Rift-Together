@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 8/30
+Progress 9/30
 
 
 
@@ -34,7 +34,7 @@ Art
 
 Raritanium Weapons and equipment
 
-- 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(UI needs custom art)
+- 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(done)
 - Change commando helmet into a respirator (done)
 
 Nef annihilator Animations

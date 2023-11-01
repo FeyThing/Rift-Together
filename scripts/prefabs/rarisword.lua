@@ -2,7 +2,7 @@ local assets =
 {
 	Asset("ANIM", "anim/rarisword.zip"),
 	Asset("ANIM", "anim/swap_rarisword.zip"),
-	Asset("ANIM", "anim/ui_alterguardianhat_1x1.zip"),
+	Asset("ANIM", "anim/ui_ratchet_1x1.zip"),
 
 }
 
