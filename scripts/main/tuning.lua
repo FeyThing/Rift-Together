@@ -151,6 +151,52 @@ local tunings = {
 
     DIMENSIONAL_RIFTS = {
         MAX_AMOUNT = 3,
+        TIME_VARIANCE = 480,
+
+        LOOT_PREFABS = {
+            nanotech                            = 5.0,
+            petals                              = 5.0,
+            trinket_4                           = 5.0,
+            rarttaniumore                       = 2.0,
+            monkeyisland_portal_fxloot          = 10.0,
+            moonrocknugget                      = 5.0,
+            hound_robomutt                      = 1.0,
+            wetgoop                             = 5.0,
+            twigs                               = 5.0,
+        },
+
+        STAGES = {
+            { --FIRST
+                LIGHT = 2,
+                LOOTSPAWNTIME = 60,
+                MAXLOOT = 10,
+                SHAKECAMERA = {0.5, .01, .1, 50},
+                AMBIENT_INTENSITY = 0.1,
+                PHYSICS = 1.2,
+
+                TIME = total_day_time*.75,
+            },
+            { --SECOND
+                LIGHT = 5,
+                LOOTSPAWNTIME = 45,
+                MAXLOOT = 15,
+                SHAKECAMERA = {1.0, .03, .2, 100},
+                AMBIENT_INTENSITY = 0.4,
+                PHYSICS = 2.2,
+
+                TIME = total_day_time*1.25,
+            }, --THIRD
+            {
+                LIGHT = 9,
+                LOOTSPAWNTIME = 20,
+                MAXLOOT = 25,
+                SHAKECAMERA = {1.5, .06, .3, 200},
+                AMBIENT_INTENSITY = 0.7,
+                PHYSICS = 3.2,
+
+                TIME = total_day_time*1.5,
+            },
+        },
     },
 }
 

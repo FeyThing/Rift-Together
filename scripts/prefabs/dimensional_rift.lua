@@ -4,21 +4,7 @@ local assets =
 }
 
 local prefabs = {
-"dimensional_rift_fx",
-}
-
------- Constants ---------------------------------------------------------------
-
-local AMBIENT_SOUND_PATH = "rifts2/shadow_rift/shadowrift_portal_allstage"
-local AMBIENT_SOUND_LOOP_NAME = "shadowrift_portal_ambience"
-local AMBIENT_SOUND_PARAM_NAME = "stage"
-local AMBIENT_SOUND_STAGE_TO_INTENSITY = {0.1, 0.4, 0.7}
-local PHYSICS_SIZE_BY_STAGE = {1.2, 2.2, 3.2}
-
-local SHAKE_PARAMS_BY_STAGE = {
-    {0.5, .01, .1, 50 },
-    {1.0, .03, .2, 100},
-    {1.5, .06, .3, 200},
+    "dimensional_rift_fx",
 }
 
 local function SetMaxMinimapStatus(inst)
@@ -43,16 +29,15 @@ local function SpawnStageFx(inst)
 end
 
 local function GetStageUpTime(inst)
-    return 900 + TUNING.RIFT_SHADOW1_STAGEUP_RANDOM_TIME * math.random()
+    return TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].TIME + TUNING.DIMENSIONAL_RIFTS.TIME_VARIANCE * math.random()
 end
 
 local function Initialize(inst)
-
 	inst:SpawnStageFx()
 
     inst.SoundEmitter:PlaySound("rifts2/shadow_rift/groundcrack_expand")
 
-    local duration, speed, scale, max_dist = unpack(SHAKE_PARAMS_BY_STAGE[inst._stage])
+    local duration, speed, scale, max_dist = unpack(TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].SHAKECAMERA)
     ShakeAllCameras(CAMERASHAKE.FULL, duration, speed, scale, inst, max_dist)
 end
 
@@ -71,20 +56,20 @@ local function TryStageUp(inst)
 
         inst:SpawnStageFx()
 
-        inst.Physics:SetCylinder(PHYSICS_SIZE_BY_STAGE[next_stage], 6)
+        inst.Physics:SetCylinder(TUNING.DIMENSIONAL_RIFTS.STAGES[next_stage].PHYSICS, 6)
 
-        local duration, speed, scale, max_dist = unpack(SHAKE_PARAMS_BY_STAGE[next_stage])
+        local duration, speed, scale, max_dist = unpack(TUNING.DIMENSIONAL_RIFTS.STAGES[next_stage].SHAKECAMERA)
         ShakeAllCameras(CAMERASHAKE.FULL, duration, speed, scale, inst, max_dist)
 
         inst.AnimState:PlayAnimation("stage_"..next_stage.."_pre")
         inst.AnimState:PushAnimation("stage_"..next_stage.."_loop", true)
 
-        inst.SoundEmitter:SetParameter(AMBIENT_SOUND_LOOP_NAME, AMBIENT_SOUND_PARAM_NAME, AMBIENT_SOUND_STAGE_TO_INTENSITY[next_stage])
+        inst.SoundEmitter:SetParameter("shadowrift_portal_ambience", "stage", TUNING.DIMENSIONAL_RIFTS.STAGES[next_stage].AMBIENT_INTENSITY)
         inst.SoundEmitter:PlaySound("rifts2/shadow_rift/groundcrack_expand")
 
         if next_stage < TUNING.RIFT_SHADOW1_MAXSTAGE then
             if not inst.components.timer:TimerExists("trynextstage") then
-                inst.components.timer:StartTimer("trynextstage", GetStageUpTime())
+                inst.components.timer:StartTimer("trynextstage", GetStageUpTime(inst))
             end
         else
             inst.components.timer:StopTimer("trynextstage")
@@ -117,100 +102,20 @@ local function ClosePortal(inst)
     end
 end
 
-local PORTALLOOT_TIMER_NAME = "spawnportalloot_tick"
-local STARTEVENT_TIMER_NAME = "startportalevent"
-local FIREEVENT_TIMER_NAME = "fireportalevent"
-
-local FIREEVENT_TIME = 3
-
--- We weight in some FX loot here as well, for some presentation and
--- to break up the spawn of objects with behaviour.
-local PORTAL_LOOT_PREFABS =
-{
-    nanotech                            = 5.0,
-    petals                      		= "MONKEYISLAND_PORTAL_BANANABUSHWEIGHT",
-    trinket_4                     		 = "MONKEYISLAND_PORTAL_MONKEYTAILWEIGHT",
-	rarttaniumore                       = "MONKEYISLAND_PORTAL_LIGHTCRABWEIGHT",
-    monkeyisland_portal_fxloot          = 10.0,
-    moonrocknugget                      = "MONKEYISLAND_PORTAL_PALMCONE_SEEDWEIGHT",
-    hound_robomutt                       = "MONKEYISLAND_PORTAL_POWDERMONKEYWEIGHT",
-    wetgoop                             = 5.0,
-    twigs                               = 5.0,
-}
-
-local PORTAL_LOOT_FXYOFFSET =
-{
-    nanotech        = 0.25,
-    petals 			 = 0.40,
-    trinket_4 		 = 0.40,
-    rarttaniumore   = 0.25,
-    moonrocknugget   = 0.25,
-    hound_robomutt   = 1.80,
-    wetgoop           = 0.25,
-    twigs           = 0.25,
-}
-
-local LOOT_LIGHT_OVERRIDE_AMOUNT = 0.6
-
---------------------------------------------------------------------------------
--- Follow FX --
---------------------------------------------------------------------------------
-local function follow_fx_finish(fx)
-    fx.AnimState:PlayAnimation("idle_pst")
-    fx:ListenForEvent("animover", fx.Remove)
-end
-
-local function followfx_fn()
-    local inst = CreateEntity("MonkeyIslandPortalLoot.SpawnFollowFX")
-
-    inst.entity:AddTransform()
-    inst.entity:AddAnimState()
-    inst.entity:AddNetwork()
-
-    inst:AddTag("FX")
-    inst:AddTag("NOBLOCK")
-    inst:AddTag("NOCLICK")
-
-    inst.AnimState:SetBank("monkey_island_portal_fx")
-    inst.AnimState:SetBuild("monkey_island_portal_fx")
-    inst.AnimState:PlayAnimation("idle_loop", true)
-
-    inst.AnimState:SetFinalOffset(1)
-    inst.AnimState:SetScale(0.65, 0.65)
-    inst.AnimState:SetMultColour(1, 1, 1, 0.4)
-    inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
-    inst.AnimState:SetLightOverride(LOOT_LIGHT_OVERRIDE_AMOUNT)
-
-    inst.entity:SetPristine()
-    if not TheWorld.ismastersim then
-        return inst
-    end
-
-    inst.persists = false
-
-    inst.fx_len = inst.AnimState:GetCurrentAnimationLength()
-    inst:DoTaskInTime(inst.fx_len, follow_fx_finish)
-
-    return inst
-end
---------------------------------------------------------------------------------
-
 local function cleanup_outofscope_loot(inst)
-    -- If loot has gone invalid or too far away, remove it.
     for i = #inst._loot, 1, -1 do
         local loot = inst._loot[i]
         if loot == nil or not loot:IsValid()
                 or loot:IsInLimbo()
-                or not inst:IsNear(loot, TUNING.MONKEYISLAND_PORTAL_LOOTMAXDST) then
+                or not inst:IsNear(loot, TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].MAXLOOT) then
             table.remove(inst._loot, i)
         end
     end
 end
 
-local VERTICAL_FLING_OFFSET = Vector3(0, 0, 0)
 local function fling_portal_loot(inst, loot_to_drop)
     local portal_pos = inst:GetPosition()
-    local fling_pos = portal_pos + VERTICAL_FLING_OFFSET
+    local fling_pos = portal_pos
 
     if loot_to_drop.components.embarker == nil then
         inst.SoundEmitter:PlaySound("monkeyisland/portal/spit_item")
@@ -230,34 +135,6 @@ local function fling_portal_loot(inst, loot_to_drop)
     end
 end
 
-local function spawn_real_loot(inst)
-    -- Rebuild the table here each time in case the tuning variables change.
-    local loot_to_test = {}
-    for loot_prefab_to_test, chance in pairs(PORTAL_LOOT_PREFABS) do
-        loot_to_test[loot_prefab_to_test] = (type(chance) == "string" and TUNING[chance]) or chance
-    end
-    local loot_prefab = weighted_random_choice(loot_to_test)
-
-    local loot_to_drop = SpawnPrefab(loot_prefab)
-    if loot_to_drop == nil then
-        return nil
-    end
-
-    table.insert(inst._loot, loot_to_drop)
-
-    fling_portal_loot(inst, loot_to_drop)
-
-    return loot_to_drop
-end
-
-local function spawn_fx_loot(inst)
-    local loot_fx = SpawnPrefab("monkeyisland_portal_fxloot")
-
-    inst.components.lootdropper:FlingItem(loot_fx, inst:GetPosition() + VERTICAL_FLING_OFFSET)
-
-    return loot_fx
-end
-
 local function reset_attach_target_after_light(inst)
     inst.AnimState:SetLightOverride(0)
     inst:RemoveTag("outofreach")
@@ -265,33 +142,53 @@ end
 
 local function attach_light_fx(attach_target)
     local spawn_fx = SpawnPrefab("monkeyisland_portal_lootfollowfx")
-    spawn_fx.Transform:SetPosition(0, PORTAL_LOOT_FXYOFFSET[attach_target.prefab] or 0, 0)
+    spawn_fx.Transform:SetPosition(0, 0, 0)
     attach_target:AddChild(spawn_fx)
     if spawn_fx.fx_len then
         attach_target:AddTag("outofreach")
-        attach_target.AnimState:SetLightOverride(LOOT_LIGHT_OVERRIDE_AMOUNT)
+        attach_target.AnimState:SetLightOverride(0.6)
         attach_target:DoTaskInTime(spawn_fx.fx_len, reset_attach_target_after_light)
     end
+end
+
+local function SpawnLoot(inst, isfxonly)
+    local loot_to_drop
+    if not isfxonly then
+        local loot_to_test = {}
+        for loot_prefab_to_test, chance in pairs(TUNING.DIMENSIONAL_RIFTS.LOOT_PREFABS) do
+            loot_to_test[loot_prefab_to_test] = (type(chance) == "string" and TUNING[chance]) or chance
+        end
+        local loot_prefab = weighted_random_choice(loot_to_test)
+
+        loot_to_drop = SpawnPrefab(loot_prefab)
+        if loot_to_drop == nil then
+            return nil
+        end
+
+        table.insert(inst._loot, loot_to_drop)
+
+        fling_portal_loot(inst, loot_to_drop)
+    else
+        loot_to_drop = SpawnPrefab("monkeyisland_portal_fxloot")
+
+        inst.components.lootdropper:FlingItem(loot_to_drop, inst:GetPosition())
+    end
+    if loot_to_drop then
+        inst.SoundEmitter:PlaySound("monkeyisland/portal/spit_item")
+        attach_light_fx(loot_to_drop)
+    end
+    return loot_to_drop
 end
 
 local function try_portal_spawn(inst)
     cleanup_outofscope_loot(inst)
 
-    local loot_to_drop = (#inst._loot < TUNING.MONKEYISLAND_PORTAL_MAXLOOT and spawn_real_loot(inst))
-        or spawn_fx_loot(inst)
-
-    if loot_to_drop ~= nil then
-        inst.SoundEmitter:PlaySound("monkeyisland/portal/spit_item")
-        attach_light_fx(loot_to_drop)
-    end
+    SpawnLoot(inst, #inst._loot < TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].MAXLOOT)
 end
 
---------------------------------------------------------------------------------
-
 local function on_cycles_changed(inst, cycles)
-    if TUNING.MONKEYISLAND_PORTAL_ENABLED and
-            not inst.components.timer:TimerExists(STARTEVENT_TIMER_NAME) then
-        inst.components.timer:StartTimer(STARTEVENT_TIMER_NAME, TUNING.TOTAL_DAY_TIME / 2)
+    if not inst.components.timer:TimerExists("startportalevent") then
+        inst.components.timer:StartTimer("startportalevent", TUNING.TOTAL_DAY_TIME / 2)
     end
 end
 
@@ -304,10 +201,6 @@ local function spawn_event_loot(inst, loot_prefab)
         inst.SoundEmitter:PlaySound("monkeyisland/portal/spit_item")
         attach_light_fx(loot)
     end
-end
-
-local function enable_trading(inst)
-    inst._event_is_busy = false
 end
 
 local function fire_portal_event(inst)
@@ -326,82 +219,29 @@ local function fire_portal_event(inst)
     }
     shuffleArray(portal_event_spawns)
 
-    -- Being explicit that we want to reference i after the loop, so we can
-    -- identify when all of the event objects have finished spawning.
     local i = 1
     while i <= #portal_event_spawns do
         inst:DoTaskInTime(10*(i+1)*FRAMES, spawn_event_loot, portal_event_spawns[i])
         i = i + 1
     end
-
-    inst:DoTaskInTime(10*(i+2)*FRAMES, enable_trading)
 end
 
 local function start_portal_event(inst)
-    if not TUNING.MONKEYISLAND_PORTAL_ENABLED then
-        return
-    end
-
-    local do_event = false
-    local px, py, pz = inst.Transform:GetWorldPosition()
-    for _, player in ipairs(AllPlayers) do
-        if player:GetDistanceSqToPoint(px, py, pz) < 400 then
-            do_event = true
-            break
-        end
-    end
-    if not do_event then
-        return
-    end
-
-    inst._event_is_busy = true
-
-    -- If the event was triggered in a non-timer way, clear the timer
-    -- so we don't do it again until the next day.
-    if inst.components.timer:TimerExists(STARTEVENT_TIMER_NAME) then
-        inst.components.timer:StopTimer(STARTEVENT_TIMER_NAME)
+    if inst.components.timer:TimerExists("startportalevent") then
+        inst.components.timer:StopTimer("startportalevent")
     end
 
     inst.SoundEmitter:PlaySound("monkeyisland/portal/buildup_burst")
-    inst.components.timer:StartTimer(FIREEVENT_TIMER_NAME, FIREEVENT_TIME)
+    inst.components.timer:StartTimer("fireportalevent", 3)
 end
-
---------------------------------------------------------------------------------
-local EVENT_TRIGGER_TIME = 3
-local function portal_on_near(inst, player)
-    -- If we're waiting on an event timer, try to fire it sooner.
-    local time_left = inst.components.timer:GetTimeLeft(STARTEVENT_TIMER_NAME)
-    if time_left ~= nil and time_left > EVENT_TRIGGER_TIME then
-        inst.components.timer:SetTimeLeft(STARTEVENT_TIMER_NAME, EVENT_TRIGGER_TIME)
-    end
-end
-
---------------------------------------------------------------------------------
-local function able_to_accept_trade_test(inst, item, giver)
-    if inst._event_is_busy then
-        return false, "BUSY"
-    elseif not item:HasTag("moonstorm_spark") then
-        return false, "GENERIC"
-    else
-        return true
-    end
-end
-
-local function on_accept_item(inst, giver, item)
-    start_portal_event(inst)
-end
-
---------------------------------------------------------------------------------
 
 local function OnTimerDone(inst, data)
-    if data.name == PORTALLOOT_TIMER_NAME then
+    if data.name == "spawnportalloot_tick" then
         try_portal_spawn(inst)
-
-        -- The portal loot timer is repeating!
-        inst.components.timer:StartTimer(PORTALLOOT_TIMER_NAME, TUNING.MONKEYISLAND_PORTAL_SPEWTIME)
-    elseif data.name == STARTEVENT_TIMER_NAME then
+        inst.components.timer:StartTimer("spawnportalloot_tick", TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].LOOTSPAWNTIME)
+    elseif data.name == "startportalevent" then
         start_portal_event(inst)
-    elseif data.name == FIREEVENT_TIMER_NAME then
+    elseif data.name == "fireportalevent" then
         fire_portal_event(inst)
     elseif data.name == "trynextstage" then
         inst:TryStageUp()
@@ -414,8 +254,6 @@ local function OnTimerDone(inst, data)
     end
 end
 
-----------------------------------------------------------------------------------
-
 local function CreateParticleFx(inst)
     local fx = SpawnPrefab("dimensional_rift_fx")
     inst:AddChild(fx)
@@ -423,23 +261,8 @@ local function CreateParticleFx(inst)
     return fx
 end
 
-local function ParticlePlayStage(inst, stage, load)
-    if load then
-        inst.AnimState:PlayAnimation("particle_"..stage.."_loop", true)
-    else
-        inst.AnimState:PlayAnimation("particle_"..stage.."_pre")
-        inst.AnimState:PushAnimation("particle_"..stage.."_loop", true)
-    end
-end
-
-local function ParticleDisappear(inst)
-    inst.AnimState:PlayAnimation("particle_disappear")
-end
-
---------------------------------------------------------------------------------
-
 local function OnPortalSleep(inst)
-    inst.SoundEmitter:KillSound(AMBIENT_SOUND_LOOP_NAME)
+    inst.SoundEmitter:KillSound("shadowrift_portal_ambience")
 
 	if inst._fx then
         inst._fx:Remove()
@@ -447,14 +270,13 @@ local function OnPortalSleep(inst)
         inst.highlightchildren = nil
     end
 
-    inst.components.timer:PauseTimer(PORTALLOOT_TIMER_NAME)
-
+    inst.components.timer:PauseTimer("spawnportalloot_tick")
 end
 
 local function OnPortalWake(inst)
-    inst.components.timer:ResumeTimer(PORTALLOOT_TIMER_NAME)
-    inst.SoundEmitter:PlaySound(AMBIENT_SOUND_PATH, AMBIENT_SOUND_LOOP_NAME)
-    inst.SoundEmitter:SetParameter(AMBIENT_SOUND_LOOP_NAME, AMBIENT_SOUND_PARAM_NAME, AMBIENT_SOUND_STAGE_TO_INTENSITY[inst._stage])
+    inst.components.timer:ResumeTimer("spawnportalloot_tick")
+    inst.SoundEmitter:PlaySound("rifts2/shadow_rift/shadowrift_portal_allstage", "shadowrift_portal_ambience")
+    inst.SoundEmitter:SetParameter("shadowrift_portal_ambience", "stage",TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].AMBIENT_INTENSITY)
 	
 	if not inst._fx then
         inst._fx = CreateParticleFx(inst)
@@ -462,8 +284,6 @@ local function OnPortalWake(inst)
         inst.highlightchildren = {inst._fx}
     end
 end
-
---------------------------------------------------------------------------------
 
 local function OnPortalSave(inst, data)
     data.stage = inst._stage
@@ -491,7 +311,7 @@ local function OnPortalLoad(inst, data)
             inst.components.timer:StopTimer("trynextstage")
         end
 
-        inst.Physics:SetCylinder(PHYSICS_SIZE_BY_STAGE[inst._stage], 6)
+        inst.Physics:SetCylinder(TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].PHYSICS, 6)
 
         if data.finished then
             inst.AnimState:PlayAnimation("disappear")
@@ -519,11 +339,11 @@ local function OnPortalLoadPostPass(inst, newents, data)
 
     inst.components.timer:StopTimer("initialize")
 
-    inst.SoundEmitter:KillSound(AMBIENT_SOUND_LOOP_NAME)
+    inst.SoundEmitter:KillSound("shadowrift_portal_ambience")
 
     if not inst:IsAsleep() then
-        inst.SoundEmitter:PlaySound(AMBIENT_SOUND_PATH, AMBIENT_SOUND_LOOP_NAME)
-        inst.SoundEmitter:SetParameter(AMBIENT_SOUND_LOOP_NAME, AMBIENT_SOUND_PARAM_NAME, AMBIENT_SOUND_STAGE_TO_INTENSITY[inst._stage])
+        inst.SoundEmitter:PlaySound("rifts2/shadow_rift/shadowrift_portal_allstage", "shadowrift_portal_ambience")
+        inst.SoundEmitter:SetParameter("shadowrift_portal_ambience", "stage", TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].AMBIENT_INTENSITY)
     end
 
     if inst._stage == TUNING.RIFT_SHADOW1_MAXSTAGE then
@@ -542,7 +362,7 @@ local function OnPortalLongUpdate(inst, dt)
     local trynextstage_timeleft = timer:GetTimeLeft("trynextstage")
     
     if trynextstage_timeleft ~= nil then
-        local stageup_time = GetStageUpTime()
+        local stageup_time = GetStageUpTime(inst)
 
         if dt >= stageup_time then
             inst:TryStageUp()
@@ -551,8 +371,6 @@ local function OnPortalLongUpdate(inst, dt)
         end
     end
 end
-
---------------------------------------------------------------------------------
 
 local function portalfn()
     local inst = CreateEntity()
@@ -564,8 +382,8 @@ local function portalfn()
     inst.entity:AddLight()
     inst.entity:AddNetwork()
 
-    MakeObstaclePhysics(inst, PHYSICS_SIZE_BY_STAGE[1])
-    inst.Physics:SetCylinder(PHYSICS_SIZE_BY_STAGE[1], 6)
+    MakeObstaclePhysics(inst, TUNING.DIMENSIONAL_RIFTS.STAGES[1].PHYSICS)
+    inst.Physics:SetCylinder(TUNING.DIMENSIONAL_RIFTS.STAGES[1].PHYSICS, 6)
 
     inst.MiniMapEntity:SetIcon("dimensional_rift.png")
     inst.MiniMapEntity:SetPriority(1)
@@ -599,7 +417,6 @@ local function portalfn()
     inst:AddTag("dimensional_rift")
 
     inst._loot = {}
-    inst._event_is_busy = false
 
     inst.entity:SetPristine()
 	
@@ -615,28 +432,17 @@ local function portalfn()
 
     inst:AddComponent("inspectable")
 
-    ----------------------------------------------------------
     inst:AddComponent("lootdropper")
-    inst.components.lootdropper.min_speed = 4
-    inst.components.lootdropper.max_speed = 6
-    inst.components.lootdropper.y_speed_variance = 2
-    ----------------------------------------------------------
-    inst:AddComponent("playerprox")
-    inst.components.playerprox:SetDist(10, 15)
-    inst.components.playerprox:SetOnPlayerNear(portal_on_near)
 
     inst:AddComponent("timer")
     inst.components.timer:StartTimer("initialize", 0)
     inst.components.timer:StartTimer("close", TUNING.RIFT_SHADOW1_CLOSE_TIME)
-    inst.components.timer:StartTimer("trynextstage", GetStageUpTime())
-    inst.components.timer:StartTimer(PORTALLOOT_TIMER_NAME, TUNING.MONKEYISLAND_PORTAL_SPEWTIME)
+    inst.components.timer:StartTimer("trynextstage", GetStageUpTime(inst))
+    inst.components.timer:StartTimer("spawnportalloot_tick", TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].LOOTSPAWNTIME)
 
     inst:WatchWorldState("cycles", on_cycles_changed)
 
     inst:ListenForEvent("timerdone", OnTimerDone)
-
-	inst.Test = try_portal_spawn
-    inst._TestPortalEvent = start_portal_event
 
     inst.OnEntitySleep = OnPortalSleep
     inst.OnEntityWake = OnPortalWake
@@ -653,6 +459,18 @@ local function portalfn()
     return inst
 end
 
+local function ParticlePlayStage(inst, stage, load)
+    if load then
+        inst.AnimState:PlayAnimation("particle_"..stage.."_loop", true)
+    else
+        inst.AnimState:PlayAnimation("particle_"..stage.."_pre")
+        inst.AnimState:PushAnimation("particle_"..stage.."_loop", true)
+    end
+end
+
+local function ParticleDisappear(inst)
+    inst.AnimState:PlayAnimation("particle_disappear")
+end
 
 local function portalfxfn()
     local inst = CreateEntity()
@@ -661,11 +479,10 @@ local function portalfxfn()
     inst.entity:AddAnimState()
     inst.entity:AddNetwork()
 
-    local animstate = inst.AnimState
-    animstate:SetBank("dimensional_rift")
-    animstate:SetBuild("dimensional_rift")
-    animstate:PlayAnimation("particle_1_pre")
-    animstate:PushAnimation("particle_1_loop", true)
+    inst.AnimState:SetBank("shadowrift_portal")
+    inst.AnimState:SetBuild("dimensional_rift")
+    inst.AnimState:PlayAnimation("particle_1_pre")
+    inst.AnimState:PushAnimation("particle_1_loop", true)
 
     inst.AnimState:SetLightOverride(1)
 
@@ -684,17 +501,6 @@ local function portalfxfn()
 
     return inst
 end
-
-local rift_portal_defs = require("prefabs/rift_portal_defs")
-local RIFTPORTAL_FNS = rift_portal_defs.RIFTPORTAL_FNS
-local RIFTPORTAL_CONST = rift_portal_defs.RIFTPORTAL_CONST
-
-RIFTPORTAL_FNS.CreateRiftPortalDefinition("dimensional_rift", {
-    CustomAllowTest = function(_map, x, y, z)
-        return true
-    end,
-    Affinity = RIFTPORTAL_CONST.AFFINITY.NONE,
-})
 
 return Prefab("dimensional_rift",    portalfn,   assets, prefabs),
 	   Prefab("dimensional_rift_fx", portalfxfn, assets, prefabs)
