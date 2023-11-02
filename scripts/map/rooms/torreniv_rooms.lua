@@ -185,7 +185,7 @@
 			{
 				raritanium_crystals = 0.2,
 								
-				pond_cave = 0.1,
+				irradiated_pond = 0.1,
 				butterfly = .5,				
 				flower = .2,
 				luminoustree = 3,				
@@ -204,7 +204,7 @@
 
 			},
 			countprefabs= {
-			pond_cave = 1
+			irradiated_pond = 1
 			},
 		},
 	})	
