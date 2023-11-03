@@ -113,6 +113,8 @@ local master_postinit = function(inst)
 	
 	inst.soundsname = "wilson"
 	
+	inst.customidleanim = "idle_winona"
+	
 	inst.components.health:SetMaxHealth(TUNING.RATCHET_HEALTH)
 	inst.components.hunger:SetMax(TUNING.RATCHET_HUNGER)
 	inst.components.sanity:SetMax(TUNING.RATCHET_SANITY)

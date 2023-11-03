@@ -118,6 +118,8 @@ local master_postinit = function(inst)
 	
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
 	inst.soundsname = "wilson"
+	
+	inst.customidleanim = "idle_wilson"
 
 	inst.components.health:SetMaxHealth(TUNING.NEFARIOUS_HEALTH)
 	inst.components.hunger:SetMax(TUNING.NEFARIOUS_HUNGER)

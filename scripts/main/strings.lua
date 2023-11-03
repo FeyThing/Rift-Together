@@ -47,7 +47,7 @@ local strings = {
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
 				RARITANIUMORE = "Hey, this could help!",
-				RARITANIUM_BAR= "Now it's more useful!",
+				RARITANIUM_BAR= "Now it's useful!",
 				RARITANIUM_CRYSTALS = "Looks like some sort of crystal formation.",
 				SCRAPMETAL = "Pieces of metal litter the ground.",
 				BARREL_RADIOACTIVE = "I don't want to get too close.",
@@ -55,6 +55,7 @@ local strings = {
 				TORREN_GRASS = "It's a strange patch of grass.",
 				TORREN_CACTUS = "It's a large cactus.",
 				LUMINOUSTREE = "It's a glowing tree.",
+				LUMINOUSTREE_SAPLING = "It's starting to grow.",
 				LUMINOUS_FRUIT = "Doesn't look too appetizing.",
 				LUMINOUS_FRUIT_COOKED = "It may taste better now that it's cooked.",
 
@@ -123,6 +124,7 @@ local strings = {
 		TORREN_GRASS = "Alien Grass",
 		TORREN_CACTUS = "Cactus",
 		LUMINOUSTREE = "Luminous Tree",
+		LUMINOUSTREE_SAPLING = "Luminous Sapling",
 		LUMINOUS_FRUIT = "Luminous Fruit",
 		LUMINOUS_FRUIT_COOKED = "Roasted Luminous Fruit",
 

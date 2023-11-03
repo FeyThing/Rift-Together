@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 16/30
+Progress 17/30
 
 
 
@@ -34,7 +34,7 @@ Art
 
 Raritanium Weapons and equipment
 
-- 1 slot modular sword which can only break nanotech crates, metal objects and is extra effective against robots or things with chess tag.(done)
+- 1 slot modular sword which is extra effective against robots or things with chess tag.(done)
 - Change commando helmet into a respirator (done)
 
 Nef annihilator Animations
@@ -45,13 +45,13 @@ Nef annihilator Animations
 
 Canyon Biome
 
-- Add biolum trees with temp rad curing food.(Mostly-Complete. Needs slight polishing)
+- Add biolum trees with temp rad curing food.(done) 
 - Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
-- Replace ponds with new ponds with new fishing possibilities for nanotech and raritanium renewal (done)
+- Replace ponds with new ponds with new fishing possibilities for nanotech and raritanium renewal(done)
 
 Junk Biome
 
-- Add Abandoned houses 
+- Add Abandoned houses (Starting)
 - Add Vullard NPC setpiece with "Gone dumpster diving sign" and move smelter to said setpiece 
 - Make new art for Vullard Lamp post
 
@@ -76,7 +76,7 @@ Rifts
 Sound
 
 - Custom sound for Nef
-- Custom sound for Ratchet
+- Custom sound for Ratchet (In Progress)
 - Custom sound for Qwark
 
 
@@ -91,8 +91,16 @@ Characters
 
 Main Logo
 
-- Make animated Rift Together logo
+- Make animated Rift Together logo (done but not animated yet)
 
+
+-----------
+Bugs
+
+- Outline around art when compiling from spriter. All art needs a quick pass through textool to fix.
+- Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
+- RadiationManager crashes as nil  when starting up a server with caves
+- Barrels art needs to be fixed and edited to be less crooked in a balanced way
 
 
 -----------

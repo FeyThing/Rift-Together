@@ -38,6 +38,7 @@ return {
 		"dimensional_rift",
 		"radiation_dust",
 		"irradiated_pond",
+		"luminoustree_sapling",
 	},
 
 	Assets = {

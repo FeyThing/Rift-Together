@@ -7,16 +7,16 @@ local assets =
 
 local prefabs =
 {
----sapling not done
-    --"luminous_fruit_sapling",
+
+    "luminoustree_sapling",
     "luminous_fruit_cooked",
     "spoiled_food",
    
 }
 
----Not finished
---[[local function plant(pt, growtime)
-    local sapling = SpawnPrefab("luminous_fruit_sapling")
+
+local function plant(pt, growtime)
+    local sapling = SpawnPrefab("luminoustree_sapling")
     sapling:StartGrowing()
     sapling.Transform:SetPosition(pt:Get())
     sapling.SoundEmitter:PlaySound("dontstarve/wilson/plant_tree")
@@ -37,7 +37,7 @@ local function OnLoad(inst, data)
     if data and data.growtime then
         plant(inst, data.growtime)
     end
-end]]
+end
 
 local function fn()
     local inst = CreateEntity()
@@ -97,16 +97,16 @@ local function fn()
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
-    --[[inst:AddComponent("deployable")
+    inst:AddComponent("deployable")
     inst.components.deployable:SetDeployMode(DEPLOYMODE.PLANT)
-    inst.components.deployable.ondeploy = ondeploy]]
+    inst.components.deployable.ondeploy = ondeploy
 
     inst:AddComponent("forcecompostable")
     inst.components.forcecompostable.brown = true
 
     MakeHauntableLaunchAndPerish(inst)
 
-    --inst.OnLoad = OnLoad
+    inst.OnLoad = OnLoad
 
     return inst
 end
@@ -167,5 +167,5 @@ local function cooked()
 end
 
 return Prefab("luminous_fruit", fn, assets, prefabs),
-       Prefab("luminous_fruit_cooked", cooked, assets)
-       --MakePlacer("luminous_fruit_placer", "luminous_fruit", "luminous_fruit", "idle_planted")
+       Prefab("luminous_fruit_cooked", cooked, assets),
+       MakePlacer("luminous_fruit_placer", "luminous_fruit", "luminous_fruit", "idle_planted")
