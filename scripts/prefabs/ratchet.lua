@@ -111,7 +111,9 @@ local master_postinit = function(inst)
 	inst.level = 0
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
 	
-	inst.soundsname = "wilson"
+	inst.soundsname = "ratchetevent"
+	
+	inst.talker_path_override = "ratchet/"
 	
 	inst.customidleanim = "idle_winona"
 	

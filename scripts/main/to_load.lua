@@ -91,6 +91,9 @@ return {
 
 				
 		--sound
+		Asset("SOUNDPACKAGE", "sound/ratchet.fev"),
+		Asset("SOUND", "sound/ratchet.fsb"),
+		
 		-- Asset("SOUNDPACKAGE", "sound/radiation.fev"),
 		-- Asset("SOUND", "sound/radiation.fsb"),
 				
