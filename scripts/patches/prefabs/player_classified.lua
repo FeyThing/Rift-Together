@@ -1,3 +1,8 @@
+local function SetDirty(netvar, val)
+    --Forces a netvar to be dirty regardless of value
+    netvar:set_local(val)
+    netvar:set(val)
+end
 
 local function OnRadiationDelta(parent, data)
     if data.overtime then
@@ -37,7 +42,7 @@ local function RegisterNetListeners_mastersim(inst)
 end
 
 local function RegisterNetListeners_local(inst)
-    inst:ListenForEvent("radiationdirtydirty", OnRadiationDirty)
+    inst:ListenForEvent("radiationdirty", OnRadiationDirty)
 end
 
 local function RegisterNetListeners(inst)

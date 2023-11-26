@@ -94,14 +94,14 @@ local function fn()
 
     local function emit_fn()
         local x, y, z = inst.Transform:GetWorldPosition()
-        local maxradiation = TheWorld.components.radiation_manager:GetRadiationAtPoint(x, y, z)
+        local radiation_comp = TheWorld.net.components.radiation_particle_manager 
         local px, py, pz = emitter_shape()
         py = py + halfheight -- otherwise the particles appear under the ground
         x = x + px
         z = z + pz
 
         -- don't spawn particles over water
-        local radiation = TheWorld.components.radiation_manager:GetRadiationAtPoint(x, y, z)
+        local radiation = radiation_comp and radiation_comp:GetRadiationAtPoint(x, y, z) or -1
         if radiation > 0 then
             local vx = .01 * (math.random() - .5) * UnitRand()
             local vy = 0
@@ -139,7 +139,9 @@ local function fn()
     inst.time = 0
     inst.interval = 0
 
-    EmitterManager:AddEmitter(inst, nil, updateFunc)
+    if not TheNet:IsDedicated() then
+        EmitterManager:AddEmitter(inst, nil, updateFunc)
+    end
 
     function inst:PostInit()
         local dt = 1 / 30

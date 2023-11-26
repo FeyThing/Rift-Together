@@ -58,6 +58,36 @@ local PATCHES =
 }
 
 
+local network_postinits = {}
+local done_inits = {}
+
+local _MakeWorldNetwork = require("prefabs/world_network")
+local function MakeWorldNetwork(...)
+	local inst = _MakeWorldNetwork(...)
+	local prefab = inst.prefab or inst.name
+
+	if not done_inits[prefab] then
+		done_inits[prefab] = true
+		AddPrefabPostInit(prefab, function(inst)
+			for _, v in ipairs(network_postinits) do
+				v(inst)
+			end
+		end)
+	end
+
+	return inst
+end
+package.loaded["prefabs/world_network"] = MakeWorldNetwork
+
+function AddNetworkPostInit(fn)
+	table.insert(network_postinits, fn)
+end
+
+env.AddNetworkPostInit = AddNetworkPostInit
+local GenericNetworkFn = require("patches/prefabs/world_network")
+AddNetworkPostInit(GenericNetworkFn)
+
+
 for i, prefab in ipairs(PATCHES.PLAYERS) do
 	PATCHES.PREFABS[prefab] = prefab
 end

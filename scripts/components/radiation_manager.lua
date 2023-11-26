@@ -24,6 +24,7 @@ self.inst = inst
 --------------------------------------------------------------------------
 
 local _world = TheWorld
+local particle_mamager
 local _map = _world.Map
 
 local _radiationgrid --this grid contains the radiation
@@ -35,11 +36,13 @@ local _radiationgrid --this grid contains the radiation
 local function SetRadiation(index, radiation)
 	local prev_radiation = _radiationgrid:GetDataAtIndex(index)
 	local new_radiation = Clamp(radiation, TheWorld.state.wetness, TUNING.SOIL_MAX_MOISTURE_VALUE) or 0
-
+	if not particle_mamager then
+		particle_mamager = TheWorld.net.components.radiation_particle_manager
+	end
 	if prev_radiation ~= new_radiation then
 		_radiationgrid:SetDataAtIndex(index, new_radiation)
-
-		if new_radiation == 0 or prev_radiation == 0 then
+		if particle_mamager then
+			particle_mamager.update_values:set(DataDumper(_radiationgrid, nil, true))
 		end
 	end
 end
@@ -106,6 +109,10 @@ end
 --------------------------------------------------------------------------
 --[[ Save/Load ]]
 --------------------------------------------------------------------------
+
+function self:Grid()
+	return _radiationgrid
+end
 
 function self:OnSave()
 	return ZipAndEncodeSaveData(_radiationgrid:Save())

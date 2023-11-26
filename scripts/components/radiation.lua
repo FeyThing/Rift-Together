@@ -262,8 +262,8 @@ function Radiation:OnLoad(data)
 
     if data.current ~= nil then
         self.current = data.current
-        self:DoDelta(0)
     end
+    self:DoDelta(1)
 end
 
 function Radiation:TransferComponent(newinst)

@@ -1,19 +1,27 @@
+local function SetDirty(netvar, val)
+    --Forces a netvar to be dirty regardless of value
+    netvar:set_local(val)
+    netvar:set(val)
+end
+
 local Radiation = Class(function(self, inst)
     self.inst = inst
 
     self._isdying = net_bool(inst.GUID, "radiation._isdying")
     if inst:HasTag('player') then
-        self.snowfx = SpawnPrefab("radiation_dust")
-        self.snowfx.entity:SetParent(inst.entity)
-        self.snowfx.particles_per_tick = 200
-        self.snowfx:PostInit()
+        self.radfx = SpawnPrefab("radiation_dust")
+        self.radfx.entity:SetParent(inst.entity)
+        self.radfx.particles_per_tick = 200
+        self.radfx:PostInit()
     end
 
-    if TheWorld.ismastersim then
-        self.classified = inst.player_classified
-    elseif self.classified == nil and inst.player_classified ~= nil then
-        self:AttachClassified(inst.player_classified)
-    end
+    self.inst:DoTaskInTime(0, function()
+        if TheWorld.ismastersim then
+            self.classified = inst.player_classified
+        elseif self.classified == nil and inst.player_classified ~= nil then
+            self:AttachClassified(inst.player_classified)
+        end
+    end)
 end)
 
 --------------------------------------------------------------------------
@@ -59,13 +67,13 @@ end
 
 function Radiation:SetCurrent(current)
     if self.classified ~= nil then
-        self.classified:SetValue("currentradiation", current)
+        self.classified.currentradiation:set(current)
     end
 end
 
 function Radiation:SetMax(max)
     if self.classified ~= nil then
-        self.classified:SetValue("maxradiation", max)
+        self.classified.maxradiation:set(max)
     end
 end
 
