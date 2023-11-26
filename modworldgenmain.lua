@@ -26,13 +26,11 @@ end
 
 if GetModConfigData("Raritanium Crystals") == 1 then
 	GenerateCrystalsForRoom("Badlands", 0.125)
-	GenerateCrystalsForRoom("BGBadlands", 0.110)
 	GenerateCrystalsForRoom("BuzzardyBadlands", 0.095)
 	GenerateCrystalsForRoom("Lightning", 0.075)	
 	GenerateCrystalsForRoom("MoonIsland_Mine", 0.125)
 	GenerateCrystalsForRoom("MoonIsland_Baths", 0.080)
 	GenerateCrystalsForRoom("MoonIsland_Meadows", 0.055)
-	GenerateCrystalsForRoom("BGRocky", 0.055)
 	GenerateCrystalsForRoom("Rocky", 0.035)
 end
 
@@ -46,9 +44,7 @@ local function GenerateForRoom(room, factor)
 end
 
 if GetModConfigData("Nanotech Crates") == 1 then
-	GenerateForRoom("BGMarsh", 0.125)
-	GenerateForRoom("Marsh", 0.090)
-	GenerateForRoom("BGCrappyForest", 0.025)	
+	GenerateForRoom("Marsh", 0.090)	
 	GenerateForRoom("CrappyForest", 0.015)			
 end
 
@@ -57,7 +53,7 @@ end
 local TORRENIV_GROUND_TYPES =
 {
     WORLD_TILES.IMPASSABLE, WORLD_TILES.GRASS, WORLD_TILES.FOREST, WORLD_TILES.ROCKY, WORLD_TILES.DIRT, -- 1, 2, 3, 4, 5
-    WORLD_TILES.JUNK, WORLD_TILES.OCEAN_COASTAL, WORLD_TILES.OCEAN_COASTAL_SHORE, WORLD_TILES.OCEAN_RUST, -- 6, 7, 8, 9
+    WORLD_TILES.JUNK, WORLD_TILES.OCEAN_COASTAL, WORLD_TILES.OCEAN_COASTAL_SHORE, WORLD_TILES.OCEAN_RUST, WORLD_TILES.METALPLATFORM -- 6, 7, 8, 9, 10
 }
 
 
@@ -76,7 +72,10 @@ for k, v in pairs(filters) do
 end
 
 Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
+Layouts["lonely_depot"] = StaticLayout.Get("map/static_layouts/lonely_depot")
+
 Layouts["gunkywateringhole"].ground_types = TORRENIV_GROUND_TYPES
+Layouts["lonely_depot"].ground_types = TORRENIV_GROUND_TYPES
 
 
 if GetModConfigData("Torren IV") == 1 then

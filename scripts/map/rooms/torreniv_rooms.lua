@@ -54,7 +54,7 @@
 		contents = {
 			countprefabs= {
 				hound_robomuttherd = function() return math.random(1,2) end,
-				vullard_smelter = 1
+				barrel_radioactive = 2,
 			},
 			distributepercent = 0.07,
 			distributeprefabs =
@@ -73,6 +73,30 @@
 				torren_cactus = 0.33,
 				
 				lava_pond = .1,
+				junk_pillar = 1,
+				torrenivdesert_pillar = 0.15,
+				torrenivdesert_pillar_small = 0.5,
+				mud_puddle = 0.1,
+			},
+		},
+		
+	})
+	
+AddRoom("Torren IV Depot",  {
+		colour={r=0.3,g=0.2,b=0.1,a=0.3},
+		value = WORLD_TILES.JUNK_NOISE,
+		contents = {
+			countstaticlayouts={["lonely_depot"] = 1},
+			distributepercent = 0.07,
+			distributeprefabs =
+			{								
+				scraprock = 3,
+				scrapmetal = 0.6,
+				vullard_lamp = 0.1,
+				
+				torren_grass = 2,
+				torren_cactus = 0.33,
+				
 				junk_pillar = 1,
 				torrenivdesert_pillar = 0.15,
 				torrenivdesert_pillar_small = 0.5,
@@ -224,7 +248,7 @@ AddRoom("Torren IV Fertile",  {
 
 				torren_cactus = 0.33,
 				fireflies = 0.33,
-				torren_grass = .25,
+				torren_grass = .5,
 				succulent_plant = 0.3,
 				luminoustree = 6,				
 				

@@ -8,7 +8,8 @@ AddTask("Torren IV", {
 		level_set_piece_blocker = true,
 		room_tags = {"RoadPoison", "not_mainland", "Astral_1"},
 		room_choices={
-			["Torren IV"] = 2,			
+			["Torren IV"] = 2,
+			["Torren IV Depot"] = 1,			
 		},
 		room_bg=WORLD_TILES.JUNK,
 		background_room = "BG Torren IV",

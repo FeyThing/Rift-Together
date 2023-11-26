@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 19/30
+Progress 20/30
 
 
 
@@ -52,7 +52,7 @@ Canyon Biome
 Junk Biome
 
 - Add Abandoned houses (Starting)
-- Add Vullard NPC setpiece with "Gone dumpster diving sign" and move smelter to said setpiece 
+- Add Vullard NPC setpiece with "Gone scavenging sign" and move smelter to said setpiece (Starting) 
 - Make new art for Vullard Lamp post
 
 
@@ -66,7 +66,7 @@ Tiles
 
 - Create Murky Water Tile (done)
 - Make a new sand tile to replace the shipwrecked beach placeholder tile
-- Create a new metallic platform tile for the vullard npc to stand on when he is finished. (Starting)
+- Create a new metallic platform tile for the vullard npc to stand on when he is finished. (done)
 
 
 Rifts
@@ -95,13 +95,14 @@ Main Logo
 
 
 -----------
-Bugs
+Bugs to fix before release
 
 - Outline around art when compiling from spriter. All art needs a quick pass through textool to fix.
 - Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
-- RadiationManager crashes as nil  when starting up a server with caves.
 - Barrels art needs to be fixed and edited to be less crooked in a balanced way.
 - Ratchet's ears need to be touched up so they aren't floating when he peers downward.
+- Tile art too big, needs fixing.
+- Radiation starts at 100% then returns back to 0% upon world update/save in caves
 
 
 -----------

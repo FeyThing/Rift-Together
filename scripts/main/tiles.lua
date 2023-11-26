@@ -25,7 +25,7 @@ local TORRENIV_WAVETINTS =
 
 AddTile("OCEAN_RUST", "OCEAN",
     {
-		ground_name = "Hazardous Waste", 
+		ground_name = "Rusted Waves", 
 	},
     {
         name = "cave",
@@ -65,6 +65,29 @@ AddTile("OCEAN_TOXIC", "OCEAN",
     }
 )
 
+AddTile("METALPLATFORM", "LAND",
+	{
+		ground_name 	= "Metal Platform",
+	},
+	{
+		name			= "carpet",
+		noise_texture	= "levels/textures/ground_noise_metalplatform.tex",
+		runsound 		= "dontstarve/movement/run_marble",
+        walksound 		= "dontstarve/movement/walk_marble",
+		snowsound		= "dontstarve/movement/run_snow",
+		mudsound        = "dontstarve/movement/run_mud",
+		flooring = true,
+		hard			= true,
+		ocean_depth = "BASIC",
+		colors = TORRENIV_OCEAN_COLOR,
+	},
+	{
+		name 			= "map_edge",
+		noise_texture	= "levels/textures/mini_noise_metalplatform.tex",
+	}
+	
+)
+
 AddTile("JUNK", "LAND",
 	{
 		ground_name 	= "Junky Ground",
@@ -86,6 +109,7 @@ AddTile("JUNK", "LAND",
 	}
 	
 )
+
 
 AddTile("DESERTSAND", "LAND",
 	{
