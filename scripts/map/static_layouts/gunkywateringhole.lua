@@ -1,16 +1,16 @@
 return {
-  version = "1.9",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.9.2",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 11,
-  height = 9,
+  height = 11,
   tilewidth = 64,
   tileheight = 64,
   nextlayerid = 3,
-  nextobjectid = 15,
+  nextobjectid = 16,
   properties = {},
   tilesets = {
     {
@@ -25,7 +25,7 @@ return {
       x = 0,
       y = 0,
       width = 11,
-      height = 9,
+      height = 11,
       id = 1,
       name = "BG_TILES",
       class = "",
@@ -39,14 +39,14 @@ return {
       encoding = "lua",
       data = {
         0, 6, 0, 0, 0, 0, 0, 0, 0, 6, 6,
-        0, 6, 0, 9, 6, 0, 9, 9, 0, 6, 6,
-        6, 0, 9, 9, 9, 9, 9, 9, 9, 6, 0,
-        0, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0,
-        0, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0,
-        0, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0,
-        0, 9, 9, 9, 9, 9, 9, 9, 9, 9, 0,
-        0, 0, 9, 9, 9, 9, 9, 9, 9, 0, 6,
-        6, 6, 0, 9, 9, 9, 9, 9, 0, 6, 6,
+        0, 6, 0, 11, 6, 0, 11, 11, 0, 6, 6,
+        6, 0, 11, 11, 11, 11, 11, 11, 11, 6, 0,
+        0, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0,
+        0, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0,
+        0, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0,
+        0, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0,
+        0, 0, 11, 11, 11, 11, 11, 11, 11, 0, 6,
+        6, 6, 0, 11, 11, 11, 11, 11, 0, 6, 6,
         0, 6, 0, 0, 0, 0, 0, 0, 6, 0, 0
       }
     },
@@ -79,8 +79,8 @@ return {
         },
         {
           id = 4,
-          name = "Salt Stacks",
-          type = "saltstack_area",
+          name = "Drum",
+          type = "barrel_radioactive",
           shape = "rectangle",
           x = 385,
           y = 258,
@@ -92,8 +92,8 @@ return {
         },
         {
           id = 5,
-          name = "More Salt Stacks",
-          type = "saltstack_area",
+          name = "More Drums",
+          type = "barrel_radioactive",
           shape = "rectangle",
           x = 195,
           y = 380,
@@ -156,7 +156,7 @@ return {
           properties = {}
         },
         {
-          id = 9,
+          id = 11,
           name = "Big Pillar Once More",
           type = "torrenivdesert_pillar",
           shape = "rectangle",
@@ -190,6 +190,19 @@ return {
           y = 16,
           width = 35,
           height = 36,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 15,
+          name = "Dead Guy",
+          type = "skeleton",
+          shape = "rectangle",
+          x = 334,
+          y = 31,
+          width = 48,
+          height = 46,
           rotation = 0,
           visible = true,
           properties = {}

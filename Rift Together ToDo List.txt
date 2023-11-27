@@ -1,7 +1,7 @@
 Rift Together list before release.
 
 -----Note must at least get 80% done before release. 24/30 listed------
-Progress 20/30
+Progress 21/30
 
 
 
@@ -52,7 +52,7 @@ Canyon Biome
 Junk Biome
 
 - Add Abandoned houses (Starting)
-- Add Vullard NPC setpiece with "Gone scavenging sign" and move smelter to said setpiece (Starting) 
+- Add Vullard NPC setpiece with "Gone scavenging sign" and move smelter to said setpiece (done) 
 - Make new art for Vullard Lamp post
 
 
@@ -75,7 +75,7 @@ Rifts
 
 Sound
 
-- Custom sound for Nef (Should start after the houses and new tile is made for the setpiece) --bringing the progress to 22
+- Custom sound for Nef (Should start after the houses and new tile is made for the setpiece) --bringing the progress to 23
 - Custom sound for Ratchet (done) 
 - Custom sound for Qwark
 
@@ -100,9 +100,9 @@ Bugs to fix before release
 - Outline around art when compiling from spriter. All art needs a quick pass through textool to fix.
 - Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
 - Barrels art needs to be fixed and edited to be less crooked in a balanced way.
-- Ratchet's ears need to be touched up so they aren't floating when he peers downward.
 - Tile art too big, needs fixing.
 - Radiation starts at 100% then returns back to 0% upon world update/save in caves
+
 
 
 -----------
@@ -126,6 +126,10 @@ Items
 Armor
 
 - O2 mask (to slow radiation and provides some waterproofing)
+
+Animations
+
+- Drink animation -- Cause eating whole cans is weird :D
 
 
 Mechanics

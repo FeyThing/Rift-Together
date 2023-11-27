@@ -39,6 +39,7 @@ return {
 		"radiation_dust",
 		"irradiated_pond",
 		"luminoustree_sapling",
+		"barrel_spawner",
 	},
 
 	Assets = {
