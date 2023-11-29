@@ -20,8 +20,8 @@ local strings = {
 		nefarious = "Grim",
 	},
 	CHARACTERS = {
-		ratchet = require("speech_ratchet"),
-		nefarious = require("speech_nefarious"),
+		--RATCHET = require "speech_ratchet",
+		--NEFARIOUS = require "speech_nefarious",
 
 		GENERIC = {
 			DESCRIBE = {
@@ -66,13 +66,13 @@ local strings = {
 				VULLARD_LAMP = "Looks like someone made them with scrap.",
 				SCRAPROCK = "I hear something coming from it.",
 				JUNKPILE = "I should be careful touching it with bare hands.",
-				VULLARD_SMELTER = "That's incredibly hot! I could maybe make something with this.",
+				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
 			},
 			
 			ANNOUNCE_IRRITATED = "I feel sore.",
 			ANNOUNCE_PAIN = "My entire body hurts.",
 			ANNOUNCE_SUFFERING = "It's so painful.",
-			ANNOUNCE_DYING = "No! I must leave! I cannot take it anymore.",
+			ANNOUNCE_DYING = "I need medical attention.",
 		},
 
 		RATCHET = {
