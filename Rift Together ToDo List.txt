@@ -86,7 +86,7 @@ Characters
 - Remake Ratchet's character Art (done)
 - Touch up nefarious's character Art
 - Remake all big portraits
-- Write all character dialogue
+- Write all character dialogue (In progress) --Ratchet speech is mostly done, need to start on Nefarious
 
 
 Main Logo
