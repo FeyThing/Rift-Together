@@ -62,5 +62,24 @@ return function(self)
             local percent_Energy = self.owner.current_energy and (self.owner.current_energy:value())/TUNING.NEFARIOUS_ENERGY or 0
             self.energyhud:SetPercent(percent_Energy, TUNING.NEFARIOUS_ENERGY)
         end
+		if self.energyhud then
+			local currentPlaform = self.inst:GetCurrentPlatform()
+            if currentPlaform ~= nil and currentPlaform.components.healthsyncer ~= nil 
+                    and _G.KnownModIndex:IsModEnabled("workshop-376333686") then
+                        self.energyhud:SetPosition(-125,35,0)
+                    elseif _G.KnownModIndex:IsModEnabled("workshop-376333686") then
+                        self.energyhud:SetPosition(-62,-52,0)
+                    elseif currentPlaform ~= nil and currentPlaform.components.healthsyncer ~= nil then
+                        self.energyhud:SetPosition(-120, 20,0)
+                    else
+                        self.energyhud:SetPosition(-80,-40,0)
+                    end
+            if not self.inst:HasTag("playerghost") then
+                        self.energyhud:Show()
+                    else
+                        self.energyhud:Hide()
+                    end
+            end			
 	end
+
 end

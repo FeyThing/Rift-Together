@@ -1841,7 +1841,7 @@ return {
         CHESSJUNK1 = "Looks like a pile of scrapmetal.",
         CHESSJUNK2 = "Another pile of scrap?",
         CHESSJUNK3 = "Where do these piles come from?",
-		CHESTER = "And I thought I've seen some strange creatures.",
+		CHESTER = "I've seen stranger creatures on Magnus.",
 		CHESTER_EYEBONE =
 		{
 			GENERIC = "It's looking at me.",
@@ -2125,7 +2125,7 @@ return {
 		GOLDENPICKAXE = "Hey, isn't gold really soft?",
 		GOLDENPITCHFORK = "Why did I even make a pitchfork this fancy?",
 		GOLDENSHOVEL = "I can't wait to dig holes.",
-		GOLDNUGGET = "Maybe I smelt things down into more.",
+		GOLDNUGGET = "Maybe I could smelt things down into more.",
 		GRASS =
 		{
 			BARREN = "It needs fertilizer.",
@@ -4174,7 +4174,7 @@ return {
         DRAGONFRUIT_OVERSIZED = "I half expect it to sprout wings.",
         WATERMELON_OVERSIZED = "A big, juicy watermelon.",
         TOMATO_OVERSIZED = "A tomato of incredible proportions.",
-        POTATO_OVERSIZED = "Now I wonder if I could make a whole batch of galaxyburger fries!"
+        POTATO_OVERSIZED = "Now I wonder if I could make a whole batch of galaxyburger fries!",
         ASPARAGUS_OVERSIZED = "I guess we'll be eating asparagus for a while...",
         ONION_OVERSIZED = "They grow up so fast! It's... it's bringing a tear to my eye.",
         GARLIC_OVERSIZED = "A gargantuan garlic!",
