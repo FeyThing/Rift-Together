@@ -91,6 +91,7 @@ configuration_options = {
     CreateEnableOption("Raritanium Crystals", 1, nil, "Whether or not raritanium rock formations spawns."),
     CreateEnableOption("Nanotech Crates", 1, nil, "Whether or not nanotech spawns."),
 	CreateEnableOption("Torren IV", 1, nil, "Allow a chunk of the Torren IV to spawn from the polaris galaxy."),
+	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
 	--CreateEnableOption("Show Gieger Meter", 1, nil, "For testing purposes."),
 }
 

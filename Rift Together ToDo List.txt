@@ -86,7 +86,7 @@ Characters
 - Remake Ratchet's character Art (done)
 - Touch up nefarious's character Art
 - Remake all big portraits
-- Write all character dialogue (In progress) --Ratchet speech is mostly done, need to start on Nefarious
+- Write all character dialogue
 
 
 Main Logo
@@ -96,12 +96,17 @@ Main Logo
 
 -----------
 Bugs to fix before release
-
+----- Art
 - Outline around art when compiling from spriter. All art needs a quick pass through textool to fix.
 - Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
 - Barrels art needs to be fixed and edited to be less crooked in a balanced way.
 - Tile art too big, needs fixing.
-- Radiation starts at 100% then returns back to 0% upon world update/save in caves
+----- Code
+- Visual bug. Radiation starts at 100% then returns back to 0% upon world update/save with caves enabled, or when you equip an item. When player rejoins there is a bug where it is back to 100% for a split second then returns back as appropiate percentage.
+In multiplayer, the host stays stuck at 100% radiation but the client players revert back to their appropiate percentage.
+- When equipping the respirator, it loses its RadiationProtectPercent when you reload the game until you re-equip it again.
+- Major performance issues in regards to radiation particle generators.
+- Unable to remove radiation spreader component upon destroying radioactive drums.
 
 
 

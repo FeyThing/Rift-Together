@@ -8,12 +8,12 @@ local prefabs = {
 }
 
 local function onhammered(inst)
-    inst.components.lootdropper:DropLoot()
     local fx = SpawnPrefab("collapse_small")
     fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
     fx:SetMaterial("metal")
     inst:Remove()
 end
+
 
 local function MakeBarrel(name)
     local function fn()
@@ -69,6 +69,7 @@ local function MakeBarrel(name)
     end
 
     return Prefab(name, fn, assets, prefabs)
+		
 end
 
 return MakeBarrel("barrel_radioactive")

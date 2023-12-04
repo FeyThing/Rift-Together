@@ -48,6 +48,19 @@ if GetModConfigData("Nanotech Crates") == 1 then
 	GenerateForRoom("CrappyForest", 0.015)			
 end
 
+local function GenerateRoboHerdsForRoom(room, factor)
+	AddRoomPreInit(room, function(room)
+		if room.contents.distributeprefabs then
+			room.contents.distributeprefabs.hound_robomuttherd = factor
+		end
+	end)
+end
+
+if GetModConfigData("Roaming RoboMutts") == 1 then
+	GenerateRoboHerdsForRoom("BuzzardyBadlands", 0.035)	
+	GenerateRoboHerdsForRoom("Rocky", 0.035)
+end
+
 
 local TORRENIV_GROUND_TYPES =
 {
