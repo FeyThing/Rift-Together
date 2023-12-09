@@ -65,7 +65,7 @@ local function fn()
     local effect = inst.entity:AddVFXEffect()
     effect:InitEmitters(1)
     effect:SetRenderResources(0, TEXTURE, SHADER)
-    effect:SetMaxNumParticles(0, 3000)
+    effect:SetMaxNumParticles(0, 200) ---was 3000
     effect:SetMaxLifetime(0, MAX_LIFETIME)
     effect:SetColourEnvelope(0, COLOUR_ENVELOPE_NAME)
     effect:SetScaleEnvelope(0, SCALE_ENVELOPE_NAME)

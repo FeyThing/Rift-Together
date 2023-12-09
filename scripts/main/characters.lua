@@ -8,5 +8,9 @@ local skin_modes = {
     },
 }
 
-AddModCharacter("ratchet", "MALE", skin_modes)
-AddModCharacter("nefarious", "MALE", skin_modes)
+if GetModConfigData("Ratchet And Clank Characters") == 1 then
+		AddModCharacter("ratchet", "MALE", skin_modes)
+		--AddModCharacter("nefarious", "MALE", skin_modes)
+
+	end
+

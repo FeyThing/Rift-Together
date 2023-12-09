@@ -23,9 +23,11 @@ modimport("scripts/main/tuning.lua")
 modimport("scripts/main/strings.lua")
 modimport("scripts/main/recipes.lua")
 modimport("scripts/main/patches.lua")
+modimport("scripts/main/retrofit.lua")
 modimport("scripts/main/actions.lua")
 modimport("scripts/main/characters.lua")
 modimport("scripts/main/containers.lua")
+
 
 AddReplicableComponent("radiation")
 
@@ -33,3 +35,4 @@ AddReplicableComponent("radiation")
 modimport("scripts/stategraphs/SGannihilator")
 modimport("scripts/util/nefarious_powers")
 modimport("scripts/stategraphs/SGratchet")
+

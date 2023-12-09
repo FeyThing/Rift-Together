@@ -66,7 +66,7 @@ local TORRENIV_GROUND_TYPES =
 {
     WORLD_TILES.IMPASSABLE, WORLD_TILES.GRASS, WORLD_TILES.FOREST, WORLD_TILES.ROCKY, WORLD_TILES.DIRT, -- 1, 2, 3, 4, 5
     WORLD_TILES.JUNK, WORLD_TILES.OCEAN_COASTAL, WORLD_TILES.OCEAN_COASTAL_SHORE, WORLD_TILES.OCEAN_RUST, WORLD_TILES.METALPLATFORM, -- 6, 7, 8, 9, 10
-	WORLD_TILES.OCEAN_TOXIC -- 11
+	WORLD_TILES.OCEAN_TOXIC, WORLD_TILES.DESERTSAND, WORLD_TILES.LUSH  -- 11, 12, 13
 }
 
 
@@ -87,6 +87,7 @@ end
 Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
 Layouts["lonely_depot"] = StaticLayout.Get("map/static_layouts/lonely_depot")
 
+
 Layouts["gunkywateringhole"].ground_types = TORRENIV_GROUND_TYPES
 Layouts["lonely_depot"].ground_types = TORRENIV_GROUND_TYPES
 
@@ -100,6 +101,32 @@ if GetModConfigData("Torren IV") == 1 then
 	end)
 end
 
+-----------------------------------
+-- retrofitting ~ Thank you ADM!
+-----------------------------------
+
+local retrofit_islands = {"retrofit_torreniv", "retrofit_torreniv_small"}
+    
+--    Forest's layouts
+for i, layout in ipairs(retrofit_islands) do
+    Layouts[layout] = StaticLayout.Get("map/static_layouts/"..layout,
+    {
+        start_mask = PLACE_MASK.IGNORE_IMPASSABLE,
+        fill_mask = PLACE_MASK.IGNORE_IMPASSABLE,
+        add_topology = {room_id = "StaticLayoutIsland:Torren IV", tags = {"RoadPoison", "not_mainland"}},
+        areas =
+        {
+            raritanium_crystals = function() return math.random() < 0.9 and {"scrapmetal"} or nil end,
+        },
+        min_dist_from_land = 0,
+    })
+    Layouts[layout].ground_types = TORRENIV_GROUND_TYPES
+end
+
+
+-------------
+-- Ocean Water Blend ~ Coutesy of Asura
+-------------
 
 local function IsBiomeToBlend(ground)
 	return ground == WORLD_TILES.DESERTSAND or ground == WORLD_TILES.JUNK
@@ -203,3 +230,4 @@ Ocean_ConvertImpassibleToWater = function(...)
 
 	return val
 end
+

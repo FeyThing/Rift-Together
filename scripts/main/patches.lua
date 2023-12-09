@@ -22,6 +22,8 @@ local PATCHES =
 		"wisecracker",
 		"combat",
 		"wavemanager",
+		"retrofitforestmap_anr",
+		
 	},
 	
 	REPLICAS = {

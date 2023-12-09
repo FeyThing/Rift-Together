@@ -6,7 +6,7 @@ AddTask("Torren IV", {
 		keys_given={KEYS.ISLAND_TIER2},
 		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"RoadPoison", "not_mainland", "Astral_1"},
+		room_tags = {"RoadPoison", "not_mainland", "torrenarea"},
 		room_choices={
 			["Torren IV"] = 2,
 			["Torren IV Depot"] = 1,			
@@ -26,7 +26,7 @@ AddTask("Torren IV", {
 		keys_given={KEYS.ISLAND_TIER3},
 		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"RoadPoison", "not_mainland", "Astral_1"},
+		room_tags = {"RoadPoison", "not_mainland", "torrenarea"},
 		room_choices={
 			["Torren IV Wastes"] = 1,			
 			["Torren IV Lake"] = 1,
@@ -44,7 +44,7 @@ AddTask("Torren Wastes Fertile", {
 		keys_given={KEYS.ISLAND_TIER2},
 		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"RoadPoison", "not_mainland", "Astral_1"},
+		room_tags = {"RoadPoison", "not_mainland", "torrenarea"},
 		room_choices={
 			["Torren IV Fertile"] = 1,
 			["Torren IV Ponds"] = 1,			
@@ -62,7 +62,7 @@ AddTask("Torren Wastes Fertile", {
 		keys_given={KEYS.ISLAND_TIER3},
 		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"RoadPoison", "not_mainland", "Astral_1"},
+		room_tags = {"RoadPoison", "not_mainland", "torrenarea"},
 		room_choices={
 			["Torren IV Wastes Crags"] = 1,			
 		},
