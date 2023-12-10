@@ -34,3 +34,9 @@ AddRecipe2("rarisword",
 		TECH.LOST, 
         {atlas=atlas},
 		{"CHARACTER","WEAPONS"})
+		
+AddRecipe2("respiratormask", 
+		{ Ingredient("transistor", 4), Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 2) }, 
+		TECH.LOST, 
+        {atlas=atlas},
+		{"CHARACTER","ARMOUR"})

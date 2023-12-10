@@ -36,6 +36,11 @@ local PATCHES =
 		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
 		player_classified = "player_classified",
 		world = "world",
+		veggies = {"carrot", "carrot_cooked", "potato", "potato_cooked", "cave_banana", "cave_banana_cooked"},
+		meats = {"meat","cookedmeat", "meat_dried", "monstermeat", "cookedmonstermeat", "monstermeat_dried", "smallmeat", "cookedsmallmeat",
+		"smallmeat_dried", "drumstick", "drumstick_cooked", "batwing", "batwing_cooked", "plantmeat", "plantmeat_cooked", "fishmeat_small",
+		"fishmeat_small_cooked","fishmeat", "fishmeat_cooked", "humanmeat", "humanmeat_cooked", "humanmeat_dried", "quagmire_smallmeat", 
+		"quagmire_cookedsmallmeat","barnacle", "barnacle_cooked", "batnose", "batnose_cooked"},
 		--prefab_template = "spider",
 	},
 

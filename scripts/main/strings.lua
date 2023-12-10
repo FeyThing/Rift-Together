@@ -33,16 +33,17 @@ local strings = {
 					GHOST = "Nefarious could use a heart...I think?",
 				},
 				ratchet = {
-					GENERIC = "TO-DO",
-					ATTACKER = "TO-DO",
-					MURDERER = "TO-DO",
-					REVIVER = "TO-DO",
-					GHOST = "TO-DO",
+					GENERIC = "Looks like a cross between a cat and something else.",
+					ATTACKER = "Why are you doing this!",
+					MURDERER = "Murderer!",
+					REVIVER = "Thanks for saving me",
+					GHOST = "Ratchet could use a heart...I think?",
 				},
 
 				OWRENCH = "It's an oversized wrench.",
 				
 				RESPIRATORMASK = "Maybe it'll provide some protection.",
+				RARISWORD = "I could slice through metal with this!",
 				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
@@ -67,12 +68,14 @@ local strings = {
 				SCRAPROCK = "I hear something coming from it.",
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
+				
+				
 			},
 			
-			ANNOUNCE_IRRITATED = "I feel sore.",
-			ANNOUNCE_PAIN = "My entire body hurts.",
-			ANNOUNCE_SUFFERING = "It's so painful.",
-			ANNOUNCE_DYING = "I need medical attention.",
+			ANNOUNCE_IRRITATED = "What's this prickly sensation?",
+			ANNOUNCE_PAIN = "I feel sore.",
+			ANNOUNCE_SUFFERING = "My entire body is in pain.",
+			ANNOUNCE_DYING = "I need medical attention...",
 		},
 
 		RATCHET = {
@@ -84,6 +87,7 @@ local strings = {
 				SHOCKMOD = "Let's electrify it!",
 
 				RESPIRATORMASK = "Should provide some great protection against that radiation!",
+				RARISWORD = "With this amount of raritanium, I bet it's a lot like my wrench",
 
 				NANOTECH = "Nanotech, just what the doctor ordered.",
 				NANOCRATE = "This could patch me up!",
@@ -112,7 +116,8 @@ local strings = {
 		SHOCKMOD = "Shock Modification",
 
 		RESPIRATORMASK = "Respirator",
-
+		RARISWORD = "Crystalass",
+		
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
 		RARITANIUMORE = "Raritanium Crystal",
@@ -148,7 +153,7 @@ local strings = {
 		NAPALMMOD = "Adds fire damage to modifiable weapons.",
 		SHOCKMOD = "Adds electric damage to modifiable weapons.",
 
-		RESPIRATORMASK = "First issue commando Helmet.",
+		RESPIRATORMASK = "It provides minor protection against harsh elements.",
 
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 

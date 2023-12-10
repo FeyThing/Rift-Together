@@ -2330,8 +2330,8 @@ return {
         MOSQUITOSACK = "It's probably someone else's blood...",
         MOUND =
         {
-            DUG = "He probably deserved it.",
-            GENERIC = "I bet there's all sorts of good stuff down there!",
+            DUG = "Yeahhhh, I think Clank would judge me for doing this.",
+            GENERIC = "I really don't think this is a good idea...",
         },
         NIGHTLIGHT = "It's eerie but doesn't really bother me.",
         NIGHTMAREFUEL = "Something tells me I should not mess with it!",
