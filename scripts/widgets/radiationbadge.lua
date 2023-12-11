@@ -25,7 +25,7 @@ local RadiationBadge = Class(Badge, function(self, owner)
     self.circleframe2:GetAnimState():PlayAnimation("frame")
     self.circleframe2:GetAnimState():AnimateWhilePaused(false)
 
-    self.radiationarrow = self.underNumber:AddChild(UIAnim())
+    self.radiationarrow = self:AddChild(UIAnim())
     self.radiationarrow:GetAnimState():SetBank("sanity_arrow")
     self.radiationarrow:GetAnimState():SetBuild("sanity_arrow")
     self.radiationarrow:GetAnimState():PlayAnimation("neutral")

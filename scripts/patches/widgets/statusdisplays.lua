@@ -2,8 +2,7 @@ local NefBadge = require "widgets/nefbadge"
 local RadiationBadge = require "widgets/radiationbadge"
 
 return function(self)
-    self.radiation = self:AddChild(RadiationBadge(self.owner))
-    self.radiation:SetPosition(self.column2, -100, 0)
+	
 
     function self:SetRadiationPercent(pct)
         local oldpenalty = self.radiation.penaltypercent or 0
@@ -46,6 +45,29 @@ return function(self)
             end
         end
     end
+	
+-----------Radiation Badge positions	
+    self.radiation = self:AddChild(RadiationBadge(self.owner))
+		
+	if self.radiation ~= nil then
+			local currentPlaform = self.inst:GetCurrentPlatform()
+            if currentPlaform ~= nil and currentPlaform.components.healthsyncer ~= nil 
+                    and _G.KnownModIndex:IsModEnabled("workshop-376333686") then
+                        self.radiation:SetPosition(-125,35,0)
+                    elseif _G.KnownModIndex:IsModEnabled("workshop-376333686") then
+                        self.radiation:SetPosition(-124,35,0) -- combined stat pos
+                    elseif currentPlaform ~= nil and currentPlaform.components.healthsyncer ~= nil then
+                        self.radiation:SetPosition(-220, 20,0)
+                    else
+                        self.radiation:SetPosition(-120, 20) -- base pos
+                    end
+            if not self.inst:HasTag("playerghost") then
+                        self.radiation:Show()
+                    else
+                        self.radiation:Hide()
+                    end
+            end	
+-----------	
 
     self.inst:DoTaskInTime(0, function()
         if self.onradiationdelta == nil then
@@ -62,7 +84,7 @@ return function(self)
             local percent_Energy = self.owner.current_energy and (self.owner.current_energy:value())/TUNING.NEFARIOUS_ENERGY or 0
             self.energyhud:SetPercent(percent_Energy, TUNING.NEFARIOUS_ENERGY)
         end
-		if self.energyhud then
+		if self.energyhud ~= nil then
 			local currentPlaform = self.inst:GetCurrentPlatform()
             if currentPlaform ~= nil and currentPlaform.components.healthsyncer ~= nil 
                     and _G.KnownModIndex:IsModEnabled("workshop-376333686") then
@@ -79,7 +101,7 @@ return function(self)
                     else
                         self.energyhud:Hide()
                     end
-            end			
+            end		
 	end
 
 end

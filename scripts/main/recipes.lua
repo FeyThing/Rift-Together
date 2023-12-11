@@ -9,19 +9,19 @@ AddRecipe2("cryomod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 8, atlas), Ingredient("bluegem", 1)},
         TECH.LOST,
         {atlas=atlas},
-		{builder_tag= "solana_galaxy_resident"},{"CHARACTER","WEAPONS"})
+		{"CHARACTER","WEAPONS"})
 
 AddRecipe2("napalmmod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 8, atlas), Ingredient("redgem", 1)},
         TECH.LOST,
         {atlas=atlas},
-		{builder_tag="solana_galaxy_resident"},{"CHARACTER","WEAPONS"})
+		{"CHARACTER","WEAPONS"})
 
 AddRecipe2("shockmod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 8, atlas), Ingredient("lightninggoathorn", 1)},
         TECH.LOST,
         {atlas=atlas},
-		{builder_tag="solana_galaxy_resident"},{"CHARACTER","WEAPONS"})
+		{"CHARACTER","WEAPONS"})
 
 AddRecipe2("nanoboost", 
 		{ Ingredient("nanotech", 3, atlas), Ingredient("raritanium_bar", 1, atlas), Ingredient("ice", 3) }, 

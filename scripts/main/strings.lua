@@ -154,6 +154,7 @@ local strings = {
 		SHOCKMOD = "Adds electric damage to modifiable weapons.",
 
 		RESPIRATORMASK = "It provides minor protection against harsh elements.",
+		RARISWORD = "This raritanium sword is highly modifiable and extra effective against metallic enemies.",
 
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 
