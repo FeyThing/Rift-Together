@@ -7,6 +7,15 @@ local strings = {
 		ratchet = "Ratchet",
 		nefarious = "Nefarious",
 	},
+	SKIN_NAMES = {
+	ms_rivet = "The Interdimensional Rebel",
+	},
+	SKIN_DESCRIPTIONS = {
+	ms_rivet = "Ratchet's dimensional counterpart, Rivet."
+	},
+	SKIN_QUOTES = {
+	ms_rivet = "W...where am I?."
+	},
 	CHARACTER_DESCRIPTIONS = {
 		ratchet = "*Starts with a wrench\n*Modifiable Weapons\n*Levels up\n*Fearless",
 		nefarious = "*Cannot wear armor\n*Doesn't get hungry as fast\n*Abilities are powered by energy",

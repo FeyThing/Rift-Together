@@ -1,10 +1,10 @@
 return {
-	Prefabs = {
+	Prefabs = {	
 		"ratchet",
 		"ratchet_none",
-		"owrench",
 		"nefarious",
-		"nefarious_none",
+		"nefarious_none",				
+		"owrench",		
 		"forcefieldfx1",
 		"chessjunk_spawner",
 		"sparks",
@@ -39,7 +39,6 @@ return {
 		"radiation_dust",
 		"irradiated_pond",
 		"luminoustree_sapling",
-		
 	},
 
 	Assets = {
@@ -55,6 +54,12 @@ return {
 
 		Asset( "IMAGE", "bigportraits/ratchet.tex" ),
 		Asset( "ATLAS", "bigportraits/ratchet.xml" ),
+		
+				Asset( "IMAGE", "bigportraits/ratchet_none.tex" ),
+		Asset( "ATLAS", "bigportraits/ratchet_none.xml" ),
+		
+		Asset( "IMAGE", "bigportraits/ms_rivet.tex" ),
+		Asset( "ATLAS", "bigportraits/ms_rivet.xml" ),
 		
 		Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
 		Asset( "ATLAS", "images/avatars/avatar_ratchet.xml" ),
