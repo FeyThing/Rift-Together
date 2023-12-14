@@ -7,15 +7,7 @@ local function OnEquip(inst, owner)
     owner.AnimState:OverrideSymbol("swap_hat", "respiratormask", "swap_hat")
 	
         owner.AnimState:Show("HAT")
-    --[[owner.AnimState:Hide("HAIR_HAT")
-        owner.AnimState:Show("HAIR_NOHAT")
-        owner.AnimState:Show("HAIR")
-	
-	if owner:HasTag("player") then
-        owner.AnimState:Show("HEAD")
-        owner.AnimState:Hide("HEAD_HAT")
-
-	end]]
+		owner:AddTag("has_gasmask")
 	
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StartConsuming()
@@ -26,14 +18,7 @@ local function OnUnequip(inst, owner)
 	owner.AnimState:ClearOverrideSymbol("swap_hat")
 	
 	owner.AnimState:Hide("HAT")
-	--[[owner.AnimState:Hide("HAIR_HAT")
-	owner.AnimState:Show("HAIR_NOHAT")
-	owner.AnimState:Show("HAIR")
-	
-	if owner:HasTag("player") then
-		owner.AnimState:Show("HEAD")
-		owner.AnimState:Hide("HEAD_HAT")
-	end]]
+	owner:RemoveTag("has_gasmask")
 	
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StopConsuming()
@@ -54,8 +39,8 @@ local function MainFunction()
     inst.AnimState:SetBuild("respiratormask")
     inst.AnimState:PlayAnimation("anim")
 
-	inst:AddTag("HASRADIOACTIVE")
     inst:AddTag("respiratormask")
+	inst:AddTag("has_gasmask")
 	inst:AddTag("waterproofer")
 	
 	MakeInventoryFloatable(inst, "small", 0.1, 1.12)
@@ -77,7 +62,7 @@ local function MainFunction()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
-	inst.components.equippable:SetRadiationProtectPercent(0.2)
+	inst.components.equippable:SetRadiationProtectPercent(0.2) 
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
@@ -88,9 +73,6 @@ local function MainFunction()
 
 	inst:AddComponent("waterproofer")
     inst.components.waterproofer:SetEffectiveness(0.2)
-
-    -- inst:AddComponent("radioactive")	
-	-- inst.components.radioactive.aura = TUNING.RADIATION_SMALL
 	
     MakeHauntableLaunch(inst)
 

@@ -3,10 +3,10 @@ local ChangeTileRenderOrder = ChangeTileRenderOrder
 
 local TORRENIV_OCEAN_COLOR =
 {
-	primary_color =        {153, 76, 0,  28},
-	secondary_color =      {102,  51, 0, 90},
-	secondary_color_dusk = {51,  25, 0, 80},
-	minimap_color =        {132,  67,  13,  51},
+	primary_color =        {25, 15, 5,  255}, -- {153, 76, 0,  200},
+	secondary_color =      {20,  9, 2, 200}, -- {102,  51, 0, 255/2},
+	secondary_color_dusk = {10,  2, 0, 125}, -- {51,  25, 0, 80},
+	minimap_color =        {23,  12,  3,  150},
 }
 
 local TORRENIV_OCEAN_COLOR_TOXIC =
@@ -19,7 +19,7 @@ local TORRENIV_OCEAN_COLOR_TOXIC =
 
 local TORRENIV_WAVETINTS =
 {
-    rust = {1,  0.20,   0.10},
+    rust = {249, 180, 45}, -- 1,  0.20,   0.10
 	toxic = {0.40,  0.62,   0.50},
 }
 
@@ -100,7 +100,7 @@ AddTile("JUNK", "LAND",
 		snowsound		= "dontstarve/movement/run_snow",
 		mudsound        = "dontstarve/movement/run_mud",
 		hard			= true,
-		ocean_depth = "BASIC",
+		ocean_depth = "SHALLOW",
 		colors = TORRENIV_OCEAN_COLOR,
 	},
 	{
@@ -118,11 +118,11 @@ AddTile("DESERTSAND", "LAND",
 	{
 		name			= "desertsand",
 		noise_texture	= "levels/textures/ground_noise_desertsand.tex",
-		runsound 		= "dontstarve/movement/run_carpet",
-        walksound 		= "dontstarve/movement/walk_carpet",
-		snowsound		= "dontstarve/movement/run_snow",
+		runsound 		= "dontstarve/movement/run_dirt",
+        walksound 		= "dontstarve/movement/walk_dirt",
+		snowsound		= "dontstarve/movement/run_ice",
 		mudsound        = "dontstarve/movement/run_mud",
-		ocean_depth = "BASIC",
+		ocean_depth = "SHALLOW",
 		colors = TORRENIV_OCEAN_COLOR,
 	},
 	{
@@ -144,7 +144,7 @@ AddTile("LUSH", "LAND",
         walksound="dontstarve/movement/walk_woods",
         snowsound="dontstarve/movement/run_snow",
         mudsound="dontstarve/movement/run_mud",
-		ocean_depth = "BASIC",
+		ocean_depth = "SHALLOW",
 		colors = TORRENIV_OCEAN_COLOR,
 	},
 	{
@@ -177,4 +177,6 @@ local function GetTileFordesertfertileNoise(noise)
 end
 
 NOISES[WORLD_TILES.DESERTFERTILE_NOISE] = GetTileFordesertfertileNoise
+
+ChangeTileRenderOrder(WORLD_TILES.OCEAN_RUST, WORLD_TILES.OCEAN_BRINEPOOL, false)
 
