@@ -190,7 +190,7 @@ local function squareFill(world, width, height, x, y, radius, ground)
 				if not is_waterlined(t) then
 					world:SetTile(xx, yy, ground)
 				end
-				if IsOceanTile(t) and not IsSurroundedByWaterOrInvalid(world, xx, yy, 1) then --фиксим приколдес с обрезаными тайлами
+				if IsOceanTile(t) and not IsSurroundedByWaterOrInvalid(world, xx, yy, 1) then
 					if t == WORLD_TILES.OCEAN_BRINEPOOL then
 						world:SetTile(xx, yy, WORLD_TILES.OCEAN_BRINEPOOL_SHORE)
 					else

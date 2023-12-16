@@ -61,8 +61,8 @@ return {
 		Asset( "IMAGE", "bigportraits/ms_rivet.tex" ),
 		Asset( "ATLAS", "bigportraits/ms_rivet.xml" ),
 		
-		Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
-		Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
+		-- Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
+		-- Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
 
 		
 		Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),

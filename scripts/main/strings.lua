@@ -1,3 +1,7 @@
+STRINGS.CHARACTERS.RATCHET = require "speech_ratchet"
+STRINGS.CHARACTERS.NEFARIOUS = require "speech_nefarious"
+
+
 local strings = {
 	CHARACTER_TITLES = {
 		ratchet = "The Galactic Hero",
@@ -8,13 +12,15 @@ local strings = {
 		nefarious = "Nefarious",
 	},
 	SKIN_NAMES = {
-	ms_rivet = "The Interdimensional Rebel"
+		ratchet_none = "Ratchet",
+		nefarious_none = "Nefarious",
+		ms_rivet = "The Interdimensional Rebel",
 	},
 	SKIN_DESCRIPTIONS = {
-	ms_rivet = "Ratchet's dimensional counterpart, Rivet."
+		ms_rivet = "Ratchet's dimensional counterpart, Rivet.",
 	},
 	SKIN_QUOTES = {
-	ms_rivet = "W...where am I?."
+		ms_rivet = "W...where am I?.",
 	},
 	CHARACTER_DESCRIPTIONS = {
 		ratchet = "*Starts with a modifiable wrench\n*Is very nimble\n*Fearless",
@@ -29,9 +35,6 @@ local strings = {
 		nefarious = "Grim",
 	},
 	CHARACTERS = {
-		--RATCHET = require "speech_ratchet",
-		--NEFARIOUS = require "speech_nefarious",
-
 		GENERIC = {
 			DESCRIBE = {
 				nefarious = {
@@ -117,6 +120,7 @@ local strings = {
 	NAMES = {
 		ratchet = "Ratchet",
 		nefarious = "Nefarious",
+		ms_rivet = "The Interdimensional Rebel",
 
 		OWRENCH = "OmniWrench",
 
@@ -151,10 +155,7 @@ local strings = {
 		JUNKPILE = "Junk Pile",
 		VULLARD_SMELTER = "Smelter",
 	},
-	SKIN_NAMES = {
-		ratchet_none = "Ratchet",
-		nefarious_none = "Nefarious",
-	},
+
 	RECIPE_DESC = {
 		OWRENCH = "Just in case I ever misplace it.",
 
@@ -174,6 +175,7 @@ local strings = {
 	},
 }
 
+TransferTable(strings, STRINGS)
 TransferTable(strings, STRINGS)
 
 

@@ -32,20 +32,12 @@ local nefenergy  = Class(Badge, function(self, owner)
     self.num:Hide()
     self:StartUpdating()
 end)
+
 function nefenergy:SetPercent(val, max,owner)
 	max = max or TUNING.NEFARIOUS_ENERGY
 	val = val or 0
 
-	if val >= 0.75 then
-		self.icon:SetTexture("images/rnc_hud.xml", "bolt-4.tex")	
-	elseif val>=0.5 then
-		self.icon:SetTexture("images/rnc_hud.xml", "bolt-3.tex")	
-	elseif val>=0.25 then
-		self.icon:SetTexture("images/rnc_hud.xml", "bolt-2.tex")	
-	else
-		self.icon:SetTexture("images/rnc_hud.xml", "bolt-1.tex")	
-	end
-	
+	self.icon:SetTexture("images/rnc_inventoryimages.xml", "bolt-"..(val >= .75 and "4" or val >= .5 and "3" or val >= .25 and "2" or "1")..".tex")	
 	self.anim:GetAnimState():SetPercent("anim", 1 - val)
 	self.anim:GetAnimState():SetMultColour(0/255, 255/255, 219/255, 1)
 	self.circleframe:GetAnimState():SetMultColour(0/255, 115/255, 255/255, 1)
