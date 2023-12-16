@@ -55,11 +55,15 @@ return {
 		Asset( "IMAGE", "bigportraits/ratchet.tex" ),
 		Asset( "ATLAS", "bigportraits/ratchet.xml" ),
 		
-				Asset( "IMAGE", "bigportraits/ratchet_none.tex" ),
+		Asset( "IMAGE", "bigportraits/ratchet_none.tex" ),
 		Asset( "ATLAS", "bigportraits/ratchet_none.xml" ),
 		
 		Asset( "IMAGE", "bigportraits/ms_rivet.tex" ),
 		Asset( "ATLAS", "bigportraits/ms_rivet.xml" ),
+		
+		Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
+		Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
+
 		
 		Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
 		Asset( "ATLAS", "images/avatars/avatar_ratchet.xml" ),
@@ -106,6 +110,9 @@ return {
 		--items
 		Asset("ATLAS", "images/rnc_inventoryimages.xml"),
 		Asset("IMAGE", "images/rnc_inventoryimages.tex"),
+		
+		Asset("ATLAS", "images/rnc_hud.xml"),
+		Asset("IMAGE", "images/rnc_hud.tex"),
 		
 		Asset("ATLAS", "images/rnc_map_icons.xml"),
 		Asset("IMAGE", "images/rnc_map_icons.tex"),

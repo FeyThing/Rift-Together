@@ -1,0 +1,106 @@
+Rift Together list before release.
+
+
+Art
+----------------
+
+
+Nef annihilator Animations
+
+- Replace Nef Annihilator animation with the angry emote.
+- Add symbols to show invisible equipment when in annihilator mode
+- Finish all annihilator animations or add placeholders
+
+Canyon Biome
+
+- Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
+- Draw better irradiated ponds
+
+Junk Biome
+
+- Add Abandoned houses (Starting)
+- Add Vullard NPC setpiece with "Gone scavenging sign" and move smelter to said setpiece (done) 
+- Make new art for Vullard Lamp post
+
+Sound
+
+- Custom sound for Nef (Should start after the houses and new tile is made for the setpiece) --bringing the progress to 23
+- Custom sound for Qwark
+
+
+Characters 
+
+- Add Qwark
+- Add Clank
+- Add Nefarious
+- Touch up nefarious's character Art
+- Remake all big portraits
+- Write all character dialogue
+
+
+Main Logo
+
+- Make animated Rift Together logo (done but not animated yet)
+
+
+-----------
+Bugs to fix before release
+----- Art
+- Outline around art when compiling from spriter. All art needs a quick pass through textool to fix.
+- Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
+- Barrels art needs to be fixed and edited to be less crooked in a balanced way.
+- Tile art too big, needs fixing.
+- Misplaced bubbling animations on ponds and smelter.
+
+
+-----------
+
+Future Plans
+
+Junk Biome
+
+- Instead of a shovel. Drill, for digging through special rock for raritanium.
+- Vending Machine that spawns only on the vullard NPCs setpiece
+
+
+NPCs
+
+- Vullard NPC you must find before he appears to sell you blueprints or trade
+
+Items
+
+- Raritanium fishing rod (allows fishing in radioactive ponds and lakes)
+- Purifier machine
+
+Armor
+
+- O2 mask (to slow radiation and provides some waterproofing)
+
+Animations
+
+- Drink animation -- Cause eating whole cans is weird :D
+
+
+Mechanics
+
+- Add new raritanium hull tag which adds resistance to all damage except from magic weapons and raritanium made weapons(both mobs and player made RT armors)
+
+Sound
+
+- Add Radiation geiger meter ticks when infected possibly
+
+Environment
+
+-- Dust Devils spawning in summer?
+
+TorrenIV
+
+-Add Oil Feilds
+- Impure tar pits on land (irradiated). Acquired with drill.
+
+
+
+
+
+
+

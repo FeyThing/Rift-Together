@@ -1,0 +1,58 @@
+Rift Together list before release.
+
+
+----------------
+
+To Add
+
+- Add damage. Increased radiation damage the worst state you become.
+- Add radiation immunity so some mobs aren't effected.
+- Putting moonrocks/etc or irradiated things in your inventory triggers the radiation to tick up
+- All lunar creatures deal radiation damage
+
+Organization
+
+- Organize the very unorganized configs
+- Reorganize messy file placement
+
+Optional
+
+- Nuclear winter. Radioactive snow after the first year ingame.
+- Shade or taking cover under stuff protects you from the radioactive snow.
+- Moving/migrating radioactive barrels floating in the water 
+
+
+Compatibility
+
+- Moonmaw_dragonfly from Uncompromising mode emits a radiation aura
+- Moonglass Glommer from Cherry Forest emits an anti-radiation aura
+
+
+
+-----------
+Bugs to fix before release
+
+- Visual bug. Radiation starts at 100% then returns back to 0% upon world update/save in caves, eat food or when you equip an item. When player rejoins
+
+there is a bug where it is back to 100% for a split second then returns backs as appropiate percentage.
+- When equipping the respirator, it loses its RadiationProtectPercent when you reload the game until you re-equip it again.
+
+- Damage bug where things become irradiated very quickly after taking damage.
+
+-Performance issue is mostly fixed with reduced particles but overtime I'm unsure if radiation particles will build up. If there is a way to make them disappear when off screen, it may help.
+ 
+
+
+
+----------------
+
+Later stuff TBA
+
+
+
+
+
+
+
+
+

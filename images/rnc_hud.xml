@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Atlas>
+	<Texture filename="rnc_hud.tex" />
+	<Elements>
+		<Element name="radiation_icon.tex" u1="0.001" u2="0.1972421875" v2="0.999" v1="0.624046875" variant="" />
+		<Element name="bolt-1.tex" u1="0.1992421875" u2="0.4472421875" v2="0.999" v1="0.501" variant="" />
+		<Element name="bolt-2.tex" u1="0.001" u2="0.249" v2="0.499" v1="0.001" variant="" />
+		<Element name="bolt-3.tex" u1="0.251" u2="0.499" v2="0.499" v1="0.001" variant="" />
+		<Element name="bolt-4.tex" u1="0.4492421875" u2="0.6972421875" v2="0.999" v1="0.501" variant="" />
+	</Elements>
+</Atlas>

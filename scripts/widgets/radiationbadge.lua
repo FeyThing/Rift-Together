@@ -32,7 +32,7 @@ local RadiationBadge = Class(Badge, function(self, owner)
     self.radiationarrow:GetAnimState():AnimateWhilePaused(false)
     self.radiationarrow:SetClickable(false)
 	
-	self.icon = self.underNumber:AddChild(Image("images/rnc_inventoryimages.xml", "radiation_icon.tex"))
+	self.icon = self.underNumber:AddChild(Image("images/rnc_hud.xml", "radiation_icon.tex"))
 	local icon = 1*0.2
 	self.icon:SetScale(icon, icon, icon)
 
@@ -47,7 +47,7 @@ function RadiationBadge:SetPercent(val, max, penaltypercent)
     self.val = val
     self.max = max
     Badge.SetPercent(self, self.val, self.max)
-	self.icon:SetTexture("images/rnc_inventoryimages.xml", "radiation_icon.tex")
+	self.icon:SetTexture("images/rnc_hud.xml", "radiation_icon.tex")
     self.penaltypercent = penaltypercent or 0
     self.topperanim:GetAnimState():SetPercent("anim", 1 - self.penaltypercent)
 end
