@@ -1,4 +1,9 @@
 return function(inst)
+
+		if inst:IsValid() and inst.components and inst.components.health and inst:HasTag("lunar_aligned") then
+		inst:AddTag("radiationimmunity")
+		end
+
     --CLIENT
     if not TheWorld.ismastersim then
         return

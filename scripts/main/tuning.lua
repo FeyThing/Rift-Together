@@ -30,7 +30,7 @@ local tunings = {
     GAMEMODE_STARTING_ITEMS = {
         DEFAULT = {
             RATCHET = { "owrench", "nanoboost" },
-            NEFARIOUS = {},
+            --NEFARIOUS = {},
         },
     },
 
@@ -68,30 +68,29 @@ local tunings = {
     },
     ROBOT_RADIATION_RESISTANCE = .35,
 
-    NEFARIOUS_ENERGY = 100,
+	RT_UNCOMP = {
+	GetModConfigData("rt_um"),
+	},
+	RT_CHERRY = {
+	GetModConfigData("rt_cf"),
+	},
+
+--- Character moved for later release
+    --[[NEFARIOUS_ENERGY = 100,
     NEFARIOUS_ENERGY_COST = 1,
-    
-    STEALTH = {
-        KEY = GetModConfigData("vkey") or 118,
-    },
-    
-    COMBAT = {
-        KEY = GetModConfigData("ckey") or 99,
-    },
-    
-    SHIELDING = {
-        KEY = GetModConfigData("zkey") or 122,
-    },
-    
+        
     NEFARIOUS_HEALTH = 200,
     NEFARIOUS_HEALTH_ABSORB = .30,
     NEFARIOUS_HUNGER = 175,
-    NEFARIOUS_SANITY = 150,
+    NEFARIOUS_SANITY = 100,
+	NEFARIOUS_RADIATION = 200,]]
+
     
     RATCHET_HEALTH = 100,
     RATCHET_HUNGER = 150,
     RATCHET_SANITY = 200,
-    RATCHET_RADIATION = 100,
+	RATCHET_RADIATION = 120,
+
     
     RAD_TOTAL = 100,
     
@@ -105,13 +104,17 @@ local tunings = {
     RADIATION_GIANT = 30,
     
     RAD_THRESH = .6,
+	
+	RAD_CORRODE_DAMAGE_TIME = 1.5, -- How quickly the game polls to deal acidrain damage.
+    RAD_CORRODE_DAMAGE_PER_SECOND = 2.0,
+	RAD_CORRODE_DAMAGE_FUELED_SCALER = 2.0,
     
     IRRADIATED = 1,
     
     RAD_INJECT_DAMAGE = 75,
     RAD_INJECT_MIN_HEALTH = 5,
     
-    RAD_IMMUNE_DURATION = total_day_time, -- the time you are immune to radiation after taking antivenom
+    RAD_IMMUNE_DURATION = total_day_time, -- the time you are immune to radiation 
     RAD_DAMAGE_PER_INTERVAL = 2, -- the amount of health damage radiation causes per interval
     RAD_INTERVAL = 10, -- how frequently damage is applied
 

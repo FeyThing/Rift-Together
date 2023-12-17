@@ -39,7 +39,11 @@ there is a bug where it is back to 100% for a split second then returns backs as
 
 - Damage bug where things become irradiated very quickly after taking damage.
 
--Performance issue is mostly fixed with reduced particles but overtime I'm unsure if radiation particles will build up. If there is a way to make them disappear when off screen, it may help.
+- Performance issue is mostly fixed with reduced particles but overtime I'm unsure if radiation particles will build up. If there is a way to make them disappear when off screen, it may help.
+
+- Characters max radiation is not setting properly, and is default wilson's.
+
+- When Uncompromising Mode is active and the moonmaw_dragonfly is encountered. It's radiation spreaders break the radiation particle system so players have no indicator of infected areas.
  
 
 

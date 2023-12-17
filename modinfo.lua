@@ -36,56 +36,7 @@ local function CreateEnableOption(name, default, label, hover)
 end
 
 configuration_options = {
-	{
-        name = "ckey",
-        label = "Combat Mode Key",
-        hover = "Map key to activate nefarious's combat mode.",
-        options =
-        {
-            {description="C", data = 99},
 
-            {description="UP", data = 273},
-
-            {description="0", data = 48},
-            {description="1", data = 49},
-            {description="2", data = 50},
-            {description="3", data = 51},
-            {description="4", data = 52},
-        },
-        default = 99,
-    },
-	{
-        name = "zkey",
-        label = "Shield Mode Key",
-        hover = "Map key to activate nefarious's shield mode.",
-        options =
-        {
-            {description="X", data = 120},
-            {description="Z", data = 122},
-            
-            {description="DOWN", data = 274},
-  
-            {description="5", data = 53},
-            {description="6", data = 54},
-            {description="7", data = 55},
-            
-        },
-        default = 122,
-    },
-	{
-        name = "vkey",
-        label = "Stealth Mode Key",
-        hover = "Map key to activate nefarious's stealth mode.",
-        options =
-        {
-            {description="V", data = 118},
-
-
-            {description="8", data = 56},
-            {description="9", data = 57},
-        },
-        default = 118,
-    },
 	{
         name = "biome_retrofit",
         label = "Retrofit",
@@ -98,13 +49,14 @@ configuration_options = {
         default = 0,
     },
 	
+	CreateEnableOption("rt_um", 1, "Uncompromising Mode", "Allow compatibility with Uncompromising Mode."),
+	CreateEnableOption("rt_cf", 1, "Cherry Forest", "Allow compatibility with Cherry Forest."),
     CreateEnableOption("Raritanium Crystals", 1, nil, "Whether or not raritanium rock formations spawns."),
     CreateEnableOption("Nanotech Crates", 1, nil, "Whether or not nanotech spawns."),
 	CreateEnableOption("Torren IV", 1, nil, "Allow a chunk of the Torren IV to spawn from the polaris galaxy."),
 	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
 	CreateEnableOption("Ratchet And Clank Characters", 1, nil, "Allow playable Ratchet and Clank Characters."),
 	
-	--CreateEnableOption("Show Gieger Meter", 1, nil, "For testing purposes."),
 }
 
 

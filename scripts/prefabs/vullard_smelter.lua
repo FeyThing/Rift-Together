@@ -138,8 +138,8 @@ local function fn()
 	inst.components.machine.turnofffn = TurnOff
 	inst.components.machine.cooldowntime = 0.5
 	
-	--inst:AddComponent("heater")
-	--inst.components.heater.heat = 115
+	inst:AddComponent("heater")
+	inst.components.heater.heat = 90
 	
 	inst:ListenForEvent("onbuilt", onbuilt)
 	

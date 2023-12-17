@@ -28,6 +28,7 @@ local function onpenalty(self, penalty)
     self.inst.replica.radiation:SetPenalty(penalty)
 end
 
+
 local Radiation = Class(function(self, inst)
     self.inst = inst
     self.max = 100
@@ -40,6 +41,8 @@ local Radiation = Class(function(self, inst)
     
     self.dying = false
     self.resistance = 0.15
+	
+	self.maxDamageDeltaPerTick = -1
 
 	self.externalmodifiers = SourceModifierList(self.inst, 0, SourceModifierList.additive)
     self.health_state = STATES.NONE
@@ -51,6 +54,7 @@ local Radiation = Class(function(self, inst)
 
     self._oldisdying = self:IsNotDying()
     self._oldpercent = self:GetPercent()
+	
     
     self.inst:StartUpdatingComponent(self)
 end,
@@ -62,6 +66,7 @@ nil,
     dying = ondying,
     penalty = onpenalty,
 })
+
 
 function Radiation:IsNotDying()
     return not self.dying
@@ -139,6 +144,7 @@ function Radiation:GetRateScale()
     return self.ratescale
 end
 
+
 function Radiation:DoDelta(delta, overtime)
     if self.redirect ~= nil then
         self.redirect(self.inst, delta, overtime)
@@ -147,7 +153,7 @@ function Radiation:DoDelta(delta, overtime)
 
     if self.ignore then
         return
-    end
+    end	
 
     if self.current >= self:GetMaxWithPenalty() and delta >= 0 then
         self.current = self.current 
@@ -205,6 +211,7 @@ function Radiation:TryAnnounce()
     end
 end
 
+
 function Radiation:OnUpdate(dt)
 	local map = TheWorld.Map
 	
@@ -219,10 +226,16 @@ function Radiation:OnUpdate(dt)
         self.lastpos = pos
         if not (self.inst.components.health:IsInvincible() or
                 self.inst:HasTag("spawnprotection") or
+				self.inst:HasTag("radiationimmunity") or
                 self.inst.sg and self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
                 self.inst.is_teleporting or
                 (self.ignore and self.redirect == nil)) then
             self:Recalc(dt, radiation)
+	if self.inst.components.health and not self.inst.components.health:IsDead() then
+		if self:GetPercent() >= TUNING.RADIATION_THRESH.PAIN.POST then
+		self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "physical")
+		end	
+	end
         else
             --Disable arrows
             self.rate = 0

@@ -1,4 +1,5 @@
 local env = env
+local KnownModIndex = KnownModIndex
 local AddBrainPostInit = AddBrainPostInit
 local AddStategraphPostInit = AddStategraphPostInit
 local AddPrefabPostInit = AddPrefabPostInit
@@ -32,16 +33,32 @@ local PATCHES =
 	},
 
 	PREFABS = {
+		alterguardian_phase1 = "alterguardian_phase1",
+		alterguardian_phase2 = "alterguardian_phase2",
+		alterguardian_phase3 = "alterguardian_phase3",
+		armor_lunarplant = "armor_lunarplant",
+		bearger = "mutatedbearger",
 		chess = {"knight", "bishop", "rook"},
 		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
+		deerclops = "mutateddeerclops",
+		gestalt = "gestalt",		
+		gestalt_alterguardian_projectile = {"gestalt_alterguardian_projectile", "smallguard_alterguardian_projectile", "alterguardianhat_projectile", "largeguard_alterguardian_projectile"},
+		gestalt_guard = "gestalt_guard",
+		hound = "mutatedhound",
+		lunar_grazer = "lunar_grazer",
+		meats = {"meat","cookedmeat", "meat_dried", "monstermeat", "cookedmonstermeat", "monstermeat_dried", "smallmeat", "cookedsmallmeat",
+		"smallmeat_dried", "batwing", "batwing_cooked", "humanmeat", "humanmeat_cooked", "humanmeat_dried", "quagmire_smallmeat", 
+		"quagmire_cookedsmallmeat","barnacle", "barnacle_cooked", "batnose", "batnose_cooked"},	
+		moon_mushroom = {"moon_cap", "moon_cap_cooked"},
+		mushrooms = {"blue_cap", "blue_cap_cooked", "red_cap", "red_cap_cooked", "green_cap", "green_cap_cooked"},
+		penguin = "mutated_penguin",
 		player_classified = "player_classified",
+		spider = "spider_moon",
+		warg = "mutatedwarg",
 		world = "world",
 		veggies = {"carrot", "carrot_cooked", "potato", "potato_cooked", "cave_banana", "cave_banana_cooked"},
-		meats = {"meat","cookedmeat", "meat_dried", "monstermeat", "cookedmonstermeat", "monstermeat_dried", "smallmeat", "cookedsmallmeat",
-		"smallmeat_dried", "drumstick", "drumstick_cooked", "batwing", "batwing_cooked", "plantmeat", "plantmeat_cooked", "fishmeat_small",
-		"fishmeat_small_cooked","fishmeat", "fishmeat_cooked", "humanmeat", "humanmeat_cooked", "humanmeat_dried", "quagmire_smallmeat", 
-		"quagmire_cookedsmallmeat","barnacle", "barnacle_cooked", "batnose", "batnose_cooked"},
-		--prefab_template = "spider",
+				
+		--prefab_template = "beefalo",
 	},
 
 	PLAYERS = {
@@ -62,6 +79,7 @@ local PATCHES =
 	SCREENS = {
 
 	},
+	
 }
 
 
@@ -161,6 +179,7 @@ for _, file in ipairs(PATCHES.SCREENS) do
 	local fn = require("patches/screens/"..file)
 	patchclass("screens/"..file, fn)
 end
+
 
 for _, file in ipairs(PATCHES.STATES) do
 	local server_states = require("patches/states/"..file)
