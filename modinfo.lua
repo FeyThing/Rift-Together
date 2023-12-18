@@ -19,7 +19,7 @@ icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
 server_filter_tags = {
-    "character", "environment", "worldgen", "item", "ratchet", "clank", "nefarious",
+    "character", "environment", "worldgen", "item", "ratchet", "clank", "qwark", "nefarious",
 }
 
 local function CreateEnableOption(name, default, label, hover)
@@ -51,10 +51,14 @@ configuration_options = {
 	
 	CreateEnableOption("rt_um", 1, "Uncompromising Mode", "Allow compatibility with Uncompromising Mode."),
 	CreateEnableOption("rt_cf", 1, "Cherry Forest", "Allow compatibility with Cherry Forest."),
+	CreateEnableOption("rt_ia", 1, "Island Adventures", "Allow compatibility with Island Adventures."),
+	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow compatibility with Dehydrated."),
+	
     CreateEnableOption("Raritanium Crystals", 1, nil, "Whether or not raritanium rock formations spawns."),
     CreateEnableOption("Nanotech Crates", 1, nil, "Whether or not nanotech spawns."),
 	CreateEnableOption("Torren IV", 1, nil, "Allow a chunk of the Torren IV to spawn from the polaris galaxy."),
 	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
+	
 	CreateEnableOption("Ratchet And Clank Characters", 1, nil, "Allow playable Ratchet and Clank Characters."),
 	
 }

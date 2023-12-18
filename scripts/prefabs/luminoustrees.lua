@@ -29,6 +29,10 @@ local function makeanims(stage)
         burnt="burnt_"..stage,
         chop_burnt="chop_burnt_"..stage,
         idle_chop_burnt="idle_chop_burnt_"..stage,
+		blown1 = "blown1_loop_"..stage,
+        blown2 = "blown2_loop_"..stage,
+        blown_pre = "blown_pre_"..stage,
+        blown_pst = "blown_pst_"..stage,
     }
 end
 
@@ -548,6 +552,16 @@ local function on_wake(inst)
     end
 end
 
+local function GetWindAnims(inst, type)
+	if type == 1 then
+		local anim = math.random(1,2)
+		return luminoustree_anims[inst.size]["blown"..tostring(anim)]
+	elseif type == 2 then
+		return luminoustree_anims[inst.size].blown_pst
+	end
+	return luminoustree_anims[inst.size].blown_pre
+end
+
 local function luminoustree(name, stage, data)
     local function fn()
         local inst = CreateEntity()
@@ -643,6 +657,8 @@ local function luminoustree(name, stage, data)
 
         -------------------
         MakeHauntableWorkAndIgnite(inst)
+
+	    inst.WindGetAnims = GetWindAnims
 
         -------------------
         inst.OnSave = on_save

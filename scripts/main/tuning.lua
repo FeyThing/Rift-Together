@@ -74,6 +74,12 @@ local tunings = {
 	RT_CHERRY = {
 	GetModConfigData("rt_cf"),
 	},
+	RT_ISLAND = {
+	GetModConfigData("rt_ia"),
+	},
+	RT_DEHYDRATED = {
+	GetModConfigData("rt_dm"),
+	},
 
 --- Character moved for later release
     --[[NEFARIOUS_ENERGY = 100,

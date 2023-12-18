@@ -41,6 +41,7 @@ local PATCHES =
 		chess = {"knight", "bishop", "rook"},
 		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
 		deerclops = "mutateddeerclops",
+		frog = "lunarfrog",
 		gestalt = "gestalt",		
 		gestalt_alterguardian_projectile = {"gestalt_alterguardian_projectile", "smallguard_alterguardian_projectile", "alterguardianhat_projectile", "largeguard_alterguardian_projectile"},
 		gestalt_guard = "gestalt_guard",
