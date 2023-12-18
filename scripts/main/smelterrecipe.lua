@@ -1,6 +1,6 @@
 return {
 	raritaniumore = {
-		stacksize = 6,
+		stacksize = 3,
 		newitem = "raritanium_bar",
 		returnamount = 1,
 	},

@@ -122,8 +122,20 @@ local function omega_modifiers(inst, attacker, target)
     end
 end
 
+local swapbuilds = {
+	["ms_owrench_hammer"] = "ms_swap_owrench_hammer",
+}
+
+
 local function onequip(inst, owner) 
-    owner.AnimState:OverrideSymbol("swap_object", "swap_owrench", "swap_owrench")
+	
+local skin_build = inst:GetSkinBuild()
+if skin_build ~= nil then
+	owner.AnimState:OverrideItemSkinSymbol("swap_object", swapbuilds[skin_build], "swap_rarisword", inst.GUID, "swap_owrench")
+else
+	owner.AnimState:OverrideSymbol("swap_object", "swap_owrench", "swap_owrench")
+end
+  
 	owner.SoundEmitter:PlaySound("dontstarve/wilson/equip_item_gold")
     owner.AnimState:Show("ARM_carry") 
     owner.AnimState:Hide("ARM_normal") 
@@ -192,6 +204,7 @@ local function fn(Sim)
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.imagename = "owrench"
     inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
+	inst.components.inventoryitem.keepondeath = true
 	
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)

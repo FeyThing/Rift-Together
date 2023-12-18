@@ -15,9 +15,11 @@ local strings = {
 		ratchet_none = "Ratchet",
 		nefarious_none = "Nefarious",
 		ms_rivet = "The Interdimensional Rebel",
+		ms_owrench_hammer = "Rivet's Hammer",
 	},
 	SKIN_DESCRIPTIONS = {
 		ms_rivet = "Ratchet's dimensional counterpart, Rivet.",
+		ms_owrench_hammer = "A hammer used by Ratchet's counterpart, Rivet.",
 	},
 	SKIN_QUOTES = {
 		ms_rivet = "W...where am I?.",
