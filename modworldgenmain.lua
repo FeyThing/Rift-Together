@@ -16,6 +16,7 @@ local StaticLayout = require("map/static_layout")
 modimport("scripts/main/tiles")
 modimport("scripts/map/tasks/torreniv")
 
+
 local function GenerateCrystalsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
 		if room.contents.distributeprefabs then
@@ -24,16 +25,30 @@ local function GenerateCrystalsForRoom(room, factor)
 	end)
 end
 
-if GetModConfigData("Raritanium Crystals") == 1 then
-	GenerateCrystalsForRoom("Badlands", 0.125)
-	GenerateCrystalsForRoom("BuzzardyBadlands", 0.095)
-	GenerateCrystalsForRoom("Lightning", 0.075)	
-	GenerateCrystalsForRoom("MoonIsland_Mine", 0.125)
-	GenerateCrystalsForRoom("MoonIsland_Baths", 0.080)
-	GenerateCrystalsForRoom("MoonIsland_Meadows", 0.055)
-	GenerateCrystalsForRoom("Rocky", 0.035)
-end
+local rari_amount = GetModConfigData("raritanium_crystals")
 
+if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+GenerateCrystalsForRoom("JungleClearing", rari_amount)
+GenerateCrystalsForRoom("VolcanoRock", rari_amount)
+GenerateCrystalsForRoom("VolcanoObsidian", rari_amount)	
+GenerateCrystalsForRoom("VolcanoCage", rari_amount)
+GenerateCrystalsForRoom("GenericMagmaNoThreat", rari_amount)
+GenerateCrystalsForRoom("MoonIsland_Baths", rari_amount)
+GenerateCrystalsForRoom("MagmaHomeBoon", rari_amount)
+GenerateCrystalsForRoom("MoonIsland_Meadows", rari_amount)
+GenerateCrystalsForRoom("TidalMarsh", rari_amount)
+GenerateCrystalsForRoom("Badlands", rari_amount)
+GenerateCrystalsForRoom("BuzzardyBadlands", rari_amount)
+
+else
+GenerateCrystalsForRoom("Badlands", rari_amount)
+GenerateCrystalsForRoom("BuzzardyBadlands", rari_amount)
+GenerateCrystalsForRoom("Lightning", rari_amount)	
+GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
+GenerateCrystalsForRoom("MoonIsland_Baths", rari_amount)
+GenerateCrystalsForRoom("MoonIsland_Meadows", rari_amount)
+GenerateCrystalsForRoom("Rocky", rari_amount)
+end
 
 local function GenerateForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
@@ -43,9 +58,14 @@ local function GenerateForRoom(room, factor)
 	end)
 end
 
-if GetModConfigData("Nanotech Crates") == 1 then
-	GenerateForRoom("Marsh", 0.090)	
-	GenerateForRoom("CrappyForest", 0.015)			
+local nano_amount = GetModConfigData("nanotech_crates")
+
+if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+GenerateForRoom("ToxicTidalMarsh", nano_amount)	
+GenerateForRoom("CrappyForest", nano_amount)
+else
+GenerateForRoom("Marsh", nano_amount)	
+GenerateForRoom("CrappyForest", nano_amount)
 end
 
 local function GenerateRoboHerdsForRoom(room, factor)
@@ -57,8 +77,38 @@ local function GenerateRoboHerdsForRoom(room, factor)
 end
 
 if GetModConfigData("Roaming RoboMutts") == 1 then
+	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+	GenerateRoboHerdsForRoom("MeadowRocky", 0.035)
+	GenerateRoboHerdsForRoom("VolcanoRock", 0.035)
 	GenerateRoboHerdsForRoom("BuzzardyBadlands", 0.035)	
 	GenerateRoboHerdsForRoom("Rocky", 0.035)
+	else
+	GenerateRoboHerdsForRoom("BuzzardyBadlands", 0.035)	
+	GenerateRoboHerdsForRoom("Rocky", 0.035)
+end
+end
+
+local function GenerateRariMeteorsForRoom(room, factor)
+	AddRoomPreInit(room, function(room)
+		if room.contents.countprefabs then
+			room.contents.countprefabs.raritaniumspawner = factor
+			room.contents.countprefabs.burntground_faded = factor
+		end
+	end)
+end
+
+if GetModConfigData("Raritanium Meteors") == 1 then
+	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+	GenerateRariMeteorsForRoom("GenericMagmaNoThreat", 1)	
+	GenerateRariMeteorsForRoom("MeadowRocky", 1)
+	GenerateRariMeteorsForRoom("MoonIsland_Meadows", 2)
+	GenerateRariMeteorsForRoom("Badlands", 1)	
+	GenerateRariMeteorsForRoom("Rocky", 1)
+	else
+	GenerateRariMeteorsForRoom("Badlands", 1)	
+	GenerateRariMeteorsForRoom("Rocky", 1)
+	GenerateRariMeteorsForRoom("MoonIsland_Meadows", 2)
+end
 end
 
 

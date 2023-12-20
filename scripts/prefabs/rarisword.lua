@@ -167,7 +167,8 @@ local function fn(Sim)
     inst.AnimState:SetBuild("rarisword")
     inst.AnimState:PlayAnimation("idle")
 	
-
+	MakeInventoryFloatable(inst, "med", 0.05, {0.65, 0.5, 0.65})
+	
     if not TheWorld.ismastersim then
         return inst
     end
