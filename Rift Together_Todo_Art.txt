@@ -14,7 +14,7 @@ Nef annihilator Animations
 Canyon Biome
 
 - Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
-- Draw better irradiated ponds
+- Draw better irradiated ponds (drawing concepts as we speak)
 
 Junk Biome
 
@@ -24,7 +24,7 @@ Junk Biome
 
 Sound
 
-- Custom sound for Nef (Should start after the houses and new tile is made for the setpiece) --bringing the progress to 23
+- Custom sound for Nef 
 - Custom sound for Qwark
 
 
@@ -34,8 +34,8 @@ Characters
 - Add Clank
 - Add Nefarious
 - Touch up nefarious's character Art
-- Remake all big portraits
-- Write all character dialogue
+- Remake all big portraits (done for Ratchet)
+- Write all character dialogue (done for Ratchet)
 
 
 Main Logo
@@ -46,7 +46,6 @@ Main Logo
 -----------
 Bugs to fix before release
 ----- Art
-- Outline around art when compiling from spriter. All art needs a quick pass through textool to fix.
 - Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
 - Barrels art needs to be fixed and edited to be less crooked in a balanced way.
 - Tile art too big, needs fixing.

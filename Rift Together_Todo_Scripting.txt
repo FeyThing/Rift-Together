@@ -6,13 +6,13 @@ Rift Together list before release.
 To Add
 
 - Add damage. Increased radiation damage the worst state you become.
-- Add radiation immunity so some mobs aren't effected.
+- Add radiation immunity so some mobs aren't effected. (done)
 - Putting moonrocks/etc or irradiated things in your inventory triggers the radiation to tick up
-- All lunar creatures deal radiation damage
+- All lunar creatures deal radiation damage (done)
 
 Organization
 
-- Organize the very unorganized configs
+- Organize the very unorganized configs (done)
 - Reorganize messy file placement
 
 Optional
@@ -41,7 +41,7 @@ there is a bug where it is back to 100% for a split second then returns backs as
 
 - Performance issue is mostly fixed with reduced particles but overtime I'm unsure if radiation particles will build up. If there is a way to make them disappear when off screen, it may help.
 
-- Characters max radiation is not setting properly, and is default wilson's.
+- Characters max radiation is not setting properly, and is default wilson's 100.
 
 - When Uncompromising Mode is active and the moonmaw_dragonfly is encountered. It's radiation spreaders break the radiation particle system so players have no indicator of infected areas.
  
