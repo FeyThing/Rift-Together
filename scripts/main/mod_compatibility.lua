@@ -5,7 +5,7 @@ local STRINGS = GLOBAL.STRINGS
 -- Uncompromising Mode
 
 
-if TUNING.RT_UNCOMP and KnownModIndex:IsModEnabled("workshop-2039181790") then
+if TUNING.RT_UNCOMP and MOD.UNCOMP_ENABLED then
 
 --- Setting radiation value for UM characters
 
@@ -152,7 +152,7 @@ end
 
 --- Cherry Forest
 
-if TUNING.RT_CHERRY and KnownModIndex:IsModEnabled("workshop-1289779251") then
+if TUNING.RT_CHERRY and MOD.CHERRY_ENABLED then
 	-- Adding Radiation to Cherry Forest.
 	AddPrefabPostInit("bismuthhat", function(inst)
 		if not GLOBAL.TheWorld.ismastersim then
@@ -194,7 +194,7 @@ end
 --- Island Adventures
 
 
-if TUNING.RT_ISLAND and KnownModIndex:IsModEnabled("workshop-1467214795") then
+if TUNING.RT_ISLAND and MOD.ISLAND_ENABLED then
 
 	--- Setting radiation value for IA characters
 
@@ -242,7 +242,7 @@ end
 
 --- Dehydration Mode
 
-if TUNING.RT_DEHYDRATED and KnownModIndex:IsModEnabled("workshop-3004639365") then
+if TUNING.RT_DEHYDRATED and MOD.DEHYDRATED_ENABLED then
 
 
 	-- Adding Radiation to Dehydrated Mode.

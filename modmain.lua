@@ -16,6 +16,7 @@ end
 GLOBAL.UpvalueHacker = require("tools/upvaluehacker")
 
 modimport("scripts/main/utils.lua")
+modimport("scripts/main/constants.lua")
 modimport("scripts/main/tuning.lua")
 modimport("scripts/main/strings.lua")
 modimport("scripts/main/recipes.lua")
@@ -28,6 +29,8 @@ modimport("scripts/main/mod_compatibility.lua")
 
 
 AddReplicableComponent("radiation")
+
+
 
 -----------------------
 modimport("scripts/stategraphs/SGannihilator")
