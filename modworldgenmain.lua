@@ -17,6 +17,7 @@ modimport("scripts/main/tiles")
 modimport("scripts/map/tasks/torreniv")
 
 
+
 local function GenerateCrystalsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
 		if room.contents.distributeprefabs then
@@ -33,9 +34,8 @@ GenerateCrystalsForRoom("VolcanoRock", rari_amount)
 GenerateCrystalsForRoom("VolcanoObsidian", rari_amount)	
 GenerateCrystalsForRoom("VolcanoCage", rari_amount)
 GenerateCrystalsForRoom("GenericMagmaNoThreat", rari_amount)
-GenerateCrystalsForRoom("MoonIsland_Baths", rari_amount)
 GenerateCrystalsForRoom("MagmaHomeBoon", rari_amount)
-GenerateCrystalsForRoom("MoonIsland_Meadows", rari_amount)
+GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
 GenerateCrystalsForRoom("TidalMarsh", rari_amount)
 GenerateCrystalsForRoom("Badlands", rari_amount)
 GenerateCrystalsForRoom("BuzzardyBadlands", rari_amount)
@@ -45,8 +45,6 @@ GenerateCrystalsForRoom("Badlands", rari_amount)
 GenerateCrystalsForRoom("BuzzardyBadlands", rari_amount)
 GenerateCrystalsForRoom("Lightning", rari_amount)	
 GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
-GenerateCrystalsForRoom("MoonIsland_Baths", rari_amount)
-GenerateCrystalsForRoom("MoonIsland_Meadows", rari_amount)
 GenerateCrystalsForRoom("Rocky", rari_amount)
 end
 
@@ -62,6 +60,7 @@ local nano_amount = GetModConfigData("nanotech_crates")
 
 if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
 GenerateForRoom("ToxicTidalMarsh", nano_amount)	
+GenerateForRoom("Marsh", nano_amount)
 GenerateForRoom("CrappyForest", nano_amount)
 else
 GenerateForRoom("Marsh", nano_amount)	

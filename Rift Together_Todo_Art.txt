@@ -66,6 +66,11 @@ NPCs
 
 - Vullard NPC you must find before he appears to sell you blueprints or trade
 
+
+Mobs
+Swarmer. Steals stuff, aggros during ceratain seasons. Has two morphs. Antara(nuetral) and Cerullean(Hostile).
+Fendersax Wasp (Needle Wasp) Spawns from hanging nests with harvestable, Sirangian honey. Spits acid.
+
 Items
 
 - Raritanium fishing rod (allows fishing in radioactive ponds and lakes)

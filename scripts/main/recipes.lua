@@ -2,8 +2,8 @@ local atlas = "images/rnc_inventoryimages.xml"
 AddRecipe2("owrench",
         {Ingredient("raritaniumore", 3, atlas), Ingredient("nanotech", 2, atlas), Ingredient("gears", 2)},
         TECH.NONE,
-        {atlas=atlas},
-		{builder_tag="veldin_mechanic"},{"CHARACTER","TOOLS"})
+        {builder_tag="veldin_mechanic",atlas=atlas},
+		{"CHARACTER","TOOLS"})
 
 AddRecipe2("cryomod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 4, atlas), Ingredient("bluegem", 1)},
@@ -26,8 +26,8 @@ AddRecipe2("shockmod",
 AddRecipe2("nanoboost", 
 		{ Ingredient("nanotech", 3, atlas), Ingredient("raritanium_bar", 1, atlas), Ingredient("ice", 3) }, 
 		TECH.NONE, 
-        {atlas=atlas},
-		{builder_tag="solana_galaxy_resident"},{"CHARACTER","RESTORATION"})
+        {builder_tag="solana_galaxy_resident",atlas=atlas},
+		{"CHARACTER","RESTORATION"})
 		
 AddRecipe2("rarisword", 
 		{ Ingredient("purplegem", 1), Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 3) }, 
@@ -40,3 +40,9 @@ AddRecipe2("respiratormask",
 		TECH.LOST, 
         {atlas=atlas},
 		{"CHARACTER","ARMOUR"})
+
+--[[AddRecipe2("rarispear", 
+		{ Ingredient("rope", 1), Ingredient("raritaniumore", 1, atlas), Ingredient("spear", 1) }, 
+		TECH.SCIENCE_ONE, 
+        {atlas=atlas},
+		{"CHARACTER","WEAPONS"})]]
