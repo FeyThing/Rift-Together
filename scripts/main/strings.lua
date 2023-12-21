@@ -36,6 +36,24 @@ local strings = {
 		ratchet = "Slim",
 		nefarious = "Grim",
 	},
+	CHARACTER_ABOUTME = {
+		ratchet = "",
+		nefarious = "Insert text here",
+	},
+	CHARACTER_BIOS = {
+		ratchet = {
+					{ title = "Birthday", desc = "Unknown" },
+					{ title = "Favorite Food", desc = "Unknown" },
+					{ title = "Past...", desc = "Ratchet, an orphen originally born from Fastoon, is a headstrong and challenge seeking savior of multiple galaxies. Originally a jerk, he has now developed a light-hearted yet wise-cracking personality with the help of clank, his best friend. Though he has struggled balancing his own needs and those of others, he always chooses the right thing to do in order to keep the universe safe. Especially his friends and his foster home, Veldin."},
+				},
+		
+		nefarious = {
+					{ title = "Birthday", desc = "Unknown" },
+					{ title = "Favorite Food", desc = "Unknown" },
+					{ title = "Past...", desc = "Is yet to be revealed."},
+				},
+		
+	},
 	CHARACTERS = {
 		GENERIC = {
 			DESCRIBE = {
@@ -66,6 +84,7 @@ local strings = {
 				RARITANIUM_CRYSTALS = "Looks like some sort of crystal formation.",
 				SCRAPMETAL = "Pieces of metal litter the ground.",
 				BARREL_RADIOACTIVE = "I don't want to get too close.",
+				DIMENSIONAL_RIFT = "Oh no, there must be a way to close it...",
 
 				TORREN_GRASS = "It's a strange patch of grass.",
 				TORREN_CACTUS = "It's a large cactus.",
@@ -108,6 +127,7 @@ local strings = {
 				RARITANIUMORE = "Raritanium! I wonder if I could use it for upgrades?",
 				RARITANIUM_CRYSTALS = "That looks like raritanium.",
 				SCRAPMETAL = "Maybe I could make use of this scrap.",
+				DIMENSIONAL_RIFT = "It must be the work of the dimensionator. I need to find a way to close it.",
 
 				HOUND_ROBOMUTT = "Oh no, not these things again.",
 
@@ -140,6 +160,7 @@ local strings = {
 		RARITANIUM_CRYSTALS= "Raritanium",
 		SCRAPMETAL = "Scrap Metal",
 		BARREL_RADIOACTIVE = "Metal Drum",
+		DIMENSIONAL_RIFT = "Dimensional Rift",
 
 		TORREN_GRASS = "Alien Grass",
 		TORREN_CACTUS = "Cactus",

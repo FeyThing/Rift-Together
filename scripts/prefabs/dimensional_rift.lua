@@ -440,6 +440,9 @@ local function portalfn()
     inst.components.timer:StartTimer("trynextstage", GetStageUpTime(inst))
     inst.components.timer:StartTimer("spawnportalloot_tick", TUNING.DIMENSIONAL_RIFTS.STAGES[inst._stage].LOOTSPAWNTIME)
 
+	inst:AddComponent("radiationspreader")
+    inst.components.radiationspreader:SetRadius(2)
+
     inst:WatchWorldState("cycles", on_cycles_changed)
 
     inst:ListenForEvent("timerdone", OnTimerDone)
