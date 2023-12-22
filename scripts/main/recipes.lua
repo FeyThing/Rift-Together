@@ -41,8 +41,8 @@ AddRecipe2("respiratormask",
         {atlas=atlas},
 		{"CHARACTER","ARMOUR"})
 
---[[AddRecipe2("rarispear", 
-		{ Ingredient("rope", 1), Ingredient("raritaniumore", 1, atlas), Ingredient("spear", 1) }, 
+AddRecipe2("rarispear", 
+		{ Ingredient("moonrocknugget", 1), Ingredient("raritaniumore", 1, atlas), Ingredient("spear", 1) }, 
 		TECH.SCIENCE_ONE, 
         {atlas=atlas},
-		{"CHARACTER","WEAPONS"})]]
+		{"CHARACTER","WEAPONS"})

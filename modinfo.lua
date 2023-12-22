@@ -11,7 +11,7 @@ With an emphasis on combating a new kind of survival threat, it's up to you to g
 󰀛 Explore :
 Travel to new biomes polluted from worlds crossing over, discover new modular weapons, find the smelter to forge new gear, fight against empowered lunar threats, face new mobs, endure against a world where everything is tainted and very much wants you dead.
 
-󰀏 Configure the mod to your choosing!
+󰀏 Configure the mod to your choosing in the settings!
 ]]
 
 

@@ -76,6 +76,7 @@ local strings = {
 				
 				RESPIRATORMASK = "Maybe it'll provide some protection.",
 				RARISWORD = "I could slice through metal with this!",
+				RARISPEAR = "I could poke through metal with this.",
 				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
@@ -121,6 +122,7 @@ local strings = {
 
 				RESPIRATORMASK = "Should provide some great protection against that radiation!",
 				RARISWORD = "With this amount of raritanium, I bet it's a lot like my wrench",
+				RARISPEAR = "Sharp, but not as good at bashing in robots like my wrench",
 
 				NANOTECH = "Nanotech, just what the doctor ordered.",
 				NANOCRATE = "This could patch me up!",
@@ -152,6 +154,7 @@ local strings = {
 
 		RESPIRATORMASK = "Respirator",
 		RARISWORD = "Crystalass",
+		RARISPEAR = "Reinforced Spear",
 		
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
@@ -199,7 +202,7 @@ local strings = {
 }
 
 TransferTable(strings, STRINGS)
-TransferTable(strings, STRINGS)
+
 
 
 
