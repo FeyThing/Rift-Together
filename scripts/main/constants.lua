@@ -10,20 +10,13 @@ MOD =
 	}
 
 --- Materials
-MATERIALS= 
-{
-
-RARITANIUMORE = "Raritaniumore",
-
+MATERIALS = {
+	RARITANIUMORE = "raritaniumore",
 }
 
 --- Forge Materials
-
-FORGEMATERIALS =
-{
-
-RARITANIUM_BAR = "Raritanium_bar",
-
+FORGEMATERIALS = {
+	RARITANIUM_BAR = "raritanium_bar",
 }
 
 

@@ -28,6 +28,13 @@ local function onpenalty(self, penalty)
     self.inst.replica.radiation:SetPenalty(penalty)
 end
 
+local function onignore(self, val)
+    if val then
+        self.inst:AddTag("radiationimmunity")
+    else
+        self.inst:RemoveTag("radiationimmunity")
+    end
+end
 
 local Radiation = Class(function(self, inst)
     self.inst = inst
@@ -65,6 +72,7 @@ nil,
     ratescale = onratescale,
     dying = ondying,
     penalty = onpenalty,
+    ignore = onignore,
 })
 
 
@@ -134,6 +142,10 @@ function Radiation:SetMax(amount)
     self.max = amount
     self.current = 0
     self:DoDelta(0)
+end
+
+function Radiation:SetIgnore(val)
+    self.ignore = val or false
 end
 
 function Radiation:GetMaxWithPenalty()

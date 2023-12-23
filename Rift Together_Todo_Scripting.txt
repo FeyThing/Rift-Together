@@ -37,11 +37,11 @@ Bugs to fix before release
 there is a bug where it is back to 100% for a split second then returns backs as appropiate percentage.
 - When equipping the respirator, it loses its RadiationProtectPercent when you reload the game until you re-equip it again.
 
-- Damage bug where things become irradiated very quickly after taking damage.
+- Damage bug where things become irradiated very quickly after taking damage.(done)
 
 - Performance issue is mostly fixed with reduced particles but overtime I'm unsure if radiation particles will build up. If there is a way to make them disappear when off screen, it may help.
 
-- Characters max radiation is not setting properly, and is default wilson's 100.
+- Characters max radiation is not setting properly, and is default wilson's 100.(done)
 
 - When Uncompromising Mode is active and the moonmaw_dragonfly is encountered. It's radiation spreaders break the radiation particle system so players have no indicator of infected areas.
  

@@ -25,8 +25,8 @@ return function(self)
             or 1
             local dmg, spdmg = self:CalcDamage(targ, weapon, mult)
             dmg = dmg * (instancemult or 1)
-            if self.inst.components.radiation:GetPercent() < targ.components.radiation:GetPercent() then
-                self.inst.components.radiation:DoDelta(dmg*.1)
+            if self.inst.components.radiation:GetPercent() > targ.components.radiation:GetPercent() then
+                targ.components.radiation:DoDelta(dmg*.1)
             end
         end
     end

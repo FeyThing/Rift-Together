@@ -65,20 +65,21 @@ local tunings = {
         WALTER = 100, 
         WANDA = 100,
         WONKEY = 100, 
+        RATCHET = 120,
     },
     ROBOT_RADIATION_RESISTANCE = .35,
 
 	RT_UNCOMP = {
-	GetModConfigData("rt_um"),
+	    GetModConfigData("rt_um"),
 	},
 	RT_CHERRY = {
-	GetModConfigData("rt_cf"),
+	    GetModConfigData("rt_cf"),
 	},
 	RT_ISLAND = {
-	GetModConfigData("rt_ia"),
+	    GetModConfigData("rt_ia"),
 	},
 	RT_DEHYDRATED = {
-	GetModConfigData("rt_dm"),
+	    GetModConfigData("rt_dm"),
 	},
 
 --- Character moved for later release
@@ -91,12 +92,9 @@ local tunings = {
     NEFARIOUS_SANITY = 100,
 	NEFARIOUS_RADIATION = 200,]]
 
-    
     RATCHET_HEALTH = 125,
     RATCHET_HUNGER = 150,
     RATCHET_SANITY = 200,
-	RATCHET_RADIATION = 120,
-
     
     RAD_TOTAL = 100,
     

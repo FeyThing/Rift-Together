@@ -42,8 +42,8 @@ local function fn()
         return inst
     end
 
-		inst:AddComponent("radiationspreader")
-        inst.components.radiationspreader:SetRadius(2)
+    inst:AddComponent("radiationspreader")
+    inst.components.radiationspreader:SetRadius(2)
 
     return inst
 end
