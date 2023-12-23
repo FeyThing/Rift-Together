@@ -39,7 +39,14 @@ local RadiationBadge = Class(Badge, function(self, owner)
     self.max = 100
     self.penaltypercent = 0
 
-    self:StartUpdating()
+    self.inst:DoTaskInTime(0, function()
+        local rad = self.owner.replica.radiation
+        if rad then
+            self:SetPercent(rad:GetCurrent(), rad:Max(), rad:GetPenaltyPercent())
+        end
+        self:OnUpdate(0)
+        self:StartUpdating()
+    end)
 end)
 
 function RadiationBadge:SetPercent(val, max, penaltypercent)

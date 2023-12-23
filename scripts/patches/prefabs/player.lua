@@ -3,7 +3,7 @@ return function(inst)
         inst:AddTag("robot")
     end
 	
-	    if inst.prefab == "wormwood" then
+    if inst.prefab == "wormwood" then
         inst:AddTag("lunar_touched")
     end
     

@@ -180,6 +180,8 @@ local strings = {
 		SCRAPROCK = "Scrap Mound",
 		JUNKPILE = "Junk Pile",
 		VULLARD_SMELTER = "Smelter",
+
+		RADIATION = "Radiation",
 	},
 
 	RECIPE_DESC = {

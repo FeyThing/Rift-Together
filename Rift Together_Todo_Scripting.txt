@@ -32,10 +32,10 @@ Compatibility
 -----------
 Bugs to fix before release
 
-- Visual bug. Radiation starts at 100% then returns back to 0% upon world update/save in caves, eat food or when you equip an item. When player rejoins
+- Visual bug. Radiation starts at 100% then returns back to 0% upon world update/save in caves, eat food or when you equip an item. When player rejoins(done)
 
-there is a bug where it is back to 100% for a split second then returns backs as appropiate percentage.
-- When equipping the respirator, it loses its RadiationProtectPercent when you reload the game until you re-equip it again.
+there is a bug where it is back to 100% for a split second then returns backs as appropiate percentage.(done)
+- When equipping the respirator, it loses its RadiationProtectPercent when you reload the game until you re-equip it again.(done)
 
 - Damage bug where things become irradiated very quickly after taking damage.(done)
 

@@ -245,7 +245,7 @@ function Radiation:OnUpdate(dt)
             self:Recalc(dt, radiation)
 	if self.inst.components.health and not self.inst.components.health:IsDead() then
 		if self:GetPercent() >= TUNING.RADIATION_THRESH.PAIN.POST then
-		self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "physical")
+		self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
 		end	
 	end
         else
@@ -288,7 +288,6 @@ function Radiation:OnLoad(data)
     if data.current ~= nil then
         self.current = data.current
     end
-    self:DoDelta(1)
 end
 
 function Radiation:TransferComponent(newinst)
