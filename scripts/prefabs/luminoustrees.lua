@@ -663,6 +663,13 @@ local function luminoustree(name, stage, data)
         -------------------
         inst.OnSave = on_save
         inst.OnLoad = on_load
+		
+		if data == "stump" then
+			make_stump(inst)
+			inst.AnimState:PlayAnimation(luminoustree_anims[inst.size].stump)
+		elseif data == "burnt" then
+			on_luminoustree_burnt_immediate_helper(inst)
+		end
 
         -------------------
         MakeSnowCovered(inst)
@@ -681,4 +688,6 @@ end
 return luminoustree("luminoustree", 0),
     luminoustree("luminoustree_short", 1),
     luminoustree("luminoustree_normal", 2),
-    luminoustree("luminoustree_tall", 3)
+    luminoustree("luminoustree_tall", 3),
+	luminoustree("luminoustree_stump", 0, "stump"),
+	luminoustree("luminoustree_burnt", 0, "burnt")

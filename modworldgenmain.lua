@@ -3,12 +3,13 @@ local env = env
 local modimport = modimport
 local AddRoomPreInit = AddRoomPreInit
 local AddTaskSetPreInit = AddTaskSetPreInit
+local AddTaskSetPreInitAny = AddTaskSetPreInitAny
 local GetModConfigData = GetModConfigData
 
 _G.setfenv(1, _G)
 
 require("map/terrain")
-require("tilemanager")
+require("map/torreniv_terrain")
 
 local Layouts = require("map/layouts").Layouts
 local StaticLayout = require("map/static_layout")
@@ -142,12 +143,14 @@ Layouts["lonely_depot"].ground_types = TORRENIV_GROUND_TYPES
 
 
 if GetModConfigData("Torren IV") == 1 then
-	AddTaskSetPreInit("default", function(taskset)
-		table.insert(taskset.tasks, "Torren IV")
-		table.insert(taskset.tasks, "Torren Wastes")
-		table.insert(taskset.tasks, "Torren Wastes Crags")
-		table.insert(taskset.tasks, "Torren Wastes Fertile")
-	end)
+AddTaskSetPreInitAny(function(tasksetdata)
+    if tasksetdata.location == "forest" and tasksetdata.tasks and #tasksetdata.tasks > 1 then
+        table.insert(tasksetdata.tasks, "Torren IV")
+        table.insert(tasksetdata.tasks, "Torren Wastes")
+        table.insert(tasksetdata.tasks, "Torren Wastes Crags")
+        table.insert(tasksetdata.tasks, "Torren Wastes Fertile")
+    end
+end)
 end
 
 -----------------------------------

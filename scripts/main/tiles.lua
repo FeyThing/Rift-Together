@@ -157,7 +157,7 @@ AddTile("LUSH", "LAND",
 AddTile("JUNK_NOISE", "NOISE")
 
 local function GetTileForJunkNoise(noise)
-    return noise < math.random() and WORLD_TILES.JUNK or WORLD_TILES.DESERTSAND
+    return noise < .5 and WORLD_TILES.JUNK or WORLD_TILES.DESERTSAND
 end
 
 NOISES[WORLD_TILES.JUNK_NOISE] = GetTileForJunkNoise
@@ -165,7 +165,7 @@ NOISES[WORLD_TILES.JUNK_NOISE] = GetTileForJunkNoise
 AddTile("DESERTSAND_NOISE", "NOISE")
 
 local function GetTileFordesertsandNoise(noise)
-    return noise < .5 and WORLD_TILES.DESERTSAND or WORLD_TILES.DESERT_DIRT or WORLD_TILES.ROCKY
+    return noise < .6 and WORLD_TILES.DESERTSAND or noise < .3 and WORLD_TILES.DESERT_DIRT or WORLD_TILES.LUSH
 end
 
 NOISES[WORLD_TILES.DESERTSAND_NOISE] = GetTileFordesertsandNoise

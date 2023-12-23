@@ -110,6 +110,8 @@ local function makebarrenfn(inst, wasempty)
     end
 end
 
+local GRASS_TAGS = {"torrengrass"}
+
 local function onpickedfn(inst, picker)
     inst.SoundEmitter:PlaySound("dontstarve/wilson/pickup_reeds")
     inst.AnimState:PlayAnimation("picking")
@@ -127,6 +129,14 @@ local function onpickedfn(inst, picker)
     else
         inst.AnimState:PushAnimation("picked", false)
     end
+	
+	local x, y, z = inst.Transform:GetWorldPosition()
+	local grass = TheSim:FindEntities(x, y, z, 2, nil, nil, GRASS_TAGS)
+	for i, v in ipairs(grass) do
+		if v.components.pickable and v.components.pickable:CanBePicked() then
+			v.components.pickable:MakeEmpty()
+		end
+	end
 end
 
 local FINDGRASSGEKKO_MUST_TAGS = { "grassgekko" }
@@ -219,6 +229,7 @@ local function torren_grass(name, stage)
         inst:AddTag("renewable")
 		inst:AddTag("silviculture") -- for silviculture book
         inst:AddTag("lunarplant_target")
+		inst:AddTag("torrengrass")
 
         --witherable (from witherable component) added to pristine state for optimization
         inst:AddTag("witherable")
@@ -308,6 +319,48 @@ local function torren_grasspart_fn()
     return inst
 end
 
+local GRASS_BLOCKER_TAGS = {"antlion_sinkhole_blocker", "birdblocker", "blocker", "_inventoryitem"}
+local PLANT_TAGS = {"plant"}
+
+local function customcheckfn(pt)
+	return #TheSim:FindEntities(pt.x, pt.y, pt.z, 2, nil, nil, GRASS_BLOCKER_TAGS) == 0 and #TheSim:FindEntities(pt.x, pt.y, pt.z, 0.25, nil, nil, PLANT_TAGS) == 0
+		and not TheWorld.Map:IsPointNearHole(pt) and TheWorld.Map:CanPlantAtPoint(pt.x, pt.y, pt.z)
+end
+
+local function OnInit(inst)
+	local numgrass = math.random(20, 36)
+	local pt = inst:GetPosition()
+	for i = 1, numgrass do
+		local offset = FindWalkableOffset(pt, math.random() * 2 * PI, GetRandomMinMax(0, 8), 12, false, true, customcheckfn)
+		if offset ~= nil then
+			local prefab = math.random() > 0.02 and "torren_grass" or "rocks"
+			local grass = SpawnPrefab(prefab)
+			grass.Transform:SetPosition((pt + offset):Get())
+		end
+	end
+	inst:Remove()
+end
+
+local function spawner_fn()
+    local inst = CreateEntity()
+	
+	inst.entity:AddTransform()
+    inst.entity:AddNetwork()
+	
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst:DoTaskInTime(0.1, OnInit)
+	
+	inst.persists = false
+
+    return inst
+end
+
 return torren_grass("torren_grass", 0),
        torren_grass("depleted_torren_grass", 1),
-       Prefab("torren_grasspartfx", torren_grasspart_fn, torren_grasspart_assets)
+       Prefab("torren_grasspartfx", torren_grasspart_fn, torren_grasspart_assets),
+	   Prefab("torren_grass_spawner", spawner_fn)

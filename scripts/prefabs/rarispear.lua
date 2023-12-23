@@ -20,7 +20,7 @@ end
 
 local function OnAttack(inst, attacker, target)
     if target:HasTag("chess") then
-		target.components.combat:GetAttacked(attacker, 40, inst)
+		target.components.combat:GetAttacked(attacker, 30, inst)
 	end
 
     omega_modifiers(inst, attacker, target)	

@@ -138,7 +138,7 @@ local function cooked()
     inst.components.edible.healthvalue = TUNING.HEALING_TINY
     inst.components.edible.foodtype = FOODTYPE.VEGGIE
     inst.components.edible.secondaryfoodtype = FOODTYPE.BERRY
-    inst.components.edible.radiationvalue = -5
+    inst.components.edible.radiationvalue = -8
 
     inst:AddComponent("tradable")
 

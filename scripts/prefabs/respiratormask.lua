@@ -83,7 +83,7 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
-	inst.components.equippable:SetRadiationProtectPercent(0.2) 
+	inst.components.equippable:SetRadiationProtectPercent(0.5) -- from .2 to .5 temporarily until more rad combating equipment is created
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
@@ -93,7 +93,7 @@ local function fn()
 	inst.components.fueled:SetDepletedFn(inst.Remove)
 
 	inst:AddComponent("waterproofer")
-    inst.components.waterproofer:SetEffectiveness(0.2)
+    inst.components.waterproofer:SetEffectiveness(0.5) -- supposed to match rad absorbtion, temp increase
 	
     MakeHauntableLaunch(inst)
 
