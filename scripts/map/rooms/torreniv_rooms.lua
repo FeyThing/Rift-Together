@@ -11,7 +11,7 @@
 				scrapmetal = 0.33,
 				raritanium_crystals = 0.01,
 				
-				torren_grass_spawner = 1,
+				torren_grass_spawner = .2,
 				torren_cactus = 0.33,
 				
 				vullard_lamp = 0.1,
@@ -35,7 +35,7 @@
 				torren_cactus = 0.33,
 				succulent_plant = 0.3,
 				fireflies = 0.33,
-				torren_grass_spawner = 1,
+				torren_grass_spawner = .1,
 				driftwood_tall = 0.1,
 				raritanium_crystals = 0.01,
 				scrapmetal = 0.15,
@@ -68,7 +68,7 @@
 				scrapmetal = 0.6,
 				vullard_lamp = 0.1,
 				
-				torren_grass_spawner = .9,
+				torren_grass_spawner = .3,
 				torren_cactus = 0.33,
 				
 				lava_pond = .1,
@@ -93,7 +93,7 @@ AddRoom("Torren IV Depot",  {
 				scrapmetal = 0.6,
 				vullard_lamp = 0.1,
 				
-				torren_grass_spawner = 2,
+				torren_grass_spawner = .2,
 				torren_cactus = 0.33,
 				
 				junk_pillar = 1,
@@ -120,7 +120,7 @@ AddRoom("Torren IV Depot",  {
 				nanocrate = 0.1,
 				scrapmetal = 1,
 												
-				torren_grass_spawner = 2,
+				torren_grass_spawner = .1,
 				marsh_tree = 1,
 				fireflies = 0.33,
 				torren_cactus = 0.33,
@@ -151,7 +151,7 @@ AddRoom("Torren IV Depot",  {
 				flower = .3,
 				luminoustree = 3,
 												
-				torren_grass_spawner = .7,
+				torren_grass_spawner = .2,
 				marsh_tree = 1,
 				fireflies = 0.33,
 				torren_cactus = 0.43,
@@ -178,7 +178,7 @@ AddRoom("Torren IV Depot",  {
 				nanocrate = 0.01,
 				scrapmetal = 1,					
                 					
-				torren_grass_spawner = 1,
+				torren_grass_spawner = .01,
 				marsh_tree = 1,
 				fireflies = 0.33,
 				torren_cactus = 0.33,
@@ -213,7 +213,7 @@ AddRoom("Torren IV Depot",  {
 
 				torren_cactus = 0.33,
 				fireflies = 0.33,
-				torren_grass_spawner = .25,
+				torren_grass_spawner = .15,
 				tumbleweedspawner = .01,
 				marsh_tree = .5,
 				succulent_plant = 0.3,
@@ -246,7 +246,7 @@ AddRoom("Torren IV Fertile",  {
 				notthebees = {weight = .2, prefabs = {"beehive", "wasphive"}},
 				torren_cactus = 0.33,
 				fireflies = 0.33,
-				torren_grass_spawner = .5,
+				torren_grass_spawner = .3,
 				berrybush2 = 0.4,
 				succulent_plant = 0.3,
 				luminoustree = 6,				
