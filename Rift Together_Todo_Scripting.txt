@@ -1,58 +1,43 @@
-Rift Together list before release.
+Rift Together scripting todo list.
 
 
 ----------------
 
-To Add
+To Add post-release
 
-- Add damage. Increased radiation damage the worst state you become.
-- Add radiation immunity so some mobs aren't effected. (done)
+- Increased radiation damage the worst state you become instead of a flat 1 damage tick per second.
 - Putting moonrocks/etc or irradiated things in your inventory triggers the radiation to tick up
-- All lunar creatures deal radiation damage (done)
+
 
 Organization
 
-- Organize the very unorganized configs (done)
 - Reorganize messy file placement
-
-Optional
-
-- Nuclear winter. Radioactive snow after the first year ingame.
-- Shade or taking cover under stuff protects you from the radioactive snow.
-- Moving/migrating radioactive barrels floating in the water 
 
 
 Compatibility
 
-- Moonmaw_dragonfly from Uncompromising mode emits a radiation aura
 - Moonglass Glommer from Cherry Forest emits an anti-radiation aura
 
 
+Bugs to fix 
 
------------
-Bugs to fix before release
-
-- Visual bug. Radiation starts at 100% then returns back to 0% upon world update/save in caves, eat food or when you equip an item. When player rejoins(done)
-
-there is a bug where it is back to 100% for a split second then returns backs as appropiate percentage.(done)
-- When equipping the respirator, it loses its RadiationProtectPercent when you reload the game until you re-equip it again.(done)
-
-- Damage bug where things become irradiated very quickly after taking damage.(done)
 
 - Performance issue is mostly fixed with reduced particles but overtime I'm unsure if radiation particles will build up. If there is a way to make them disappear when off screen, it may help.
 
-- Characters max radiation is not setting properly, and is default wilson's 100.(done)
 
 - When Uncompromising Mode is active and the moonmaw_dragonfly is encountered. It's radiation spreaders break the radiation particle system so players have no indicator of infected areas.
  
 
 
 
-----------------
+-----------
 
-Later stuff TBA
+Future ideas Plans
 
 
+- Nuclear winter. Radioactive snow after the first year ingame.
+- Shade or taking cover under stuff protects you from the radioactive snow.
+- Moving/migrating radioactive barrels floating in the water 
 
 
 

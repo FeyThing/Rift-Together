@@ -1,41 +1,21 @@
-Rift Together list before release.
+Rift Together list to do pre-release during testing phase.
 
 
 Art
 ----------------
 
-
-Nef annihilator Animations
-
-- Replace Nef Annihilator animation with the angry emote.
-- Add symbols to show invisible equipment when in annihilator mode
-- Finish all annihilator animations or add placeholders
-
 Canyon Biome
 
-- Add Swarmer Enemy. A small creature that acts similar to shipwreck monkeys which steal things, but get heavily aggressive depending on certain conditions.
 - Draw better irradiated ponds (drawing concepts as we speak)
 
 Junk Biome
 
-- Add Abandoned houses (Starting)
-- Add Vullard NPC setpiece with "Gone scavenging sign" and move smelter to said setpiece (done) 
+- Add Abandoned houses 
 - Make new art for Vullard Lamp post
 
 Sound
 
-- Custom sound for Nef 
-- Custom sound for Qwark
-
-
-Characters 
-
-- Add Qwark
-- Add Clank
-- Add Nefarious
-- Touch up nefarious's character Art
-- Remake all big portraits (done for Ratchet)
-- Write all character dialogue (done for Ratchet)
+- Add custom sound to hounds
 
 
 Main Logo
@@ -44,41 +24,64 @@ Main Logo
 
 
 -----------
-Bugs to fix before release
------ Art
+Bugs to fix pre release
+
 - Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
-- Barrels art needs to be fixed and edited to be less crooked in a balanced way.
-- Tile art too big, needs fixing.
+- Barrels art needs to be fixed and edited to be less crooked.
+- Tile art too big for platform, needs fixing.
 - Misplaced bubbling animations on ponds and smelter.
+
+
+
 
 
 -----------
 
-Future Plans
+Future ideas Plans
 
 Junk Biome
 
 - Instead of a shovel. Drill, for digging through special rock for raritanium.
-- Vending Machine that spawns only on the vullard NPCs setpiece
+- Vending Machine that spawns only on the vullard NPCs setpiece. 
 
 
 NPCs
 
-- Vullard NPC you must find before he appears to sell you blueprints or trade
+- Vullard NPC you must find before he appears to sell you blueprints or trade.
 
 
 Mobs
 Swarmer. Steals stuff, aggros during ceratain seasons. Has two morphs. Antara(nuetral) and Cerullean(Hostile).
-Fendersax Wasp (Needle Wasp) Spawns from hanging nests with harvestable, Sirangian honey. Spits acid.
+Fendersax Wasp (Needle Wasp) Spawns from attached nests with harvestable, Sirangian honey. Spits acid.
 
 Items
 
 - Raritanium fishing rod (allows fishing in radioactive ponds and lakes)
 - Purifier machine
 
+
+Characters 
+
+- Add Qwark
+- Add Clank (Next character?)
+- Add Nefarious
+
+Sound
+
+- Custom sound for Nef 
+- Custom sound for Qwark
+- Custom sound for Clank
+
+Nef annihilator Animations
+
+- Replace Nef Annihilator animation with the angry emote.
+- Add symbols to show invisible equipment when in annihilator mode
+- Finish all annihilator animations or add placeholders
+
 Armor
 
-- O2 mask (to slow radiation and provides some waterproofing)
+- Modular Armor
+- Radiantion resistant armor
 
 Animations
 
@@ -87,7 +90,7 @@ Animations
 
 Mechanics
 
-- Add new raritanium hull tag which adds resistance to all damage except from magic weapons and raritanium made weapons(both mobs and player made RT armors)
+- Add new raritanium hull tag which adds resistance to all damage except from magic weapons and raritanium made weapons(both mobs and player made raritanim armors)
 
 Sound
 
