@@ -78,7 +78,7 @@ function RadiationBadge:OnUpdate(dt)
         if self.owner:HasTag("sleeping") then
             --Special case for sleeping: at night, radiation will ping between .9999 and 1 of max, so make an exception for the arrow
             if radiation:GetPercentWithPenalty() < 1 then
-                anim = "arrow_loop_increase"
+                anim = "neutral"
             end
         else
             local ratescale = radiation:GetRateScale()
