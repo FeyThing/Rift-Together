@@ -1,5 +1,5 @@
 STRINGS.CHARACTERS.RATCHET = require "speech_ratchet"
-STRINGS.CHARACTERS.NEFARIOUS = require "speech_nefarious"
+--STRINGS.CHARACTERS.NEFARIOUS = require "speech_nefarious"
 
 
 local strings = {
@@ -192,7 +192,8 @@ local strings = {
 		SHOCKMOD = "Adds electric damage to modifiable weapons.",
 
 		RESPIRATORMASK = "It provides minor protection against harsh elements.",
-		RARISWORD = "This raritanium sword is highly modifiable and extra effective against metallic enemies.",
+		RARISWORD = "This raritanium sword is highly modifiable and extra effective against artificial enemies.",
+		RARISPEAR = "Turns that flimsy spear of yours into an effective weapon against artificial creatures.",
 
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 
