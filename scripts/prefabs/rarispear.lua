@@ -23,7 +23,6 @@ local function OnAttack(inst, attacker, target)
 		target.components.combat:GetAttacked(attacker, 30, inst)
 	end
 
-    omega_modifiers(inst, attacker, target)	
 end
 
 
