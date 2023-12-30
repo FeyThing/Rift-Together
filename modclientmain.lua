@@ -67,6 +67,14 @@ TUNING.STARTING_ITEM_IMAGE_OVERRIDE["nanoboost"] = {
     image = "nanoboost.tex",
 }
 
+GLOBAL.owrench_init_fn = function(inst, build_name)
+    GLOBAL.basic_init_fn(inst, build_name, "owrench" )
+end
+
+GLOBAL.owrench_clear_fn = function(inst)
+    GLOBAL.basic_clear_fn(inst, "owrench" )
+end
+
 if GetModConfigData("Ratchet And Clank Characters") then
 	AddModCharacter("ratchet", "MALE")
 end
