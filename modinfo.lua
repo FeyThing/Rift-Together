@@ -1,7 +1,7 @@
 name = "Ratchet and Clank: Rift Together"
 --description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
 author = "XenoMind, Asura"
-version = "Beta 1.0"
+version = "Beta 1.0.7"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[
@@ -34,11 +34,11 @@ server_filter_tags = {
     "character", "environment", "scenario", "worldgen", "item", "creature", "art", "ratchet", "clank", "qwark", "nefarious",
 }
 
-mod_dependencies = {
+--[[mod_dependencies = {
     {--Skin Api
         workshop = "workshop-2812783478",
     },
-}
+}]]
 
 
 local function CreateEnableOption(name, default, label, hover)

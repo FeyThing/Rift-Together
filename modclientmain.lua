@@ -42,7 +42,7 @@ STRINGS.CHARACTER_QUOTES.ratchet = "\"Clank? Where are you!\""
 STRINGS.CHARACTER_ABOUTME.ratchet = "Ratchet is the hero of multiple galaxies, he wishes to one day be reunited with his kind one day."
 STRINGS.CHARACTER_BIOS.ratchet = {
  { title = "Birthday", desc = "Unknown" },
-					{ title = "Favorite Food", desc = "Unknown" },
+					{ title = "Favorite Food", desc = "Barnacle Pita" },
 					{ title = "A Hero trapped between dimensions", desc = "Ratchet, an orphen originally born from Fastoon, is a headstrong and challenge seeking savior of multiple galaxies. Originally a jerk, he has now developed a light-hearted yet wise-cracking personality with the help of clank, his best friend. Though he has struggled balancing his own needs and those of others, he always chooses the right thing to do in order to keep the universe safe. Especially his friends and his foster home, Veldin."},
 				
 }

@@ -69,7 +69,6 @@ local common_postinit = function(inst)
 end
 
 local master_postinit = function(inst)
-	inst.level = 0
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
 	
 	inst.soundsname = "ratchetevent"
@@ -78,6 +77,7 @@ local master_postinit = function(inst)
 	
 	inst.customidleanim = "idle_winona"
 
+	inst.components.foodaffinity:AddPrefabAffinity("barnaclepita", TUNING.AFFINITY_15_CALORIES_SUPERHUGE)
 
 	inst.components.health:SetMaxHealth(TUNING.RATCHET_HEALTH)
 	inst.components.hunger:SetMax(TUNING.RATCHET_HUNGER)	
