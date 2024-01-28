@@ -46,3 +46,9 @@ AddRecipe2("rarispear",
 		TECH.SCIENCE_ONE, 
         {atlas=atlas},
 		{"CHARACTER","WEAPONS"})
+		
+AddRecipe2("shoes_hover", 
+		{Ingredient("pigskin", 2), Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 4)}, 
+		TECH.SHOES_ONE, 
+		{atlas=atlas}, 
+		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})

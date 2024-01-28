@@ -70,6 +70,20 @@ local function CreateDensityOption(name, default, label, hover)
     }
 end
 
+local function CreatePercentageOption(name, default, label, hover)
+    return {
+        name = name,
+        label = label, 
+        hover = hover,
+        options = {
+			{description = "25%", data = 25},
+			{description = "50%", data = 50},
+			{description = "75%", data = 75},
+        },
+        default = 50,
+    }
+end
+
 local opt_na = {{description = "", data = 0}}
 local function Title(title,hover)
 	return {
@@ -112,6 +126,8 @@ configuration_options = {
 	CreateEnableOption("rt_cf", 1, "Cherry Forest", "Allow compatibility with Cherry Forest."),
 	CreateEnableOption("rt_ia", 1, "Island Adventures", "Allow compatibility with Island Adventures."),
 	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow compatibility with Dehydrated."),
+	CreateEnableOption("rt_shoe", 1, "Shoes", "Allow compatibility with Shoetime."),
+	CreatePercentageOption("shoes_hover_speed", 50, "Hover Boot Speed", "Adjusts hover speed for the hover boots found in shoetime."),
 	
 	DIVIDE,
 	Title("Character Options"),

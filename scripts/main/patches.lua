@@ -66,7 +66,7 @@ local PATCHES =
 		--"prefab_template", --"wilson"
 	},
 	STATEGRAPHS = { --it's creating new one
-		--"wilson",
+		"wilson",
 	},
 	STATES = { --it's patches
 		--"wilson",

@@ -2,8 +2,8 @@ return {
 	Prefabs = {	
 		"ratchet",
 		"ratchet_none",
-		"nefarious",
-		"nefarious_none",				
+		--"nefarious",
+		--"nefarious_none",				
 		"owrench",		
 		"forcefieldfx1",
 		"chessjunk_spawner",
@@ -44,6 +44,8 @@ return {
 
 	Assets = {
 		Asset( "ANIM", "anim/radiation_meter.zip"),
+		Asset( "ANIM", "anim/player_shoeshover.zip"),
+		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),
 
@@ -66,7 +68,7 @@ return {
 		--Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
 
 		
-		Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
+		--[[Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
 		Asset( "ATLAS", "images/avatars/avatar_ratchet.xml" ),
 		
 		Asset( "IMAGE", "images/avatars/avatar_ghost_ratchet.tex" ),
@@ -98,7 +100,7 @@ return {
 		Asset( "ATLAS", "images/avatars/avatar_ghost_nefarious.xml" ),
 		
 		Asset( "IMAGE", "images/names_nefarious.tex" ),
-		Asset( "ATLAS", "images/names_nefarious.xml" ),
+		Asset( "ATLAS", "images/names_nefarious.xml" ),]]
 
 				
 		--sound

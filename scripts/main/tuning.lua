@@ -81,6 +81,24 @@ local tunings = {
 	RT_DEHYDRATED = {
 	    GetModConfigData("rt_dm"),
 	},
+	
+	RT_SHOES = {
+	    GetModConfigData("rt_shoe"),
+	},
+
+	--[[if GLOBAL.EQUIPSLOTS.SHOES then
+	TUNING.SHOES_RADIATION_PERISHTIME = .25
+	
+	STRINGS.NAMES.SHOES_RADIATION = "Protective Boots"
+	STRINGS.CHARACTERS.GENERIC.DESCRIBE.SHOES_RADIATION = "Nice heavy boots that is made of extra protective metal."
+	STRINGS.RECIPE_DESC.SHOES_RADIATION = "Stepping in radioactive puddles is a thing of the past!"
+	
+	local TECH = GLOBAL.TECH
+	
+	AddRecipe2("shoes_radiation", {Ingredient("pigskin", 2)}, TECH.SHOES_ONE, shoesconfig, TUNING.SHOES_NOUNLOCK and {"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
+	
+	table.insert(PrefabFiles, "shoes_radiation")
+end]]
 
 --- Character moved for later release
     --[[NEFARIOUS_ENERGY = 100,
@@ -93,9 +111,15 @@ local tunings = {
 	NEFARIOUS_RADIATION = 200,]]
 
     RATCHET_HEALTH = 125,
+	
     RATCHET_HUNGER = 150,
+	
     RATCHET_SANITY = 200,
     
+	---Shoes Mod
+	SHOES_HOVER_SPEED = 1 + ((GetModConfigData("shoes_hover_speed") or 20) * 0.01),
+	
+	
     RAD_TOTAL = 100,
     
     RAD_EFFECT_RANGE = 5,

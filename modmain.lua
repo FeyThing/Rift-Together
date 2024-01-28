@@ -4,7 +4,6 @@ local require = GLOBAL.require
 local STRINGS = GLOBAL.STRINGS
 local containers = require "containers"
 
-GLOBAL.CHEATS_ENABLED = true
 
 local ToLoad = require("main/to_load")
 PrefabFiles = ToLoad.Prefabs
@@ -34,6 +33,6 @@ AddReplicableComponent("radiation")
 
 -----------------------
 modimport("scripts/stategraphs/SGannihilator")
-modimport("scripts/util/nefarious_powers")
+--modimport("scripts/util/nefarious_powers")
 modimport("scripts/stategraphs/SGratchet")
 

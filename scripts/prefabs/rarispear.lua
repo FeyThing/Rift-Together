@@ -22,7 +22,7 @@ local function OnAttack(inst, attacker, target)
     if target:HasTag("chess") then
 		target.components.combat:GetAttacked(attacker, 30, inst)
 	end
-
+	
 end
 
 

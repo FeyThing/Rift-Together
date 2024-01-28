@@ -103,7 +103,8 @@ local strings = {
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
 				
-				
+				--- Shoes mod
+				SHOES_HOVER = "I can glide over almost anything!",
 			},
 			
 			ANNOUNCE_IRRITATED = "What's this prickly sensation?",
@@ -137,7 +138,35 @@ local strings = {
 				SCRAPROCK = "Maybe if I bust it open, I'll find something of use.",
 				JUNKPILE = "That's your typical vullard pile of junk.",
 				VULLARD_SMELTER = "Oh hey, reminds me of home. Maybe I can make use of the scrap around here.",
-			},
+				--- Shoes mod
+				SHOES_HOVER = "Looks like my old hoverboots! Let's take them out for a spin.",
+				SHOES_ARMOR = "These offer some great protection!",
+				SHOES_SPEED = "I'm all ready to run!",
+				SHOES_RAIN = "Should keep my feet dry.",
+				SHOES_WET = "Eugh, these are gross. They're a pair of soggy socks!",
+				SHOES_WINTER = "These could protect me even from the Tundor Wastes!",
+				SHOES_SUMMER = "Ahhh, nice and breezy.",
+				SHOES_SLURPER = "Ewww, I think it licked me.",
+				SHOES_WATERPLANT = "These should make traversal a cakewalk!",
+				SHOES_FROG = "Wow these are great! Too bad they feel a little slimy.",
+				SHOES_BATTLE = "Usually I like a good wrench to the face, but with these a kick will do too!",
+				SHOES_MOONROCK = "The dark doesn't seem that bad with these on.",
+				SHOES_FERN = "They can take a beating for me.",
+				SHOES_MUSHROOM_RED = "Whoohoo, these are great during the day!",
+				SHOES_MUSHROOM_GREEN = "Whoohoo, these are great during dusk!",
+				SHOES_MUSHROOM_BLUE = "Whoohoo, these are great during the night!",
+				SHOESHINE_KIT = "Makes repairing footwear easier.",
+				SHOES_DESK = {
+				BURNT = "Yikes, I definitely didn't do that.",
+				GENERIC = "Whoever constructed a table like this is pretty great at improvising.",
+				},
+				SHOES_DESK_MOREL = "Looks like he's ready to open up shop.",
+				SHOES_SELLER = {
+				GENERIC = "Probably not a florana resident, which may be a good thing.",
+				HUNGRY = "I think he'll appreciate it if I grab him a bite to eat.",
+				},
+				SHOES_SELLER_PET = "Awww, look at the little guy."
+				},
 		},
 	},
 	
@@ -182,6 +211,9 @@ local strings = {
 		VULLARD_SMELTER = "Smelter",
 
 		RADIATION = "Radiation",
+		
+		--- Shoes mod
+		SHOES_HOVER = "Hover Boots",
 	},
 
 	RECIPE_DESC = {
@@ -198,6 +230,9 @@ local strings = {
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 
 		NANOBOOST = "An energy restoring drink!",
+		
+		--- Shoes mod
+		SHOES_HOVER = "The terrain is the thing of the past with these!",
 	},
 	ACTIONS = {
 		DODGE_RATCHET = "Dodge"

@@ -77,7 +77,7 @@ return function(self)
         end
     end)
 
-    if self.owner.prefab == "nefarious" then
+   --[[if self.owner.prefab == "nefarious" then
 		self.energyhud = self:AddChild(NefBadge(self, self.owner))
         self.owner.energyhud = self.energyhud
         self.owner.UpdateBadges = function()
@@ -102,6 +102,6 @@ return function(self)
                         self.energyhud:Hide()
                     end
             end		
-	end
+	end]]
 
 end

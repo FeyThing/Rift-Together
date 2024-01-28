@@ -21,7 +21,7 @@ require("map/retrofit_savedata").DoRetrofitting = function(savedata, world_map, 
 end
 
 function ChangeTorrenIVConfigs(config, value)
-    local configuration_options = KnownModIndex:LoadModConfigurationOptions("Rift-Together", false)
+    local configuration_options = KnownModIndex:LoadModConfigurationOptions("workshop-3121596445", false)
     if configuration_options ~= nil then
         for i, v in ipairs(configuration_options) do
             if v.name == config then
@@ -30,5 +30,5 @@ function ChangeTorrenIVConfigs(config, value)
             end
         end
     end
-    KnownModIndex:SaveConfigurationOptions(function() end, "Rift-Together", configuration_options, false)
+    KnownModIndex:SaveConfigurationOptions(function() end, "workshop-3121596445", configuration_options, false)
 end

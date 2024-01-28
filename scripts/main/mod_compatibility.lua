@@ -23,3 +23,8 @@ end
 if TUNING.RT_DEHYDRATED and MOD.DEHYDRATED_ENABLED then
 	modimport("scripts/main/mods/dehydration")
 end
+
+--- Shoes
+if TUNING.RT_SHOES and MOD.SHOES_ENABLED then
+	modimport("scripts/main/mods/shoes")
+end

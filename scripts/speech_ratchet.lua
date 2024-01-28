@@ -568,10 +568,10 @@ return {
 	ANNOUNCE_TOADESCAPED = "Yeah, run away!",
 
 
-	ANNOUNCE_DAMP = "Just my day, it's raining.",
-	ANNOUNCE_WET = "And I thought I was used to rain by now.",
-	ANNOUNCE_WETTER = "Aww, not my clothes.",
-	ANNOUNCE_SOAKED = "Ugh, I feel like I fell into one of pokitaru's oceans.",
+	ANNOUNCE_DAMP = "Just my day, I'm all wet",
+	ANNOUNCE_WET = "I can never get used to being drenched.",
+	ANNOUNCE_WETTER = "Aww, not my clothes!",
+	ANNOUNCE_SOAKED = "Ugh, I feel like I fell into one of pokitaru's oceans!",
 
 	ANNOUNCE_WASHED_ASHORE = "Th...that was horrible!",
 
@@ -2281,17 +2281,17 @@ return {
         MEATBALLS = "It's just a big wad of meat.",
         MEATRACK =
         {
-            DONE = "Jerky time!",
-            DRYING = "Meat takes a while to dry.",
-            DRYINGINRAIN = "Meat takes even longer to dry in rain.",
-            GENERIC = "I should dry some meats.",
-            BURNT = "The rack got dried.",
-            DONE_NOTMEAT = "In laboratory terms, we would call that \"dry\".",
-            DRYING_NOTMEAT = "Drying things is not an exact science.",
-            DRYINGINRAIN_NOTMEAT = "Rain, rain, go away. Be wet again another day.",
+            DONE = "Awww yeah, Jerky!",
+            DRYING = "Looks like I better wait, it's going to take a moment.",
+            DRYINGINRAIN = "Awww, it's wet. This might delay the process.",
+            GENERIC = "I could dry my catch with this.",
+            BURNT = "I guess not everything lasts long.",
+            DONE_NOTMEAT = "Ahhhh yeah, it's done!",
+            DRYING_NOTMEAT = "If I can dry it, I'll dry it.",
+            DRYINGINRAIN_NOTMEAT = "Aww no, not the rain.",
         },
-        MEAT_DRIED = "Just jerky enough.",
-        MERM = "I can smell them before I see them!",
+        MEAT_DRIED = "Tasty, tasy beef jerky.",
+        MERM = "Eugh can smell them before I see them!",
         MERMHEAD =
         {
             GENERIC = "I..I think I'm about to lose my lunch.",
@@ -2418,7 +2418,7 @@ return {
         RAINOMETER =
         {
             GENERIC = "It measures cloudiness.",
-            BURNT = "The measuring parts went up in a cloud of smoke.",
+            BURNT = "I don't know if I should say that's my fault or not.",
         },
         RAINCOAT = "Feels good to be dry.",
         RAINHAT = "At least I'm dry.",
@@ -2628,7 +2628,7 @@ return {
 		SWEATERVEST = "Hey, this is pretty cozy.",
 		REFLECTIVEVEST = "At least it'll keep me cool!",
 		HAWAIIANSHIRT = "It's not lab-safe!",
-		TAFFY = "If I had a dentist they'd be mad I ate stuff like that.",
+		TAFFY = "Ahh, a little junk food won't hurt.",
 		TALLBIRD = "That's a tall bird!",
 		TALLBIRDEGG = "Will it hatch?",
 		TALLBIRDEGG_COOKED = "Delicious and nutritious.",
@@ -2649,7 +2649,7 @@ return {
 		{
 			GENERIC = "Not a very tall bird.",
 			HUNGRY = "You need some food and quick, huh?",
-			STARVING = "It has a dangerous look in its eye.",
+			STARVING = "Um, nice birdy. I'm not exactly that tasty.",
 			SLEEPING = "It's getting some shut-eye",
 		},
 		TELEPORTATO_BASE =
