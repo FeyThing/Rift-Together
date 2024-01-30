@@ -29,6 +29,7 @@ local function fn()
 	inst.AnimState:SetBuild("swap_shoes_radiation")
 	inst.AnimState:PlayAnimation("idle_radiation")
 	
+	inst.shoesanim = "radiation"
 	
 	inst.entity:SetPristine()
 	
@@ -36,20 +37,21 @@ local function fn()
 		return inst
 	end
 	
-	inst.lunacyshields = {}
-	inst._sanitymode = false
+	inst._hidefeet = true
 	
 	inst:AddComponent("inventoryitem")
+	inst.components.inventoryitem.imagename = "shoes_radiation"
+    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
 	inst:AddComponent("equippable")
 	inst.components.equippable.equipslot = EQUIPSLOTS.SHOES
-	inst.components.equippable:SetRadiationProtectPercent(0.5)
+	inst.components.equippable:SetRadiationProtectPercent(0.25)
 	inst.components.equippable:SetOnEquip(OnEquip)
 	inst.components.equippable:SetOnUnequip(OnUnequip)
 	
 	inst:AddComponent("fueled")
 	inst.components.fueled.fueltype = FUELTYPE.USAGE
-	inst.components.fueled:InitializeFuelLevel(SHOES_SUMMER_PERISHTIME)
+	inst.components.fueled:InitializeFuelLevel(480*5)
 	inst.components.fueled:SetDepletedFn(inst.Remove)
 	
 	inst:AddComponent("insulator")

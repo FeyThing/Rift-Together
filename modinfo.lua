@@ -1,7 +1,7 @@
 name = "Ratchet and Clank: Rift Together"
 --description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
 author = "XenoMind, Asura"
-version = "Beta 1.0.7"
+version = "Beta 1.0.8"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[
@@ -127,7 +127,7 @@ configuration_options = {
 	CreateEnableOption("rt_ia", 1, "Island Adventures", "Allow compatibility with Island Adventures."),
 	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow compatibility with Dehydrated."),
 	CreateEnableOption("rt_shoe", 1, "Shoes", "Allow compatibility with Shoetime."),
-	CreatePercentageOption("shoes_hover_speed", 50, "Hover Boot Speed", "Adjusts hover speed for the hover boots found in shoetime."),
+	CreatePercentageOption("shoes_hover_speed", 50, "Hover Boot Speed", "Adjusts hover speed for the hover boots if shoe slot is active."),
 	
 	DIVIDE,
 	Title("Character Options"),

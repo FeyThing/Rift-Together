@@ -26,5 +26,11 @@ end
 
 --- Shoes
 if TUNING.RT_SHOES and MOD.SHOES_ENABLED then
-	modimport("scripts/main/mods/shoes")
+	modimport("scripts/main/mods/shoetime")
+end
+
+--- Just in case the shoe slot is enabled without the original shoetime mod. Rift Together's shoes will become available.
+if GLOBAL.EQUIPSLOTS.SHOES then
+	table.insert(PrefabFiles, "shoes_hover")
+	table.insert(PrefabFiles, "shoes_radiation")
 end

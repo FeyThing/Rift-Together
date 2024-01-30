@@ -118,7 +118,7 @@ end]]
     
 	---Shoes Mod
 	SHOES_HOVER_SPEED = 1 + ((GetModConfigData("shoes_hover_speed") or 20) * 0.01),
-	
+
 	
     RAD_TOTAL = 100,
     

@@ -103,8 +103,9 @@ local strings = {
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
 				
-				--- Shoes mod
+				--- Shoetime mod
 				SHOES_HOVER = "I can glide over almost anything!",
+				SHOES_RADIATION = "Keeps the pain at bay.",
 			},
 			
 			ANNOUNCE_IRRITATED = "What's this prickly sensation?",
@@ -138,8 +139,9 @@ local strings = {
 				SCRAPROCK = "Maybe if I bust it open, I'll find something of use.",
 				JUNKPILE = "That's your typical vullard pile of junk.",
 				VULLARD_SMELTER = "Oh hey, reminds me of home. Maybe I can make use of the scrap around here.",
-				--- Shoes mod
+				--- Shoetime mod
 				SHOES_HOVER = "Looks like my old hoverboots! Let's take them out for a spin.",
+				SHOES_RADIATION = "They're somewhat safe enough to even walk through aquatos's sewers.",
 				SHOES_ARMOR = "These offer some great protection!",
 				SHOES_SPEED = "I'm all ready to run!",
 				SHOES_RAIN = "Should keep my feet dry.",
@@ -212,8 +214,9 @@ local strings = {
 
 		RADIATION = "Radiation",
 		
-		--- Shoes mod
+		--- Shoetime mod
 		SHOES_HOVER = "Hover Boots",
+		SHOES_RADIATION = "Protective Boots",
 	},
 
 	RECIPE_DESC = {
@@ -231,8 +234,9 @@ local strings = {
 
 		NANOBOOST = "An energy restoring drink!",
 		
-		--- Shoes mod
+		--- Shoetime mod
 		SHOES_HOVER = "The terrain is the thing of the past with these!",
+		SHOES_RADIATION = "Protect your feet from those deadly gamma rays.",
 	},
 	ACTIONS = {
 		DODGE_RATCHET = "Dodge"

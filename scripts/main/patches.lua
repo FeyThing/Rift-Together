@@ -24,6 +24,7 @@ local PATCHES =
 		"combat",
 		"wavemanager",
 		"retrofitforestmap_anr",
+		"carefulwalker",
 		
 	},
 	
@@ -45,6 +46,7 @@ local PATCHES =
 		gestalt = "gestalt",		
 		gestalt_alterguardian_projectile = {"gestalt_alterguardian_projectile", "smallguard_alterguardian_projectile", "alterguardianhat_projectile", "largeguard_alterguardian_projectile"},
 		gestalt_guard = "gestalt_guard",
+		hats = "lunarplanthat",
 		hound = "mutatedhound",
 		lunar_grazer = "lunar_grazer",
 		meats = {"meat","cookedmeat", "meat_dried", "monstermeat", "cookedmonstermeat", "monstermeat_dried", "smallmeat", "cookedsmallmeat",

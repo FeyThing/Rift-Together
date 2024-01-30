@@ -20,6 +20,7 @@ local function LightsOn(inst)
 end
 
 local function OnEquip(inst, owner)	
+	inst._hovering = false
 	Shoes_OnEquip(inst, owner)
 	owner:RemoveTag("hovershoed")
 	owner.components.locomotor.fasteroncreep = false
@@ -29,54 +30,59 @@ local function OnEquip(inst, owner)
 	if inst.components.fueled and inst.components.equippable:IsEquipped() then
 			inst.components.fueled:StopConsuming()
 	end	
+	
 end
 
 local function OnUnequip(inst, owner)	
+	inst._hovering = false
 	owner:RemoveTag("hovershoed")
 	owner.sg:GoToState("idle")
 	owner.components.locomotor.fasteroncreep = false
 	owner.components.locomotor:SetTriggersCreep(true)
 	LightsOff(inst)
-	
+		
 	Shoes_OnUnequip(inst, owner)
 end
-
 	
-local function Hover_OnUse(inst, owner)	
-	local owner = inst.components.inventoryitem.owner
-	inst._hovering = not inst._hovering
-	
-	if inst._hovering then		
-	owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
-	if owner then
-	owner:AddTag("hovershoed")
-	owner.sg:GoToState("hover_stop")
-	owner.components.locomotor.fasteroncreep = true
-	owner.components.locomotor:SetTriggersCreep(false)
-	inst.components.equippable.walkspeedmult = TUNING.SHOES_HOVER_SPEED	
-	
-	LightsOn(inst)
-	end
-	if inst.components.fueled and inst.components.equippable:IsEquipped() then
-			inst.components.fueled:StartConsuming()
-		end
-	elseif not inst._hovering then
-		owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
-		owner:RemoveTag("hovershoed")
-		owner.sg:GoToState("idle")
-		owner.components.locomotor.fasteroncreep = false
-		owner.components.locomotor:SetTriggersCreep(true)
-		inst.components.equippable.walkspeedmult = 1
-		LightsOff(inst)
-	if inst.components.fueled and inst.components.equippable:IsEquipped() then
-			inst.components.fueled:StopConsuming()
-		end	
-	end
-	if inst.fx then
-		inst.fx:PlayShoesAnim(inst.shoesanim..(inst._hovering and "_boost" or ""), inst._hovering)
-	end
-	
-	inst:DoTaskInTime(0.1, function() inst.components.useableitem.inuse = false end)
+local function Hover_OnUse(inst, owner)    
+    local owner = inst.components.inventoryitem.owner    
+    inst._hovering = not inst._hovering        
+    
+    if inst._hovering then        
+    owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
+    if owner then
+    if owner.components.carefulwalker and owner.components.carefulwalker:IsCarefulWalking() then
+        owner.components.carefulwalker:ToggleCareful(false)
+    end
+    inst._hovering = true
+    owner:AddTag("hovershoed")
+    owner.sg:GoToState("hover_stop")
+    owner.components.locomotor.fasteroncreep = true
+    owner.components.locomotor:SetTriggersCreep(false)
+    inst.components.equippable.walkspeedmult = TUNING.SHOES_HOVER_SPEED
+    LightsOn(inst)
+    end
+    if inst.components.fueled and inst.components.equippable:IsEquipped() then
+            inst.components.fueled:StartConsuming()
+        end
+    elseif not inst._hovering then
+        inst._hovering = false
+        owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
+        owner:RemoveTag("hovershoed")
+        owner.sg:GoToState("idle_hover_stop")
+        owner.components.locomotor.fasteroncreep = false
+        owner.components.locomotor:SetTriggersCreep(true)
+        inst.components.equippable.walkspeedmult = 1
+        LightsOff(inst)
+    if inst.components.fueled and inst.components.equippable:IsEquipped() then
+            inst.components.fueled:StopConsuming()
+        end    
+    end
+    if inst.fx then
+        inst.fx:PlayShoesAnim(inst.shoesanim..(inst._hovering and "_boost" or ""), inst._hovering)
+    end
+    
+    inst:DoTaskInTime(0.1, function() inst.components.useableitem.inuse = false end)
 end
 
 
@@ -116,6 +122,7 @@ local function fn()
 		return inst
 	end
 	
+	inst._hidefeet = true
 	
 	inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.imagename = "shoes_hover"

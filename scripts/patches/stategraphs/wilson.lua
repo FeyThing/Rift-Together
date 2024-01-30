@@ -25,7 +25,7 @@ local states = {
 
 State{
         name = "hover_start",
-        tags = { "moving", "running", "canrotate", "hovering", "autopredict" },
+        tags = { "moving", "running", "canrotate", "hovering", "noslip", "autopredict" },
 
         onenter = function(inst)
             inst.components.locomotor:RunForward()
@@ -52,7 +52,7 @@ State{
 	
 		State{
 		name = "run_hover",
-		tags = {"moving", "running", "canrotate", "hovering", "autopredict"},
+		tags = {"moving", "running", "canrotate", "hovering", "noslip", "autopredict"},
 		
 		onenter = function(inst)
 			inst.components.locomotor:RunForward()
@@ -99,7 +99,7 @@ State{
 	
 	State{
         name = "hover_stop",
-        tags = { "canrotate", "hovering", "idle", "autopredict" },
+        tags = { "canrotate", "hovering", "idle", "noslip", "autopredict" },
 
         onenter = function(inst)
             inst.components.locomotor:Stop()
@@ -122,7 +122,7 @@ State{
 	
 	    State{
         name = "idle_hover",
-        tags = { "idle", "canrotate", "hovering", },
+        tags = { "idle", "canrotate","noslip", "hovering", },
 
         onenter = function(inst, pushanim)
             inst.components.locomotor:Stop()
@@ -170,26 +170,30 @@ State{
         ontimeout = function(inst)
 		inst.sg:GoToState("idle_hover")
 		
-            --[[local royalty = nil
-            local mindistsq = 25
-            for i, v in ipairs(AllPlayers) do
-                if v ~= inst and
-                    not v:HasTag("playerghost") and
-                    v.entity:IsVisible() and
-                    v.components.inventory:EquipHasTag("regal") then
-                    local distsq = v:GetDistanceSqToInst(inst)
-                    if distsq < mindistsq then
-                        mindistsq = distsq
-                        royalty = v
-                    end
-                end
-            end
-            if royalty ~= nil then
-                inst.sg:GoToState("bow", royalty)
-            else
-                inst.sg:GoToState("idle_hover")
-            end]]
         end,
+    },
+	
+	State{
+        name = "idle_hover_stop",
+        tags = { "canrotate","noslip", "hovering", "idle", "autopredict" },
+
+        onenter = function(inst)
+            inst.components.locomotor:Stop()
+            inst.AnimState:PlayAnimation("shoeshover_pst_idle")
+			if not inst.AnimState:IsCurrentAnimation("shoeshover_pst") then
+				inst.AnimState:PlayAnimation("shoeshover_pst")
+			end
+            
+        end,
+            
+        events =
+        {
+            EventHandler("animover", function(inst)
+                if inst.AnimState:AnimDone() then
+                    inst.sg:GoToState("idle")
+                end
+            end),
+        },
     },
 
 }

@@ -7,6 +7,3 @@ AddPrefabPostInit("shoes_moonrock", function(inst)
     inst.components.equippable:SetRadiationProtectPercent(0.15)
 end)	
 	
-if GLOBAL.EQUIPSLOTS.SHOES then
-	table.insert(PrefabFiles, "shoes_hover")
-end
