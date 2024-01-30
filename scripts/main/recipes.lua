@@ -48,7 +48,7 @@ AddRecipe2("rarispear",
 		{"CHARACTER","WEAPONS"})
 		
 AddRecipe2("shoes_hover", 
-		{Ingredient("shoes_radiation", 1), Ingredient("shoes_slurper", 1, atlas), Ingredient("gears", 4)}, 
+		{Ingredient("shoes_radiation", 1, atlas), Ingredient("shoes_slurper", 1), Ingredient("gears", 4)}, 
 		TECH.SHOES_ONE, 
 		{atlas=atlas},  
 		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
