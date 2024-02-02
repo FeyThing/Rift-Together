@@ -33,4 +33,7 @@ end
 if GLOBAL.EQUIPSLOTS.SHOES then
 	table.insert(PrefabFiles, "shoes_hover")
 	table.insert(PrefabFiles, "shoes_radiation")
+		
 end
+
+

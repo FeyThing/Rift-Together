@@ -229,6 +229,7 @@ local function fn(Sim)
     inst.components.pickable.cycles_left = inst.components.pickable.max_cycles
     inst.components.pickable:SetUp(nil,0)
     inst.components.pickable.transplanted = true
+	
     -------------------
 	--[[inst:AddComponent("childspawner")
 	inst.components.childspawner.childname = "swarmer"
@@ -247,7 +248,11 @@ local function fn(Sim)
     inst.components.lootdropper.numrandomloot = 1
     inst.components.lootdropper.speed = 2
     inst.components.lootdropper.alwaysinfront = true
-  
+	
+	if EQUIPSLOTS.SHOES then
+    inst.components.lootdropper:AddRandomLoot("shoes_hover_blueprint", 0.1)
+	end
+	  
     MakeSmallPropagator(inst)
 
     ---------------------
@@ -266,7 +271,7 @@ local function fn(Sim)
             land(inst)        
         end
     end)
-
+	
     MakeSnowCovered(inst)
 
 	inst.OnEntitySleep = OnEntitySleep

@@ -1,7 +1,7 @@
 name = "Ratchet and Clank: Rift Together"
 --description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
 author = "XenoMind, Asura"
-version = "Beta 1.0.8"
+version = "Beta 1.0.9"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[
@@ -84,6 +84,24 @@ local function CreatePercentageOption(name, default, label, hover)
     }
 end
 
+local function CreateTimerOption(name, default, label, hover)
+    return {
+        name = name,
+        label = label, 
+        hover = hover,
+        options = {
+			{description = "0", data = 0},
+			{description = "5", data = 5},
+			{description = "10", data = 10},
+			{description = "15", data = 15},
+			{description = "20", data = 20},
+			{description = "25", data = 25},
+			{description = "30", data = 30},
+        },
+        default = 5,
+    }
+end
+
 local opt_na = {{description = "", data = 0}}
 local function Title(title,hover)
 	return {
@@ -128,6 +146,7 @@ configuration_options = {
 	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow compatibility with Dehydrated."),
 	CreateEnableOption("rt_shoe", 1, "Shoes", "Allow compatibility with Shoetime."),
 	CreatePercentageOption("shoes_hover_speed", 50, "Hover Boot Speed", "Adjusts hover speed for the hover boots if shoe slot is active."),
+	CreateTimerOption("shoes_hover_speed_combat", 5, "Hover Boot Speed Cooldown", "Adjusts the cooldown timer for speed regain after combat."),
 	
 	DIVIDE,
 	Title("Character Options"),

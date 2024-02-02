@@ -49,7 +49,7 @@ AddRecipe2("rarispear",
 		
 AddRecipe2("shoes_hover", 
 		{Ingredient("shoes_radiation", 1, atlas), Ingredient("shoes_slurper", 1), Ingredient("gears", 4)}, 
-		TECH.SHOES_ONE, 
+		TECH.LOST, 
 		{atlas=atlas},  
 		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
 		

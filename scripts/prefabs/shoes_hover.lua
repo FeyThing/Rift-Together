@@ -27,9 +27,12 @@ local function OnEquip(inst, owner)
 	owner.components.locomotor:SetTriggersCreep(true)
 	inst.components.equippable.walkspeedmult = 1
 	
+	inst:ListenForEvent("onattackother", inst.SpeedAttack, owner, inst)
+	
 	if inst.components.fueled and inst.components.equippable:IsEquipped() then
 			inst.components.fueled:StopConsuming()
 	end	
+	
 	
 end
 
@@ -40,15 +43,50 @@ local function OnUnequip(inst, owner)
 	owner.components.locomotor.fasteroncreep = false
 	owner.components.locomotor:SetTriggersCreep(true)
 	LightsOff(inst)
+	
+	inst:RemoveEventCallback("onattackother", inst.SpeedAttack, owner, inst)
 		
 	Shoes_OnUnequip(inst, owner)
 end
+
+local function Speed_Penalty(inst)
+	local speed = TUNING.SHOES_HOVER_SPEED or 1
+	local new
 	
-local function Hover_OnUse(inst, owner)    
+	if inst.components.timer then
+		local t = inst.components.timer:GetTimeLeft("shoesspeed_penalty") or 0
+		new = math.max(1, Lerp(speed, 1, t * 0.5))
+	end
+	
+	if new and new < speed then
+		inst.components.equippable.walkspeedmult = math.min(speed, RoundBiasedUp(new, 2))
+	else
+		inst.components.equippable.walkspeedmult = speed
+		inst._shoespenaltytask:Cancel()
+		inst._shoespenaltytask = nil
+	end
+end
+
+local function Speed_Attack(inst, owner, data)
+	if inst.components.timer then
+		local time = TUNING.HOVER_COMBAT_TIME or 5
+		if inst.components.timer:TimerExists("shoesspeed_penalty") then
+			inst.components.timer:SetTimeLeft("shoesspeed_penalty", time)
+		else
+			inst.components.timer:StartTimer("shoesspeed_penalty", time)
+		end
+	end
+	
+	if inst._shoespenaltytask == nil and inst.components.equippable.walkspeedmult > 1 then
+		inst._shoespenaltytask = inst:DoPeriodicTask(0.1, Speed_Penalty)
+	end
+end
+	
+local function Hover_OnUse(inst, owner, item)    
     local owner = inst.components.inventoryitem.owner    
     inst._hovering = not inst._hovering        
-    
-    if inst._hovering then        
+    	
+    if inst._hovering then  
     owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
     if owner then
     if owner.components.carefulwalker and owner.components.carefulwalker:IsCarefulWalking() then
@@ -65,7 +103,7 @@ local function Hover_OnUse(inst, owner)
     if inst.components.fueled and inst.components.equippable:IsEquipped() then
             inst.components.fueled:StartConsuming()
         end
-    elseif not inst._hovering then
+    elseif not inst._hovering then	
         inst._hovering = false
         owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
         owner:RemoveTag("hovershoed")
@@ -83,7 +121,7 @@ local function Hover_OnUse(inst, owner)
     end
     
     inst:DoTaskInTime(0.1, function() inst.components.useableitem.inuse = false end)
-end
+	end
 
 
 local function fn()
@@ -124,13 +162,16 @@ local function fn()
 	
 	inst._hidefeet = true
 	
+	inst:AddComponent("timer")
+	
+	inst.SpeedAttack = function(owner, data) Speed_Attack(inst, owner, data) end
+	
 	inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.imagename = "shoes_hover"
     inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
 	inst:AddComponent("equippable")
 	inst.components.equippable.equipslot = EQUIPSLOTS.SHOES
-	inst.components.equippable:SetRadiationProtectPercent(0.1)
 	inst.components.equippable:SetOnEquip(OnEquip)
 	inst.components.equippable:SetOnUnequip(OnUnequip)
 	
@@ -141,6 +182,7 @@ local function fn()
 	
 	inst:AddComponent("useableitem")
 	inst.components.useableitem:SetOnUseFn(Hover_OnUse)
+
 	
 	inst:AddComponent("insulator")
 	inst.components.insulator:SetInsulation(TUNING.INSULATION_SMALL)
