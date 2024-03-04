@@ -45,6 +45,8 @@ return {
 	Assets = {
 		Asset( "ANIM", "anim/radiation_meter.zip"),
 		Asset( "ANIM", "anim/player_shoeshover.zip"),
+		Asset( "ANIM", "anim/player_drink.zip"),
+		Asset( "ANIM", "anim/winterfood.zip"),
 		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),

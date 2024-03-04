@@ -7,6 +7,50 @@ local prefabs = {
     "collapse_small",
 }
 
+local SEA_TAGS = {"barrel", "frozen"}
+local SEA_CANT_TAGS = {"irreplaceable", "INLIMBO"}
+
+local function OnInit(inst)
+    local rad = TUNING.TOXIC_TILE_RADIUS
+    
+    if inst.deepened == nil then
+        local map = TheWorld.Map
+        local pt = inst:GetPosition()
+        local x, y = map:GetTileCoordsAtPoint(pt:Get())
+        local _x = x - rad
+        local _y = y - rad
+        
+		
+        local ents = TheSim:FindEntities(pt.x, pt.y, pt.z, TUNING.TOXIC_RADIUS * 2, nil, SEA_CANT_TAGS, SEA_TAGS)		
+        for i, v in ipairs(ents) do
+		if v ~= inst then
+            v:Remove()
+			end		
+		end
+		
+        local i = -rad
+        while i < rad do
+            local j = -rad
+            while j < rad do
+                _x = _x - 1
+                
+                local current_tile = map:GetTile(_x, _y)
+                if not TileGroupManager:IsLandTile(current_tile) then
+                    map:SetTile(_x, _y, WORLD_TILES.OCEAN_TOXIC)
+                end
+                
+                j = j + 1
+            end
+            _x = x + rad
+            _y = _y + 1
+            
+            i = i + 1
+        end
+        
+        inst.deepened = true
+    end
+end
+
 local function onhammered(inst)
     local fx = SpawnPrefab("collapse_small")
     fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
@@ -43,6 +87,8 @@ local function MakeBarrel(name)
         inst.AnimState:PlayAnimation("idle", true)
         
         inst.entity:SetPristine()
+		
+		inst:AddTag("barrel")
 
         if not TheWorld.ismastersim then
             return inst
@@ -63,7 +109,9 @@ local function MakeBarrel(name)
 		inst:AddComponent("radiationspreader")
         inst.components.radiationspreader:SetRadius(2)
 
+
         inst:ListenForEvent("floater_startfloating", function(inst) inst.AnimState:PlayAnimation("idle_water", true) end)
+		inst:ListenForEvent("floater_startfloating", OnInit)
 
         return inst
     end
@@ -72,4 +120,16 @@ local function MakeBarrel(name)
 		
 end
 
-return MakeBarrel("barrel_radioactive")
+local function spawnerfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    --[[Non-networked entity]]
+
+    inst:AddTag("CLASSIFIED")
+
+    return inst
+end
+
+return MakeBarrel("barrel_radioactive"),
+	   MakeBarrel("barrel_radioactive_spawner", spawnerfn, assets, prefabs)

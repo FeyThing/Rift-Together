@@ -3,6 +3,8 @@ local function OnFueled(inst)
 
     if installed ~= nil and inst.components.fueled ~= nil then	
         inst.components.fueled:StartConsuming()
+		else
+		inst.components.fueled:StopConsuming()
     end
 end
 
@@ -34,12 +36,12 @@ local function CreateMod(name, bank, build, anim, fuellevel)
 
         inst:AddComponent("inspectable")
 
-        inst:AddComponent("fueled")
+        --[[inst:AddComponent("fueled")
         inst.components.fueled.fueltype = FUELTYPE.USAGE
         inst.components.fueled:InitializeFuelLevel(fuellevel)
         inst.components.fueled:SetDepletedFn(inst.Remove)
 
-        OnFueled(inst)
+        OnFueled(inst)]]
 
         inst:AddComponent("inventoryitem")
         inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"

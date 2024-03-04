@@ -1,8 +1,5 @@
 --- Had to do it the old fashioned way. It just was not having it with any modimports ;U;
 
-
-
-
 PrefabFiles = {
 	"ratchet",
 	"ratchet_none"
@@ -79,6 +76,20 @@ if GetModConfigData("Ratchet And Clank Characters") then
 	AddModCharacter("ratchet", "MALE")
 end
 
+ModdedCurios = {
+  ms_loading_ratchet1 = {
+        type = "loading",
+        skin_tags = {},
+        rarity = "ModMade",
+        assets = {
+            Asset("ATLAS", "images/bg_loading_ms_loading_ratchet1.xml"),
+            Asset("IMAGE", "images/bg_loading_ms_loading_ratchet1.tex"),
+            
+            Asset("DYNAMIC_ANIM", "anim/dynamic/ms_loading_ratchet1.zip"),
+            Asset("PKGREF", "anim/dynamic/ms_loading_ratchet1.dyn")
+        },
+    },
+}
 
 
 

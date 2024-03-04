@@ -105,6 +105,64 @@ AddPrefabPostInit("hound", function(inst)
     end
 end)
 
+--- Adding Armored Mobs to Uncomp
+
+AddPrefabPostInit("knook", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("armoredbody")
+
+end)
+
+AddPrefabPostInit("bight", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("armoredbody")
+
+end)
+
+AddPrefabPostInit("roship", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("armoredbody")
+
+end)
+
+AddPrefabPostInit("um_pawn", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("armoredbody")
+
+end)
+
+AddPrefabPostInit("um_pawn_nightmare", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("armoredbody")
+
+end)
+
+AddPrefabPostInit("hound_magma", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+	inst:AddComponent("armoredbody")
+
+end)
+
+--- food
+
 AddPrefabPostInit("honey_log", function(inst)
     if not GLOBAL.TheWorld.ismastersim then
         return inst

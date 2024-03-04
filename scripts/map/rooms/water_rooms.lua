@@ -5,10 +5,11 @@
 			distributepercent = 0.02,
 			distributeprefabs =
 			{
-				driftwood_log = 1,
-				boatfragment03 = 1,
-				boatfragment04 = 1,
-				boatfragment05 = 1,
+				driftwood_log = .1,
+				boatfragment03 = .3,
+				boatfragment04 = .2,
+				boatfragment05 = .2,
+				barrel_radioactive_spawner = .2,
 				
 			},
 		}

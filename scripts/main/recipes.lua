@@ -24,7 +24,7 @@ AddRecipe2("shockmod",
 		{"CHARACTER","WEAPONS"})
 
 AddRecipe2("nanoboost", 
-		{ Ingredient("nanotech", 3, atlas), Ingredient("raritanium_bar", 1, atlas), Ingredient("ice", 3) }, 
+		{ Ingredient("nanotech", 2, atlas), Ingredient("raritaniumore", 1, atlas), Ingredient("ice", 3) }, 
 		TECH.NONE, 
         {builder_tag="solana_galaxy_resident",atlas=atlas},
 		{"CHARACTER","RESTORATION"})

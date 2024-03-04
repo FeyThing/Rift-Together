@@ -41,6 +41,7 @@ local function fn()
 
     inst:AddTag("sharp")
     inst:AddTag("pointy")
+	inst:AddTag("raritanium")
 
     --weapon (from weapon component) added to pristine state for optimization
     inst:AddTag("weapon")

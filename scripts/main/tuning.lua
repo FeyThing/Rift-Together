@@ -86,19 +86,6 @@ local tunings = {
 	    GetModConfigData("rt_shoe"),
 	},
 
-	--[[if GLOBAL.EQUIPSLOTS.SHOES then
-	TUNING.SHOES_RADIATION_PERISHTIME = .25
-	
-	STRINGS.NAMES.SHOES_RADIATION = "Protective Boots"
-	STRINGS.CHARACTERS.GENERIC.DESCRIBE.SHOES_RADIATION = "Nice heavy boots that is made of extra protective metal."
-	STRINGS.RECIPE_DESC.SHOES_RADIATION = "Stepping in radioactive puddles is a thing of the past!"
-	
-	local TECH = GLOBAL.TECH
-	
-	AddRecipe2("shoes_radiation", {Ingredient("pigskin", 2)}, TECH.SHOES_ONE, shoesconfig, TUNING.SHOES_NOUNLOCK and {"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
-	
-	table.insert(PrefabFiles, "shoes_radiation")
-end]]
 
 --- Character moved for later release
     --[[NEFARIOUS_ENERGY = 100,
@@ -153,6 +140,15 @@ end]]
     AREA_RAD_CHECK_INTERVAL = .5, -- How frequently radiation checks for nearby entities to infect
     
     RAD_SANITY_SCALE = .05, -- sanity hit = radiation hit * RAD_SANITY_SCALE  set to 0 to turn off
+
+	---- Ocean
+	
+	TOXIC_RADIUS = 1,
+	TOXIC_TILE_RADIUS = 5,
+	
+	
+	----
+
 
     RADIATION_THRESH = {
         IRRITATED = {

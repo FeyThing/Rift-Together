@@ -1,12 +1,6 @@
 local radiation = 0
 
 local VEGGIES = {
-	carrot = {radiation = 2},
-	carrot_cooked = {radiation = 1},
-
-	potato = {radiation = 2},
-	potato_cooked = {radiation = 1},
-
 	cave_banana = {radiation = 5},
 	cave_banana_cooked = {radiation = 2},
 
@@ -27,9 +21,6 @@ local VEGGIES = {
 
 	tomato = {radiation = -1},
 	tomato_cooked = {radiation = -2},
-
-	watermelon = {radiation = -1},
-	watermelon_cooked = {radiation = -2},
 
 	pumpkin = {radiation = -1},
 	pumpkin_cooked = {radiation = -2},

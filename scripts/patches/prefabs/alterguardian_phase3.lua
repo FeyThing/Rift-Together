@@ -4,6 +4,8 @@ return function(inst)
 		return
 	end
 	
+	inst:AddComponent("armoredbody")
+	
 	inst.inflictvictim = function(inst, attacker)
         if attacker and attacker.components.health and not attacker.components.health:IsDead() then
             SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					

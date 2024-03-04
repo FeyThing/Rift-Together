@@ -4,6 +4,37 @@ local EventHandler = _G.EventHandler
 local FRAMES = _G.FRAMES
 local State = _G.State
 local TimeEvent = _G.TimeEvent
+local cooking = require("cooking")
+
+
+_G.USE_DRINK_ANIM = {
+    sweettea = true,
+    vegstinger = true,
+    winter_food8 = {build = "winterfood", sym = "coco"},
+	winter_food7 = {build = "winterfood", sym = "cider"},
+	winter_food9 = {build = "winterfood", sym = "eggnog"},
+	nanoboost = {build = "nanoboost", sym = "nanoboost"},
+}
+
+local function GetFoodBuild(foodname) -- foodname is prefab
+    local build = "cook_pot_food"
+    local overridesymbol = foodname
+    for k, v in pairs(cooking.recipes) do
+        local recipe = cooking.GetRecipe(k, foodname)
+        if recipe then
+            if recipe.overridebuild ~= nil then
+                build = recipe.overridebuild
+            end
+            if recipe.overridesymbolname ~= nil then
+                overridesymbol = recipe.overridesymbol
+            end
+            
+            break
+        end
+    end
+    
+    return build, overridesymbol
+end
 
 local PlayFootstep = _G.PlayFootstep
 local function DoEquipmentFoleySounds(inst)
@@ -22,6 +53,7 @@ local function DoFoleySounds(inst)
 end
 
 local states = {
+
 
 State{
         name = "hover_start",
@@ -243,5 +275,89 @@ for _, state in pairs(states) do
 			inst.sg:GoToState("idle_hover")
 		end
 	end
-
+	
+local oldquickeat = sg.states["quickeat"].onenter
+    sg.states["quickeat"].onenter = function(inst, foodinfo, ...)
+		
+	
+        local feed = foodinfo and foodinfo.feed
+        local act = inst:GetBufferedAction()
+        if feed == nil and act and act.invobject then
+            feed = act.invobject
+        end
+		
+		
+        oldquickeat(inst, foodinfo, ...)
+        		
+		
+        local drink_data = feed and _G.USE_DRINK_ANIM[feed.prefab]
+        if drink_data then
+            inst.AnimState:PlayAnimation("quick_drink")
+			inst.SoundEmitter:KillSound("eating")
+			--inst.SoundEmitter:PlaySound("dontstarve/creatures/slurper/burp")
+            
+            local build, overridesymbol
+            if type(drink_data) == "table" then
+                build, overridesymbol = drink_data.build, drink_data.sym
+				print ("Show non-crockpot drink", drink_data.build, drink_data.sym)
+            else
+                build, overridesymbol = GetFoodBuild(feed.prefab)
+            end
+            local basename = string.match(overridesymbol, "(.*)_spice")
+            inst.AnimState:OverrideSymbol("drink", build, basename or overridesymbol)
+        end
+    end
+	
+	local oldeat = sg.states["eat"].onenter
+    sg.states["eat"].onenter = function(inst, foodinfo, ...)
+		
+	
+        local feed = foodinfo and foodinfo.feed
+        local act = inst:GetBufferedAction()
+        if feed == nil and act and act.invobject then
+            feed = act.invobject
+        end
+		
+		
+        oldeat(inst, foodinfo, ...)
+        		
+		
+        local drink_data = feed and _G.USE_DRINK_ANIM[feed.prefab]
+        if drink_data then
+            inst.AnimState:PlayAnimation("drink")
+			inst.SoundEmitter:KillSound("eating")
+			--inst.SoundEmitter:PlaySound("dontstarve/creatures/slurper/burp")
+            
+            local build, overridesymbol
+            if type(drink_data) == "table" then
+                build, overridesymbol = drink_data.build, drink_data.sym
+				print ("Show non-crockpot drink", drink_data.build, drink_data.sym)
+            else
+                build, overridesymbol = GetFoodBuild(feed.prefab)
+            end
+            local basename = string.match(overridesymbol, "(.*)_spice")
+            inst.AnimState:OverrideSymbol("drink", build, basename or overridesymbol)
+        end
+    end
+	
+	local oldeat2 = sg.actionhandlers[ACTIONS.EAT].deststate
+	sg.actionhandlers[ACTIONS.EAT].deststate = function(inst, action, ...)
+    local obj = action.target or action.invobject
+    if obj and obj.prefab == "nanoboost" then
+        return "eat"
+    end
+    
+    return oldeat2(inst, action, ...)
+	end
+	
+	local EATSTR = ACTIONS.EAT.stroverridefn
+	ACTIONS.EAT.stroverridefn = function(act)
+    if table.contains(_G.USE_DRINK_ANIM, act.invobject.prefab) then
+        return _G.STRINGS.ACTIONS.DRINK
+    end
+    
+    if EATSTR ~= nil then
+        return EATSTR(act)
+    end
+	end
 end

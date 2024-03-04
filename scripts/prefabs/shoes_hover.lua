@@ -94,6 +94,7 @@ local function Hover_OnUse(inst, owner, item)
     end
     inst._hovering = true
     owner:AddTag("hovershoed")
+	owner:AddTag("bear_trap_immune")
     owner.sg:GoToState("hover_stop")
     owner.components.locomotor.fasteroncreep = true
     owner.components.locomotor:SetTriggersCreep(false)
@@ -107,6 +108,7 @@ local function Hover_OnUse(inst, owner, item)
         inst._hovering = false
         owner.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
         owner:RemoveTag("hovershoed")
+		owner:RemoveTag("bear_trap_immune")
         owner.sg:GoToState("idle_hover_stop")
         owner.components.locomotor.fasteroncreep = false
         owner.components.locomotor:SetTriggersCreep(true)

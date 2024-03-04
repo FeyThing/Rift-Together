@@ -26,17 +26,13 @@ AddStategraphState("wilson",
 
         onenter = function(inst, data)
 			inst.components.locomotor:Stop()
-            if data and data.pos then
-				local pos = data.pos:GetPosition()
-				inst:ForceFacePoint(pos.x, 0, pos.z)
-			end
+       
+            inst.sg:SetTimeout(.8)
+            inst.AnimState:PlayAnimation("dodgeroll_pre")
 
-            inst.sg:SetTimeout(0.25)
-            inst.AnimState:PlayAnimation("boat_jump_pre")
-
-            inst.AnimState:PushAnimation("boat_jump_loop")
+            inst.AnimState:PushAnimation("dodgeroll")
            
-            inst.Physics:SetMotorVelOverride(20,0,0)
+            inst.Physics:SetMotorVelOverride(10,0,0)
             inst.components.locomotor:EnableGroundSpeedMultiplier(false)
 			
             inst.SoundEmitter:PlaySound("turnoftides/common/together/boat/jump")
@@ -51,7 +47,7 @@ AddStategraphState("wilson",
 			if inst.components.playercontroller ~= nil then
                 inst.components.playercontroller:RemotePausePrediction()
             end
-			inst.sg:SetTimeout(0.25)
+			inst.sg:SetTimeout(.8)
         end,
 
         ontimeout = function(inst)
@@ -81,7 +77,7 @@ AddStategraphState("wilson",
         tags = {"evade","no_stun"},
 
         onenter = function(inst)
-            inst.AnimState:PlayAnimation("boat_jump_pst")
+            inst.AnimState:PlayAnimation("dodgeroll_pst")
         end,
 
         events =
@@ -101,21 +97,17 @@ AddStategraphState("wilson_client",
 
         onenter = function(inst, data)
 			inst.entity:SetIsPredictingMovement(false)
-            if data and data.pos then
-				local pos = data.pos:GetPosition()
-				inst:ForceFacePoint(pos.x, 0, pos.z)
-			end
 
             inst.components.locomotor:Stop()
-            inst.AnimState:PlayAnimation("boat_jump_pre")
-            inst.AnimState:PushAnimation("jump", false)
+            inst.AnimState:PlayAnimation("dodgeroll_pre")
+            inst.AnimState:PushAnimation("dodgeroll", false)
 
             inst.components.locomotor:EnableGroundSpeedMultiplier(false)
             
             inst.last_dodge_time = GLOBAL.GetTime()
 			inst.dodgetime:set(inst.dodgetime:value() == false and true or false)
 			inst:PerformPreviewBufferedAction()
-			inst.sg:SetTimeout(2)
+			inst.sg:SetTimeout(1)
         end,
 		
 		onupdate = function(inst)

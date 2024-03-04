@@ -13,7 +13,7 @@ local function fn(Sim)
 
     inst.AnimState:SetBank("nanoboost")
     inst.AnimState:SetBuild("nanoboost")
-    inst.AnimState:PlayAnimation("anim")
+    inst.AnimState:PlayAnimation("idle")
 	
 	MakeInventoryFloatable(inst, "med", 0.05, {0.65, 0.5, 0.65})
 	

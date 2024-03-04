@@ -1,7 +1,7 @@
 name = "Ratchet and Clank: Rift Together"
 --description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
 author = "XenoMind, Asura"
-version = "Beta 1.0.9"
+version = "Beta 1.1.0"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[
@@ -40,6 +40,19 @@ server_filter_tags = {
     },
 }]]
 
+local function CreateLanguageOption(name, default, label, hover)
+    return {
+        name = name,
+        label = label,
+		hover = hover,
+		
+        options = {
+            {description = "English", hover = "By Feything", data = "en"},
+            --{description = "NA", hover = "By Insertname", data = "vi"},
+        },
+        default = default or "en",
+    }
+end
 
 local function CreateEnableOption(name, default, label, hover)
     return {
@@ -115,6 +128,8 @@ end
 local DIVIDE = Title("")
 
 configuration_options = {
+	
+	CreateLanguageOption("language", "en", "Language", "Change the mod language."),	
 
 	DIVIDE,
 	Title("WorldGen Options"),
@@ -133,20 +148,22 @@ configuration_options = {
 		
     CreateDensityOption("raritanium_crystals", 0.5, "Raritanium Crystals", "How many raritanium rock formations spawns."),
     CreateDensityOption("nanotech_crates", 0.5, "Nanotech Crates", "How many nanotech crates spawn within the world."),
-	CreateEnableOption("Torren IV", 1, nil, "Allow a chunk of the Torren IV to spawn from the polaris galaxy."),
+	CreatePercentageOption("Barrels", 25, nil, "How polluted do you want your ocean to be?"),
+	CreateEnableOption("Torren IV", 1, nil, "Allow a chunk of Torren IV to spawn from the polaris galaxy."),
+	--CreateEnableOption("Biome Generation", 0, "Generate on Mainland", "Instead of an island, Torren IV will generate on the mainland."),
 	CreateEnableOption("Raritanium Meteors", 1, nil, "Allow resources to become renewable beyond Torren IV."),
 	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
 	
 	DIVIDE,
 	Title("Compatibility Options"),
 	
-	CreateEnableOption("rt_um", 1, "Uncompromising Mode", "Allow compatibility with Uncompromising Mode."),
-	CreateEnableOption("rt_cf", 1, "Cherry Forest", "Allow compatibility with Cherry Forest."),
-	CreateEnableOption("rt_ia", 1, "Island Adventures", "Allow compatibility with Island Adventures."),
-	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow compatibility with Dehydrated."),
-	CreateEnableOption("rt_shoe", 1, "Shoes", "Allow compatibility with Shoetime."),
-	CreatePercentageOption("shoes_hover_speed", 50, "Hover Boot Speed", "Adjusts hover speed for the hover boots if shoe slot is active."),
-	CreateTimerOption("shoes_hover_speed_combat", 5, "Hover Boot Speed Cooldown", "Adjusts the cooldown timer for speed regain after combat."),
+	CreateEnableOption("rt_um", 1, "Uncompromising Mode", "Radioactive effects, are applied to Uncompromising Mode mobs."),
+	CreateEnableOption("rt_cf", 1, "Cherry Forest", "When Cherry Forest is active, armors provide protection and certain mobs gain immunities to radiation."),
+	CreateEnableOption("rt_ia", 1, "Island Adventures", "Robotic hounds, and resources spawn in island adventure worlds."),
+	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow radiation curing drinks when Dehydrated is active."),
+	CreateEnableOption("rt_shoe", 1, "Shoes", "Protective boots and Hover boots become available with Shoetime."),
+	CreatePercentageOption("shoes_hover_speed", 50, "Hover Boot Speed", "Adjusts hover speed for the Hover boots if shoe slot is active."),
+	CreateTimerOption("shoes_hover_speed_combat", 5, "Hover Boot Speed Cooldown", "Adjusts the cooldown timer for speed regain for Hover boots after combat."),
 	
 	DIVIDE,
 	Title("Character Options"),

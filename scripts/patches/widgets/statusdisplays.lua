@@ -2,9 +2,7 @@ local NefBadge = require "widgets/nefbadge"
 local RadiationBadge = require "widgets/radiationbadge"
 
 return function(self)
-	
-
-    function self:SetRadiationPercent(pct)
+	  function self:SetRadiationPercent(pct)
         local oldpenalty = self.radiation.penaltypercent or 0
         local newpenalty = self.owner.replica.radiation:GetPenaltyPercent()
         self.radiation:SetPercent(pct, self.owner.replica.radiation:Max(), newpenalty)
@@ -55,18 +53,22 @@ return function(self)
                     and _G.KnownModIndex:IsModEnabled("workshop-376333686") then
                         self.radiation:SetPosition(-125,35,0)
                     elseif _G.KnownModIndex:IsModEnabled("workshop-376333686") then
-                        self.radiation:SetPosition(-124,35,0) -- combined stat pos
+                        self.radiation:SetPosition(-125,35,0) -- combined stat pos                        
                     elseif currentPlaform ~= nil and currentPlaform.components.healthsyncer ~= nil then
                         self.radiation:SetPosition(-220, 20,0)
                     else
                         self.radiation:SetPosition(-120, 20) -- base pos
                     end
-            if not self.inst:HasTag("playerghost") then
+            if not self.inst:HasTag("playerghost") or _G.KnownModIndex:IsModEnabled("workshop-3004639365") then
                         self.radiation:Show()
                     else
                         self.radiation:Hide()
                     end
             end	
+			if _G.KnownModIndex:IsModEnabled("workshop-3004639365") then
+						self.radiation:Hide() 
+                    end
+            
 -----------	
 
     self.inst:DoTaskInTime(0, function()

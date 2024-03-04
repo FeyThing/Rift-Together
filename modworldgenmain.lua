@@ -18,7 +18,6 @@ modimport("scripts/main/tiles")
 modimport("scripts/map/tasks/torreniv")
 
 
-
 local function GenerateCrystalsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
 		if room.contents.distributeprefabs then
@@ -31,22 +30,14 @@ local rari_amount = GetModConfigData("raritanium_crystals")
 
 if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
 GenerateCrystalsForRoom("JungleClearing", rari_amount)
-GenerateCrystalsForRoom("VolcanoRock", rari_amount)
 GenerateCrystalsForRoom("VolcanoObsidian", rari_amount)	
 GenerateCrystalsForRoom("VolcanoCage", rari_amount)
-GenerateCrystalsForRoom("GenericMagmaNoThreat", rari_amount)
 GenerateCrystalsForRoom("MagmaHomeBoon", rari_amount)
 GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
 GenerateCrystalsForRoom("TidalMarsh", rari_amount)
-GenerateCrystalsForRoom("Badlands", rari_amount)
-GenerateCrystalsForRoom("BuzzardyBadlands", rari_amount)
 
 else
-GenerateCrystalsForRoom("Badlands", rari_amount)
-GenerateCrystalsForRoom("BuzzardyBadlands", rari_amount)
-GenerateCrystalsForRoom("Lightning", rari_amount)	
 GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
-GenerateCrystalsForRoom("Rocky", rari_amount)
 end
 
 local function GenerateForRoom(room, factor)
@@ -61,10 +52,8 @@ local nano_amount = GetModConfigData("nanotech_crates")
 
 if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
 GenerateForRoom("ToxicTidalMarsh", nano_amount)	
-GenerateForRoom("Marsh", nano_amount)
 GenerateForRoom("CrappyForest", nano_amount)
-else
-GenerateForRoom("Marsh", nano_amount)	
+else	
 GenerateForRoom("CrappyForest", nano_amount)
 end
 
@@ -79,14 +68,54 @@ end
 if GetModConfigData("Roaming RoboMutts") == 1 then
 	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
 	GenerateRoboHerdsForRoom("MeadowRocky", 0.035)
-	GenerateRoboHerdsForRoom("VolcanoRock", 0.035)
-	GenerateRoboHerdsForRoom("BuzzardyBadlands", 0.035)	
+	GenerateRoboHerdsForRoom("VolcanoRock", 0.035)	
 	GenerateRoboHerdsForRoom("Rocky", 0.035)
 	else
-	GenerateRoboHerdsForRoom("BuzzardyBadlands", 0.035)	
 	GenerateRoboHerdsForRoom("Rocky", 0.035)
 end
 end
+
+
+local function GenerateBarrelsForRoom(room, factor)
+	AddRoomPreInit(room, function(room)
+		if not room.contents.distributeprefabs then
+			room.contents.distributeprefabs.barrel_radioactive = {}
+		end
+		room.contents.distributeprefabs["barrel_radioactive"] = factor
+	end)
+end
+
+
+--local barrel_amount = GetModConfigData("Barrels")
+
+
+if GetModConfigData("Barrels") == 75 then
+
+if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+	GenerateBarrelsForRoom("WaterDeep", .3)
+	else
+	GenerateBarrelsForRoom("OceanHazardous", .3)	
+	GenerateBarrelsForRoom("OceanRough", .3)	
+	GenerateBarrelsForRoom("OceanCoastal", .3)
+end
+elseif GetModConfigData("Barrels") == 50 then
+if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+	GenerateBarrelsForRoom("WaterDeep", .3)
+	else
+	GenerateBarrelsForRoom("OceanHazardous", .3)	
+	GenerateBarrelsForRoom("OceanRough", .3)	
+end
+elseif GetModConfigData("Barrels") == 25 then
+if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+	GenerateBarrelsForRoom("WaterDeep", .3)
+	else
+	GenerateBarrelsForRoom("OceanHazardous", .3)		
+end
+
+end
+
+
+
 
 local function GenerateRariMeteorsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
@@ -119,6 +148,15 @@ local TORRENIV_GROUND_TYPES =
 	WORLD_TILES.OCEAN_TOXIC, WORLD_TILES.DESERTSAND, WORLD_TILES.LUSH  -- 11, 12, 13
 }
 
+--[[if WORLD_TILES.OCEAN_SHALLOW ~= nil then
+	TORRENIV_GROUND_TYPES[1] = WORLD_TILES.OCEAN_SHALLOW
+	TORRENIV_GROUND_TYPES[2] = WORLD_TILES.JUNGLE
+	TORRENIV_GROUND_TYPES[6] = WORLD_TILES.BEACH
+	TORRENIV_GROUND_TYPES[7] = WORLD_TILES.OCEAN_SHALLOW
+	TORRENIV_GROUND_TYPES[13] = WORLD_TILES.OCEAN_MEDIUM
+	TORRENIV_GROUND_TYPES[14] = WORLD_TILES.OCEAN_DEEP
+	TORRENIV_GROUND_TYPES[15] = WORLD_TILES.OCEAN_DEEP
+end]]
 
 
 local filters = {
@@ -177,7 +215,7 @@ end
 
 
 -------------
--- Ocean Water Blend ~ Coutesy of Asura
+-- Ocean Water Blend ~ Courtesy of Asura
 -------------
 
 local function IsBiomeToBlend(ground)

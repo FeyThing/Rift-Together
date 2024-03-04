@@ -343,6 +343,8 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
 
     inst:AddComponent("sanityaura")
     inst.components.sanityaura.aura = -TUNING.SANITYAURA_MED
+	
+	inst:AddComponent("armoredbody")
 
     inst:AddComponent("combat")
     inst.components.combat:SetDefaultDamage(TUNING.FIREHOUND_DAMAGE)

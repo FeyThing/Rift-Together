@@ -18,13 +18,9 @@ SetSharedLootTable('scrap_mound',
 {
     {'goldnugget', 0.33},
     {'trinket_6', 0.5},
-    {'raritaniumore',   1.00},
+    {'raritaniumore',   .5},
     {'cutgrass',      0.6},
-    {'gears',     0.01},
-    {'rarisword_blueprint',     0.1},
-    {'cryomod_blueprint',     0.2},
-    {'napalmod_blueprint',     0.2},
-    {'shockmod_blueprint',     0.2},
+    {'rocks',   1.00},
 })
 
 local function onhammered(inst)

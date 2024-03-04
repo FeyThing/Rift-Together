@@ -7,9 +7,14 @@ end)
 AddPrefabPostInit("bismuthhat", function(inst)
     if not GLOBAL.TheWorld.ismastersim then
         return inst
-    end
+    end	
     inst.components.equippable:SetRadiationProtectPercent(0.15)
 end)
+
+AddPrefabPostInit("bismuthshield", function(inst)	
+    inst:AddTag("bismuthloaded")
+end)
+
 
 AddPrefabPostInit("armorbismuth", function(inst)
     if not GLOBAL.TheWorld.ismastersim then

@@ -16,5 +16,8 @@ return function(inst)
 		return
 	end
 	--SERVER
+	
+	inst:AddComponent("armoredbody")
+	
 	inst:ListenForEvent("death", OnDeath)
 end

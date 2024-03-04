@@ -55,7 +55,7 @@ AddTile("OCEAN_TOXIC", "OCEAN",
         walksound="dontstarve/movement/walk_marsh",
         snowsound="dontstarve/movement/run_ice",
         mudsound = "dontstarve/movement/run_mud",
-        ocean_depth = "SHALLOW",
+        ocean_depth = "DEEP",
         colors = TORRENIV_OCEAN_COLOR_TOXIC,
         wavetint = TORRENIV_WAVETINTS.toxic,
     },
@@ -179,4 +179,8 @@ end
 NOISES[WORLD_TILES.DESERTFERTILE_NOISE] = GetTileFordesertfertileNoise
 
 ChangeTileRenderOrder(WORLD_TILES.OCEAN_RUST, WORLD_TILES.OCEAN_BRINEPOOL, false)
+ChangeTileRenderOrder(WORLD_TILES.OCEAN_TOXIC, WORLD_TILES.OCEAN_HAZARDOUS, true)
+
+
+
 

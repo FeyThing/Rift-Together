@@ -1,26 +1,5 @@
 -- Adding Radiation to Dehydrated Mode.
-AddPrefabPostInit("spoiled_drink", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
-        return inst
-    end
-    inst.components.edible.radiationvalue = 5
-end)
-
-AddPrefabPostInit("water_dirty_ice", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
-        return inst
-    end
-    inst.components.edible.radiationvalue = 10
-end)	
-
-AddPrefabPostInit("water_dirty", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
-        return inst
-    end
-    inst.components.edible.radiationvalue = 8
-end)	
-
-AddPrefabPostInit("goopydrink", function(inst)
+	AddPrefabPostInit("goopydrink", function(inst)
     if not GLOBAL.TheWorld.ismastersim then
         return inst
     end

@@ -1,4 +1,6 @@
 local env = env
+local GetModConfigData = GetModConfigData
+local modnameFancy = "Rift-Together"
 local KnownModIndex = KnownModIndex
 local AddBrainPostInit = AddBrainPostInit
 local AddStategraphPostInit = AddStategraphPostInit
@@ -37,11 +39,15 @@ local PATCHES =
 		alterguardian_phase1 = "alterguardian_phase1",
 		alterguardian_phase2 = "alterguardian_phase2",
 		alterguardian_phase3 = "alterguardian_phase3",
+		archive_centipede = "archive_centipede",
 		armor_lunarplant = "armor_lunarplant",
 		bearger = "mutatedbearger",
 		chess = {"knight", "bishop", "rook"},
+		chess_nightmare = {"knight_nightmare", "bishop_nightmare", "rook_nightmare"},
 		chessjunk = {"chessjunk1", "chessjunk2", "chessjunk3", "chessjunk"},
+		crabking = "crabking",
 		deerclops = "mutateddeerclops",
+		eyeofterror = {"twinofterror1", "twinofterror2"},
 		frog = "lunarfrog",
 		gestalt = "gestalt",		
 		gestalt_alterguardian_projectile = {"gestalt_alterguardian_projectile", "smallguard_alterguardian_projectile", "alterguardianhat_projectile", "largeguard_alterguardian_projectile"},
@@ -56,6 +62,7 @@ local PATCHES =
 		mushrooms = {"blue_cap", "blue_cap_cooked", "red_cap", "red_cap_cooked", "green_cap", "green_cap_cooked"},
 		penguin = "mutated_penguin",
 		player_classified = "player_classified",
+		rocky = "rocky",
 		spider = "spider_moon",
 		warg = "mutatedwarg",
 		world = "world",
@@ -77,7 +84,9 @@ local PATCHES =
 		--brain_template = "powdermonkeybrain",
 	},
 	WIDGETS = {
+	    
 		"statusdisplays",
+		
 	},
 	SCREENS = {
 
@@ -177,6 +186,7 @@ for _, file in ipairs(PATCHES.WIDGETS) do
 	local fn = require("patches/widgets/"..file)
 	patchclass("widgets/"..file, fn)
 end
+
 
 for _, file in ipairs(PATCHES.SCREENS) do
 	local fn = require("patches/screens/"..file)

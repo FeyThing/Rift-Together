@@ -191,6 +191,7 @@ local function fn(Sim)
     inst:AddTag("weaponmod")
 	inst:AddTag("hammer")
     inst:AddTag("sharp")
+	inst:AddTag("raritanium")
 
     inst:AddComponent("weapon")
 	inst.components.weapon:SetDamage(25)
