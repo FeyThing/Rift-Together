@@ -137,7 +137,7 @@ configuration_options = {
 	{
         name = "biome_retrofit",
         label = "Retrofit",
-        hover = "Retrofit Torren IV into an existing world.",
+        hover = "Retrofit the Torren IV island into an existing world.",
         options =
         {
             {description = "Disabled", data = 0},
@@ -146,10 +146,10 @@ configuration_options = {
         default = 0,
     },
 		
-    CreateDensityOption("raritanium_crystals", 0.5, "Raritanium Crystals", "How many raritanium rock formations spawns."),
+    CreateDensityOption("raritanium_crystals", 0.5, "Raritanium Crystals", "How many raritanium rock formations spawn."),
     CreateDensityOption("nanotech_crates", 0.5, "Nanotech Crates", "How many nanotech crates spawn within the world."),
 	CreatePercentageOption("Barrels", 25, nil, "How polluted do you want your ocean to be?"),
-	CreateEnableOption("Torren IV", 1, nil, "Allow a chunk of Torren IV to spawn from the polaris galaxy."),
+	CreateEnableOption("Torren IV", 1, nil, "Allow the new biome, a chunk of Torren IV to spawn from the polaris galaxy."),
 	--CreateEnableOption("Biome Generation", 0, "Generate on Mainland", "Instead of an island, Torren IV will generate on the mainland."),
 	CreateEnableOption("Raritanium Meteors", 1, nil, "Allow resources to become renewable beyond Torren IV."),
 	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
@@ -157,7 +157,7 @@ configuration_options = {
 	DIVIDE,
 	Title("Compatibility Options"),
 	
-	CreateEnableOption("rt_um", 1, "Uncompromising Mode", "Radioactive effects, are applied to Uncompromising Mode mobs."),
+	CreateEnableOption("rt_um", 1, "Uncompromising Mode", "Radioactive effects are applied to Uncompromising Mode mobs."),
 	CreateEnableOption("rt_cf", 1, "Cherry Forest", "When Cherry Forest is active, armors provide protection and certain mobs gain immunities to radiation."),
 	CreateEnableOption("rt_ia", 1, "Island Adventures", "Robotic hounds, and resources spawn in island adventure worlds."),
 	CreateEnableOption("rt_dm", 1, "Dehydrated Mode", "Allow radiation curing drinks when Dehydrated is active."),

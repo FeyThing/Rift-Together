@@ -17,6 +17,18 @@ local StaticLayout = require("map/static_layout")
 modimport("scripts/main/tiles")
 modimport("scripts/map/tasks/torreniv")
 
+--If Island adventures is active, this prevents spawning the setpiece which as of now causes a void in the water
+if not _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+AddRoomPreInit("Torren IV Lake", function(room)
+    if not room.contents.countstaticlayouts then
+        room.contents.countstaticlayouts = {}
+    end
+	room.contents.countstaticlayouts["gunkywateringhole"] = 1
+	end)		
+end
+
+---
+
 
 local function GenerateCrystalsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
@@ -72,7 +84,7 @@ if GetModConfigData("Roaming RoboMutts") == 1 then
 	GenerateRoboHerdsForRoom("Rocky", 0.035)
 	else
 	GenerateRoboHerdsForRoom("Rocky", 0.035)
-end
+	end
 end
 
 
@@ -148,16 +160,6 @@ local TORRENIV_GROUND_TYPES =
 	WORLD_TILES.OCEAN_TOXIC, WORLD_TILES.DESERTSAND, WORLD_TILES.LUSH  -- 11, 12, 13
 }
 
---[[if WORLD_TILES.OCEAN_SHALLOW ~= nil then
-	TORRENIV_GROUND_TYPES[1] = WORLD_TILES.OCEAN_SHALLOW
-	TORRENIV_GROUND_TYPES[2] = WORLD_TILES.JUNGLE
-	TORRENIV_GROUND_TYPES[6] = WORLD_TILES.BEACH
-	TORRENIV_GROUND_TYPES[7] = WORLD_TILES.OCEAN_SHALLOW
-	TORRENIV_GROUND_TYPES[13] = WORLD_TILES.OCEAN_MEDIUM
-	TORRENIV_GROUND_TYPES[14] = WORLD_TILES.OCEAN_DEEP
-	TORRENIV_GROUND_TYPES[15] = WORLD_TILES.OCEAN_DEEP
-end]]
-
 
 local filters = {
 	["raritanium_crystals"] = {WORLD_TILES.ROAD, WORLD_TILES.WOODFLOOR, WORLD_TILES.CARPET, WORLD_TILES.CHECKER, WORLD_TILES.JUNK},
@@ -174,7 +176,6 @@ end
 
 Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
 Layouts["lonely_depot"] = StaticLayout.Get("map/static_layouts/lonely_depot")
-
 
 Layouts["gunkywateringhole"].ground_types = TORRENIV_GROUND_TYPES
 Layouts["lonely_depot"].ground_types = TORRENIV_GROUND_TYPES

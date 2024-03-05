@@ -48,6 +48,9 @@ STRINGS.SKIN_NAMES.ms_rivet = "The Interdimensional Rebel"
 STRINGS.SKIN_DESCRIPTIONS.ms_rivet = "Ratchet's dimensional counterpart, Rivet."
 STRINGS.SKIN_QUOTES.ms_rivet = "W...where am I?."
 
+STRINGS.SKIN_NAMES.ms_loading_ratchet1 = "Rift Together"
+STRINGS.SKIN_DESCRIPTIONS.ms_loading_ratchet1 = "Reality in this dimension is being torn apart by its very seams. The only way to escape it's collapse is to find a way out...if there is a way out. ~Art created by Gearless"
+
 STRINGS.CHARACTER_SURVIVABILITY.ratchet= "Slim"
 
 TUNING.RATCHET_HEALTH = 125

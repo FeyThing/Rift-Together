@@ -139,7 +139,7 @@ AddRoom("Torren IV Depot",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTSAND,
 		contents = {			
-			countstaticlayouts={["gunkywateringhole"] = 1},
+			--countstaticlayouts={["gunkywateringhole"] = 1},
 			distributepercent = 0.15,
 			distributeprefabs =
 			{
