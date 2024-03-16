@@ -54,6 +54,7 @@ local function OnSetOwner(inst)
     end
 end
 
+
 local common_postinit = function(inst) 
 	inst.MiniMapEntity:SetIcon( "ratchet.tex" )
 	inst:AddTag("fastbuilder")
@@ -86,9 +87,8 @@ local master_postinit = function(inst)
 	
     inst.components.sanity:SetPlayerGhostImmunity(true)
     inst.components.sanity:SetNegativeAuraImmunity(true)
-
-	   	
-	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE
+  	
+	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE	
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload 

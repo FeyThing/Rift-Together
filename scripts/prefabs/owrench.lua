@@ -207,6 +207,7 @@ local function fn(Sim)
 	inst.components.inventoryitem.imagename = "owrench"
     inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	inst.components.inventoryitem.keepondeath = true
+	inst.components.inventoryitem.keepondrown = true
 	
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)

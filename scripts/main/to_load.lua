@@ -40,6 +40,7 @@ return {
 		"radiation_dust",
 		"irradiated_pond",
 		"luminoustree_sapling",
+		"commando_helmet",
 	},
 
 	Assets = {

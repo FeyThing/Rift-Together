@@ -14,6 +14,20 @@ for k, v in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
 end
 local prefabs = FlattenTree(start_inv, true)
 
+
+HATS_TABLE = {
+	"ruinshat",
+	"flowerhat",
+	"eyebrellahat",
+	"kelphat",
+	"featherhat",
+	"lunarplanthat",
+	"voidclothhat",
+	"mermhat",
+	"respiratormask",
+}
+
+
 local function applyupgrades(inst)
 	local max_upgrades = 10
 	local upgrades = math.min(inst.level, max_upgrades)
@@ -46,16 +60,16 @@ local function oneat(inst, food)
 	end
 end
 
+
 local function noarmor(inst)
-	local _Equip = inst.components.inventory.Equip	
+	local _Equip = inst.components.inventory.Equip
 	
 	inst.components.inventory.Equip = function(self, item, old_to_active)
 		if not item or not item.components.equippable or not item:IsValid() then
 			return		
-		end		
-		
-		if item.components.equippable.equipslot == EQUIPSLOTS.HEAD and not (item.prefab == "ruinshat") and not (item.prefab == "flowerhat") and not (item.prefab == "eyebrellahat") and not (item.prefab == "kelphat") and not (item.prefab == "respiratormask") 
-		or item.components.equippable.equipslot == EQUIPSLOTS.BODY and item.components.armor then		
+		end				
+		if item.components.equippable.equipslot == EQUIPSLOTS.HEAD and not table.contains(HATS_TABLE, item.prefab )
+			or item.components.equippable.equipslot == EQUIPSLOTS.BODY and item.components.armor then
 			self:DropItem(item)
 			self:GiveItem(item)
 			if inst and inst.components.talker then
@@ -66,6 +80,8 @@ local function noarmor(inst)
 		return _Equip(self, item, old_to_active)
 	end
 end
+
+
 local function onpreload(inst, data)
 	if data then
 		if data.level then
