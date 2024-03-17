@@ -93,7 +93,7 @@ local function CreatePercentageOption(name, default, label, hover)
 			{description = "50%", data = 50},
 			{description = "75%", data = 75},
         },
-        default = 50,
+        default = default or 50,
     }
 end
 

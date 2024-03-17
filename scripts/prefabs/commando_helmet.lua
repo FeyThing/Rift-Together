@@ -28,6 +28,7 @@ local function fn()
     inst.AnimState:PlayAnimation("anim")
 
 	inst:AddTag("waterproofer")
+	inst:AddTag("goggles")
 	
 	MakeInventoryFloatable(inst, "small", 0.1, 1.12)
 	
@@ -43,7 +44,7 @@ local function fn()
     inst:AddComponent("tradable")
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "commandohelmet"
+	inst.components.inventoryitem.imagename = "commando_helmet"
 	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
     inst:AddComponent("equippable")

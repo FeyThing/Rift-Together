@@ -107,6 +107,7 @@ local strings = {
 				RESPIRATORMASK = "Maybe it'll provide some protection.",
 				RARISWORD = "I could slice through metal with this!",
 				RARISPEAR = "I could poke through metal with this.",
+				COMMANDO_HELMET = "It's a strange helmet with holes on the sides. I don't think I can wear this.",
 				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
@@ -160,6 +161,7 @@ local strings = {
 				RESPIRATORMASK = "Should provide some great protection against that radiation!",
 				RARISWORD = "With this amount of raritanium, I bet it's a lot like my wrench",
 				RARISPEAR = "Sharp, but not as good at bashing in robots like my wrench",
+				COMMANDO_HELMET = "Hey my old megacorp helmet! This could help with survivability.",
 
 				NANOTECH = "Nanotech, just what the doctor ordered.",
 				NANOCRATE = "This could patch me up!",
@@ -221,6 +223,7 @@ local strings = {
 		RESPIRATORMASK = "Respirator",
 		RARISWORD = "Crystalass",
 		RARISPEAR = "Reinforced Spear",
+		COMMANDO_HELMET = "Megacorp Helmet",
 		
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
@@ -315,7 +318,8 @@ local strings = {
 
 		RESPIRATORMASK = "It provides minor protection against harsh elements.",
 		RARISWORD = "This raritanium sword is highly modifiable and extra effective against artificial enemies.",
-		RARISPEAR = "Turns that flimsy spear of yours into an effective weapon against artificial creatures.",
+		RARISPEAR = "Turns that flimsy spear of yours into an effective weapon against artificial or heavily armored creatures.",
+		COMMANDO_HELMET = "Provides decent protection and keeps particles from obscuring the wearers view.",
 
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 

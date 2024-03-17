@@ -24,7 +24,7 @@ AddRecipe2("shockmod",
 		{"CHARACTER","WEAPONS"})
 
 AddRecipe2("nanoboost", 
-		{ Ingredient("nanotech", 2, atlas), Ingredient("raritaniumore", 1, atlas), Ingredient("ice", 3) }, 
+		{ Ingredient("nanotech", 2, atlas), Ingredient("raritaniumore", 2, atlas), Ingredient("ice", 3) }, 
 		TECH.NONE, 
         {builder_tag="solana_galaxy_resident",atlas=atlas},
 		{"CHARACTER","RESTORATION"})
@@ -46,6 +46,12 @@ AddRecipe2("rarispear",
 		TECH.SCIENCE_ONE, 
         {atlas=atlas},
 		{"CHARACTER","WEAPONS"})
+		
+AddRecipe2("commando_helmet", 
+		{ Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 2), Ingredient("moonglass", 3) }, 
+		TECH.SCIENCE_TWO, 
+        {builder_tag="veldin_mechanic",atlas=atlas},
+		{"CHARACTER","ARMOUR"})
 		
 AddRecipe2("shoes_hover", 
 		{Ingredient("shoes_radiation", 1, atlas), Ingredient("shoes_slurper", 1), Ingredient("gears", 4)}, 

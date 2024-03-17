@@ -2,7 +2,7 @@
 <Atlas>
 	<Texture filename="rnc_inventoryimages.tex" />
 	<Elements>
-		<Element name="commandohelmet.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
+		<Element name="commando_helmet.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
 		<Element name="cryomod.tex" u1="0.126" u2="0.23728125" v2="0.999" v1="0.7588125" variant="" />
 		<Element name="desertsand.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
 		<Element name="junk.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
