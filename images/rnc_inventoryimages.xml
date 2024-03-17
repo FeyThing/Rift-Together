@@ -4,11 +4,11 @@
 	<Elements>
 		<Element name="commando_helmet.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
 		<Element name="cryomod.tex" u1="0.126" u2="0.23728125" v2="0.999" v1="0.7588125" variant="" />
-		<Element name="desertsand.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
-		<Element name="junk.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
+		<Element name="turf_desertsand.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
+		<Element name="turf_junk.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
 		<Element name="luminousfruit.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
 		<Element name="luminousfruit_cooked.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
-		<Element name="lush.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
+		<Element name="turf_lush.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
 		<Element name="ms_owrench_hammer.tex" u1="0.251" u2="0.3661875" v2="0.749" v1="0.516625" variant="" />
 		<Element name="nanoboost.tex" u1="0.3681875" u2="0.454078125" v2="0.749" v1="0.52834375" variant="" />
 		<Element name="nanotech.tex" u1="0.3681875" u2="0.47946875" v2="0.52634375" v1="0.28615625" variant="" />
