@@ -43,8 +43,8 @@ local function fn()
     inst:AddComponent("tradable")
 
     inst:AddComponent("inventoryitem")
-	--inst.components.inventoryitem.imagename = "commando_helmet"
-	--inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
+	inst.components.inventoryitem.imagename = "commandohelmet"
+	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD

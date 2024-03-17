@@ -133,6 +133,11 @@ local strings = {
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
 				
+				--- Turfs
+				TURF_JUNK = "It's a bunch of welded together clumps metal.",
+				TURF_LUSH = "Smells like a freshly mowed lawn.",
+				TURF_DESERTSAND = "Rocky, but also coarse, rough, irritating and it gets everywhere.",
+				
 				--- Shoetime mod
 				SHOES_HOVER = "I can glide over almost anything!",
 				SHOES_RADIATION = "Keeps the pain at bay.",
@@ -243,6 +248,11 @@ local strings = {
 		VULLARD_SMELTER = "Smelter",
 
 		RADIATION = "Radiation",
+		
+		--- Turfs
+		TURF_JUNK = "Junk Turf",
+		TURF_LUSH = "Lush Turf",
+		TURF_DESERTSAND = "Desertsand Turf",	
 		
 		--- Shoetime mod
 		SHOES_HOVER = "Hover Boots",

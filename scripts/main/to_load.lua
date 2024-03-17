@@ -48,6 +48,7 @@ return {
 		Asset( "ANIM", "anim/player_shoeshover.zip"),
 		Asset( "ANIM", "anim/player_drink.zip"),
 		Asset( "ANIM", "anim/winterfood.zip"),
+		Asset( "ANIM", "anim/rnc_turf.zip"),
 		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),
@@ -130,3 +131,4 @@ return {
 	
 	
 }
+

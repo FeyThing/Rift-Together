@@ -106,8 +106,13 @@ AddTile("JUNK", "LAND",
 	{
 		name 			= "map_edge",
 		noise_texture	= "levels/textures/mini_noise_junk.tex",
-	}
-	
+	},
+	{
+        name = "junk",
+        anim = "junk",
+        bank_build = "rnc_turf",
+        pickupsound = "rock",
+    }
 )
 
 
@@ -129,8 +134,13 @@ AddTile("DESERTSAND", "LAND",
 		name 			= "map_edge",
 		noise_texture	= "levels/textures/mini_noise_desertsand.tex",
 		pickupsound = "grainy",
-	}
-	
+	},
+	{
+        name = "desertsand",
+        anim = "desertsand",
+        bank_build = "rnc_turf",
+        pickupsound = "rock",
+    }
 )
 
 AddTile("LUSH", "LAND",
@@ -150,8 +160,13 @@ AddTile("LUSH", "LAND",
 	{
 		name 			= "map_edge",
 		noise_texture	= "levels/textures/ground_noise_lush.tex",
-	}
-	
+	},
+	{
+        name = "lush",
+        anim = "lush",
+        bank_build = "rnc_turf",
+        pickupsound = "cloth",
+    }
 )
 
 AddTile("JUNK_NOISE", "NOISE")
@@ -185,7 +200,6 @@ ChangeTileRenderOrder(WORLD_TILES.JUNK, GLOBAL.WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.LUSH, GLOBAL.WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.DESERTSAND, GLOBAL.WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.METALPLATFORM, GLOBAL.WORLD_TILES.DIRT)
-
 
 
 
