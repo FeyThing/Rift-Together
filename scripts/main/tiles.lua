@@ -201,8 +201,8 @@ ChangeTileRenderOrder(WORLD_TILES.LUSH, GLOBAL.WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.DESERTSAND, GLOBAL.WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.METALPLATFORM, GLOBAL.WORLD_TILES.DIRT)
 
-RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_lush.tex")
-RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_junk.tex")
-RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_desertsand.tex")
+--RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_lush.tex")
+--RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_junk.tex")
+--RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_desertsand.tex")
 
 

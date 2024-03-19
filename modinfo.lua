@@ -1,7 +1,7 @@
 name = "Ratchet and Clank: Rift Together"
 --description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
 author = "XenoMind, Asura"
-version = "Beta 1.1.0"
+version = "Beta 1.1.1"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[

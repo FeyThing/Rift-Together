@@ -63,12 +63,18 @@ return function(self)
                         self.radiation:Show()
                     else
                         self.radiation:Hide()
-                    end
+                    end					
             end	
 			if _G.KnownModIndex:IsModEnabled("workshop-3004639365") then
 						self.radiation:Hide() 
-                    end
-            
+                    end	
+			--[[if _G.KnownModIndex:IsModEnabled("workshop-376333686") and self.radiation:Activate() and self.bg ~= nil then
+						self.bg:Show()
+					elseif _G.KnownModIndex:IsModEnabled("workshop-376333686") and self.radiation:Deactivate()and self.bg ~= nil then
+						self.bg:Hide() 
+            end	]]
+			
+			
 -----------	
 
     self.inst:DoTaskInTime(0, function()
