@@ -85,6 +85,8 @@ local tunings = {
 	RT_SHOES = {
 	    GetModConfigData("rt_shoe"),
 	},
+	
+	--- Biomes
 
 
 --- Character moved for later release

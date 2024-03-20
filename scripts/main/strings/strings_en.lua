@@ -350,6 +350,7 @@ local strings = {
 		},
 		LOADING_SCREEN_OTHER_TIPS = {
 			CONFIGS = "Is the current configs not to your liking? If not, then you can always tweak Rift Together's settings in configurations!",
+			BIOMES = "Are you tired of traveling to the island smelter? Fear not, you can always toggle Rift Together's biomes to generate on the mainland instead.",
 			WIKI = "Having trouble with finding something? Don't know what something does? Check out Rift Together's wiki found on the mod page!",	
 			COMPAT = "To activate Rift Together's effects in other mods. Make sure compatibility is toggled on in configs.",
 		},				

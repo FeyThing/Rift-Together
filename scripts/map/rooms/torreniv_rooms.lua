@@ -84,6 +84,7 @@
 AddRoom("Torren IV Depot",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.JUNK_NOISE,
+		required_prefabs = {"vullard_smelter"},
 		contents = {
 			countstaticlayouts={["lonely_depot"] = 1},
 			distributepercent = 0.07,

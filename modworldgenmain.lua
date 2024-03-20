@@ -15,7 +15,15 @@ local Layouts = require("map/layouts").Layouts
 local StaticLayout = require("map/static_layout")
 
 modimport("scripts/main/tiles")
+
+if GetModConfigData("Island Generation") == 1 then
+print ("importing the island")
 modimport("scripts/map/tasks/torreniv")
+else
+print ("importing the mainland")
+modimport("scripts/map/tasks/torreniv_mainland")
+end
+
 
 --If Island adventures is active, this prevents spawning the setpiece which as of now causes a void in the water
 if not _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then

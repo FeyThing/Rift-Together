@@ -2,11 +2,11 @@ require("map/rooms/torreniv_rooms")
 require("map/rooms/water_rooms")
 
 AddTask("Torren IV", {
-		locks={LOCKS.NONE},
-		keys_given={KEYS.TIER2},
-		region_id = "torren_iv",
+		locks={LOCKS.TIER4,},
+		keys_given={KEYS.TIER2, KEYS.ROCKS},
 		level_set_piece_blocker = true,
-		room_tags = {"torrenarea"},
+		room_tags = {"RoadPoison","torrenarea"},
+		entrance_room="Torren IV Wastes",
 		room_choices={
 			["Torren IV"] = 2,
 			["Torren IV Depot"] = 1,			
@@ -24,9 +24,8 @@ AddTask("Torren IV", {
 	AddTask("Torren Wastes", {
 		locks={LOCKS.TIER2},
 		keys_given={KEYS.TIER3},
-		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"torrenarea"},
+		room_tags = {"RoadPoison","torrenarea"},
 		room_choices={
 			["Torren IV Wastes"] = 1,			
 			["Torren IV Lake"] = 1,
@@ -42,9 +41,8 @@ AddTask("Torren IV", {
 AddTask("Torren Wastes Fertile", {
 		locks={LOCKS.NONE},
 		keys_given={KEYS.TIER2},
-		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"torrenarea"},
+		room_tags = {"RoadPoison","torrenarea"},
 		room_choices={
 			["Torren IV Fertile"] = 1,
 			["Torren IV Ponds"] = 1,			
@@ -60,9 +58,8 @@ AddTask("Torren Wastes Fertile", {
 	AddTask("Torren Wastes Crags", {
 		locks={LOCKS.TIER2},
 		keys_given={KEYS.TIER3},
-		region_id = "torren_iv",
 		level_set_piece_blocker = true,
-		room_tags = {"torrenarea"},
+		room_tags = {"RoadPoison","torrenarea"},
 		room_choices={
 			["Torren IV Wastes Crags"] = 1,			
 		},

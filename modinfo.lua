@@ -1,7 +1,7 @@
 name = "Ratchet and Clank: Rift Together"
 --description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
 author = "XenoMind, Asura"
-version = "Beta 1.1.1"
+version = "Beta 1.1.2"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[
@@ -67,6 +67,19 @@ local function CreateEnableOption(name, default, label, hover)
     }
 end
 
+local function CreateTypeOption(name, default, label, hover)
+    return {
+        name = name,
+        label = label,
+        hover = hover,
+        options = {
+            {description = "Enabled", data = "torren_iv"},
+            {description = "Disabled", data = ""},
+        },
+        default = default or "torren_iv",
+    }
+end
+
 local function CreateDensityOption(name, default, label, hover)
     return {
         name = name,
@@ -115,6 +128,7 @@ local function CreateTimerOption(name, default, label, hover)
     }
 end
 
+
 local opt_na = {{description = "", data = 0}}
 local function Title(title,hover)
 	return {
@@ -150,7 +164,7 @@ configuration_options = {
     CreateDensityOption("nanotech_crates", 0.5, "Nanotech Crates", "How many nanotech crates spawn within the world."),
 	CreatePercentageOption("Barrels", 25, nil, "How polluted do you want your ocean to be?"),
 	CreateEnableOption("Torren IV", 1, nil, "Allow the new biome, a chunk of Torren IV to spawn from the polaris galaxy."),
-	--CreateEnableOption("Biome Generation", 0, "Generate on Mainland", "Instead of an island, Torren IV will generate on the mainland."),
+	CreateEnableOption("Island Generation", 1, "Generate as island", "The new biome is an island by default. Disabling this generates the new biome on the mainland."),
 	CreateEnableOption("Raritanium Meteors", 1, nil, "Allow resources to become renewable beyond Torren IV."),
 	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
 	
