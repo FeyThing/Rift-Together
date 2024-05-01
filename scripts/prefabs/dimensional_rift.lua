@@ -505,7 +505,19 @@ local function portalfxfn()
     return inst
 end
 
+--------------------------------------------------------------------------------
+
+local rift_portal_defs = require("prefabs/rift_portal_defs")
+local RIFTPORTAL_FNS = rift_portal_defs.RIFTPORTAL_FNS
+local RIFTPORTAL_CONST = rift_portal_defs.RIFTPORTAL_CONST
+rift_portal_defs = nil
+
+RIFTPORTAL_FNS.CreateRiftPortalDefinition("dimensional_rift", {
+    CustomAllowTest = function(_map, x, y, z)
+        return _map:FindVisualNodeAtPoint(x, y, z, "not_mainland") == nil -- Only mainland.
+    end,
+    Affinity = RIFTPORTAL_CONST.AFFINITY.NONE,
+})
+
 return Prefab("dimensional_rift",    portalfn,   assets, prefabs),
 	   Prefab("dimensional_rift_fx", portalfxfn, assets, prefabs)
-
-

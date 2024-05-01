@@ -5,7 +5,6 @@
 			distributepercent = 0.12,
 			distributeprefabs =
 			{
-				chessjunk_spawner = 0.1,
 				lava_pond = 0.1,
 				nanocrate = 0.25,
 				scrapmetal = 0.33,
@@ -31,7 +30,6 @@
 			distributepercent = 0.1,
 			distributeprefabs =
 			{
-				chessjunk_spawner = 0.1,
 				torren_cactus = 0.33,
 				succulent_plant = 0.3,
 				fireflies = 0.33,
@@ -53,6 +51,7 @@
 		contents = {
 			countprefabs= {
 				hound_robomuttherd = function() return math.random(1,2) end,
+				raritaniumspawner = function() return math.random(1,2) end,
 				barrel_radioactive = 2,
 			},
 			distributepercent = 0.25,
@@ -61,8 +60,6 @@
 				raritanium_crystals = 0.1,
 				nanocrate = 0.25,
 								
-				chessjunk_spawner = 0.15,
-				hound_robomuttherd = 0.01,
 				scraprock = 3,
 				junkpile = 4,
 				scrapmetal = 0.6,
@@ -152,6 +149,7 @@ AddRoom("Torren IV Depot",  {
 				flower = .3,
 				luminoustree = 3,
 												
+				dustdevilspawner = .01,
 				torren_grass_spawner = .2,
 				marsh_tree = 1,
 				fireflies = 0.33,
@@ -180,6 +178,7 @@ AddRoom("Torren IV Depot",  {
 				scrapmetal = 1,					
                 					
 				torren_grass_spawner = .01,
+				dustdevilspawner = .01,
 				marsh_tree = 1,
 				fireflies = 0.33,
 				torren_cactus = 0.33,
@@ -216,10 +215,10 @@ AddRoom("Torren IV Depot",  {
 				fireflies = 0.33,
 				torren_grass_spawner = .15,
 				tumbleweedspawner = .01,
+				dustdevilspawner = .01,
 				marsh_tree = .5,
 				succulent_plant = 0.3,
-				
-				chessjunk_spawner = 0.1,				
+												
 				
 				torrenivdesert_pillar = 0.1,
 				torrenivdesert_pillar_small = 1,

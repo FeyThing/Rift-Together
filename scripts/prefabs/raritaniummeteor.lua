@@ -21,6 +21,7 @@ local prefabs =
     --"raritanium_crystals_med",
     --"raritanium_crystals_low",
     "nanocrate",
+	"chessjunk_spawner",
 }
 
 local SMASHABLE_WORK_ACTIONS =
@@ -246,8 +247,8 @@ local function SetSize(inst, sz, mod)
             {
                 {
                     prefab =
-                        (rand <= .33 and "raritanium_crystals") or
-                        (rand <= .67 and "raritanium_crystals") or
+                        (rand <= .33 and "scrapmetal") or
+                        (rand <= .67 and "chessjunk_spawner") or
                         "raritanium_crystals",
                     chance = 1,
                 },

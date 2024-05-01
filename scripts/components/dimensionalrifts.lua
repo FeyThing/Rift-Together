@@ -1,4 +1,4 @@
-local RIFTSPAWN_TIMERNAME = "dimenstion_rift_spawn_timer"
+local RIFTSPAWN_TIMERNAME = "dimensional_rift_spawn_timer"
 
 local RiftSpawner = Class(function(self, inst)
     assert(TheWorld.ismastersim, "RiftSpawner should not exist on the client")
@@ -43,7 +43,7 @@ function RiftSpawner:OnRiftRemoved(rift)
         self.rifts[rift] = nil
         self.rifts_count = self.rifts_count - 1
 
-        if self.spawnmode ~= 1 and not self._worldsettingstimer:ActiveTimerExists(RIFTSPAWN_TIMERNAME) then
+        if self.spawnmode ~= 1 and not self._worldsettingstimer:ActiveTimerExists("dimensional_rift_spawn_timer") then
             if self.rifts_count < TUNING.DIMENSIONAL_RIFTS.MAX_AMOUNT then
                 self._worldsettingstimer:StartTimer(RIFTSPAWN_TIMERNAME, TUNING.RIFTS_SPAWNDELAY)
             end
@@ -96,6 +96,7 @@ function RiftSpawner:TryToSpawnRift(forced_pos)
 end
 
 function RiftSpawner:OnRiftTimerDone()
+print ("Is rifts working?")
     if self.spawnmode == 1 then
         return
     end

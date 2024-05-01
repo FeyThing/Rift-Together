@@ -52,7 +52,8 @@ AddRecipe2("commando_helmet",
 		TECH.SCIENCE_TWO, 
         {builder_tag="veldin_mechanic",atlas=atlas},
 		{"CHARACTER","ARMOUR"})
-		
+
+if GLOBAL.EQUIPSLOTS.SHOES then		
 AddRecipe2("shoes_hover", 
 		{Ingredient("shoes_radiation", 1, atlas), Ingredient("shoes_slurper", 1), Ingredient("gears", 4)}, 
 		TECH.LOST, 
@@ -64,3 +65,4 @@ AddRecipe2("shoes_radiation",
 		TECH.SHOES_ONE, 
 		{atlas=atlas},  
 		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
+		end

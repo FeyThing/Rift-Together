@@ -9,14 +9,16 @@ local function fn()
     if not TheWorld.ismastersim then
         return inst
     end
+	
+
     
     inst:DoTaskInTime(0, function() 
-        SpawnAt("chessjunk", inst):SetLessLoot()
+        SpawnAt("chessjunk", inst):SetLessLoot()		
         inst:Remove()
     end)
 
     return inst
 end
 
-return Prefab("chessjunk_spawner", fn)
+return Prefab("chessjunk_spawner", fn, prefabs)
     

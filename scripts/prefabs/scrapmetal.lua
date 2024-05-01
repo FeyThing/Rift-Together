@@ -29,6 +29,11 @@ local function onload(inst, data)
 end
 
 local function onhammered(inst, worker)
+
+	if inst.components.childspawner ~= nil then
+        inst.components.childspawner:ReleaseAllChildren()
+    end
+
     inst.components.lootdropper:DropLoot()
     local fx = SpawnPrefab("collapse_small")
     fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
@@ -66,6 +71,7 @@ local function fn()
     inst.components.workable:SetWorkLeft(1)
     inst.components.workable:SetOnFinishCallback(onhammered)
 
+
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:SetChanceLootTable('scrapmetal')
     if scraptype == 3 then
@@ -77,7 +83,8 @@ local function fn()
     -------------------
     inst:AddComponent("inspectable")
 
-    --MakeSnowCovered(inst)
+    MakeSnowCovered(inst)
+	
     inst.OnSave = onsave
     inst.OnLoad = onload
 

@@ -13,6 +13,7 @@ local prefabs =
     "transistor",
     "rocks",
     "raritaniumore",
+	"rt_pawn",
     "collapse_small",
 }
 
@@ -24,8 +25,8 @@ local loots =
     {'transistor', 0.05},
     {'trinket_6', 0.05},
     {'twigs', 0.5},
-	{'gears', 0.02},	
-	{'blueprint', 0.01},
+	{'gears', 0.02},
+	{"rt_pawn", 0.1},	
     {'boneshard', 0.03},
     {'cookingrecipecard', 0.1},
     {'rope', 0.03},

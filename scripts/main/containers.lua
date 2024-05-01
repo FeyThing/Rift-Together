@@ -12,10 +12,12 @@ local params = {
                 Vector3(0, 5,  0),
 				Vector3(75, 5,  0),
             },
-            --[[slotbg =
-            {
-               { image = "omegamods.tex" },
-            },]]
+			        slotbg =
+			{
+            {image = "omegamods.tex", atlas = "images/omegamods.xml" },
+			{image = "omegamods.tex", atlas = "images/omegamods.xml" },
+			{image = "omegamods.tex", atlas = "images/omegamods.xml" },			
+			},
             animbank = "ui_ratchet_3x1",
             animbuild = "ui_ratchet_3x1",
             pos = Vector3(0, 30, 0),
@@ -35,6 +37,10 @@ local params = {
             {
                 Vector3(0,  -10,  0),
             },
+			slotbg =
+			{
+            {image = "omegamods.tex", atlas = "images/omegamods.xml" },			
+			},
 
             animbank = "ui_ratchet_1x1",
             animbuild = "ui_ratchet_1x1",

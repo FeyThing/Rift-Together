@@ -167,6 +167,7 @@ configuration_options = {
 	CreateEnableOption("Island Generation", 1, "Generate as island", "The new biome is an island by default. Disabling this generates the new biome on the mainland."),
 	CreateEnableOption("Raritanium Meteors", 1, nil, "Allow resources to become renewable beyond Torren IV."),
 	CreateEnableOption("Roaming RoboMutts", 1, nil, "Whether you'll run into a pack of robotic hounds on the mainland."),
+	CreateEnableOption("Dust Devils", 1, nil, "Enable or Disable the spawn of dust devil tornados in the summer."),
 	
 	DIVIDE,
 	Title("Compatibility Options"),

@@ -2682,7 +2682,7 @@ return {
 		TENTACLE_PILLAR_ARM = "It's quite disturbing.",
 		TENTACLE_GARDEN = "I still don't want to know what it's attached to.",
 		TOPHAT = "Nice hat.",
-		TORCH = "Tt should help me see better.",
+		TORCH = "It should help me see better.",
 		TRANSISTOR = "Hey! Maybe I could use this to upgrade my tools.",
 		TRAP = "This should catch something.",
 		TRAP_TEETH = "Wouldn't want to be caught in that.",

@@ -37,6 +37,20 @@ end
 
 ---
 
+local rt_pawns = { "RuinedCity", "Vacant", "Barracks", "LabyrinthEntrance", "Labyrinth" }
+
+for i, room in ipairs(rt_pawns) do
+        AddRoomPreInit(room, function(room)
+            if room.contents == nil then
+                room.contents = {}
+            end
+            if room.contents.distributeprefabs == nil then
+                room.contents.distributeprefabs = {}
+            end
+            room.contents.distributeprefabs.rt_pawn_nightmare_spawner = 0.069
+        end)
+    end
+
 
 local function GenerateCrystalsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
@@ -79,19 +93,43 @@ end
 
 local function GenerateRoboHerdsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
-		if room.contents.distributeprefabs then
-			room.contents.distributeprefabs.hound_robomuttherd = factor
+		if room.contents.countprefabs then
+			room.contents.countprefabs.hound_robomuttherd = factor
 		end
 	end)
 end
 
 if GetModConfigData("Roaming RoboMutts") == 1 then
 	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
-	GenerateRoboHerdsForRoom("MeadowRocky", 0.035)
-	GenerateRoboHerdsForRoom("VolcanoRock", 0.035)	
-	GenerateRoboHerdsForRoom("Rocky", 0.035)
+	GenerateRoboHerdsForRoom("MeadowRocky", function() return math.random() < 0.25 and 1 or 0 end)
+	GenerateRoboHerdsForRoom("VolcanoRock", 1)	
+	GenerateRoboHerdsForRoom("Rocky", function() return math.random() < 0.25 and 1 or 0 end)
 	else
-	GenerateRoboHerdsForRoom("Rocky", 0.035)
+	GenerateRoboHerdsForRoom("Rocky", function() return math.random() < 0.25 and 1 or 0 end)
+	end
+end
+
+local function GeneratedustdevilsForRoom(room, factor)
+	AddRoomPreInit(room, function(room)
+		if room.contents.distributeprefabs then
+			room.contents.distributeprefabs.dustdevilspawner = factor
+		end
+	end)
+end
+
+if GetModConfigData("Dust Devils") == 1 then
+	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
+	GeneratedustdevilsForRoom("MeadowRocky", 0.035)
+	GeneratedustdevilsForRoom("VolcanoRock", 0.035)	
+	else
+	GeneratedustdevilsForRoom("BGBadlands", 0.035)
+	GeneratedustdevilsForRoom("Lightning", 0.015)
+	GeneratedustdevilsForRoom("Badlands", 0.035)
+	GeneratedustdevilsForRoom("HoundyBadlands", 0.035)
+	GeneratedustdevilsForRoom("BuzzardyBadlands", 0.035)
+	GeneratedustdevilsForRoom("BGLightningBluff", 0.035)
+	GeneratedustdevilsForRoom("LightningBluffAntlion", 0.015)
+	GeneratedustdevilsForRoom("LightningBluffLightning", 0.015)
 	end
 end
 

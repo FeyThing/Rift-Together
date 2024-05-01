@@ -41,6 +41,11 @@ return {
 		"irradiated_pond",
 		"luminoustree_sapling",
 		"commando_helmet",
+		"dustdevil",
+		"dustdevilspawner",
+		"dustdevil_fx",
+		"rt_pawn",
+		"rt_pawn_trap",
 	},
 
 	Assets = {
@@ -123,6 +128,9 @@ return {
 		
 		Asset("ATLAS", "images/rnc_map_icons.xml"),
 		Asset("IMAGE", "images/rnc_map_icons.tex"),
+		
+		Asset("ATLAS", "images/omegamods.xml"),
+		Asset("IMAGE", "images/omegamods.tex"),
 	},
 
 	MiniMaps = {

@@ -149,9 +149,20 @@ local tunings = {
 	TOXIC_TILE_RADIUS = 5,
 	
 	
+	---- Weather
+	DUSTDEVIL_LIFETIME = 50,
+	DUSTDEVIL_DAMAGE = 27,
+	
+
+	--- Creatures
+	RT_PAWN_HEALTH = 200,
+	RT_PAWN_DAMAGE = 10,
+	RT_PAWN_TARGET_DIST = 10,
+	RT_PAWN_PULSE_COOLDOWN = 10,
+	RT_PAWN_PULSE_TRAP_LT = 5,
+
 	----
-
-
+	
     RADIATION_THRESH = {
         IRRITATED = {
             PRE = .35,
@@ -179,7 +190,7 @@ local tunings = {
     },
 
     DIMENSIONAL_RIFTS = {
-        MAX_AMOUNT = 3,
+        MAX_AMOUNT = 2,
         TIME_VARIANCE = 480,
 
         LOOT_PREFABS = {

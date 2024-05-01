@@ -128,6 +128,8 @@ local strings = {
 				NANOBOOST = "Looks refreshing.",
 
 				HOUND_ROBOMUTT = "Their teeth are sharp!",
+				RT_PAWN = "They're smaller so surely they're easier to beat right?",
+				RT_PAWN_NIGHTMARE = "That one looks like it has seen better days.",
 
 				VULLARD_LAMP = "Looks like someone made them with scrap.",
 				SCRAPROCK = "I hear something coming from it.",
@@ -171,6 +173,8 @@ local strings = {
 				DIMENSIONAL_RIFT = "It must be the work of the dimensionator. I need to find a way to close it.",
 
 				HOUND_ROBOMUTT = "Oh no, not these things again.",
+				RT_PAWN = "Well they're smaller. An easier job for my good 'ole Wrench.",
+				RT_PAWN_NIGHTMARE = "Looks broken. Should be a cakewalk!",
 
 				VULLARD_LAMP = "Huh, seems like the work of vullards.",
 				SCRAPROCK = "Maybe if I bust it open, I'll find something of use.",
@@ -228,7 +232,7 @@ local strings = {
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
 		RARITANIUMORE = "Raritanium Crystal",
-		RARITANIUM_BAR= "Refined Raritanium",
+		RARITANIUM_BAR= "Raritanium Alloy",
 		RARITANIUM_CRYSTALS= "Raritanium",
 		SCRAPMETAL = "Scrap Metal",
 		BARREL_RADIOACTIVE = "Metal Drum",
@@ -243,7 +247,11 @@ local strings = {
 
 		NANOBOOST = "Nanotech Boost",
 
+		--- Mobs
 		HOUND_ROBOMUTT = "RoboMutt",
+		RT_PAWN = "Clockwork Pawn",
+		RT_PAWN_NIGHTMARE = "Damaged Pawn",
+		
 
 		VULLARD_LAMP = "Junk Lamp",
 		SCRAPROCK = "Scrap Mound",

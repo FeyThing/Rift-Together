@@ -1,3 +1,10 @@
+local prefabs =
+{
+	"rt_pawn",
+	"rt_pawn_nightmare",
+}
+
+
 SetSharedLootTable("chess_junk_less",
 {
     {'trinket_6',      0.60},   
@@ -17,6 +24,24 @@ return function(inst)
         return
     end
     --SERVER
+	
+	-------
+	inst:AddComponent("childspawner")
+    if TheWorld:HasTag("cave") then
+        inst.components.childspawner.childname = "rt_pawn_nightmare"
+    else        
+		inst.components.childspawner.childname = "rt_pawn"
+    end
+
+    inst.components.childspawner:SetRegenPeriod(TUNING.TOTAL_DAY_TIME * 2)
+	inst.components.childspawner:SetSpawnPeriod(TUNING.CATCOONDEN_RELEASE_TIME)
+    inst.components.childspawner:SetSpawnPeriod(1)
+    inst.components.childspawner:SetMaxChildren(1)
+	inst.components.childspawner.spawnoffscreen = true
+	inst.components.childspawner:StartSpawning()
+
+	-------
+	
 	inst.SetLessLoot = SetLessLoot
 
     local _OnSave = inst.OnSave
