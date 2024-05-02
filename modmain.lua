@@ -1,7 +1,10 @@
-GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) end})
+-- GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) end})
 
-local require = GLOBAL.require
-local STRINGS = GLOBAL.STRINGS
+env._G = GLOBAL._G
+GLOBAL.setfenv(1, env) -- Sets the mods environment to the games'
+
+local require = require
+local STRINGS = _G.STRINGS
 local containers = require "containers"
 
 
@@ -12,7 +15,8 @@ for k, v in ipairs(ToLoad.MiniMaps) do
     AddMinimapAtlas(v)
 end
 
-GLOBAL.UpvalueHacker = require("tools/upvaluehacker")
+UpvalueHacker = require("tools/upvaluehacker")
+_G.UpvalueHacker = UpvalueHacker
 
 modimport("scripts/main/utils.lua")
 modimport("scripts/main/constants.lua")
@@ -33,7 +37,7 @@ AddReplicableComponent("radiation")
 
 
 -----------------------
-modimport("scripts/stategraphs/SGannihilator")
+-- modimport("scripts/stategraphs/SGannihilator")
 --modimport("scripts/util/nefarious_powers")
 modimport("scripts/stategraphs/SGratchet")
 

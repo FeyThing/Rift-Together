@@ -8,9 +8,9 @@ local params = {
         {
             slotpos =
             {
-                Vector3(-75, 5,  0),
-                Vector3(0, 5,  0),
-				Vector3(75, 5,  0),
+                _G.Vector3(-75, 5,  0),
+                _G.Vector3(0, 5,  0),
+				_G.Vector3(75, 5,  0),
             },
 			        slotbg =
 			{
@@ -20,7 +20,7 @@ local params = {
 			},
             animbank = "ui_ratchet_3x1",
             animbuild = "ui_ratchet_3x1",
-            pos = Vector3(0, 30, 0),
+            pos = _G.Vector3(0, 30, 0),
         },
         --usespecificslotsforitems = true,
         type = "hand_inv",
@@ -35,7 +35,7 @@ local params = {
         {
             slotpos =
             {
-                Vector3(0,  -10,  0),
+                _G.Vector3(0,  -10,  0),
             },
 			slotbg =
 			{
@@ -44,7 +44,7 @@ local params = {
 
             animbank = "ui_ratchet_1x1",
             animbuild = "ui_ratchet_1x1",
-            pos = Vector3(0, 50, 0),
+            pos = _G.Vector3(0, 50, 0),
         },
         --usespecificslotsforitems = true,
         type = "hand_inv",
@@ -59,13 +59,13 @@ local params = {
 		{
 			slotpos =
 			{
-				Vector3(-72, 0, 0),
+				_G.Vector3(-72, 0, 0),
 				--Vector3(0, 0, 0),
-				Vector3(72, 0, 0), 
+				_G.Vector3(72, 0, 0), 
 			},
 			animbank = "ui_ratchet_3x1",
 			animbuild = "ui_ratchet_3x1",
-			pos = Vector3(0, 200, 0),
+			pos = _G.Vector3(0, 200, 0),
 			side_align_tip = 160,
             -- buttoninfo =
             -- {

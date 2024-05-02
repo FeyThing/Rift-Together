@@ -1,6 +1,6 @@
 local env = env
 local GetModConfigData = GetModConfigData
-local KnownModIndex = KnownModIndex
+local KnownModIndex = _G.KnownModIndex
 local AddBrainPostInit = AddBrainPostInit
 local AddStategraphPostInit = AddStategraphPostInit
 local AddPrefabPostInit = AddPrefabPostInit
@@ -10,7 +10,6 @@ local AddGlobalClassPostConstruct = AddGlobalClassPostConstruct
 local AddClassPostConstruct = AddClassPostConstruct
 local AddPlayerPostInit = AddPlayerPostInit
 local AddPrefabPostInitAny = AddPrefabPostInitAny
-_G.setfenv(1, _G)
 
 local GenericPlayerFn = require("patches/prefabs/player")
 local AnyFn = require("patches/prefabs/any")
@@ -119,13 +118,12 @@ local function MakeWorldNetwork(...)
 
 	return inst
 end
-package.loaded["prefabs/world_network"] = MakeWorldNetwork
+_G.package.loaded["prefabs/world_network"] = MakeWorldNetwork
 
 function AddNetworkPostInit(fn)
 	table.insert(network_postinits, fn)
 end
 
-env.AddNetworkPostInit = AddNetworkPostInit
 local GenericNetworkFn = require("patches/prefabs/world_network")
 AddNetworkPostInit(GenericNetworkFn)
 

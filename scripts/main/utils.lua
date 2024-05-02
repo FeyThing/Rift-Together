@@ -1,4 +1,4 @@
-function GLOBAL.TransferTable(source, destination)
+function TransferTable(source, destination)
     for key, value in pairs(source) do
         if type(value) == "table" then
             if not destination[key] then
@@ -12,3 +12,5 @@ function GLOBAL.TransferTable(source, destination)
         end
     end
 end
+
+_G.TransferTable = TransferTable

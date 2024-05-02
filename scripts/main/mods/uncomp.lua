@@ -13,13 +13,13 @@ end
 
 --- Adding radiation to Uncomp
 AddPrefabPostInit("moonmaw_dragonfly", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
             
     inst.inflictvictim = function(inst, attacker)
         if attacker and attacker.components.health and not attacker.components.health:IsDead() then
-            SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
+            _G.SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
         end
     end	 	
     
@@ -32,14 +32,14 @@ AddPrefabPostInit("moonmaw_dragonfly", function(inst)
 end)
 
 AddPrefabPostInit("moonmaw_larvae", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
             
     --- radiation damage 
     inst.inflictvictim = function(inst, attacker)
         if attacker and attacker.components.health and not attacker.components.health:IsDead() then
-            SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
+            _G.SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
         end
     end
     
@@ -52,7 +52,7 @@ AddPrefabPostInit("moonmaw_larvae", function(inst)
 end)
 
 AddPrefabPostInit("moonmaw_glass", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     
@@ -61,7 +61,7 @@ AddPrefabPostInit("moonmaw_glass", function(inst)
 end)
 
 AddPrefabPostInit("moonmaw_trap", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     
@@ -70,13 +70,13 @@ AddPrefabPostInit("moonmaw_trap", function(inst)
 end)
 
 AddPrefabPostInit("moonmaw_glasshards", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     
     inst.inflictvictim = function(inst, attacker)
         if attacker and attacker.components.health and not attacker.components.health:IsDead() then
-            SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
+            _G.SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
         end
     end
     
@@ -92,7 +92,7 @@ AddPrefabPostInit("hound", function(inst)
     if inst:HasTag("horrorhound") then	
         inst.inflictvictim = function(inst, attacker)
             if attacker and attacker.components.health and not attacker.components.health:IsDead() then
-                SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
+                _G.SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
             end
         end
         
@@ -108,7 +108,7 @@ end)
 --- Adding Armored Mobs to Uncomp
 
 AddPrefabPostInit("knook", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
 
@@ -117,7 +117,7 @@ AddPrefabPostInit("knook", function(inst)
 end)
 
 AddPrefabPostInit("bight", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
 
@@ -126,7 +126,7 @@ AddPrefabPostInit("bight", function(inst)
 end)
 
 AddPrefabPostInit("roship", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
 
@@ -135,7 +135,7 @@ AddPrefabPostInit("roship", function(inst)
 end)
 
 AddPrefabPostInit("um_pawn", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
 
@@ -144,7 +144,7 @@ AddPrefabPostInit("um_pawn", function(inst)
 end)
 
 AddPrefabPostInit("um_pawn_nightmare", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
 
@@ -153,7 +153,7 @@ AddPrefabPostInit("um_pawn_nightmare", function(inst)
 end)
 
 AddPrefabPostInit("hound_magma", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
 
@@ -164,14 +164,14 @@ end)
 --- food
 
 AddPrefabPostInit("honey_log", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     inst.components.edible.radiationvalue = -15
 end)	
 
 AddPrefabPostInit("armor_glassmail", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     inst.components.equippable:SetRadiationProtectPercent(0.15)

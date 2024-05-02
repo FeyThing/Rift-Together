@@ -1,15 +1,15 @@
-AddAction("RATCHET_DODGE" , STRINGS.ACTIONS.DODGE_RATCHET , function(act, data)
-    act.doer:PushEvent("ratchet_redirect_locomote", {pos = act.pos or Vector3(act.target.Transform:GetWorldPosition())})
+AddAction("RATCHET_DODGE" , _G.STRINGS.ACTIONS.DODGE_RATCHET , function(act, data)
+    act.doer:PushEvent("ratchet_redirect_locomote", {pos = act.pos or _G.Vector3(act.target.Transform:GetWorldPosition())})
     return true
 end)
 
-ACTIONS.RATCHET_DODGE.distance = math.huge
-ACTIONS.RATCHET_DODGE.instant = true
+_G.ACTIONS.RATCHET_DODGE.distance = math.huge
+_G.ACTIONS.RATCHET_DODGE.instant = true
 
-local EATSTR = ACTIONS.EAT.stroverridefn
-ACTIONS.EAT.stroverridefn = function(act)
-    if table.contains(GLOBAL.USE_DRINK_ANIM, act.invobject.prefab) then
-        return STRINGS.ACTIONS.DRINK
+local EATSTR = _G.ACTIONS.EAT.stroverridefn
+_G.ACTIONS.EAT.stroverridefn = function(act)
+    if table.contains(_G.USE_DRINK_ANIM, act.invobject.prefab) then
+        return _G.STRINGS.ACTIONS.DRINK
     end
     
     if EATSTR ~= nil then

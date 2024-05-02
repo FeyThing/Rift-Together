@@ -26,12 +26,12 @@ local CreateSkillTree = function()
 end
 CreateSkillTree();]]
 
-GLOBAL.owrench_init_fn = function(inst, build_name)
-    GLOBAL.basic_init_fn(inst, build_name, "owrench" )
+_G.owrench_init_fn = function(inst, build_name)
+    _G.basic_init_fn(inst, build_name, "owrench" )
 end
 
-GLOBAL.owrench_clear_fn = function(inst)
-    GLOBAL.basic_clear_fn(inst, "owrench" )
+_G.owrench_clear_fn = function(inst)
+    _G.basic_clear_fn(inst, "owrench" )
 end
 
 
@@ -45,7 +45,7 @@ local skin_modes = {
     },
 }
 
-RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"), "ms_owrench_hammer.tex")
+RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"), "ms_owrench_hammer.tex")
 
 
 if GetModConfigData("Ratchet And Clank Characters") == 1 then

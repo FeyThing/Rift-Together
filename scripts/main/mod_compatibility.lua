@@ -1,5 +1,5 @@
-local KnownModIndex = GLOBAL.KnownModIndex
-local STRINGS = GLOBAL.STRINGS
+local KnownModIndex = _G.KnownModIndex
+local STRINGS = _G.STRINGS
 
 
 -- Uncompromising Mode
@@ -30,7 +30,7 @@ if TUNING.RT_SHOES and MOD.SHOES_ENABLED then
 end
 
 --- Just in case the shoe slot is enabled without the original shoetime mod. Rift Together's shoes will become available.
-if GLOBAL.EQUIPSLOTS.SHOES then
+if _G.EQUIPSLOTS.SHOES then
 	table.insert(PrefabFiles, "shoes_hover")
 	table.insert(PrefabFiles, "shoes_radiation")
 		

@@ -1,15 +1,15 @@
-local State = GLOBAL.State
-local FRAMES = GLOBAL.FRAMES
-local EventHandler = GLOBAL.EventHandler
-local EQUIPSLOTS = GLOBAL.EQUIPSLOTS
-local TimeEvent = GLOBAL.TimeEvent
-local ActionHandler = GLOBAL.ActionHandler
-local ACTIONS = GLOBAL.ACTIONS
-local TheNet = GLOBAL.TheNet
-local SpawnPrefab = GLOBAL.SpawnPrefab
-local PlayFootstep = GLOBAL.PlayFootstep
-local Vector3 = GLOBAL.Vector3
-local STRINGS = GLOBAL.STRINGS
+local State = _G.State
+local FRAMES = _G.FRAMES
+local EventHandler = _G.EventHandler
+local EQUIPSLOTS = _G.EQUIPSLOTS
+local TimeEvent = _G.TimeEvent
+local ActionHandler = _G.ActionHandler
+local ACTIONS = _G.ACTIONS
+local TheNet = _G.TheNet
+local SpawnPrefab = _G.SpawnPrefab
+local PlayFootstep = _G.PlayFootstep
+local Vector3 = _G.Vector3
+local STRINGS = _G.STRINGS
 
 AddStategraphEvent("wilson",
 	EventHandler("ratchet_redirect_locomote", function(inst, data)
@@ -41,7 +41,7 @@ AddStategraphState("wilson",
             inst.components.health:SetInvincible(true)
             inst.sg:AddStateTag("noattack")
             
-            inst.last_dodge_time = GLOBAL.GetTime()
+            inst.last_dodge_time = _G.GetTime()
 			inst.dodgetime:set(inst.dodgetime:value() == false and true or false)
 			
 			if inst.components.playercontroller ~= nil then
@@ -104,7 +104,7 @@ AddStategraphState("wilson_client",
 
             inst.components.locomotor:EnableGroundSpeedMultiplier(false)
             
-            inst.last_dodge_time = GLOBAL.GetTime()
+            inst.last_dodge_time = _G.GetTime()
 			inst.dodgetime:set(inst.dodgetime:value() == false and true or false)
 			inst:PerformPreviewBufferedAction()
 			inst.sg:SetTimeout(1)

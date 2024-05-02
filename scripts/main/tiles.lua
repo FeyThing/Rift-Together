@@ -196,13 +196,13 @@ NOISES[WORLD_TILES.DESERTFERTILE_NOISE] = GetTileFordesertfertileNoise
 ChangeTileRenderOrder(WORLD_TILES.OCEAN_RUST, WORLD_TILES.OCEAN_HAZARDOUS, true)
 ChangeTileRenderOrder(WORLD_TILES.OCEAN_TOXIC, WORLD_TILES.OCEAN_HAZARDOUS, true)
 
-ChangeTileRenderOrder(WORLD_TILES.JUNK, GLOBAL.WORLD_TILES.DIRT)
-ChangeTileRenderOrder(WORLD_TILES.LUSH, GLOBAL.WORLD_TILES.DIRT)
-ChangeTileRenderOrder(WORLD_TILES.DESERTSAND, GLOBAL.WORLD_TILES.DIRT)
-ChangeTileRenderOrder(WORLD_TILES.METALPLATFORM, GLOBAL.WORLD_TILES.DIRT)
+ChangeTileRenderOrder(WORLD_TILES.JUNK, WORLD_TILES.DIRT)
+ChangeTileRenderOrder(WORLD_TILES.LUSH, WORLD_TILES.DIRT)
+ChangeTileRenderOrder(WORLD_TILES.DESERTSAND, WORLD_TILES.DIRT)
+ChangeTileRenderOrder(WORLD_TILES.METALPLATFORM, WORLD_TILES.DIRT)
 
---RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_lush.tex")
---RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_junk.tex")
---RegisterInventoryItemAtlas(GLOBAL.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_desertsand.tex")
+--RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_lush.tex")
+--RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_junk.tex")
+--RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_desertsand.tex")
 
 

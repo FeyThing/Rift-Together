@@ -1,3 +1,6 @@
+env._G = GLOBAL._G
+GLOBAL.setfenv(1, env)
+
 --- Had to do it the old fashioned way. It just was not having it with any modimports ;U;
 
 PrefabFiles = {
@@ -26,7 +29,7 @@ Assets = {
  
 }
 
-local STRINGS = GLOBAL.STRINGS
+local STRINGS = _G.STRINGS
 
 STRINGS.NAMES.RATCHET = "Ratchet"
 STRINGS.SKIN_NAMES.ratchet_none = "Ratchet"
@@ -67,12 +70,12 @@ TUNING.STARTING_ITEM_IMAGE_OVERRIDE["nanoboost"] = {
     image = "nanoboost.tex",
 }
 
-GLOBAL.owrench_init_fn = function(inst, build_name)
-    GLOBAL.basic_init_fn(inst, build_name, "owrench" )
+_G.owrench_init_fn = function(inst, build_name)
+    _G.basic_init_fn(inst, build_name, "owrench" )
 end
 
-GLOBAL.owrench_clear_fn = function(inst)
-    GLOBAL.basic_clear_fn(inst, "owrench" )
+_G.owrench_clear_fn = function(inst)
+    _G.basic_clear_fn(inst, "owrench" )
 end
 
 if GetModConfigData("Ratchet And Clank Characters") then

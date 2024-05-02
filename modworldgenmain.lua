@@ -1,12 +1,12 @@
-env._G = GLOBAL
+env._G = GLOBAL._G
+GLOBAL.setfenv(1, env) -- Sets the mods environment to the games'
+
 local env = env
 local modimport = modimport
 local AddRoomPreInit = AddRoomPreInit
 local AddTaskSetPreInit = AddTaskSetPreInit
 local AddTaskSetPreInitAny = AddTaskSetPreInitAny
 local GetModConfigData = GetModConfigData
-
-_G.setfenv(1, _G)
 
 require("map/terrain")
 require("map/torreniv_terrain")
@@ -17,21 +17,21 @@ local StaticLayout = require("map/static_layout")
 modimport("scripts/main/tiles")
 
 if GetModConfigData("Island Generation") == 1 then
-print ("importing the island")
-modimport("scripts/map/tasks/torreniv")
+	print("importing the island")
+	modimport("scripts/map/tasks/torreniv")
 else
-print ("importing the mainland")
-modimport("scripts/map/tasks/torreniv_mainland")
+	print("importing the mainland")
+	modimport("scripts/map/tasks/torreniv_mainland")
 end
 
 
 --If Island adventures is active, this prevents spawning the setpiece which as of now causes a void in the water
 if not _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
-AddRoomPreInit("Torren IV Lake", function(room)
-    if not room.contents.countstaticlayouts then
-        room.contents.countstaticlayouts = {}
-    end
-	room.contents.countstaticlayouts["gunkywateringhole"] = 1
+	AddRoomPreInit("Torren IV Lake", function(room)
+		if not room.contents.countstaticlayouts then
+			room.contents.countstaticlayouts = {}
+		end
+		room.contents.countstaticlayouts["gunkywateringhole"] = 1
 	end)		
 end
 
@@ -217,7 +217,7 @@ local filters = {
 }
 
 for k, v in pairs(filters) do
-	terrain.filter[k] = v
+	_G.terrain.filter[k] = v
 end
 
 Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
@@ -248,8 +248,8 @@ local retrofit_islands = {"retrofit_torreniv", "retrofit_torreniv_small"}
 for i, layout in ipairs(retrofit_islands) do
     Layouts[layout] = StaticLayout.Get("map/static_layouts/"..layout,
     {
-        start_mask = PLACE_MASK.IGNORE_IMPASSABLE,
-        fill_mask = PLACE_MASK.IGNORE_IMPASSABLE,
+        start_mask = _G.PLACE_MASK.IGNORE_IMPASSABLE,
+        fill_mask = _G.PLACE_MASK.IGNORE_IMPASSABLE,
         add_topology = {room_id = "StaticLayoutIsland:Torren IV", tags = {"RoadPoison", "not_mainland"}},
         areas =
         {
@@ -271,12 +271,12 @@ end
  
 local function IsCloseToWater(world, x, y, radius)
 	for i = -radius, radius, 1 do
-		if IsOceanTile(world:GetTile(x - radius, y + i)) or IsOceanTile(world:GetTile(x + radius, y + i)) then
+		if _G.IsOceanTile(world:GetTile(x - radius, y + i)) or _G.IsOceanTile(world:GetTile(x + radius, y + i)) then
 			return true
 		end
 	end
 	for i = -(radius - 1), radius - 1, 1 do
-		if IsOceanTile(world:GetTile(x + i, y - radius)) or IsOceanTile(world:GetTile(x + i, y + radius)) then
+		if _G.IsOceanTile(world:GetTile(x + i, y - radius)) or _G.IsOceanTile(world:GetTile(x + i, y + radius)) then
 			return true
 		end
 	end
@@ -298,11 +298,11 @@ local function IsCloseToTileType(world, x, y, radius, tile)
 end
 
 local function is_waterlined(tile)
-	return IsLandTile(tile) 
+	return _G.IsLandTile(tile) 
 end
 
 local function isWaterOrInvalid(ground)
-	return IsOceanTile(ground) or ground == WORLD_TILES.INVALID
+	return _G.IsOceanTile(ground) or ground == WORLD_TILES.INVALID
 end
 
 local function IsSurroundedByWaterOrInvalid(world, x, y, radius)
@@ -327,7 +327,7 @@ local function squareFill(world, width, height, x, y, radius, ground)
 				if not is_waterlined(t) then
 					world:SetTile(xx, yy, ground)
 				end
-				if IsOceanTile(t) and not IsSurroundedByWaterOrInvalid(world, xx, yy, 1) then
+				if _G.IsOceanTile(t) and not IsSurroundedByWaterOrInvalid(world, xx, yy, 1) then
 					if t == WORLD_TILES.OCEAN_BRINEPOOL then
 						world:SetTile(xx, yy, WORLD_TILES.OCEAN_BRINEPOOL_SHORE)
 					else
@@ -353,13 +353,13 @@ local function do_squarefill(world, w, h)
 end
 
 require("map/ocean_gen")
-local _Ocean_ConvertImpassibleToWater = Ocean_ConvertImpassibleToWater
-Ocean_ConvertImpassibleToWater = function(...)
+local _Ocean_ConvertImpassibleToWater = _G.Ocean_ConvertImpassibleToWater
+_G.Ocean_ConvertImpassibleToWater = function(...)
 	local args = {...}
 
 	local w, h = args[1], args[2]
 	local data = args[3]
-	local world = WorldSim
+	local world = _G.WorldSim
 	
 	local val = _Ocean_ConvertImpassibleToWater(...)
 

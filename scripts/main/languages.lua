@@ -11,6 +11,6 @@ local NEW_LOADING_TIPS = {
 }
 
 for tip, category in pairs(NEW_LOADING_TIPS) do
-    AddLoadingTip(GLOBAL.STRINGS.UI["LOADING_SCREEN_"..category.."_TIPS"], tip)
+    AddLoadingTip(_G.STRINGS.UI["LOADING_SCREEN_"..category.."_TIPS"], tip)
 end
 

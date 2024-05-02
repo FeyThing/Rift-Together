@@ -13,7 +13,7 @@ end
 
 -- Adding Radiation to Island Adventures.
 AddPrefabPostInit("bananapop", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     inst.components.edible.radiationvalue = 5
@@ -26,9 +26,9 @@ TUNING.LUMINOUS_WINDBLOWN_FALL_CHANCE = 0
 AddPrefabPostInit("luminoustree", function(inst)
     inst:AddTag("gustable")
     
-    if not GLOBAL.TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return inst
     end
     
-    GLOBAL.MakeTreeBlowInWindGust(inst, TUNING.LUMINOUS_WINDBLOWN_SPEED, TUNING.LUMINOUS_WINDBLOWN_FALL_CHANCE)
+    _G.MakeTreeBlowInWindGust(inst, TUNING.LUMINOUS_WINDBLOWN_SPEED, TUNING.LUMINOUS_WINDBLOWN_FALL_CHANCE)
 end)

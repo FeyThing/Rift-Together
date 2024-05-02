@@ -207,7 +207,7 @@ if inst.shielding then
             inst.Light:Enable(true)
             inst.Light:SetRadius(3) 
             inst:AddTag("forcefield")
-            inst.forcefieldfx1 = GLOBAL.SpawnPrefab("forcefieldfx1") -- "Attach" the fx to the inst
+            inst.forcefieldfx1 = _G.SpawnPrefab("forcefieldfx1") -- "Attach" the fx to the inst
             inst.forcefieldfx1.entity:SetParent(inst.entity) -- So we don't have to loop through the children to find it later to kill it
             inst.forcefieldfx1.Transform:SetPosition(0, 0.2, 0)
             inst.components.health.absorb = (3 * TUNING.NEFARIOUS_HEALTH_ABSORB)
