@@ -1,22 +1,52 @@
 Rift Together list to do pre-release during testing phase.
 
+Industrial Mayhem
 
 Art
 ----------------
 
 Canyon Biome
 
-- Draw better irradiated ponds (drawing concepts as we speak)
+-Irradiated Ponds need to be redone. Interconnected streams and shallow pools you can wad in.
 
 Junk Biome
 
 - Add Abandoned houses 
 - Make new art for Vullard Lamp post
+- Unsightly Tile in lonely depo needs to be replaced with a prefab/house foundation in prep for new NPC.
+- Placeholder lamps are from hamlet and needs to be redrawned and animated
+
+Rifts
+
+- Art needs to be redone and reanimated
+
+Armor
+
+- Modular Armor
+- Radiation and explosion resistant armor
+
+Structures
+
+- Tarp for keeping out the radiation and the elements
+
+Characters
+- Add Clank 
+
+Mobs
+Swarmer. Steals stuff, aggros during certain seasons. Has two morphs. Antara(nuetral) and Cerulean(Hostile).
+Squirrels, they're aggressive but also need their builds moved to hamlet reskin instead of rat reskin. 
 
 Sound
 
 - Add custom sound to hounds
+- Add Radiation Geiger meter ticks when infected
+- Custom sound for Clank
 
+
+Overlays
+
+- Radiation animation overlay to indicate rad intensity
+- sand overlay when a dust devil is within range and is pulling at you
 
 Main Logo
 
@@ -24,86 +54,16 @@ Main Logo
 
 
 -----------
-Bugs to fix pre release
+Bugs to fix 
 
 - Messed up original build pivots on trees. Especially noticeable when trees grow. Need to realign animations for luminous trees.
 - Barrels art needs to be fixed and edited to be less crooked.
-- Tile art too big for platform, needs fixing.
-- Misplaced bubbling animations on ponds and smelter.
-
-
+- Container sometimes bugs out on modular weapons and lingers
 
 
 
 -----------
 
-Future ideas Plans
-
-Junk Biome
-
-- Instead of a shovel. Drill, for digging through special rock for raritanium.
-- Vending Machine that spawns only on the vullard NPCs setpiece. 
-
-
-NPCs
-
-- Vullard NPC you must find before he appears to sell you blueprints or trade.
-
-
-Mobs
-Swarmer. Steals stuff, aggros during ceratain seasons. Has two morphs. Antara(nuetral) and Cerullean(Hostile).
-Fendersax Wasp (Needle Wasp) Spawns from attached nests with harvestable, Sirangian honey. Spits acid.
-
-Items
-
-- Raritanium fishing rod (allows fishing in radioactive ponds and lakes)
-- Purifier machine
-
-
-Characters 
-
-- Add Qwark
-- Add Clank (Next character?)
-- Add Nefarious
-
-Sound
-
-- Custom sound for Nef 
-- Custom sound for Qwark
-- Custom sound for Clank
-
-Nef annihilator Animations
-
-- Replace Nef Annihilator animation with the angry emote.
-- Add symbols to show invisible equipment when in annihilator mode
-- Finish all annihilator animations or add placeholders
-
-Armor
-
-- Modular Armor
-- Radiantion resistant armor
-
-Animations
-
-- Drink animation -- Cause eating whole cans is weird :D
-
-
-Mechanics
-
-- Add new raritanium hull tag which adds resistance to all damage except from magic weapons and raritanium made weapons(both mobs and player made raritanim armors)
-
-Sound
-
-- Add Radiation geiger meter ticks when infected possibly
-
-Environment
-
--- Dust Devils spawning in summer?
-
-TorrenIV
-
--Add Oil Feilds
-- Impure tar pits on land (irradiated). Acquired with drill.
 
 
 

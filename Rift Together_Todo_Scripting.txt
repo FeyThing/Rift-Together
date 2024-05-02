@@ -1,22 +1,70 @@
 Rift Together scripting todo list.
 
+Industrial Mayhem
 
 ----------------
 
-To Add post-release
+Weather
+
+- Dust devils spawn could be better. Instead of using spawners similar to tumbleweeds. A more universal weather based spawner would be better.
+- Mud puddles have been made. They just need to spawn when precipitation rate is above 50.
+- Radioactive snow or nuclear winter during the second year.
+- Metal becomes overheated and scalding in the summer. This causes metal enemies to glow red and burn the player if the player touches the creature or is physically hit by the creature. Metal armor can also burn the player if worn without being cooled down.
+- Shade or taking cover under stuff protects you from the radioactive snow. New tarps should protect players too.
+
+Rifts
+
+- The rifts spawning is broken
+
+Radiation
 
 - Increased radiation damage the worst state you become instead of a flat 1 damage tick per second.
-- Putting moonrocks/etc or irradiated things in your inventory triggers the radiation to tick up
+- Putting moonrocks/etc or irradiated things in your inventory triggers player radiation to tick up.
+- Radiation component can be a bit finicky at times and needs touching up, especially when attacking while inflicted.
 
+Canyon Biome
+
+-Irradiated Ponds need to be redone. Interconnected streams and shallow pools you can wad in.
+
+Reinforced armor
+
+- The Reinforced armor component is very bare bones. Add Resistances and player weapon knockback to weapons ill equipped for trying to pierce these armored enemies will give it better complexity and make the elemental weaponry very ideal for certain enemies.
+
+Smelter
+
+- The smelter needs an entire overhaul. It is the worst thing about the mod. It's UI needs to be overhauled and instead of two. Three slots I would want.  A metal material slot, a weapon/armor slot and last the output. If an armor or weapon isn't available, pure metal (gold, moonglass, raritanium) can be broken down or turned to alloy. Weapons placed inside can gain the reinforced tag based on the type of metal infused into it (raritanium for now gives reinforced tag), and a glow on around the item in the inventory. This allows players to kill enemies with Reinforced armor component without suffering weapon damage. 
+
+Mobs
+
+- The Pawn. A fully custom mob that needs a better gimmick than it already has right now. Nightmare versions explode on kill but need a delay and their bulbs to change red as a warning its going to explode in a couple of seconds instead of immediately. They spawn in pairs for some reason near broken clockworks. (I was going for only one at a time but game just spawns them in pairs for some reason) and they have a AOE inject attack. I would prefer if they had some support abilities to empower the clockworks around them. Like overclocking the other clockworks. Nightmare specifically. 
+
+Weapons
+
+- Bee Mine Glove (abilities to be announced)
 
 Organization
 
 - Reorganize messy file placement
 
+Animations
+
+- Drink strings don't appear as a prompt when drinking a drink. Instead it still says eat.
+
+Turfs
+
+- Custom turfs are invisible when placed in inventory
 
 Compatibility
 
 - Moonglass Glommer from Cherry Forest emits an anti-radiation aura
+
+
+Characters
+
+- Wx-78 Radiation immune upgrade
+
+- Clank (optional character. Abilities to be announced)
+
 
 
 Bugs to fix 
@@ -30,14 +78,7 @@ Bugs to fix
 
 
 
------------
-
-Future ideas Plans
-
-
-- Nuclear winter. Radioactive snow after the first year ingame.
-- Shade or taking cover under stuff protects you from the radioactive snow.
-- Moving/migrating radioactive barrels floating in the water 
+ 
 
 
 
