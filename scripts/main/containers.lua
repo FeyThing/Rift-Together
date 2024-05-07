@@ -1,5 +1,5 @@
 local Containers = require "containers"
-local SmelterRecipes = require "main/smelterrecipe"
+local Smelter = require "main/smelterrecipe"
 
 local params = {
     owrench =
@@ -60,22 +60,43 @@ local params = {
 			slotpos =
 			{
 				_G.Vector3(-72, 0, 0),
-				--Vector3(0, 0, 0),
+				_G.Vector3(0, 50, 0),
 				_G.Vector3(72, 0, 0), 
 			},
 			animbank = "ui_ratchet_3x1",
 			animbuild = "ui_ratchet_3x1",
 			pos = _G.Vector3(0, 200, 0),
 			side_align_tip = 160,
-            -- buttoninfo =
-            -- {
-            --     text = "Refine",
-            --     position = Vector3(0, -100, 0),
-            -- },
+			buttoninfo =
+			{
+				text = _G.STRINGS.ACTIONS.VULLARD_SMELT,
+				position = _G.Vector3(0, -100, 0),
+				fn = function(inst, doer)
+					if inst.components.container ~= nil then
+						_G.BufferedAction(doer, inst, _G.ACTIONS.VULLARD_SMELT):Do()
+					elseif inst.replica.container ~= nil and not inst.replica.container:IsBusy() then
+						_G.SendRPCToServer(_G.RPC.DoWidgetButtonAction, _G.ACTIONS.VULLARD_SMELT.code, inst, _G.ACTIONS.VULLARD_SMELT.mod_name)
+					end
+				end,
+				validfn = function(inst)
+					return Smelter.IsReadyToSmelt(inst)
+				end,
+			},
 		},
+		usespecificslotsforitems = true,
 		type = "chest",
         itemtestfn = function(container, item, slot)
-            return SmelterRecipes[item.prefab] and (slot == 1 or slot == 2 and container.inst.on)
+            if slot == nil and Smelter.IsValidSmelterItem(item) then
+				return true
+			elseif slot == 1 then
+				return Smelter.GetAlloyRecipe(item) ~= nil or Smelter.IsAlloy(item) or Smelter.GetScraps(item) ~= nil
+			elseif slot == 2 then
+				return Smelter.IsReinforceableWeapon(item)
+			elseif slot == 3 then
+				return false -- to-do players shouldn't put items here but I'll try a hack later to let the Smelter gives itself items
+			end
+			
+			return false
         end,
     },
 }
