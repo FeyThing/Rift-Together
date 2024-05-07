@@ -1,11 +1,11 @@
 require "prefabutil"
-local SmelterRecipes = require "main/smelterrecipe"
+local Smelter = require "main/smelterrecipe"
 
 local assets = {
 	Asset("ANIM", "anim/vullard_smelter.zip"),
 }
 
-local function SmeltItems(inst, item)
+--[[local function SmeltItems(inst, item)
 	if item and SmelterRecipes[item.prefab] then
 		if item.components.stackable then
 			if item.components.stackable:StackSize() >= SmelterRecipes[item.prefab].stacksize then
@@ -46,26 +46,41 @@ local function SmeltItems(inst, item)
 		inst.AnimState:PlayAnimation("idle")
 		inst.SoundEmitter:KillSound("snd")
 	end
+end]]
+
+local function OnStartSmelting(inst)
+	inst.AnimState:PushAnimation("bubble_loop", true)
+	inst.SoundEmitter:KillSound("snd")
+	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot", "snd")
 end
 
-local function onbuilt(inst)
+local function OnStopSmelting(inst)
+	inst.AnimState:PlayAnimation("idle", true)
+	inst.SoundEmitter:KillSound("snd")
+end
+
+local function OnDoneSmelting(inst)
+	OnStopSmelting(inst)
+	inst.SoundEmitter:PlaySound("dontstarve/characters/wx78/levelup")
+end
+
+local function OnBuilt(inst)
 	inst.AnimState:PlayAnimation("place")
     inst.AnimState:PushAnimation("idle", true)
     inst.SoundEmitter:PlaySound("dontstarve/common/chest_craft")
 end
 
-local function onopen(inst)
+local function OnOpen(inst)
 	inst.SoundEmitter:KillSound("snd")
-	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_open")		
-	inst.components.machine:TurnOff()
+	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_open")
 end 
 
-local function onclose(inst)
+local function OnClose(inst)
 	inst.SoundEmitter:KillSound("snd")
 	inst.SoundEmitter:PlaySound("dontstarve/common/cookingpot_close")
 end
 
-local function TurnOn(inst)
+--[[local function TurnOn(inst)
 	inst.on = true
 	
 	if inst.components.container:IsOpen() then
@@ -86,62 +101,62 @@ local function TurnOff(inst)
 		inst.tasksmelt:Cancel()
 		inst.tasksmelt = nil
 	end
-end
+end]]
 
 local function fn()
 	local inst = CreateEntity()
-
+	
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
 	inst.entity:AddSoundEmitter()
 	inst.entity:AddMiniMapEntity()
 	inst.entity:AddLight()
 	inst.entity:AddNetwork()
-
+	
 	MakeObstaclePhysics(inst, 2.5)
-
+	
 	inst.MiniMapEntity:SetIcon("vullard_smelter.tex")
 	
 	inst.Transform:SetScale(2, 2, 1)
-
+	
 	inst:AddTag("structure")
-	inst:AddTag("smelter")
-	--inst:AddTag("HASHEATER")
+	inst:AddTag("vullard_smelter")
+	inst:AddTag("HASHEATER")
+	inst:AddTag("container_stacksizechange_refresh")
 	
 	inst.Light:Enable(true)
 	inst.Light:SetRadius(1.0)
 	inst.Light:SetFalloff(.9)
 	inst.Light:SetIntensity(0.5)
 	inst.Light:SetColour(235 / 255, 121 / 255, 12 / 255)
-
+	
 	inst.AnimState:SetBank("vullard_smelter")
 	inst.AnimState:SetBuild("vullard_smelter")
-	inst.AnimState:PlayAnimation("idle")
+	inst.AnimState:PlayAnimation("idle", true)
 	inst.AnimState:SetLightOverride(0.4)
-
-
+	
 	inst.entity:SetPristine()
-
+	
 	if not TheWorld.ismastersim then
 		return inst
 	end
-
+	
 	inst:AddComponent("inspectable")
 	
 	inst:AddComponent("container")
 	inst.components.container:WidgetSetup("vullard_smelter")
-	inst.components.container.onopenfn = onopen
-	inst.components.container.onclosefn = onclose		
+	inst.components.container.onopenfn = OnOpen
+	inst.components.container.onclosefn = OnClose
 	
-	inst:AddComponent("machine")
-	inst.components.machine.turnonfn = TurnOn
-	inst.components.machine.turnofffn = TurnOff
-	inst.components.machine.cooldowntime = 0.5
+	inst:AddComponent("vullard_smelter")
+	inst.components.vullard_smelter.onstartsmelting = OnStartSmelting
+	inst.components.vullard_smelter.onstopsmelting = OnStopSmelting
+	inst.components.vullard_smelter.ondonesmelting = OnDoneSmelting
 	
 	inst:AddComponent("heater")
 	inst.components.heater.heat = 90
 	
-	inst:ListenForEvent("onbuilt", onbuilt)
+	inst:ListenForEvent("onbuilt", OnBuilt)
 	
 	return inst
 end
