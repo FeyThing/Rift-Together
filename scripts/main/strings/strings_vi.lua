@@ -352,6 +352,7 @@ local strings = {
 	ACTIONS = {
 		DODGE_RATCHET = "Dodge",
 		DRINK = "Drink",
+		VULLARD_SMELT = "Smelt",
 	},
 	UI = {
 		LOADING_SCREEN_LORE_TIPS = {
