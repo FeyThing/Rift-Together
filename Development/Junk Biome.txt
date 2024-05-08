@@ -1,0 +1,8 @@
+The junk biome is by far the most important and dangerous biome. It is home to robomutt hounds, and other mechanic threats. The entire junkyard is surrounded by trash and a space that looks like someone once lived there. The junk biome is themed around locating the smelter which is supposed to belong to a future NPC you're supposed to rescue. The smelter is supposed to be closed until you meet and save the NPC. 
+
+
+Currently since the NPC isn't available, the smelter is open for all players to use until the NPC is finished and implemented.
+
+The NPC is supposed to trade and provide new blueprints that are currently found in the junkpiles for the time being.
+
+The smelter setpiece "The lonely depot" is supposed to be dark (a type of canopy above it) and spew lavafalls in places near the smelter setpiece to give it a more grand look.

@@ -3,6 +3,7 @@ local Smelter = require "main/smelterrecipe"
 
 local assets = {
 	Asset("ANIM", "anim/vullard_smelter.zip"),
+	Asset("ANIM", "anim/ui_smelter.zip"),
 }
 
 --[[local function SmeltItems(inst, item)

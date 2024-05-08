@@ -20,23 +20,25 @@ Radiation
 
 - Increased radiation damage the worst state you become instead of a flat 1 damage tick per second.
 - Putting moonrocks/etc or irradiated things in your inventory triggers player radiation to tick up.
-- Radiation component can be a bit finicky at times and needs touching up, especially when attacking while inflicted.
+- Objects need a radiation value, but should not immediately become infected or become active as we don't want the entire world to glow eerily green. Just for future stuff.
+- Radiation component can be a bit finicky at times and needs touching up, especially when attacking while inflicted yourself.
+- Infected tiles that have been cleared don't disappear over time like it should.
 
 Canyon Biome
 
--Irradiated Ponds need to be redone. Interconnected streams and shallow pools you can wad in.
+-Irradiated Ponds need to be redone. Interconnected streams and shallow pools you can wad in. (Working on this and updated the art.)
 
 Reinforced armor
 
-- The Reinforced armor component is very bare bones. Add Resistances and player weapon knockback to weapons ill equipped for trying to pierce these armored enemies will give it better complexity and make the elemental weaponry very ideal for certain enemies.
+- The armoredbody component is very bare bones. Add Resistances and player weapon knockback to weapons ill equipped for trying to pierce these armored enemies will give it better complexity and make the elemental weaponry very ideal for certain enemies.
 
 Smelter
 
-- The smelter needs an entire overhaul. It is the worst thing about the mod. It's UI needs to be overhauled and instead of two. Three slots I would want.  A metal material slot, a weapon/armor slot and last the output. If an armor or weapon isn't available, pure metal (gold, moonglass, raritanium) can be broken down or turned to alloy. Weapons placed inside can gain the reinforced tag based on the type of metal infused into it (raritanium for now gives reinforced tag), and a glow on around the item in the inventory. This allows players to kill enemies with Reinforced armor component without suffering weapon damage. 
+- The smelter needs an entire overhaul. It is the worst thing about the mod. It's UI needs to be overhauled and instead of two. Three slots I would want.  A metal material slot, a weapon/armor slot and last the output. If an armor or weapon isn't available, pure metal or damaged metal based equipments (gold, moonglass, raritanium) can be broken down or turned to alloy. Weapons placed inside can gain the reinforced tag based on the type of metal infused into it (raritanium for now gives reinforced tag to combat armored enemies), and a glow on around the item in the inventory. This allows players to kill enemies with armoredbody component without suffering weapon wear and tear. 
 
 Mobs
 
-- The Pawn. A fully custom mob that needs a better gimmick than it already has right now. Nightmare versions explode on kill but need a delay and their bulbs to change red as a warning its going to explode in a couple of seconds instead of immediately. They spawn in pairs for some reason near broken clockworks. (I was going for only one at a time but game just spawns them in pairs for some reason) and they have a AOE inject attack. I would prefer if they had some support abilities to empower the clockworks around them. Like overclocking the other clockworks. Nightmare specifically. 
+- The Pawn. A fully custom mob that needs a better gimmick than it already has right now. Nightmare versions explode on kill but need a delay and their bulbs to change red as a warning its going to explode in a couple of seconds instead of immediately. They spawn in pairs for some reason near broken clockworks. (I was going for only one at a time but game just spawns them in pairs) and they have a AOE inject attack. I would prefer if they had some support abilities to empower the clockworks around them. Like overclocking the other clockworks. Nightmare specifically and originally planned for the normal variants to self replicate. 
 
 Weapons
 
@@ -44,15 +46,7 @@ Weapons
 
 Organization
 
-- Reorganize messy file placement
-
-Animations
-
-- Drink strings don't appear as a prompt when drinking a drink. Instead it still says eat.
-
-Turfs
-
-- Custom turfs are invisible when placed in inventory
+- Reorganize messy file placements
 
 Compatibility
 
@@ -76,6 +70,17 @@ Bugs to fix
 - When Uncompromising Mode is active and the moonmaw_dragonfly is encountered. It's radiation spreaders break the radiation particle system so players have no indicator of infected areas.
  
 
+- When equipping radiation protection based gear. There is an unsightly visual bug where it's penalty appears visible. I fixed the penalty from appearing but whenever radiation protective equipment is equipped it does an unsightly red and green pulse. Which would be better added into the badge itself instead of statusdisplays.
+
+- Drink strings don't appear as a prompt when drinking a drink. Instead it still says eat.
+
+- Ratchet's dodge completely makes him invincible in all stats in 1 second, when he is only supposed to get invulnerability frames for health only.
+
+- Stutter for Ratchet's dodge whenever lag compensation is active
+
+- Custom turfs are invisible when placed in inventory
+
+- If the amount of radioactive barrels is set over 50% in configs then the world darkens for unknown reasons.
 
 
  

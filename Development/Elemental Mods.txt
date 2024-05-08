@@ -1,0 +1,17 @@
+Elemental mods or omega mods are small chips (May change to gears because mod theme) that can be inserted into a modifiable weapon or armor. Current modifiable weapons are Ratchet's Wrench and the Crystalass which can be found from a blueprint in a junkpile.
+
+There are 3 current elemental mods; Napalm, Shock, and Cyro. When inserted into the modifiable weapon or armor's slot. The piece of equipment is imbued with that element. Depending on how many mod slots you have, you can stack elements together. Only weapon effects have but created for now until a modular armor is complete.
+
+
+Cryo: When installed into a modular weapon, the weapon gains these effects: 50% coldness is applied to the target. Extinguishes flames on the target.
+
+Shock: When installed into a modular weapon, the weapon gains these effects: Deal an extra 10 damage to the target. Wet targets take an additional 8 damage on top of that. 
+
+Napalm: When installed into a modular weapon, the weapon gains these effects: Frozen targets defrost, and the target catches on fire.
+
+
+----
+
+Elemental mods or default elemental weapons are needed to beat mobs elemental resistances, immunities or strike their vulnerabilities.
+
+As of now mods do not have durability. A charging station for mods is conceptualized to make them have chargable durability that is powered. 

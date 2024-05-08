@@ -1,0 +1,13 @@
+In Rift Together you gain unique and powerful armors and weapons. Mobs need to adapt and what better way to do this than to add some strategy in the mix!
+
+Many enemies in the form of machines have arrived into the constant. With their arrival many of the current inhabitants remembered that they too possess natural armor in the form of metal, shells and thick hides. A normal flimsy flint spear made for hunting soft game won't be enough to pierce these creature's bodies.
+
+Instead reinforcing your weapons, and using harder materials will be needed to take these new and old foes down.
+
+
+- As of right now mobs with the armored body component eats away 3 durability per hit if attacked with a non-reinforced and magical weapon. A sound and a fx will play if you're hitting the mob with an ill-equipped weapon. Some knockback to give more resistance would help. But it's bare-bones right now.
+
+- Resistances, immunities and weaknesses will make using different kinds of weapons viable. Such as enemies with slashing, piercing, bludgeoning, fire, ice, shadow, lunar, and electric resistance. Along with enemies with certain vulnerabilities/immunities vice versa. With new tech comes the need to toughen some of these guys up. No more mowing through enemies with just a brightshade sword and shadow reaper. Give that whip, and trident some love.
+
+
+- The anvil and new modifiable weapons will be the stations to create alloys, and elemental mods that can combat these enemies.

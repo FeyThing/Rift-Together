@@ -1,0 +1,21 @@
+The smelter is an important structure that is meant to open up once you rescue an NPC. In the time being all players have access to it since the NPC is not being developed right now for this update.
+
+In order to craft proper gear to combat radiation and bypass armored enemies, players must smelt alloys. 
+
+Alloys can be used in many other ingredients besides just weapon upgrades. 
+
+
+The smelter itself is powered by your typical fuel. Logs, charcoal, rot, etc. Once powered you can insert an ore to create an alloy. Some alloys required two different ores to create.
+
+Since the smelter is one of the earliest assets in the mod. It's not animated very well due to time and will need multiple moving parts and a lid eventually.
+
+----
+
+The anvil's sole purpose is to reinforce mundane weapons with the reinforced tag. Which will show a visual glow around the weapon in your inventory slot.
+
+Adding random effects such as buffs or debuffs to the weapon would be cool as an extra thing to make forging not become obsolete late game.
+
+These weapons can be reinforced with gold, moonglass or raritanium. Reinforced weapons are made to pierce thicker armor but they do not bypass resistances, and immunities. This solely depends on the reinforced weapon's type and if the weapon has elemental mods.
+
+
+A custom forging animation will be made for the player.

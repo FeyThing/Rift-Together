@@ -1,0 +1,31 @@
+Radiation is the biggest hazard in Rift together for the time being. As mentioned in What is Rift Together. Radiation is spatial in nature and comes from those lunar aligned or is spewed through rifts into the constant from a tainted source. In this case, the toxic caves which is a rift dumping ground of toxic material that is redirected onto the surface.
+
+
+- Radiation itself is straight forward. You take in too much radiation without protection and then you start to die. In it's current state the damage is flat with 1 tick of hp per second regardless to how severe your poisoning is. 
+Two ideas: 
+First is damage should scale and worsen the more radiation an entity takes in.
+Second is when entities reach the Suffering state the entities damage is reduced. Entering the dying state your damage is reduced and you start taking damage.
+
+- Each characters has their own radiation value.
+
+- When a mob dies from radiation poisoning, it should have a chance to mutate. In this case using current assets, hounds should have a chance to turn into a horror hound, pengull a moon pengull, and the birds. The rest of the mutants will be custom made. 
+
+
+- Radiation can also impact the environment for long periods of time before it's safe to explore the infected spot again. Right now radiation does not decay, and should go away after a certain period of time once the source of radiation is removed. Instead the infected spot stays infected even after skipping pass hundreds of days in testing.
+
+
+- Objects and food should become contaminated if infected by radiation. Touching contaminated objects and keeping them in your inventory without protection should increase radiation levels. Some foods have default natural radiation levels such bananas only if eaten. If a nuclear winter occurs, keeping stuff in fridges, under the in progress tarp and containers should keep your stuff contamination free. Moonrocks should be radioactive.
+
+- Some creatures are naturally immune to radiation. Such as those lunar aligned, or robots that have extra protective shells. 
+
+- Certain creatures can inflict radiation damage, such as the lunar aligned and mutants. These attacks have a chance to deal flat radiation damage to their opponents. But there is a bug where creatures who aren't supposed deal radiation damage, deals radiation damage namely the robotichounds, Robomutts possibly from their electrical bite. And if you're infected, you also will inflict radiation damage back at mobs. Player inflicting radiation damage after being fully infected makes sense but they should not deal this damage if below the most severe state of infection.
+
+- Various protective gear and Anti-radiation devices should be made. Radiation should eventually be weaponizable.
+
+- Gear such as the respirator and to be made haz-hat should require air filters that will need replacement every so often in order to work properly. Once this requirement is implemented. The respirator should be changed to have infinite durability.
+
+
+Bugs
+
+
+- The radioactive barrels floating in the ocean creates infected ocean tiles in a square pattern. When it needs to be circular, it's more apparent when creating an island adventures world. Creating a world that has over 50% barrels darkens the entire game.
