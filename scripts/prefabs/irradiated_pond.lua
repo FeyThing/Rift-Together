@@ -6,9 +6,9 @@ local assets =
 
 local prefabs =
 {
-    "trinket_10",
-	"trinket_17",
+    "splash",
 }
+
 
 local function fn()
     local inst = CreateEntity()
@@ -16,25 +16,33 @@ local function fn()
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
     inst.entity:AddSoundEmitter()
+	--inst.entity:AddLight()
     inst.entity:AddNetwork()
 
-    MakeObstaclePhysics(inst, 1.95)
+	inst:SetPhysicsRadiusOverride(3)
 
     inst.AnimState:SetBuild("irradiated_pond")
     inst.AnimState:SetBank("irradiated_pond")
-    inst.AnimState:PlayAnimation("idle", true)
+    inst.AnimState:PlayAnimation("idle")
     inst.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
     inst.AnimState:SetLayer(LAYER_BACKGROUND)
-    inst.AnimState:SetSortOrder(3)
+    inst.AnimState:SetSortOrder(1)
+    inst.AnimState:SetFinalOffset(2)
+	
+	--inst.AnimState:SetSymbolBloom("toxicwater")
+	--inst.AnimState:SetSymbolLightOverride("toxic", .1)
+	--inst.AnimState:SetLightOverride(.1)
+	
+	inst.Transform:SetEightFaced()
 
     inst:AddTag("watersource")
+    inst:AddTag("watersplasher")
     inst:AddTag("antlion_sinkhole_blocker")
     inst:AddTag("birdblocker")
     
 
     inst.no_wet_prefix = true
 
-    inst:SetDeployExtraSpacing(2)
 
     inst.entity:SetPristine()
 
@@ -42,8 +50,14 @@ local function fn()
         return inst
     end
 
+	inst:AddComponent("watersource")
+
+	inst:AddComponent("unevenground")
+    inst.components.unevenground.radius = 2
+
     inst:AddComponent("radiationspreader")
     inst.components.radiationspreader:SetRadius(2)
+
 
     return inst
 end

@@ -59,12 +59,13 @@ local params = {
 		{
 			slotpos =
 			{
-				_G.Vector3(-72, 0, 0),
-				_G.Vector3(0, 50, 0),
-				_G.Vector3(72, 0, 0), 
+				_G.Vector3(-74, -3, 0),
+				_G.Vector3(-74, 74, 0),
+				_G.Vector3(77, -43, 0),
+				_G.Vector3(-74, -80, 0), 
 			},
-			animbank = "ui_ratchet_3x1",
-			animbuild = "ui_ratchet_3x1",
+			animbank = "ui_smelter",
+			animbuild = "ui_smelter",
 			pos = _G.Vector3(0, 200, 0),
 			side_align_tip = 160,
 			buttoninfo =
@@ -88,7 +89,7 @@ local params = {
         itemtestfn = function(container, item, slot)
             if slot == nil and Smelter.IsValidSmelterItem(item) then
 				return true
-			elseif slot == 1 then
+			elseif slot == 1 or slot == 4 then
 				return Smelter.GetAlloyRecipe(item) ~= nil or Smelter.IsAlloy(item) or Smelter.GetScraps(item) ~= nil
 			elseif slot == 2 then
 				return Smelter.IsReinforceableWeapon(item)
