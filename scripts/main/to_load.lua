@@ -46,6 +46,7 @@ return {
 		"dustdevil_fx",
 		"rt_pawn",
 		"rt_pawn_trap",
+		"rt_anvil",
 	},
 
 	Assets = {

@@ -53,6 +53,25 @@ local params = {
             return item:HasTag("rnc_mod") 
         end,
     },
+	rt_anvil = 
+	{
+		widget = 
+		{
+			slotpos =
+			{
+				_G.Vector3(-72, 0, 0),			
+				_G.Vector3(72, 0, 0), 
+			},
+			animbank = "ui_anvil",
+			animbuild = "ui_anvil",
+			pos = _G.Vector3(0, 200, 0),
+			side_align_tip = 160,
+		},
+		type = "chest",
+        itemtestfn = function(container, item, slot)
+            return 
+        end,
+    },	
     vullard_smelter = 
 	{
 		widget = 
