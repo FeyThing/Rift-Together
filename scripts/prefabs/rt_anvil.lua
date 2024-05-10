@@ -3,6 +3,15 @@ local assets = {
 	Asset("ANIM", "anim/ui_anvil.zip"),
 }
 
+function Default_PlayAnimation(inst, anim, loop)
+    inst.AnimState:PlayAnimation(forge_loop, loop)
+end
+
+function Default_PushAnimation(inst, anim, loop)
+    inst.AnimState:PushAnimation(forg_loop, loop)
+end
+
+
 local function OnBuilt(inst)
 	inst.AnimState:PlayAnimation("place")
     inst.AnimState:PushAnimation("idle", true)
@@ -19,7 +28,7 @@ local function fn()
 	inst.entity:AddLight()
 	inst.entity:AddNetwork()
 	
-	MakeObstaclePhysics(inst, 1)
+	MakeObstaclePhysics(inst, .5)
 	
 	
 	inst:AddTag("structure")
@@ -44,6 +53,9 @@ local function fn()
 	
 	inst:ListenForEvent("onbuilt", OnBuilt)
 	
+	inst._PlayAnimation = Default_PlayAnimation
+	inst._PushAnimation = Default_PushAnimation
+
 	return inst
 end
 

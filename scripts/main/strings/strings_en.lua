@@ -135,6 +135,7 @@ local strings = {
 				SCRAPROCK = "I hear something coming from it.",
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
+				RT_ANVIL = "Things could be improved with this.",
 				
 				--- Turfs
 				TURF_JUNK = "It's a bunch of welded together clumps metal.",
@@ -180,6 +181,7 @@ local strings = {
 				SCRAPROCK = "Maybe if I bust it open, I'll find something of use.",
 				JUNKPILE = "That's your typical vullard pile of junk.",
 				VULLARD_SMELTER = "Oh hey, reminds me of home. Maybe I can make use of the scrap around here.",
+				RT_ANVIL = "I wonder who left this here?",
 				--- Shoetime mod
 				SHOES_HOVER = "Looks like my old hoverboots! Let's take them out for a spin.",
 				SHOES_RADIATION = "They're somewhat safe enough to even walk through aquatos's sewers.",
@@ -257,6 +259,7 @@ local strings = {
 		SCRAPROCK = "Scrap Mound",
 		JUNKPILE = "Junk Pile",
 		VULLARD_SMELTER = "Smelter",
+		RT_ANVIL = "Anvil",
 
 		RADIATION = "Radiation",
 		
