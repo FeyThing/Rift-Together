@@ -86,6 +86,48 @@ local tunings = {
 	    GetModConfigData("rt_shoe"),
 	},
 	
+	
+	ATTACKTYPE_RESISTANCE_DEFAULT = {
+		bludgeoning_attacktype = 0.5,
+		piercing_attacktype = 0.5,
+		slashing_attacktype = 0.5,
+		fire_attacktype = 0.5,
+		electric_attacktype = 0.5,
+		ice_attacktype = 0.5,
+		shadow_aligned = 0.5,
+		lunar_aligned = 0.5,
+	},
+	
+	ATTACKTYPE_VULNERABILITY_DEFAULT = {
+		bludgeoning_attacktype = 1.5,
+		piercing_attacktype = 1.5,
+		slashing_attacktype = 1.5,
+		fire_attacktype = 1.5,
+		electric_attacktype = 1.5,
+		ice_attacktype = 1.5,
+		shadow_aligned = 1.5,
+		lunar_aligned = 1.5,
+	},
+	
+	ATTACKTYPE_MODIFIERS = {
+		bludgeoning_attacktype = {
+		},
+		piercing_attacktype = {
+		},
+		slashing_attacktype = {
+		},
+		fire_attacktype = {
+		},
+		electric_attacktype = {
+		},
+		ice_attacktype = {
+		},
+		shadow_aligned = {
+		},
+		lunar_aligned = {
+		},
+	},
+	
 	--- Biomes
 	
 	VULLARD_SMELTER_SMELT_TIME = 30,
