@@ -3,13 +3,13 @@ local assets = {
 	Asset("ANIM", "anim/ui_anvil.zip"),
 }
 
-function Default_PlayAnimation(inst, anim, loop)
-    inst.AnimState:PlayAnimation(forge_loop, loop)
-end
+--function Default_PlayAnimation(inst, anim, loop)
+    --inst.AnimState:PlayAnimation(forge_loop, loop)
+--end
 
-function Default_PushAnimation(inst, anim, loop)
-    inst.AnimState:PushAnimation(forg_loop, loop)
-end
+--function Default_PushAnimation(inst, anim, loop)
+    --inst.AnimState:PushAnimation(forg_loop, loop)
+--end
 
 
 local function OnBuilt(inst)
@@ -53,8 +53,8 @@ local function fn()
 	
 	inst:ListenForEvent("onbuilt", OnBuilt)
 	
-	inst._PlayAnimation = Default_PlayAnimation
-	inst._PushAnimation = Default_PushAnimation
+	--inst._PlayAnimation = Default_PlayAnimation
+	--inst._PushAnimation = Default_PushAnimation
 
 	return inst
 end
