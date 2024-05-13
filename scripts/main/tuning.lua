@@ -87,8 +87,7 @@ local tunings = {
 	},
 	
 	--- Biomes
-	
-	VULLARD_SMELTER_SMELT_TIME = 30,
+
 
 --- Character moved for later release
     --[[NEFARIOUS_ENERGY = 100,

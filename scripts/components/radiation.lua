@@ -237,19 +237,19 @@ function Radiation:OnUpdate(dt)
 	if self.current > 0 or radiation ~= 0 then
         self.lastpos = pos
         if not (self.inst.components.health:IsInvincible() or
-                self.inst:HasTag("spawnprotection") or
-				self.inst:HasTag("radiationimmunity") or
-				self.inst:HasTag("boat") or
-				self.inst:HasTag("wall") or
-                self.inst.sg and self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
-                self.inst.is_teleporting or
-                (self.ignore and self.redirect == nil)) then
+        self.inst:HasTag("spawnprotection") or
+        self.inst:HasTag("radiationimmunity") or
+        self.inst:HasTag("boat") or
+        self.inst:HasTag("wall") or
+        self.inst.sg and self.inst.sg:HasStateTag("sleeping") or --need this now because you are no longer invincible during sleep
+        self.inst.is_teleporting or
+        (self.ignore and self.redirect == nil)) then
             self:Recalc(dt, radiation)
-	if self.inst.components.health and not self.inst.components.health:IsDead() then
-		if self:GetPercent() >= TUNING.RADIATION_THRESH.PAIN.POST then
-		self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
-		end	
-	end
+            if self.inst.components.health and not self.inst.components.health:IsDead() then
+                if self:GetPercent() >= TUNING.RADIATION_THRESH.PAIN.POST then
+                    self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
+                end
+            end
         else
             --Disable arrows
             self.rate = 0
