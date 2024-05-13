@@ -25,7 +25,8 @@ local PATCHES =
 		"wavemanager",
 		"retrofitforestmap_anr",
 		"carefulwalker",
-		
+		"damagetypebonus",
+		"damagetyperesist",
 	},
 	
 	REPLICAS = {
@@ -65,6 +66,7 @@ local PATCHES =
 		mushrooms = {"blue_cap", "blue_cap_cooked", "red_cap", "red_cap_cooked", "green_cap", "green_cap_cooked"},
 		penguin = "mutated_penguin",
 		player_classified = "player_classified",
+		pocketwatch_weapon = "pocketwatch_weapon",
 		rabbithole = "rabbithole",
 		rocky = "rocky",
 		spider = "spider_moon",

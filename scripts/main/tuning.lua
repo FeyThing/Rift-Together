@@ -86,45 +86,84 @@ local tunings = {
 	    GetModConfigData("rt_shoe"),
 	},
 	
-	
-	ATTACKTYPE_RESISTANCE_DEFAULT = {
-		bludgeoning_attacktype = 0.5,
-		piercing_attacktype = 0.5,
-		slashing_attacktype = 0.5,
-		fire_attacktype = 0.5,
-		electric_attacktype = 0.5,
-		ice_attacktype = 0.5,
-		shadow_aligned = 0.5,
-		lunar_aligned = 0.5,
-	},
-	
-	ATTACKTYPE_VULNERABILITY_DEFAULT = {
-		bludgeoning_attacktype = 1.5,
-		piercing_attacktype = 1.5,
-		slashing_attacktype = 1.5,
-		fire_attacktype = 1.5,
-		electric_attacktype = 1.5,
-		ice_attacktype = 1.5,
-		shadow_aligned = 1.5,
-		lunar_aligned = 1.5,
-	},
-	
-	ATTACKTYPE_MODIFIERS = {
-		bludgeoning_attacktype = {
+	DAMAGETYPE_BONUS = {
+		bludgeoning_vulnerable = {
+			DEFAULT = 1,
 		},
-		piercing_attacktype = {
+		piercing_vulnerable = {
+			DEFAULT = 1,
 		},
-		slashing_attacktype = {
+		slashing_vulnerable = {
+			DEFAULT = 1,
 		},
-		fire_attacktype = {
+		fire_vulnerable = {
+			DEFAULT = 1,
 		},
-		electric_attacktype = {
+		electric_vulnerable = {
+			DEFAULT = 1,
 		},
-		ice_attacktype = {
+		ice_vulnerable = {
+			DEFAULT = 1,
 		},
 		shadow_aligned = {
+			DEFAULT = 1,
 		},
 		lunar_aligned = {
+			DEFAULT = 1,
+		},
+	},
+	
+	DAMAGETYPE_RESISTANCE = {
+		bludgeoning_attack = {
+			DEFAULT = 0.5,
+		},
+		piercing_attack = {
+			DEFAULT = 0.5,
+		},
+		slashing_attack = {
+			DEFAULT = 0.5,
+		},
+		fire_attack = {
+			DEFAULT = 0.5,
+		},
+		electric_attack = {
+			DEFAULT = 0.5,
+		},
+		ice_attack = {
+			DEFAULT = 0.5,
+		},
+		shadow_aligned = {
+			DEFAULT = 0.5,
+		},
+		lunar_aligned = {
+			DEFAULT = 0.5,
+		},
+	},
+	
+	DAMAGETYPE_VULNERABILITY = {
+		bludgeoning_attack = {
+			DEFAULT = 1.5,
+		},
+		piercing_attack = {
+			DEFAULT = 1.5,
+		},
+		slashing_attack = {
+			DEFAULT = 1.5,
+		},
+		fire_attack = {
+			DEFAULT = 1.5,
+		},
+		electric_attack = {
+			DEFAULT = 1.5,
+		},
+		ice_attack = {
+			DEFAULT = 1.5,
+		},
+		shadow_aligned = {
+			DEFAULT = 1.5,
+		},
+		lunar_aligned = {
+			DEFAULT = 1.5,
 		},
 	},
 	
