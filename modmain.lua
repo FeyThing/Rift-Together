@@ -28,7 +28,6 @@ modimport("scripts/main/retrofit.lua")
 modimport("scripts/main/actions.lua")
 modimport("scripts/main/characters.lua")
 modimport("scripts/main/containers.lua")
-modimport("scripts/main/damagetypes.lua")
 modimport("scripts/main/skins.lua")
 modimport("scripts/main/mod_compatibility.lua")
 
