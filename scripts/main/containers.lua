@@ -62,6 +62,11 @@ local params = {
 				_G.Vector3(-72, 0, 0),			
 				_G.Vector3(72, 0, 0), 
 			},
+			slotbg =
+			{
+            {image = "forgealloy.tex", atlas = "images/forgeores.xml" },
+			{image = "anvilweapon.tex", atlas = "images/forgefire.xml" },		
+			},
 			animbank = "ui_anvil",
 			animbuild = "ui_anvil",
 			pos = _G.Vector3(0, 200, 0),
@@ -82,6 +87,13 @@ local params = {
 				_G.Vector3(-74, 74, 0),
 				_G.Vector3(77, -43, 0),
 				_G.Vector3(-74, -80, 0), 
+			},
+			slotbg =
+			{
+            {image = "forgeores.tex", atlas = "images/forgeores.xml" },
+			{image = "forgefire.tex", atlas = "images/forgefire.xml" },
+			{image = "forgealloy.tex", atlas = "images/forgealloy.xml" },
+			{image = "forgeores.tex", atlas = "images/forgeores.xml" },			
 			},
 			animbank = "ui_smelter",
 			animbuild = "ui_smelter",
