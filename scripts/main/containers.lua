@@ -14,9 +14,9 @@ local params = {
             },
 			        slotbg =
 			{
-            {image = "omegamods.tex", atlas = "images/omegamods.xml" },
-			{image = "omegamods.tex", atlas = "images/omegamods.xml" },
-			{image = "omegamods.tex", atlas = "images/omegamods.xml" },			
+            {image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },			
 			},
             animbank = "ui_ratchet_3x1",
             animbuild = "ui_ratchet_3x1",
@@ -39,7 +39,7 @@ local params = {
             },
 			slotbg =
 			{
-            {image = "omegamods.tex", atlas = "images/omegamods.xml" },			
+            {image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },			
 			},
 
             animbank = "ui_ratchet_1x1",
@@ -64,8 +64,8 @@ local params = {
 			},
 			slotbg =
 			{
-            {image = "forgealloy.tex", atlas = "images/forgeores.xml" },
-			{image = "anvilweapon.tex", atlas = "images/forgefire.xml" },		
+				{image = "forgealloy.tex", atlas = "images/rnc_ui_images.xml" },
+				{image = "anvilweapon.tex", atlas = "images/rnc_ui_images.xml" },		
 			},
 			animbank = "ui_anvil",
 			animbuild = "ui_anvil",
@@ -90,10 +90,10 @@ local params = {
 			},
 			slotbg =
 			{
-            {image = "forgeores.tex", atlas = "images/forgeores.xml" },
-			{image = "forgefire.tex", atlas = "images/forgefire.xml" },
-			{image = "forgealloy.tex", atlas = "images/forgealloy.xml" },
-			{image = "forgeores.tex", atlas = "images/forgeores.xml" },			
+            {image = "forgeores.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "forgefire.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "forgealloy.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "forgeores.tex", atlas = "images/rnc_ui_images.xml" },			
 			},
 			animbank = "ui_smelter",
 			animbuild = "ui_smelter",

@@ -123,27 +123,15 @@ return {
 		--items
 		Asset("ATLAS", "images/rnc_inventoryimages.xml"),
 		Asset("IMAGE", "images/rnc_inventoryimages.tex"),
+
+		Asset("ATLAS", "images/rnc_ui_images.xml"),
+		Asset("IMAGE", "images/rnc_ui_images.tex"),
 		
 		Asset("ATLAS", "images/rnc_hud.xml"),
 		Asset("IMAGE", "images/rnc_hud.tex"),
 		
 		Asset("ATLAS", "images/rnc_map_icons.xml"),
 		Asset("IMAGE", "images/rnc_map_icons.tex"),
-
-		Asset("ATLAS", "images/omegamods.xml"),
-		Asset("IMAGE", "images/omegamods.tex"),
-
-		Asset("ATLAS", "images/forgeores.xml"),
-		Asset("IMAGE", "images/forgeores.tex"),
-
-		Asset("ATLAS", "images/forgealloy.xml"),
-		Asset("IMAGE", "images/forgealloy.tex"),
-
-		Asset("ATLAS", "images/forgefire.xml"),
-		Asset("IMAGE", "images/forgefire.tex"),
-
-		Asset("ATLAS", "images/anvilweapon.xml"),
-		Asset("IMAGE", "images/anvilweapon.tex"),
 	},
 
 	MiniMaps = {
