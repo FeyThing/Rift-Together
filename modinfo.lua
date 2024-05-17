@@ -24,6 +24,7 @@ dst_compatible = true
 dont_starve_compatible = false
 reign_of_giants_compatible = false
 shipwrecked_compatible = false
+gorge_compatible = true
 
 all_clients_require_mod = true 
 

@@ -55,7 +55,7 @@ local PATCHES =
 		hats = "lunarplanthat",
 		hats_hideable = {"catcoonhat", "molehat", "footballhat", "wagpunkhat", "watermelonhat", "hivehat", "spiderhat"},
 		hats_viewable = {"rainhat", "tophat", "beehat", "beefalohat", "winterhat", "moonstorm_goggleshat", "dreadstonehat", "plantregistryhat", 
-		"nutrientsgoggleshat", "cookiecutterhat", "woodcarvedhat", "antlionhat", "icehat", "blue_mushroomhat", "green_mushroomhat", 
+		"nutrientsgoggleshat", "cookiecutterhat", "woodcarvedhat", "minerhat", "antlionhat", "icehat", "blue_mushroomhat", "green_mushroomhat", 
 		"red_mushroomhat", "skeletonhat", "polly_rogershat", "moon_mushroomhat"},
 		hound = "mutatedhound",
 		lunar_grazer = "lunar_grazer",
