@@ -116,6 +116,9 @@ return {
 		--sound
 		Asset("SOUNDPACKAGE", "sound/ratchet.fev"),
 		Asset("SOUND", "sound/ratchet.fsb"),
+
+		Asset("SOUNDPACKAGE", "sound/rt_music.fev"),
+		Asset("SOUND", "sound/rt_music.fsb"),
 		
 		-- Asset("SOUNDPACKAGE", "sound/radiation.fev"),
 		-- Asset("SOUND", "sound/radiation.fsb"),
@@ -136,8 +139,6 @@ return {
 
 	MiniMaps = {
 		"images/rnc_map_icons.xml",
-	},
-	
-	
+	},	
 }
 

@@ -85,6 +85,10 @@ local tunings = {
 	RT_SHOES = {
 	    GetModConfigData("rt_shoe"),
 	},
+
+    RIFT_TOGETHER_OST = {
+	    GetModConfigData("rt_music"),
+	},
 	
 	DAMAGETYPE_BONUS = {
 		bludgeoning_vulnerable = {

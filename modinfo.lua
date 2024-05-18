@@ -145,6 +145,7 @@ local DIVIDE = Title("")
 configuration_options = {
 	
 	CreateLanguageOption("language", "en", "Language", "Change the mod language."),	
+    CreateEnableOption("rt_music", 1, "Rift Together Music", "Turns on Rift Together OST for custom biomes."),	
 
 	DIVIDE,
 	Title("WorldGen Options"),

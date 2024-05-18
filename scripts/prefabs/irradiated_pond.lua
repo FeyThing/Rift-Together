@@ -7,8 +7,15 @@ local assets =
 local prefabs =
 {
     "splash",
+    "crab_king_bubble1",
+    "crab_king_bubble2",
+    "crab_king_bubble3",
 }
 
+local function CreateBubbles(inst)
+    local fx = SpawnPrefab("crab_king_bubble"..math.random(3))
+	fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
+end
 
 local function fn()
     local inst = CreateEntity()
@@ -56,8 +63,9 @@ local function fn()
     inst.components.unevenground.radius = 2
 
     inst:AddComponent("radiationspreader")
-    inst.components.radiationspreader:SetRadius(2)
+    inst.components.radiationspreader:SetRadius(1)
 
+	inst:DoPeriodicTask(0.5, CreateBubbles)
 
     return inst
 end
