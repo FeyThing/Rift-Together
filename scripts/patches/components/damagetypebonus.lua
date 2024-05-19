@@ -30,9 +30,9 @@ return function(self)
 	-- Swap a vanilla tag into our damage type, we can use it for example to turn any "shadow_aligned" bonus into our "shadow" damage type
 	local _old_addbonus = self.AddBonus
 	function self:AddBonus(tag, src, pct, key, ...)
-		local type = DamageTypesUtil.ShouldSwapTag(tag)
+		local type = DamageTypesUtil.ShouldBonusSwapTag(tag)
 		
-		if type ~= nil then
+		if type then
 			self:RT_AddMult(type, pct, key)
 		else
 			_old_addbonus(self, tag, src, pct, key, ...)
@@ -41,7 +41,7 @@ return function(self)
 	
 	local _old_removebonus = self.RemoveBonus
 	function self:RemoveBonus(tag, src, key, ...)
-		local type = DamageTypesUtil.ShouldSwapTag(tag)
+		local type = DamageTypesUtil.ShouldBonusSwapTag(tag)
 		
 		if type ~= nil then
 			self:RT_RemoveMult(type, key)

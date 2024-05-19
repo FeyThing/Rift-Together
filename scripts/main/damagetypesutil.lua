@@ -61,13 +61,23 @@ local function IsMagical(type)
 	return MAGICAL_TYPES[type] == true
 end
 
-local TAG_SWAPS = {
+-- Bonus tag swaps are inverted, because if something does more to lunar_aligned then it's doing shadow damage in our system
+local BONUS_TAG_SWAPS = {
+	shadow_aligned = "lunar",
+	lunar_aligned = "shadow",
+}
+
+local function ShouldBonusSwapTag(tag)
+	return BONUS_TAG_SWAPS[tag]
+end
+
+local RESIST_TAG_SWAPS = {
 	shadow_aligned = "shadow",
 	lunar_aligned = "lunar",
 }
 
-local function ShouldSwapTag(tag)
-	return TAG_SWAPS[tag]
+local function ShouldSwapResistTag(tag)
+	return RESIST_TAG_SWAPS[tag]
 end
 
 
@@ -176,11 +186,12 @@ local function WeaponAttackModifiers(inst, weapon_cmp)
 		AddBonus(inst, "electric")
 	end
 	
-	--[[ Shadow attack type (don't stack with existing multipliers?)
+	-- Shadow attack type
 	if (inst:HasTag("shadow_item") or inst.prefab == "ruins_bat")
-	and not (inst.components.damagetypebonus ~= nil and inst.components.damagetypebonus.tags["lunar_aligned"] ~= nil) then
+	-- Make sure it doesn't have a bonus already (existing shadow weapons that had a bonus against lunar_aligned are swapped to our system automatically)
+	and not (inst.components.damagetypebonus ~= nil and inst.components.damagetypebonus.rt_types["shadow"] ~= nil) then
 		AddBonus(inst, "shadow")
-	end]]
+	end
 end
 
 local function ArmorDefenseModifiers(inst, armor_cmp)
@@ -194,14 +205,10 @@ end
 
 local function EntityDefenseModifiers(inst, combat_cmp)
 	-- Bludgeoning
-	if inst:HasTag("shadow")
-	or inst:HasTag("shadowminion")
-	or inst:HasTag("shadowchesspiece")
-	or inst:HasTag("large")
-	or inst:HasTag("largecreature") then
+	if inst:HasTag("shadow") or inst:HasTag("shadowminion") or inst:HasTag("shadowchesspiece")
+	or inst:HasTag("large") or inst:HasTag("largecreature") then
 		AddResistance(inst, "bludgeoning")
-	elseif inst:HasTag("smallcreature")
-	or inst:HasTag("small") then
+	elseif inst:HasTag("smallcreature") or inst:HasTag("small") then
 		AddVulnerability(inst, "bludgeoning")
 	end
 	
@@ -215,7 +222,8 @@ end
 return {
 	IsPhysical = IsPhysical,
 	IsMagical = IsMagical,
-	ShouldSwapTag = ShouldSwapTag,
+	ShouldBonusSwapTag = ShouldBonusSwapTag,
+	ShouldSwapResistTag = ShouldSwapResistTag,
 	
 	AddDefenseModifier = AddDefenseModifier,
 	AddResistance = AddResistance,

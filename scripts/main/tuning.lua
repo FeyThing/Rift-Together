@@ -147,6 +147,8 @@ local tunings = {
 	DAMAGETYPE_VULNERABILITY = {
 		bludgeoning = {
 			DEFAULT = 1.5,
+			slurtle = 0.5 / (1 - TUNING.SLURTLE_SHELL_ABSORB), -- This vulnerability is only active when they're in their shell
+			snurtle = 0.5 / (1 - TUNING.SLURTLE_SHELL_ABSORB), -- Do 0.5 damage against it (instead of 0.05)
 		},
 		piercing = {
 			DEFAULT = 1.5,

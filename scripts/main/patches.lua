@@ -69,6 +69,7 @@ local PATCHES =
 		pocketwatch_weapon = "pocketwatch_weapon",
 		rabbithole = "rabbithole",
 		rocky = "rocky",
+		slurtle = {"slurtle", "snurtle"},
 		spider = "spider_moon",
 		warg = "mutatedwarg",
 		world = "world",

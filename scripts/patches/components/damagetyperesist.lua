@@ -25,9 +25,9 @@ return function(self)
 	
 	local _old_addresist = self.AddResist
 	function self:AddResist(tag, src, pct, key, ...)
-		local type = DamageTypesUtil.ShouldSwapTag(tag)
+		local type = DamageTypesUtil.ShouldSwapResistTag(tag)
 		
-		if type ~= nil then
+		if type then
 			self:RT_AddMult(type, pct, key)
 		else
 			_old_addresist(self, tag, src, pct, key, ...)
@@ -36,7 +36,7 @@ return function(self)
 	
 	local _old_removeresist = self.RemoveResist
 	function self:RemoveResist(tag, src, key, ...)
-		local type = DamageTypesUtil.ShouldSwapTag(tag)
+		local type = DamageTypesUtil.ShouldSwapResistTag(tag)
 		
 		if type ~= nil then
 			self:RT_RemoveMult(type, key)
