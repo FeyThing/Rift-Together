@@ -91,82 +91,82 @@ local tunings = {
 	},
 	
 	DAMAGETYPE_BONUS = {
-		bludgeoning_vulnerable = {
+		bludgeoning = {
 			DEFAULT = 1,
 		},
-		piercing_vulnerable = {
+		piercing = {
 			DEFAULT = 1,
 		},
-		slashing_vulnerable = {
+		slashing = {
 			DEFAULT = 1,
 		},
-		fire_vulnerable = {
+		fire = {
 			DEFAULT = 1,
 		},
-		electric_vulnerable = {
+		electric = {
 			DEFAULT = 1,
 		},
-		ice_vulnerable = {
+		ice = {
 			DEFAULT = 1,
 		},
-		shadow_aligned = {
+		shadow = {
 			DEFAULT = 1,
 		},
-		lunar_aligned = {
+		lunar = {
 			DEFAULT = 1,
 		},
 	},
 	
 	DAMAGETYPE_RESISTANCE = {
-		bludgeoning_attack = {
+		bludgeoning = {
 			DEFAULT = 0.5,
 		},
-		piercing_attack = {
+		piercing = {
 			DEFAULT = 0.5,
 		},
-		slashing_attack = {
+		slashing = {
 			DEFAULT = 0.5,
 		},
-		fire_attack = {
+		fire = {
 			DEFAULT = 0.5,
 		},
-		electric_attack = {
+		electric = {
 			DEFAULT = 0.5,
 		},
-		ice_attack = {
+		ice = {
 			DEFAULT = 0.5,
 		},
-		shadow_aligned = {
+		shadow = {
 			DEFAULT = 0.5,
 		},
-		lunar_aligned = {
+		lunar = {
 			DEFAULT = 0.5,
 		},
 	},
 	
 	DAMAGETYPE_VULNERABILITY = {
-		bludgeoning_attack = {
+		bludgeoning = {
 			DEFAULT = 1.5,
 		},
-		piercing_attack = {
+		piercing = {
 			DEFAULT = 1.5,
 		},
-		slashing_attack = {
+		slashing = {
 			DEFAULT = 1.5,
 		},
-		fire_attack = {
+		fire = {
 			DEFAULT = 1.5,
 		},
-		electric_attack = {
+		electric = {
 			DEFAULT = 1.5,
 		},
-		ice_attack = {
+		ice = {
 			DEFAULT = 1.5,
 		},
-		shadow_aligned = {
+		shadow = {
 			DEFAULT = 1.5,
 		},
-		lunar_aligned = {
+		lunar = {
 			DEFAULT = 1.5,
 		},
 	},

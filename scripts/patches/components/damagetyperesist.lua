@@ -1,87 +1,79 @@
 local SourceModifierList = require("util/sourcemodifierlist")
+local DamageType = require("main/damagetype")
 
 return function(self)
-	self.conditional_tags = {}
-	self.tags_to_remove = {}
+	self.rt_types = {}
 	
-	function self:AddConditionalResist(attacker_tag, inst_tag, src, pct, key, fn)
-		local data = self.conditional_tags[attacker_tag]
-		if data == nil then
-			data = {}
-			data.tag = inst_tag
-			data.fn = fn
-			data.modifier = SourceModifierList(self.inst)
-			self.conditional_tags[attacker_tag] = data
+	function self:RT_AddMult(type, mult, key, checkfn)
+		local dmgtype = self.rt_types[type]
+		if dmgtype == nil then
+			dmgtype = DamageType(self.inst)
+			self.rt_types[type] = dmgtype
 		end
-		if data.modifier ~= nil then
-			data.modifier:SetModifier(src, pct, key)
-		end
+		dmgtype:AddModifier(mult, key, checkfn)
 	end
 	
-	function self:RemoveConditionalResist(tag, src, key)
-		local data = self.conditional_tags[tag]
-		if data ~= nil and data.modifier ~= nil then
-			data.modifier:RemoveModifier(src, key)
-			if data.modifier:IsEmpty() then
-				self.conditional_tags[tag] = nil
+	function self:RT_RemoveMult(type, key)
+	local dmgtype = self.rt_types[type]
+		if dmgtype ~= nil then
+			dmgtype:RemoveModifier(key)
+			if dmgtype:IsEmpty() then
+				self.rt_types[type] = nil
 			end
 		end
 	end
 	
-	function self:AddConditionalTags()
-		for k,v in pairs(self.conditional_tags) do
-			if v.tag ~= nil and (v.fn == nil or v.fn(self.inst)) and not self.inst:HasTag(v.tag) then
-				self.inst:AddTag(v.tag)
-				table.insert(self.tags_to_remove, v.tag)
-			end
-		end
-	end
-	
-	function self:RemoveConditionalTags()
-		for k,v in pairs(self.tags_to_remove) do
-			self.inst:RemoveTag(v)
-		end
+	local _old_addresist = self.AddResist
+	function self:AddResist(tag, src, pct, key, ...)
+		local type = DamageTypesUtil.ShouldSwapTag(tag)
 		
-		self.tags_to_remove = {}
+		if type ~= nil then
+			self:RT_AddMult(type, pct, key)
+		else
+			_old_addresist(self, tag, src, pct, key, ...)
+		end
+	end
+	
+	local _old_removeresist = self.RemoveResist
+	function self:RemoveResist(tag, src, key, ...)
+		local type = DamageTypesUtil.ShouldSwapTag(tag)
+		
+		if type ~= nil then
+			self:RT_RemoveMult(type, key)
+		else
+			_old_removeresist(self, tag, src, key, ...)
+		end
 	end
 	
 	local _old_getresist = self.GetResist
 	function self:GetResist(attacker, weapon, ...)
-		if attacker ~= nil and attacker.components.damagetypebonus ~= nil then
-			attacker.components.damagetypebonus:AddConditionalTags()
-		end
-		if weapon ~= nil and weapon.components.damagetypebonus ~= nil then
-			weapon.components.damagetypebonus:AddConditionalTags()
-		end
-		
 		local mult = _old_getresist(self, attacker, weapon, ...)
 		
-		if attacker ~= nil then
-			for k,v in pairs(self.conditional_tags) do
-				if (v.fn == nil or v.fn(self.inst)) and (attacker:HasTag(k) or (weapon ~= nil and weapon:HasTag(k))) then
-					if v.modifier ~= nil then
-						mult = mult * v.modifier:Get()
-					end
+		local target = weapon or attacker
+		
+		if target ~= nil and target.components.damagetypebonus ~= nil then
+			for type,dmgtype in pairs(self.rt_types) do
+				local rt_mult = dmgtype:Get()
+				if target.components.damagetypebonus:RT_IsDefenseEffective(type, rt_mult) then
+					mult = mult * rt_mult
 				end
 			end
-		end
-		
-		if attacker ~= nil and attacker.components.damagetypebonus ~= nil then
-			attacker.components.damagetypebonus:RemoveConditionalTags()
-		end
-		if weapon ~= nil and weapon.components.damagetypebonus ~= nil then
-			weapon.components.damagetypebonus:RemoveConditionalTags()
 		end
 		
 		return mult
 	end
 	
-	local _old_onremovefromentity = self.OnRemoveFromEntity
-	function self:OnRemoveFromEntity(...)
-		if _old_onremovefromentity ~= nil then
-			_old_onremovefromentity(self, ...)
+	function self:RT_IsAttackEffective(type)
+		local dmgtype = self.rt_types[type]
+		
+		if dmgtype ~= nil then
+			local mult = dmgtype:Get()
+			
+			if mult > 1 then
+				return true
+			end
 		end
 		
-		self:RemoveConditionalTags()
+		return false
 	end
 end

@@ -29,7 +29,6 @@ local inits = {
     "actions",
     "characters",
     "containers",
-    "damagetypes",
     "skins",
     "mod_compatibility",
 }

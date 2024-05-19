@@ -42,167 +42,93 @@ end
 
 
 
-local function GetAttackTag(type)
-	return type.."_attack"
-end
-
-local function GetDefenseTag(type)
-	return type.."_vulnerable"
-end
-
-local function GetMult(inst, tuning, tag)
-	return tuning[tag] ~= nil and (tuning[tag][inst.prefab] or tuning[tag].DEFAULT) or 1
-end
-
-local ALLEGIANCE_TAGS = {
-	shadow_aligned = true,
-	lunar_aligned = true,
+local PHYSICAL_TYPES = {
+	bludgeoning = true,
+	piercing = true,
+	slashing = true,
 }
 
-local ALLEGIANCE_TAGS_OPPOSITE = {
-	shadow_aligned = "lunar_aligned",
-	lunar_aligned = "shadow_aligned",
-}
-
-local function IsAllegianceTag(tag)
-	return ALLEGIANCE_TAGS[tag] ~= nil
+local function IsPhysical(type)
+	return PHYSICAL_TYPES[type] == true
 end
 
-local function GetOppositeAllegiance(tag)
-	return ALLEGIANCE_TAGS_OPPOSITE[tag]
+local MAGICAL_TYPES = {
+	shadow = true,
+	lunar = true,
+}
+
+local function IsMagical(type)
+	return MAGICAL_TYPES[type] == true
+end
+
+local TAG_SWAPS = {
+	shadow_aligned = "shadow",
+	lunar_aligned = "lunar",
+}
+
+local function ShouldSwapTag(tag)
+	return TAG_SWAPS[tag]
+end
+
+
+
+local function GetMult(inst, tuning, type)
+	return tuning[type] ~= nil and (tuning[type][inst.prefab] or tuning[type].DEFAULT) or 1
 end
 
 
 
 ---- Defense modifiers
 
-local function AddDefenseModifier(inst, attack_tag, defense_tag, mult, condition)
-	local key = "base_"..attack_tag -- Example: "base_bludgeoning_attack"
+local function AddDefenseModifier(inst, type, mult, condition)
+	local key = "base_"..type -- Example: "base_bludgeoning"
 	
 	if inst.components.damagetyperesist == nil then
 		inst:AddComponent("damagetyperesist")
 	end
-	if condition ~= nil then
-		inst.components.damagetyperesist:AddConditionalResist(attack_tag, defense_tag, inst, mult, key, condition)
-	else
-		inst.components.damagetyperesist:AddResist(attack_tag, inst, mult, key)
-	end
+	inst.components.damagetyperesist:RT_AddMult(type, mult, key, condition)
+	
+	print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": Incoming "..type.." x"..mult)
 end
 
 local function AddResistance(inst, type, condition)
-	local attack_tag = GetAttackTag(type)
-	local mult = GetMult(inst, TUNING.DAMAGETYPE_RESISTANCE, attack_tag)
+	local mult = GetMult(inst, TUNING.DAMAGETYPE_RESISTANCE, type)
 	
-	if mult ~= nil and mult ~= 1 then
-		AddDefenseModifier(inst, attack_tag, nil, mult, condition)
-	end
-	
-	print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": "..attack_tag.." x"..mult)
-end
-
-local function AddAllegianceResistance(inst, tag, condition)
-	if IsAllegianceTag(tag) then
-		local attack_tag = tag
-		local mult = GetMult(inst, TUNING.DAMAGETYPE_RESISTANCE, attack_tag)
-		
-		if mult ~= nil and mult ~= 1 then
-			AddDefenseModifier(inst, attack_tag, nil, mult, condition)
-		end
-		
-		print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": "..attack_tag.." x"..mult)
-	end
+	AddDefenseModifier(inst, type, mult, condition)
 end
 
 local function AddVulnerability(inst, type, condition)
-	local attack_tag = GetAttackTag(type)
-	local defense_tag = GetDefenseTag(type)
-	local mult = GetMult(inst, TUNING.DAMAGETYPE_VULNERABILITY, attack_tag)
+	local mult = GetMult(inst, TUNING.DAMAGETYPE_VULNERABILITY, type)
 	
-	if condition == nil then
-		inst:AddTag(defense_tag)
-	end
-	
-	if mult ~= nil and mult ~= 1 then
-		AddDefenseModifier(inst, attack_tag, defense_tag, mult, condition)
-	end
-	
-	print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": "..attack_tag.." x"..mult)
-end
-
-local function AddAllegianceVulnerability(inst, tag, condition, do_opposite)
-	if IsAllegianceTag(tag) then
-		local attack_tag = tag
-		local defense_tag = (do_opposite and inst.components.armor ~= nil) and GetOppositeAllegiance(tag) or nil
-		local mult = GetMult(inst, TUNING.DAMAGETYPE_VULNERABILITY, attack_tag)
-		
-		if defense_tag ~= nil and condition == nil then
-			inst:AddTag(defense_tag)
-		end
-		
-		if mult ~= nil and mult ~= 1 then
-			AddDefenseModifier(inst, attack_tag, defense_tag, mult, condition)
-		end
-		
-		print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": "..attack_tag.." x"..mult)
-	end
+	AddDefenseModifier(inst, type, mult, condition)
 end
 
 
 
 ---- Attack modifiers
 
-local function AddAttackModifier(inst, attack_tag, defense_tag, mult, condition)
-	local key = "base_"..defense_tag -- Example: "base_bludgeoning_vulnerable"
+local function AddAttackModifier(inst, type, mult, condition)
+	local key = "base_"..type -- Example: "base_bludgeoning"
 	
 	if inst.components.damagetypebonus == nil then
 		inst:AddComponent("damagetypebonus")
 	end
-	if condition ~= nil then
-		inst.components.damagetypebonus:AddConditionalBonus(defense_tag, attack_tag, inst, mult, key, condition)
-	else
-		inst.components.damagetypebonus:AddBonus(defense_tag, inst, mult, key)
-	end
+	inst.components.damagetypebonus:RT_AddMult(type, mult, key, condition)
+	
+	print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": Outgoing "..type.." x"..mult)
 end
 
 local function AddBonus(inst, type, condition)
-	local attack_tag = GetAttackTag(type)
-	local defense_tag = GetDefenseTag(type)
-	local mult = GetMult(inst, TUNING.DAMAGETYPE_BONUS, defense_tag)
+	local mult = GetMult(inst, TUNING.DAMAGETYPE_BONUS, type)
 	
-	if condition == nil then
-		inst:AddTag(attack_tag)
-	end
-	
-	if mult ~= nil and mult ~= 1 then
-		AddAttackModifier(inst, attack_tag, defense_tag, mult, condition)
-	end
-	
-	print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": "..defense_tag.." x"..mult)
-end
-
-local function AddAllegianceBonus(inst, tag, condition, do_opposite)
-	if IsAllegianceTag(tag) then
-		local attack_tag = (do_opposite and inst.components.weapon ~= nil) and GetOppositeAllegiance(tag) or nil
-		local defense_tag = tag
-		local mult = GetMult(inst, TUNING.DAMAGETYPE_BONUS, defense_tag)
-		
-		if attack_tag ~= nil and condition == nil then
-			inst:AddTag(attack_tag)
-		end
-		
-		if mult ~= nil and mult ~= 1 then
-			AddAttackModifier(inst, attack_tag, defense_tag, mult, condition)
-		end
-		
-		print("[RT] -DAMAGE TYPES TEST- "..inst.prefab..": "..defense_tag.." x"..mult)
-	end
+	AddAttackModifier(inst, type, mult, condition)
 end
 
 
 
 ---- For AddPrefabPostInitAny
 
-local BASIC_WEAPON_TAG_OVERRIDE = {
+local BASIC_WEAPON_TYPE_OVERRIDE = {
 	tentaclespike = "piercing",
 	ruins_bat = "bludgeoning",
 	glasscutter = "slashing",
@@ -210,8 +136,8 @@ local BASIC_WEAPON_TAG_OVERRIDE = {
 }
 
 local function GetBasicWeaponModifier(inst, weapon_cmp)
-	if BASIC_WEAPON_TAG_OVERRIDE[inst.prefab] ~= nil then
-		return BASIC_WEAPON_TAG_OVERRIDE[inst.prefab]
+	if BASIC_WEAPON_TYPE_OVERRIDE[inst.prefab] ~= nil then
+		return BASIC_WEAPON_TYPE_OVERRIDE[inst.prefab]
 	end
 	
 	-- Ranged weapons
@@ -250,11 +176,11 @@ local function WeaponAttackModifiers(inst, weapon_cmp)
 		AddBonus(inst, "electric")
 	end
 	
-	-- Shadow attack type (don't stack with existing multipliers?)
+	--[[ Shadow attack type (don't stack with existing multipliers?)
 	if (inst:HasTag("shadow_item") or inst.prefab == "ruins_bat")
 	and not (inst.components.damagetypebonus ~= nil and inst.components.damagetypebonus.tags["lunar_aligned"] ~= nil) then
-		AddAllegianceBonus(inst, "lunar_aligned", nil, true)
-	end
+		AddBonus(inst, "shadow")
+	end]]
 end
 
 local function ArmorDefenseModifiers(inst, armor_cmp)
@@ -287,19 +213,22 @@ end
 
 
 return {
+	IsPhysical = IsPhysical,
+	IsMagical = IsMagical,
+	ShouldSwapTag = ShouldSwapTag,
+	
 	AddDefenseModifier = AddDefenseModifier,
 	AddResistance = AddResistance,
-	AddAllegianceResistance = AddAllegianceResistance,
 	AddVulnerability = AddVulnerability,
-	AddAllegianceVulnerability = AddAllegianceVulnerability,
 	
 	AddAttackModifier = AddAttackModifier,
 	AddBonus = AddBonus,
-	AddAllegianceBonus = AddAllegianceBonus,
 	
 	GetBasicWeaponModifier = GetBasicWeaponModifier,
 	WeaponAttackModifiers = WeaponAttackModifiers,
+	
 	ArmorDefenseModifiers = ArmorDefenseModifiers,
+	
 	EntityAttackModifiers = EntityAttackModifiers,
 	EntityDefenseModifiers = EntityDefenseModifiers,
 	

@@ -1,5 +1,5 @@
-local DamageTypes = require("main/damagetypes")
-DamageTypes.SkipAutomatic("pocketwatch_weapon")
+local DamageTypesUtil = require("main/damagetypesutil")
+DamageTypesUtil.SkipAutomatic("pocketwatch_weapon")
 
 return function(inst)
 	if not TheWorld.ismastersim then
@@ -10,7 +10,7 @@ return function(inst)
 		return inst.components.fueled == nil or not inst.components.fueled:IsEmpty()
 	end
 	
-	DamageTypes.AddBonus(inst, "bludgeoning")
-	DamageTypes.AddBonus(inst, "slashing")
-	DamageTypes.AddAllegianceBonus(inst, "lunar_aligned", HasFuel, true)
+	DamageTypesUtil.AddBonus(inst, "bludgeoning")
+	DamageTypesUtil.AddBonus(inst, "slashing")
+	DamageTypesUtil.AddBonus(inst, "shadow", HasFuel)
 end

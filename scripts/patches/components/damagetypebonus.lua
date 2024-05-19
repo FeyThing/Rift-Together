@@ -1,87 +1,101 @@
 local SourceModifierList = require("util/sourcemodifierlist")
+local DamageType = require("main/damagetype")
+local DamageTypesUtil = require("main/damagetypesutil")
 
 return function(self)
-	self.conditional_tags = {}
-	self.tags_to_remove = {}
+	self.rt_types = {}
 	
-	-- Conditional bonus: only works when fn passes
-	-- Having a fn check is a lot simpler than having to hook into stategraphs and all of that
-	function self:AddConditionalBonus(target_tag, inst_tag, src, pct, key, fn)
-		local data = self.conditional_tags[target_tag]
-		if data == nil then
-			data = {}
-			data.tag = inst_tag
-			data.fn = fn
-			data.modifier = SourceModifierList(self.inst)
-			self.conditional_tags[target_tag] = data
+	-- Our own special kind of bonus for our special damage types
+	-- Doing it through damagetypebonus (and damagetyperesist) because these components are called by Klei in convenient places
+	-- Includes a fn check if the bonus isn't always supposed to work (a lot simpler than having to hook into stategraphs and all of that)
+	function self:RT_AddMult(type, mult, key, checkfn)
+		local dmgtype = self.rt_types[type]
+		if dmgtype == nil then
+			dmgtype = DamageType(self.inst)
+			self.rt_types[type] = dmgtype
 		end
-		if data.modifier ~= nil then
-			data.modifier:SetModifier(src, pct, key)
-		end
+		dmgtype:AddModifier(mult, key, checkfn)
 	end
 	
-	function self:RemoveConditionalBonus(tag, src, key)
-		local data = self.conditional_tags[tag]
-		if data ~= nil and data.modifier ~= nil then
-			data.modifier:RemoveModifier(src, key)
-			if data.modifier:IsEmpty() then
-				self.conditional_tags[tag] = nil
+	function self:RT_RemoveMult(type, key)
+	local dmgtype = self.rt_types[type]
+		if dmgtype ~= nil then
+			dmgtype:RemoveModifier(key)
+			if dmgtype:IsEmpty() then
+				self.rt_types[type] = nil
 			end
 		end
 	end
 	
-	-- Conditional tags are for damagetyperesist, added before GetResist runs so that the tag checks pass as intended
-	function self:AddConditionalTags()
-		for k,v in pairs(self.conditional_tags) do
-			if v.tag ~= nil and (v.fn == nil or v.fn(self.inst)) and not self.inst:HasTag(v.tag) then
-				self.inst:AddTag(v.tag)
-				table.insert(self.tags_to_remove, v.tag)
-			end
-		end
-	end
-	
-	function self:RemoveConditionalTags()
-		for k,v in pairs(self.tags_to_remove) do
-			self.inst:RemoveTag(v)
-		end
+	-- Swap a vanilla tag into our damage type, we can use it for example to turn any "shadow_aligned" bonus into our "shadow" damage type
+	local _old_addbonus = self.AddBonus
+	function self:AddBonus(tag, src, pct, key, ...)
+		local type = DamageTypesUtil.ShouldSwapTag(tag)
 		
-		self.tags_to_remove = {}
+		if type ~= nil then
+			self:RT_AddMult(type, pct, key)
+		else
+			_old_addbonus(self, tag, src, pct, key, ...)
+		end
 	end
 	
-	-- Hook into GetBonus and add our behavior as intended
+	local _old_removebonus = self.RemoveBonus
+	function self:RemoveBonus(tag, src, key, ...)
+		local type = DamageTypesUtil.ShouldSwapTag(tag)
+		
+		if type ~= nil then
+			self:RT_RemoveMult(type, key)
+		else
+			_old_removebonus(self, tag, src, key, ...)
+		end
+	end
+	
+	-- Hook into GetBonus to do our intended behavior
 	local _old_getbonus = self.GetBonus
 	function self:GetBonus(target, ...)
-		if target ~= nil and target.components.damagetyperesist ~= nil then
-			target.components.damagetyperesist:AddConditionalTags()
-		end
-		
 		local mult = _old_getbonus(self, target, ...)
 		
-		if target ~= nil then
-			for k,v in pairs(self.conditional_tags) do
-				if (v.fn == nil or v.fn(self.inst)) and target:HasTag(k) then
-					if v.modifier ~= nil then
-						mult = mult * v.modifier:Get()
-					end
+		-- Our system relies on the target having damagetyperesist!
+		if target ~= nil and target.components.damagetyperesist ~= nil then
+			for type,dmgtype in pairs(self.rt_types) do
+				local rt_mult = dmgtype:Get()
+				-- An attack being effective means the defense multiplier is above 1 (takes more damage from it)
+				if target.components.damagetyperesist:RT_IsAttackEffective(type) then
+					mult = mult * rt_mult
 				end
 			end
-		end
-		
-		if target ~= nil and target.components.damagetyperesist ~= nil then
-			target.components.damagetyperesist:RemoveConditionalTags()
 		end
 		
 		return mult
 	end
 	
-	-- Just in case remove the conditional tags when the component is removed from an entity
-	-- Shouldn't be needed but better be safe than sorry!
-	local _old_onremovefromentity = self.OnRemoveFromEntity
-	function self:OnRemoveFromEntity(...)
-		if _old_onremovefromentity ~= nil then
-			_old_onremovefromentity(self, ...)
+	-- Defense being effective means the attack type corresponds to the defense (so it gets reduced/amplified accordingly)
+	function self:RT_IsDefenseEffective(type, mult)
+		
+		local dmgtype = self.rt_types[type]
+		
+		if dmgtype ~= nil then
+			-- If the type of resistance (mult less than 1) is physical and we have an active magic bonus, ignore the resistance
+			if mult < 1 and DamageTypesUtil.IsPhysical(type) then
+				for t,dt in pairs(self.rt_types) do
+					if DamageTypesUtil.IsMagical(t) then
+						for key,data in pairs(dt.modifiers) do
+							if data.checkfn == nil or data.checkfn(self.inst) then
+								return false
+							end
+						end
+					end
+				end
+			end
+			
+			-- Otherwise only check if we have an active damage type of the same type
+			for key,data in pairs(dmgtype.modifiers) do
+				if data.checkfn == nil or data.checkfn(self.inst) then
+					return true
+				end
+			end
 		end
 		
-		self:RemoveConditionalTags()
+		return false
 	end
 end
