@@ -9,19 +9,19 @@ AddRecipe2("cryomod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 4, atlas), Ingredient("bluegem", 1)},
         _G.TECH.LOST,
         {atlas=atlas},
-		{"CHARACTER","WEAPONS"})
+		{"WEAPONS"})
 
 AddRecipe2("napalmmod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 4, atlas), Ingredient("redgem", 1)},
         _G.TECH.LOST,
         {atlas=atlas},
-		{"CHARACTER","WEAPONS"})
+		{"WEAPONS"})
 
 AddRecipe2("shockmod",
         {Ingredient("raritanium_bar", 1, atlas), Ingredient("nanotech", 4, atlas), Ingredient("lightninggoathorn", 1)},
         _G.TECH.LOST,
         {atlas=atlas},
-		{"CHARACTER","WEAPONS"})
+		{"WEAPONS"})
 
 AddRecipe2("nanoboost", 
 		{ Ingredient("nanotech", 2, atlas), Ingredient("raritaniumore", 2, atlas), Ingredient("ice", 3) }, 
@@ -33,25 +33,30 @@ AddRecipe2("rarisword",
 		{ Ingredient("purplegem", 1), Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 3) }, 
 		_G.TECH.LOST, 
         {atlas=atlas},
-		{"CHARACTER","WEAPONS"})
+		{"WEAPONS"})
 		
 AddRecipe2("respiratormask", 
 		{ Ingredient("transistor", 4), Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 2) }, 
 		_G.TECH.LOST, 
         {atlas=atlas},
-		{"CHARACTER","ARMOUR"})
+		{"ARMOUR"})
 
 AddRecipe2("rarispear", 
 		{ Ingredient("moonrocknugget", 1), Ingredient("raritaniumore", 1, atlas), Ingredient("spear", 1) }, 
 		_G.TECH.SCIENCE_ONE, 
         {atlas=atlas},
-		{"CHARACTER","WEAPONS"})
+		{"WEAPONS"})
 		
 AddRecipe2("commando_helmet", 
 		{ Ingredient("raritanium_bar", 1, atlas), Ingredient("gears", 2), Ingredient("moonglass", 3) }, 
 		_G.TECH.SCIENCE_TWO, 
         {builder_tag="veldin_mechanic",atlas=atlas},
 		{"CHARACTER","ARMOUR"})
+
+AddCharacterRecipe("wx78module_maxresist",
+		{Ingredient("scandata", 4), Ingredient("luminous_fruit", 1, atlas, nil, "luminousfruit.tex"), Ingredient("wx78module_maxhealth", 1)},
+		_G.TECH.ROBOTMODULECRAFT_ONE,
+		{builder_tag="upgrademoduleowner",atlas=atlas})
 
 if _G.EQUIPSLOTS.SHOES then		
 AddRecipe2("shoes_hover", 
@@ -65,4 +70,4 @@ AddRecipe2("shoes_radiation",
 		_G.TECH.SHOES_ONE, 
 		{atlas=atlas},  
 		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
-		end
+end

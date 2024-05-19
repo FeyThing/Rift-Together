@@ -263,6 +263,8 @@ local strings = {
 
 		RADIATION = "Radiation",
 		
+		WX78MODULE_MAXRESIST = "Radioshielding Circuit",
+		
 		--- Turfs
 		TURF_JUNK = "Junk Turf",
 		TURF_LUSH = "Lush Turf",
@@ -335,6 +337,8 @@ local strings = {
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 
 		NANOBOOST = "An energy restoring drink!",
+		
+		WX78MODULE_MAXRESIST = "someone else come up with a description please",
 		
 		--- Shoetime mod
 		SHOES_HOVER = "The terrain is the thing of the past with these!",

@@ -278,6 +278,8 @@ local strings = {
 
 		RADIATION = "Radiation",
 		
+		WX78MODULE_MAXRESIST = "Radioshielding Circuit",
+		
 		--- Shoetime mod
 		SHOES_HOVER = "Hover Boots",
 		SHOES_RADIATION = "Protective Boots",
@@ -344,6 +346,8 @@ local strings = {
 		RARITANIUM_BAR = "Makes raritanium crystals useful",
 
 		NANOBOOST = "An energy restoring drink!",
+		
+		WX78MODULE_MAXRESIST = "someone else come up with a description please",
 		
 		--- Shoetime mod
 		SHOES_HOVER = "The terrain is the thing of the past with these!",

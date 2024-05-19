@@ -29,6 +29,7 @@ local inits = {
     "actions",
     "characters",
     "containers",
+	"wxmodules",
     "skins",
     "mod_compatibility",
 }
