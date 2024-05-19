@@ -141,16 +141,16 @@ function Radiation:DoDelta(delta, overtime)
     self:TryAnnounce()
 
     -- LukaS: -[TODO]- Revamp the radiation visual effects
-    -- if self.inst.AnimState then
-    --     self.inst.AnimState:SetAddColour(0, Remap(self:GetPercent(), 0, 1, 0, 0.65), 0, 1)
-    --     if self:GetPercent() > 0.65 then
-    --         self.inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
-    --     elseif self:GetPercent() < 0.35 then
-    --         self.inst.AnimState:ClearBloomEffectHandle()
-    --     end
+    if self.inst.AnimState then
+        self.inst.AnimState:SetAddColour(0, Remap(self:GetPercent(), 0, 1, 0, 0.65), 0, 1)
+        if self:GetPercent() > 0.65 then
+            self.inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+        elseif self:GetPercent() < 0.35 then
+            self.inst.AnimState:ClearBloomEffectHandle()
+        end
 
-    --     self.inst.AnimState:SetLightOverride(Remap(self:GetPercent(), 0, 1, 0, 0.2))
-    -- end
+        self.inst.AnimState:SetLightOverride(Remap(self:GetPercent(), 0, 1, 0, 0.2))
+    end
 
     self.inst:PushEvent("radiationdelta", { oldpercent = self._oldpercent, newpercent = self:GetPercent(), overtime = overtime })
 end
@@ -190,7 +190,7 @@ function Radiation:OnUpdate(dt)
         
         if self.inst.components.health and not self.inst.components.health:IsDead() then
             -- LukaS: -[TODO]- Revamp the radiation DOT
-            -- if self:GetPercent() >= TUNING.RADIATION_THRESH.PAIN.POST then
+            -- if self:GetPercent() >= TUNING.RADIATION_THRESH.HIGH.POST then
             --     self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
             -- end
         end

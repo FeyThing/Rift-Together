@@ -34,7 +34,7 @@ end
 local StatusDisplays = require("widgets/statusdisplays") -- LukaS: I need to override the SetGhostMode method before
                                                          -- the _ctor of StatusDisplays runs, with the current way of how the "patches"
                                                          -- work that's impossible to do from inside of the returning function
-                                                         -- Might have to revise how "patches" work
+                                                         -- -[TODO]- Might have to revise how "patches" work
 local old_StatusDisplays_SetGhostMode = StatusDisplays.SetGhostMode
 StatusDisplays.SetGhostMode = function(self, ghostmode, ...)
     old_StatusDisplays_SetGhostMode(self, ghostmode, ...)
@@ -122,30 +122,16 @@ return function(self)
     self.radiation = self:AddChild(RadiationBadge(self.owner))
 
 	if self.radiation then
-        local currentPlaform = self.inst:GetCurrentPlatform()
         if _G.KnownModIndex:IsModEnabled("workshop-376333686") then
             self.radiation:SetPosition(-125, 35, 0) -- combined stat pos
-                                                    -- LukaS: -[TODO]- Probably should also consider the SEASONOPTIONS option in Combined Status
-        elseif currentPlaform and currentPlaform.components.healthsyncer then
-            self.radiation:SetPosition(-220, 20, 0) -- LukaS: This will not work, the DisplayStatus constructor will only run once
         else
             self.radiation:SetPosition(-120, 20, 0) -- base pos
         end
-        
+
         if self.owner.isseamlessswaptarget then
             self.inst:ListenForEvent("finishseamlessplayerswap", OnFinishSeamlessPlayerSwap, self.owner)
         end
-
-        -- if not self.inst:HasTag("playerghost") or _G.KnownModIndex:IsModEnabled("workshop-3004639365") then -- LukaS: ???
-        --     self.radiation:Show()
-        -- else
-        --     self.radiation:Hide()
-        -- end
-    end	
-
-    -- if _G.KnownModIndex:IsModEnabled("workshop-3004639365") then -- LukaS: ???
-    --     self.radiation:Hide() 
-    -- end
+    end
 
    --[[if self.owner.prefab == "nefarious" then
 		self.energyhud = self:AddChild(NefBadge(self, self.owner))

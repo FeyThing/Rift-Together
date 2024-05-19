@@ -5,8 +5,6 @@ local function SetDirty(netvar, val)
 end
 
 local function OnRadiationDelta(parent, data)
-    print("data.newpercent - "..(data.newpercent or "nil"))
-    print("data.oldpercent - "..(data.oldpercent or "nil"))
     if data.overtime then
         -- V2C: Don't clear: it's redundant as player_classified shouldn't
         --      get constructed remotely more than once, and this would've
