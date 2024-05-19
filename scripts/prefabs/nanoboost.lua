@@ -26,7 +26,6 @@ local function fn(Sim)
     inst.entity:SetPristine()
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     inst:AddComponent("stackable")
 	inst.components.stackable.maxsize = TUNING.STACK_SIZE_LARGEITEM

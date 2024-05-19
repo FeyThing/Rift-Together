@@ -1,5 +1,4 @@
-local prefabs =
-{
+local prefabs = {
 	"dimensional_rift",
 }
 
@@ -12,13 +11,14 @@ local function SpawnDimensionalRift(inst)
 end
 
 return function(inst)
-	
-	--CLIENT
-	if not _G.TheWorld.ismastersim then
-		return
-	end
-	--SERVER
-	inst:AddComponent("dimensionalrifts")
-	
-	inst:WatchWorldState("cycles", SpawnDimensionalRift)
+	  --CLIENT
+  
+    if not TheNet:IsDedicated() and TUNING.RIFT_TOGETHER_OST then
+        inst:AddComponent("rt_music")
+    end
+  
+	  if not _G.TheWorld.ismastersim then
+        return
+    end
+    --SERVER
 end

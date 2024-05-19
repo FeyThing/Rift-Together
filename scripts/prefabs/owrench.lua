@@ -204,8 +204,6 @@ local function fn(Sim)
     inst:AddComponent("inspectable")
     
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "owrench"
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	inst.components.inventoryitem.keepondeath = true
 	inst.components.inventoryitem.keepondrown = true
 	

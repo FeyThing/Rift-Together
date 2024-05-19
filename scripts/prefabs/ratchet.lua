@@ -60,6 +60,10 @@ local common_postinit = function(inst)
 	inst:AddTag("fastbuilder")
 	inst:AddTag("solana_galaxy_resident")
 	inst:AddTag("veldin_mechanic")
+
+	if TheNet:GetServerGameMode() == "quagmire" then
+		inst:AddTag("quagmire_shopper")
+	end
 	
 	inst.dodgetime = net_bool(inst.GUID, "player.dodgetime", "dodgetimedirty")
 	inst:ListenForEvent("dodgetimedirty", function()
@@ -73,6 +77,12 @@ end
 local master_postinit = function(inst)
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
 	
+	if TheNet:GetServerGameMode() == "lavaarena" then
+		-- Not yet
+	elseif TheNet:GetServerGameMode() == "quagmire" then
+		inst.regorged = true -- Required for Re-Gorge-itated or the gamemode start_inv is replaced
+	end
+
 	inst.soundsname = "ratchetevent"
 	
 	inst.talker_path_override = "ratchet/"
@@ -89,6 +99,8 @@ local master_postinit = function(inst)
     inst.components.sanity:SetNegativeAuraImmunity(true)
   	
 	inst.components.hunger.hungerrate = 1 * TUNING.WILSON_HUNGER_RATE	
+
+
 	
 	inst.OnLoad = onload
     inst.OnNewSpawn = onload 

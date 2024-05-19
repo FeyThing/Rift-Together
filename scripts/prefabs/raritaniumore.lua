@@ -48,7 +48,6 @@ local function fn()
 
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     MakeHauntableLaunch(inst)
 	shine(inst)

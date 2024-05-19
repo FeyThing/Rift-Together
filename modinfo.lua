@@ -24,6 +24,7 @@ dst_compatible = true
 dont_starve_compatible = false
 reign_of_giants_compatible = false
 shipwrecked_compatible = false
+gorge_compatible = true
 
 all_clients_require_mod = true 
 
@@ -144,6 +145,7 @@ local DIVIDE = Title("")
 configuration_options = {
 	
 	CreateLanguageOption("language", "en", "Language", "Change the mod language."),	
+    CreateEnableOption("rt_music", 1, "Rift Together Music", "Turns on Rift Together OST for custom biomes."),	
 
 	DIVIDE,
 	Title("WorldGen Options"),

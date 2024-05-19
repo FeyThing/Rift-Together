@@ -25,7 +25,8 @@ local PATCHES =
 		"wavemanager",
 		"retrofitforestmap_anr",
 		"carefulwalker",
-		
+		"damagetypebonus",
+		"damagetyperesist",
 	},
 	
 	REPLICAS = {
@@ -46,7 +47,7 @@ local PATCHES =
 		crabking = "crabking",
 		deerclops = "mutateddeerclops",
 		eyeofterror = {"twinofterror1", "twinofterror2"},
-		--forest = "forest",
+		forest = "forest",
 		frog = "lunarfrog",
 		gestalt = "gestalt",		
 		gestalt_alterguardian_projectile = {"gestalt_alterguardian_projectile", "smallguard_alterguardian_projectile", "alterguardianhat_projectile", "largeguard_alterguardian_projectile"},
@@ -54,7 +55,7 @@ local PATCHES =
 		hats = "lunarplanthat",
 		hats_hideable = {"catcoonhat", "molehat", "footballhat", "wagpunkhat", "watermelonhat", "hivehat", "spiderhat"},
 		hats_viewable = {"rainhat", "tophat", "beehat", "beefalohat", "winterhat", "moonstorm_goggleshat", "dreadstonehat", "plantregistryhat", 
-		"nutrientsgoggleshat", "cookiecutterhat", "woodcarvedhat", "antlionhat", "icehat", "blue_mushroomhat", "green_mushroomhat", 
+		"nutrientsgoggleshat", "cookiecutterhat", "woodcarvedhat", "minerhat", "antlionhat", "icehat", "blue_mushroomhat", "green_mushroomhat", 
 		"red_mushroomhat", "skeletonhat", "polly_rogershat", "moon_mushroomhat"},
 		hound = "mutatedhound",
 		lunar_grazer = "lunar_grazer",
@@ -65,8 +66,10 @@ local PATCHES =
 		mushrooms = {"blue_cap", "blue_cap_cooked", "red_cap", "red_cap_cooked", "green_cap", "green_cap_cooked"},
 		penguin = "mutated_penguin",
 		player_classified = "player_classified",
+		pocketwatch_weapon = "pocketwatch_weapon",
 		rabbithole = "rabbithole",
 		rocky = "rocky",
+		slurtle = {"slurtle", "snurtle"},
 		spider = "spider_moon",
 		warg = "mutatedwarg",
 		world = "world",

@@ -187,8 +187,6 @@ local function fn(Sim)
     inst:AddComponent("inspectable")
     
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "rarisword"
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)

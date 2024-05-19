@@ -24,7 +24,6 @@ local wilson_sanity = 200
 local calories_per_day = 75
 
 local wilson_attack_period = 0.4 --prevents players
-local atlas = "images/rnc_inventoryimages.xml"
 
 local tunings = {
     GAMEMODE_STARTING_ITEMS = {
@@ -101,6 +100,93 @@ local tunings = {
 	
 	RT_SHOES = {
 	    GetModConfigData("rt_shoe"),
+	},
+
+    RIFT_TOGETHER_OST = {
+	    GetModConfigData("rt_music"),
+	},
+	
+	DAMAGETYPE_BONUS = {
+		bludgeoning = {
+			DEFAULT = 1,
+		},
+		piercing = {
+			DEFAULT = 1,
+		},
+		slashing = {
+			DEFAULT = 1,
+		},
+		fire = {
+			DEFAULT = 1,
+		},
+		electric = {
+			DEFAULT = 1,
+		},
+		ice = {
+			DEFAULT = 1,
+		},
+		shadow = {
+			DEFAULT = 1,
+		},
+		lunar = {
+			DEFAULT = 1,
+		},
+	},
+	
+	DAMAGETYPE_RESISTANCE = {
+		bludgeoning = {
+			DEFAULT = 0.5,
+		},
+		piercing = {
+			DEFAULT = 0.5,
+		},
+		slashing = {
+			DEFAULT = 0.5,
+		},
+		fire = {
+			DEFAULT = 0.5,
+		},
+		electric = {
+			DEFAULT = 0.5,
+		},
+		ice = {
+			DEFAULT = 0.5,
+		},
+		shadow = {
+			DEFAULT = 0.5,
+		},
+		lunar = {
+			DEFAULT = 0.5,
+		},
+	},
+	
+	DAMAGETYPE_VULNERABILITY = {
+		bludgeoning = {
+			DEFAULT = 1.5,
+			slurtle = 0.5 / (1 - TUNING.SLURTLE_SHELL_ABSORB), -- This vulnerability is only active when they're in their shell
+			snurtle = 0.5 / (1 - TUNING.SLURTLE_SHELL_ABSORB), -- Do 0.5 damage against it (instead of 0.05)
+		},
+		piercing = {
+			DEFAULT = 1.5,
+		},
+		slashing = {
+			DEFAULT = 1.5,
+		},
+		fire = {
+			DEFAULT = 1.5,
+		},
+		electric = {
+			DEFAULT = 1.5,
+		},
+		ice = {
+			DEFAULT = 1.5,
+		},
+		shadow = {
+			DEFAULT = 1.5,
+		},
+		lunar = {
+			DEFAULT = 1.5,
+		},
 	},
 	
 	--- Biomes

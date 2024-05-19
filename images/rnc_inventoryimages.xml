@@ -5,22 +5,23 @@
 		<Element name="commando_helmet.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
 		<Element name="cryomod.tex" u1="0.126" u2="0.23728125" v2="0.999" v1="0.7588125" variant="" />
 		<Element name="turf_desertsand.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
-		<Element name="turf_junk.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
-		<Element name="luminousfruit.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
-		<Element name="luminousfruit_cooked.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
-		<Element name="turf_lush.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
-		<Element name="ms_owrench_hammer.tex" u1="0.251" u2="0.3661875" v2="0.749" v1="0.516625" variant="" />
-		<Element name="nanoboost.tex" u1="0.3681875" u2="0.454078125" v2="0.749" v1="0.52834375" variant="" />
-		<Element name="nanotech.tex" u1="0.3681875" u2="0.47946875" v2="0.52634375" v1="0.28615625" variant="" />
-		<Element name="napalmmod.tex" u1="0.251" u2="0.36228125" v2="0.514625" v1="0.2744375" variant="" />
-		<Element name="owrench.tex" u1="0.126" u2="0.23728125" v2="0.5068125" v1="0.266625" variant="" />
-		<Element name="rarispear.tex" u1="0.001" u2="0.1161875" v2="0.499" v1="0.266625" variant="" />
-		<Element name="rarisword.tex" u1="0.36428125" u2="0.46775" v2="0.28415625" v1="0.05178125" variant="" />
-		<Element name="raritanium_bar.tex" u1="0.23928125" u2="0.3505625" v2="0.2724375" v1="0.1494375" variant="" />
-		<Element name="raritaniumore.tex" u1="0.001" u2="0.11228125" v2="0.264625" v1="0.0244375" variant="" />
-		<Element name="respiratormask.tex" u1="0.11428125" u2="0.23728125" v2="0.264625" v1="0.016625" variant="" />
-		<Element name="shockmod.tex" u1="0.501" u2="0.610328125" v2="0.999" v1="0.76271875" variant="" />
-		<Element name="shoes_hover.tex" u1="0.612328125" u2="0.735328125" v2="0.999" v1="0.751" variant="" />
-		<Element name="shoes_radiation.tex" u1="0.737328125" u2="0.860328125" v2="0.999" v1="0.751" variant="" />
+		<Element name="turf_junk.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
+		<Element name="luminous_fruit.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
+		<Element name="luminousfruit_cooked.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
+		<Element name="turf_lush.tex" u1="0.251" u2="0.374" v2="0.749" v1="0.501" variant="" />
+		<Element name="wx78module_maxresist.tex" u1="0.4931875" u2="0.6161875" v2="0.749" v1="0.501" variant="" />
+		<Element name="ms_owrench_hammer.tex" u1="0.376" u2="0.4911875" v2="0.749" v1="0.516625" variant="" />
+		<Element name="nanoboost.tex" u1="0.376" u2="0.461890625" v2="0.514625" v1="0.29396875" variant="" />
+		<Element name="nanotech.tex" u1="0.126" u2="0.23728125" v2="0.5068125" v1="0.266625" variant="" />
+		<Element name="napalmmod.tex" u1="0.001" u2="0.11228125" v2="0.499" v1="0.2588125" variant="" />
+		<Element name="owrench.tex" u1="0.23928125" u2="0.3505625" v2="0.499" v1="0.2588125" variant="" />
+		<Element name="rarispear.tex" u1="0.3525625" u2="0.46775" v2="0.29196875" v1="0.05959375" variant="" />
+		<Element name="rarisword.tex" u1="0.11428125" u2="0.21775" v2="0.264625" v1="0.03225" variant="" />
+		<Element name="raritanium_bar.tex" u1="0.001" u2="0.11228125" v2="0.2568125" v1="0.1338125" variant="" />
+		<Element name="raritaniumore.tex" u1="0.21975" u2="0.33103125" v2="0.2568125" v1="0.016625" variant="" />
+		<Element name="respiratormask.tex" u1="0.501" u2="0.624" v2="0.999" v1="0.751" variant="" />
+		<Element name="shockmod.tex" u1="0.626" u2="0.735328125" v2="0.999" v1="0.76271875" variant="" />
+		<Element name="shoes_hover.tex" u1="0.737328125" u2="0.860328125" v2="0.999" v1="0.751" variant="" />
+		<Element name="shoes_radiation.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
 	</Elements>
 </Atlas>

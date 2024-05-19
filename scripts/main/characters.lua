@@ -45,8 +45,6 @@ local skin_modes = {
     },
 }
 
-RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"), "ms_owrench_hammer.tex")
-
 
 if GetModConfigData("Ratchet And Clank Characters") == 1 then
 		AddModCharacter("ratchet", "MALE", skin_modes)

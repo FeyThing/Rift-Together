@@ -14,9 +14,9 @@ local params = {
             },
 			        slotbg =
 			{
-            {image = "omegamods.tex", atlas = "images/omegamods.xml" },
-			{image = "omegamods.tex", atlas = "images/omegamods.xml" },
-			{image = "omegamods.tex", atlas = "images/omegamods.xml" },			
+            {image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },			
 			},
             animbank = "ui_ratchet_3x1",
             animbuild = "ui_ratchet_3x1",
@@ -39,7 +39,7 @@ local params = {
             },
 			slotbg =
 			{
-            {image = "omegamods.tex", atlas = "images/omegamods.xml" },			
+            {image = "omegamods.tex", atlas = "images/rnc_ui_images.xml" },			
 			},
 
             animbank = "ui_ratchet_1x1",
@@ -53,6 +53,30 @@ local params = {
             return item:HasTag("rnc_mod") 
         end,
     },
+	rt_anvil = 
+	{
+		widget = 
+		{
+			slotpos =
+			{
+				_G.Vector3(-72, 0, 0),			
+				_G.Vector3(72, 0, 0), 
+			},
+			slotbg =
+			{
+				{image = "forgealloy.tex", atlas = "images/rnc_ui_images.xml" },
+				{image = "anvilweapon.tex", atlas = "images/rnc_ui_images.xml" },		
+			},
+			animbank = "ui_anvil",
+			animbuild = "ui_anvil",
+			pos = _G.Vector3(0, 200, 0),
+			side_align_tip = 160,
+		},
+		type = "chest",
+        itemtestfn = function(container, item, slot)
+            return 
+        end,
+    },	
     vullard_smelter = 
 	{
 		widget = 
@@ -63,6 +87,13 @@ local params = {
 				_G.Vector3(-74, 74, 0),
 				_G.Vector3(77, -43, 0),
 				_G.Vector3(-74, -80, 0), 
+			},
+			slotbg =
+			{
+            {image = "forgeores.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "forgefire.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "forgealloy.tex", atlas = "images/rnc_ui_images.xml" },
+			{image = "forgeores.tex", atlas = "images/rnc_ui_images.xml" },			
 			},
 			animbank = "ui_smelter",
 			animbuild = "ui_smelter",

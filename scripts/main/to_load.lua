@@ -1,3 +1,32 @@
+local INVENTORY_ITEMS = {
+	"commando_helmet",
+	"cryomod",
+	"turf_desertsand",
+	"turf_junk",
+	"luminous_fruit",
+	"luminous_fruit_cooked",
+	"turf_lush",
+	"wx78module_maxresist",
+	"ms_owrench_hammer",
+	"nanoboost",
+	"nanotech",
+	"napalmmod",
+	"owrench",
+	"rarispear",
+	"rarisword",
+	"raritanium_bar",
+	"raritaniumore",
+	"respiratormask",
+	"shockmod",
+	"shoes_hover",
+	"shoes_radiation",
+}
+
+for i,v in ipairs(INVENTORY_ITEMS) do
+	RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"), v..".tex")
+	RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"), _G.hash(v..".tex"))
+end
+
 return {
 	Prefabs = {	
 		"ratchet",
@@ -46,6 +75,7 @@ return {
 		"dustdevil_fx",
 		"rt_pawn",
 		"rt_pawn_trap",
+		"rt_anvil",
 	},
 
 	Assets = {
@@ -54,6 +84,8 @@ return {
 		Asset( "ANIM", "anim/player_drink.zip"),
 		Asset( "ANIM", "anim/winterfood.zip"),
 		Asset( "ANIM", "anim/rnc_turf.zip"),
+		Asset( "ANIM", "anim/rtstatus_wx.zip"),
+		Asset( "ANIM", "anim/rt_chips.zip"),
 		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),
@@ -115,6 +147,9 @@ return {
 		--sound
 		Asset("SOUNDPACKAGE", "sound/ratchet.fev"),
 		Asset("SOUND", "sound/ratchet.fsb"),
+
+		Asset("SOUNDPACKAGE", "sound/rt_music.fev"),
+		Asset("SOUND", "sound/rt_music.fsb"),
 		
 		-- Asset("SOUNDPACKAGE", "sound/radiation.fev"),
 		-- Asset("SOUND", "sound/radiation.fsb"),
@@ -122,21 +157,20 @@ return {
 		--items
 		Asset("ATLAS", "images/rnc_inventoryimages.xml"),
 		Asset("IMAGE", "images/rnc_inventoryimages.tex"),
+		Asset("ATLAS_BUILD", "images/rnc_inventoryimages.xml", 256),
+
+		Asset("ATLAS", "images/rnc_ui_images.xml"),
+		Asset("IMAGE", "images/rnc_ui_images.tex"),
 		
 		Asset("ATLAS", "images/rnc_hud.xml"),
 		Asset("IMAGE", "images/rnc_hud.tex"),
 		
 		Asset("ATLAS", "images/rnc_map_icons.xml"),
 		Asset("IMAGE", "images/rnc_map_icons.tex"),
-		
-		Asset("ATLAS", "images/omegamods.xml"),
-		Asset("IMAGE", "images/omegamods.tex"),
 	},
 
 	MiniMaps = {
 		"images/rnc_map_icons.xml",
-	},
-	
-	
+	},	
 }
 

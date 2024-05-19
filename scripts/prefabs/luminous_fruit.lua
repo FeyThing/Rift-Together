@@ -95,8 +95,6 @@ local function fn()
     MakeSmallPropagator(inst)
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "luminousfruit"
-	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     inst:AddComponent("deployable")
     inst.components.deployable:SetDeployMode(DEPLOYMODE.PLANT)
@@ -157,8 +155,6 @@ local function cooked()
     MakeSmallPropagator(inst)
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "luminousfruit_cooked"
-	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     inst:AddComponent("forcecompostable")
     inst.components.forcecompostable.brown = true

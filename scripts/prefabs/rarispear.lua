@@ -69,8 +69,6 @@ local function fn()
     inst:AddComponent("inspectable")
 
     inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "rarispear"
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
     inst:AddComponent("equippable")
     inst.components.equippable:SetOnEquip(onequip)

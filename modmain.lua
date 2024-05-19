@@ -18,26 +18,30 @@ end
 UpvalueHacker = require("tools/upvaluehacker")
 _G.UpvalueHacker = UpvalueHacker
 
-modimport("scripts/main/utils.lua")
-modimport("scripts/main/constants.lua")
-modimport("scripts/main/tuning.lua")
-modimport("scripts/main/languages.lua")
-modimport("scripts/main/recipes.lua")
-modimport("scripts/main/patches.lua")
-modimport("scripts/main/retrofit.lua")
-modimport("scripts/main/actions.lua")
-modimport("scripts/main/characters.lua")
-modimport("scripts/main/containers.lua")
-modimport("scripts/main/skins.lua")
-modimport("scripts/main/mod_compatibility.lua")
+local inits = {
+    "utils",
+    "constants",
+    "tuning",
+    "languages",
+    "recipes",
+    "patches",
+    "retrofit",
+    "actions",
+    "characters",
+    "containers",
+	"wxmodules",
+    "skins",
+    "mod_compatibility",
+}
 
+for _, v in pairs(inits) do
+    modimport("scripts/main/"..v)
+end
 
 AddReplicableComponent("radiation")
 
 
 
 -----------------------
--- modimport("scripts/stategraphs/SGannihilator")
---modimport("scripts/util/nefarious_powers")
 modimport("scripts/stategraphs/SGratchet")
 
