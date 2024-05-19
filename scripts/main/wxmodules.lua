@@ -105,3 +105,12 @@ AddClassPostConstruct("widgets/upgrademodulesdisplay", function(self)
 		end
 	end
 end)
+
+-- And to give modules the proper dropped on the ground animation
+for modname,_ in pairs(RT_MODULES) do
+	AddPrefabPostInit("wx78module_"..modname, function(inst)
+		inst.AnimState:SetBank("rt_chips")
+		inst.AnimState:SetBuild("rt_chips")
+		inst.AnimState:PlayAnimation(modname == "maxresist" and "resist" or modname) -- to-do temporary hack until anim name is changed
+	end)
+end

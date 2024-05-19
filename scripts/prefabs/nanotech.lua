@@ -67,8 +67,6 @@ local function fn()
 	inst:AddComponent("inspectable")
 	inst:AddComponent("inventoryitem")
 	to_ground(inst)
-	
-	inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
 
 	MakeSmallPropagator(inst)

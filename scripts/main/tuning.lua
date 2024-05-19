@@ -24,24 +24,12 @@ local wilson_sanity = 200
 local calories_per_day = 75
 
 local wilson_attack_period = 0.4 --prevents players
-local atlas = "images/rnc_inventoryimages.xml"
 
 local tunings = {
     GAMEMODE_STARTING_ITEMS = {
         DEFAULT = {
             RATCHET = { "owrench", "nanoboost" },
             --NEFARIOUS = {},
-        },
-    },
-
-    STARTING_ITEM_IMAGE_OVERRIDE = {
-        owrench = {
-            atlas = atlas,
-            image = "owrench.tex",
-        },
-        nanoboost = {
-            atlas = atlas,
-            image = "nanoboost.tex",
         },
     },
 

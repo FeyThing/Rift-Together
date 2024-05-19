@@ -169,8 +169,6 @@ local function fn()
 	inst.SpeedAttack = function(owner, data) Speed_Attack(inst, owner, data) end
 	
 	inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "shoes_hover"
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
 	inst:AddComponent("equippable")
 	inst.components.equippable.equipslot = EQUIPSLOTS.SHOES

@@ -4,12 +4,12 @@
 	<Elements>
 		<Element name="commando_helmet.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
 		<Element name="cryomod.tex" u1="0.126" u2="0.23728125" v2="0.999" v1="0.7588125" variant="" />
-		<Element name="desertsand.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
-		<Element name="junk.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
-		<Element name="luminousfruit.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
+		<Element name="turf_desertsand.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
+		<Element name="turf_junk.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
+		<Element name="luminous_fruit.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
 		<Element name="luminousfruit_cooked.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
-		<Element name="lush.tex" u1="0.251" u2="0.374" v2="0.749" v1="0.501" variant="" />
-		<Element name="maxresist_chip.tex" u1="0.4931875" u2="0.6161875" v2="0.749" v1="0.501" variant="" />
+		<Element name="turf_lush.tex" u1="0.251" u2="0.374" v2="0.749" v1="0.501" variant="" />
+		<Element name="wx78module_maxresist.tex" u1="0.4931875" u2="0.6161875" v2="0.749" v1="0.501" variant="" />
 		<Element name="ms_owrench_hammer.tex" u1="0.376" u2="0.4911875" v2="0.749" v1="0.516625" variant="" />
 		<Element name="nanoboost.tex" u1="0.376" u2="0.461890625" v2="0.514625" v1="0.29396875" variant="" />
 		<Element name="nanotech.tex" u1="0.126" u2="0.23728125" v2="0.5068125" v1="0.266625" variant="" />

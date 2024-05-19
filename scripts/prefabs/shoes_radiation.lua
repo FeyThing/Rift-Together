@@ -40,8 +40,6 @@ local function fn()
 	inst._hidefeet = true
 	
 	inst:AddComponent("inventoryitem")
-	inst.components.inventoryitem.imagename = "shoes_radiation"
-    inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 	
 	inst:AddComponent("equippable")
 	inst.components.equippable.equipslot = EQUIPSLOTS.SHOES

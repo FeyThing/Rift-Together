@@ -44,7 +44,6 @@ local function CreateMod(name, bank, build, anim, fuellevel)
         OnFueled(inst)]]
 
         inst:AddComponent("inventoryitem")
-        inst.components.inventoryitem.atlasname = "images/rnc_inventoryimages.xml"
 
         MakeHauntableLaunch(inst)
 
