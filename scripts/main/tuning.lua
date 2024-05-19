@@ -45,7 +45,8 @@ local tunings = {
         },
     },
 
-    CHARACTERS_RADIATION = {
+    CHARACTERS_MAX_RADIATION = {
+        -- Base characters
         WILSON = 100,
         WILLOW = 100,
         WENDY = 80,
@@ -66,7 +67,23 @@ local tunings = {
         WANDA = 100,
         WONKEY = 100, 
         RATCHET = 120,
+
+        -- Cherry Forest characters
+        WHIRLYWINGS = 150,
+
+        -- Island Adventures characters
+        WALANI = 100,
+        WILBER = 100,
+        WOODLEGS = 150,
+
+        -- Uncompromising Mode characters
+        WINKY = 120,
+        WATHOM = 150,
+        WIXIE = 100
     },
+
+    MAX_RADIATION_DEFAULT = 100,
+
     ROBOT_RADIATION_RESISTANCE = .35,
 
 	RT_UNCOMP = {
@@ -164,23 +181,24 @@ local tunings = {
 	----
 	
     RADIATION_THRESH = {
-        IRRITATED = {
-            PRE = .35,
-            POST = .375,
+        LOW = {
+            ENTER = .375,
+            LEAVE = .35,
         },
-        PAIN = {
-            PRE = .55,
-            POST = .575,
+        MED = {
+            ENTER = .575,
+            LEAVE = .55,
         },
-        SUFFERING = {
-            PRE = .75,
-            POST = .775,
+        HIGH = {
+            ENTER = .775,
+            LEAVE = .75,
         },
-        DYING = {
-            PRE = .85,
-            POST = .875,
-        },
+        CRITICAL = {
+            ENTER = .925,
+            LEAVE = .90,
+        }
     },
+
     RADIATION_AURA_SEACH_RANGE = 16,
 
     ROBOMUTTHERD = {

@@ -5,16 +5,16 @@ local prefabs =
 
 local function SpawnDimensionalRift(inst)
     local day = 25 + math.random(0, 3)
-    if TheWorld.state.cycles >= day and TheWorld.components.dimensionalriftspawner then
-        TheWorld.components.dimensionalriftspawner:EnableRifts()
-        TheWorld.components.dimensionalriftspawner:SpawnRift()
+    if _G.TheWorld.state.cycles >= day and _G.TheWorld.components.dimensionalriftspawner then
+        _G.TheWorld.components.dimensionalriftspawner:EnableRifts()
+        _G.TheWorld.components.dimensionalriftspawner:SpawnRift()
     end
 end
 
 return function(inst)
 	
 	--CLIENT
-	if not TheWorld.ismastersim then
+	if not _G.TheWorld.ismastersim then
 		return
 	end
 	--SERVER

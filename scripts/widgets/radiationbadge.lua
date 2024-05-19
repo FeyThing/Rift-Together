@@ -31,38 +31,30 @@ local RadiationBadge = Class(Badge, function(self, owner)
 	self.radiationarrow:GetAnimState():AnimateWhilePaused(false)
 	self.radiationarrow:SetClickable(false)
 	
-	self.icon = self.underNumber:AddChild(Image("images/rnc_hud.xml", "radiation_icon.tex"))
-	local icon = 1*0.2
-	self.icon:SetScale(icon, icon, icon)
-
-	self.val = 100
-	self.max = 100
-	self.penaltypercent = 0
+	-- self.icon = self.underNumber:AddChild(Image("images/rnc_hud.xml", "radiation_icon.tex"))
+	-- self.icon:SetScale(0.2, 0.2, 0.2)
 	
-
 	self.active = true
-	if _G.KnownModIndex:IsModEnabled("workshop-376333686") then
-	self.num:Show()
+
+	if KnownModIndex:IsModEnabled("workshop-376333686") then
+		self.num:Show()
 	end
-	self.inst:DoTaskInTime(0, function()
-		local rad = self.owner.replica.radiation
-		if rad then
-			self:SetPercent(rad:GetCurrent(), rad:Max(), rad:GetPenaltyPercent())
-		end
-		self:OnUpdate(0)
-		self:StartUpdating()
-	end)
+
+	self:StartUpdating()
 end)
 
 function RadiationBadge:Activate()
 	self.backing:GetAnimState():PlayAnimation("open")
 	self.circleframe2:GetAnimState():PlayAnimation("open")
-	self.radiationarrow:Show()
-	self.icon:Show()
+	self.topperanim:Show()
+	-- self.icon:Show()
+
 	if _G.KnownModIndex:IsModEnabled("workshop-376333686") then
-	self.bg:Show()
-	self.num:Show()
+		self.bg:Show()
+		self.num:Show()
 	end
+
+	self:StartUpdating()
 	self:OnUpdate(0)
 	TheFrontEnd:GetSound():PlaySound("dontstarve_DLC001/common/HUD_wet_open")
 end
@@ -70,12 +62,15 @@ end
 function RadiationBadge:Deactivate()
 	self.backing:GetAnimState():PlayAnimation("close")
 	self.circleframe2:GetAnimState():PlayAnimation("close")
-	self.radiationarrow:Hide()
-	self.icon:Hide()			
+	self.topperanim:Hide()
+	-- self.icon:Hide()
+
 	if _G.KnownModIndex:IsModEnabled("workshop-376333686") then
-	self.bg:Hide()
-	self.num:Hide()
+		self.bg:Hide()
+		self.num:Hide()
 	end
+
+	self:StopUpdating()
 	TheFrontEnd:GetSound():PlaySound("dontstarve_DLC001/common/HUD_wet_close")
 end
 
@@ -93,13 +88,12 @@ function RadiationBadge:SetPercent(val, max, penaltypercent)
 	self.val = val
 	self.max = max
 	Badge.SetPercent(self, self.val, self.max)
-	self.icon:SetTexture("images/rnc_hud.xml", "radiation_icon.tex")
+	-- self.icon:SetTexture("images/rnc_hud.xml", "radiation_icon.tex")
 	self.penaltypercent = penaltypercent or 0
 	self.topperanim:GetAnimState():SetPercent("anim", 1 - self.penaltypercent)
 end
 
-local RATE_SCALE_ANIM =
-{
+local RATE_SCALE_ANIM = {
 	[RATE_SCALE.INCREASE_HIGH] = "arrow_loop_increase_most",
 	[RATE_SCALE.INCREASE_MED] = "arrow_loop_increase_more",
 	[RATE_SCALE.INCREASE_LOW] = "arrow_loop_increase",

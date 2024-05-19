@@ -4,10 +4,11 @@ return function(self)
         _GetAttacked(self, attacker, damage, ...)
         if attacker and attacker.components.radiation and self.inst.components.radiation then
             if self.inst.components.radiation:GetPercent() < attacker.components.radiation:GetPercent() then
-                self.inst.components.radiation:DoDelta(damage*.25)
+                self.inst.components.radiation:DoDelta(damage*0.25) -- LukaS: -[TODO]- These deltas are stacked, FIX NEEDED
             end
         end
     end
+
     local _DoAttack = self.DoAttack
     function self:DoAttack(targ, weapon, projectile, stimuli, instancemult, ...)
         _DoAttack(self, targ, weapon, projectile, stimuli, instancemult, ...)
@@ -26,7 +27,7 @@ return function(self)
             local dmg, spdmg = self:CalcDamage(targ, weapon, mult)
             dmg = dmg * (instancemult or 1)
             if self.inst.components.radiation:GetPercent() > targ.components.radiation:GetPercent() then
-                targ.components.radiation:DoDelta(dmg*.1)
+                targ.components.radiation:DoDelta(dmg*0.1) -- LukaS: -[TODO]- These deltas are stacked, FIX NEEDED
             end
         end
     end

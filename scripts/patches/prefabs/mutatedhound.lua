@@ -1,12 +1,11 @@
 return function(inst)
-
-	if not TheWorld.ismastersim then
+	if not _G.TheWorld.ismastersim then
 		return
 	end
 	
 	inst.inflictvictim = function(inst, attacker)
         if attacker and attacker.components.health and not attacker.components.health:IsDead() then
-            SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
+            _G.SpawnPrefab("radiation_clouds"):AlignToTarget(inst, attacker, true)					
         end
     end
 	
@@ -16,5 +15,4 @@ return function(inst)
 			data.target.components.radiation:DoDelta(10)
         end
     end)
-
 end

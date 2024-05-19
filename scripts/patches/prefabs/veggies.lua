@@ -1,35 +1,34 @@
-local radiation = 0
+local veggies_radiation = {
+	cave_banana = 5,
+	cave_banana_cooked = 2,
 
-local VEGGIES = {
-	cave_banana = {radiation = 5},
-	cave_banana_cooked = {radiation = 2},
+	kelp = -2,
+	kelp_cooked = -3,
 
-	kelp = {radiation = -2},
-	kelp_cooked = {radiation = -3},
+	onion = -1,
+	onion_cooked = -2,
 
-	onion = {radiation = -1},
-	onion_cooked = {radiation = -2},
+	garlic = -1,
+	garlic_cooked = -2,
 
-	garlic = {radiation = -1},
-	garlic_cooked = {radiation = -2},
+	asparagus = -1,
+	asparagus_cooked = -2,
 
-	asparagus = {radiation = -1},
-	asparagus_cooked = {radiation = -2},
+	pepper = -1,
+	pepper_cooked = -2,
 
-	pepper = {radiation = -1},
-	pepper_cooked = {radiation = -2},
+	tomato = -1,
+	tomato_cooked = -2,
 
-	tomato = {radiation = -1},
-	tomato_cooked = {radiation = -2},
-
-	pumpkin = {radiation = -1},
-	pumpkin_cooked = {radiation = -2},
+	pumpkin = -1,
+	pumpkin_cooked = -2,
 }
 
 
 return function(inst, name)
-	if not TheWorld.ismastersim then
+	if not _G.TheWorld.ismastersim then
 		return
 	end
-	inst.components.edible.radiationvalue = VEGGIES[name] and VEGGIES[name].radiation or 0
+
+	inst.components.edible.radiationvalue = veggies_radiation[name] or 0
 end

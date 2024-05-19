@@ -5,7 +5,7 @@ local prefabs =
 }
 
 
-SetSharedLootTable("chess_junk_less",
+_G.SetSharedLootTable("chess_junk_less",
 {
     {'trinket_6',      0.60},   
 })
@@ -20,14 +20,14 @@ end
 
 return function(inst)
     --CLIENT
-    if not TheWorld.ismastersim then
+    if not _G.TheWorld.ismastersim then
         return
     end
     --SERVER
 	
 	-------
 	inst:AddComponent("childspawner")
-    if TheWorld:HasTag("cave") then
+    if _G.TheWorld:HasTag("cave") then
         inst.components.childspawner.childname = "rt_pawn_nightmare"
     else        
 		inst.components.childspawner.childname = "rt_pawn"

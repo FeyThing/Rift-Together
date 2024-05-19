@@ -26,8 +26,8 @@ In this case, the toxic caves which is a rift dumping ground of toxic material t
 - Pickable items can become irradiated. Keeping them in your inventory will increase radiation by 0.2*RAD_PERCENT per sec per irradiated item.
   This effect can be mitigated by wearing protective clothing. Some foods have natural radiation values such as bananas that
   would only affect the player when eaten.
-  If a nuclear winter occurs (cannot occur on the first winter), keeping stuff in fridges, under the tarp or inside other containers will keep items contamination free.
-  Moonrocks should be radioactive (soft radiation source, cannot spread to tiles).
+  If a nuclear winter occurs (cannot occur on the first winter), keeping stuff in fridges, under the tarp or inside other containers
+  will keep items contamination free. Moonrocks should be radioactive (soft radiation source, cannot spread to tiles).
 
 - Some creatures are naturally immune to radiation. These include the lunar aligned and robots that have extra protective shells.
   These count as soft radiation sources, cannot spread to tiles.
@@ -38,8 +38,8 @@ In this case, the toxic caves which is a rift dumping ground of toxic material t
 
 - Various protective gear and Anti-radiation devices should be made. Radiation should eventually be weaponizable.
 
-- Gear such as the respirator and To-Be-Made™ haz-hat suit should require air filters that will need replacement every so often in order to work properly.
-  Once this requirement is implemented the respirator should be changed to have infinite durability.
+- Gear such as the respirator and To-Be-Made™ haz-hat suit should require air filters that will need replacement every so often
+  in order to work properly. Once this requirement is implemented the respirator should be changed to have infinite durability.
 
 
 Bugs:

@@ -1,12 +1,11 @@
 return function(inst, owner)
 		
-	    if not TheWorld.ismastersim then
-
-        return inst
+	    if not _G.TheWorld.ismastersim then
+            return inst
         end
 
         local OldEquip = inst.components.equippable.onequipfn			
-            inst.components.equippable.onequipfn = function(inst, owner, symbol_override)
+        inst.components.equippable.onequipfn = function(inst, owner, symbol_override)
 			OldEquip(inst, owner, symbol_override)
             if owner:HasTag("veldin_mechanic") then
                 owner.AnimState:Hide("HAIRFRONT")

@@ -1,7 +1,7 @@
 return function(inst)
 	
 	--CLIENT
-	if not TheWorld.ismastersim then
+	if not _G.TheWorld.ismastersim then
 		return
 	end
 	--SERVER
