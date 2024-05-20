@@ -41,7 +41,6 @@ return {
 		"nanotech",
 		"nanoboost",
 		"raritanium_crystals",
-		"raritanium_bar",
 		"raritaniumore",
 		"rnc_mods",
 		"respiratormask",
@@ -75,6 +74,7 @@ return {
 		"dustdevil_fx",
 		"rt_pawn",
 		"rt_pawn_trap",
+		"rt_alloys",
 		"rt_anvil",
 	},
 

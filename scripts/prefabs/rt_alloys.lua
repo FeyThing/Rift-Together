@@ -1,23 +1,12 @@
 local assets =
 {
-    Asset("ANIM", "anim/raritanium_bar.zip"),
+    Asset("ANIM", "anim/rt_alloys.zip"),
 }
 
 local prefabs =
 {
  
 }
-
-local function shine(inst)
-    if inst.task then
-        inst.task:Cancel()
-        inst.task = nil
-    end
-    inst.AnimState:PlayAnimation("sparkle")
-    inst.AnimState:PushAnimation("idle")
-    inst.task = inst:DoTaskInTime(4 + math.random() * 5, shine)
-end
-
 
 local function fn()
     local inst = CreateEntity()
@@ -28,9 +17,9 @@ local function fn()
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBuild("raritanium_bar")
-    inst.AnimState:SetBank("raritanium_bar")
-    inst.AnimState:PlayAnimation("idle")
+    inst.AnimState:SetBuild("rt_alloys")
+    inst.AnimState:SetBank("rt_alloys")
+    inst.AnimState:PlayAnimation("idle_raritanium")
 
     inst:AddTag("raritanium_bar")
 
@@ -50,7 +39,6 @@ local function fn()
     inst:AddComponent("inventoryitem")
 
     MakeHauntableLaunchAndPerish(inst)
-	shine(inst)
 
     return inst
 end

@@ -10,10 +10,10 @@ return function(inst, owner)
 				owner.AnimState:Show("HAT")
 				--owner.AnimState:Hide("HAIR_HAT")
 				owner.AnimState:Show("HAIR_NOHAT")
-				owner.AnimState:Show("HAIR")
+				--owner.AnimState:Show("HAIR")
 
 				owner.AnimState:Show("HEAD")
-				--owner.AnimState:Hide("HEAD_HAT")
+				owner.AnimState:Hide("HEAD_HAT")
 				--owner.AnimState:Hide("HEAD_HAT_NOHELM")
 				--owner.AnimState:Hide("HEAD_HAT_HELM")
             end           
@@ -25,7 +25,7 @@ return function(inst, owner)
                 owner.AnimState:Hide("HAT")
 				owner.AnimState:Hide("HAIR_HAT")
 				owner.AnimState:Show("HAIR_NOHAT")
-				owner.AnimState:Show("HAIR")
+				--owner.AnimState:Show("HAIR")
             end
             OldUnequip(inst, owner)
         end

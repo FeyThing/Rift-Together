@@ -5,15 +5,17 @@ local Assets = {
 
 local function OnEquip(inst, owner)
     if owner:HasTag("player") then
-        owner.AnimState:Show("HEAD_HAT")
-        owner.AnimState:Show("HEAD_HAT_HELM")
-        owner.AnimState:UseHeadHatExchange(true)
-        owner.AnimState:SetSymbolMultColour("headbase_hat", 0,0,0,0)
+        owner.AnimState:Show("HEAD")
+        owner.AnimState:Hide("HEAD_HAT")
+        owner.AnimState:Hide("HEAD_HAT_NOHELM")
+        owner.AnimState:Hide("HEAD_HAT_HELM")
+        --owner.AnimState:UseHeadHatExchange(true)
+        --owner.AnimState:SetSymbolMultColour("headbase", 0,0,0,0)
     else
         owner.AnimState:Show("HAT")
         owner.AnimState:Hide("HAIR_HAT")
-        owner.AnimState:Hide("HAIR_NOHAT")
-        owner.AnimState:Hide("HAIR")
+        owner.AnimState:Show("HAIR_NOHAT")
+        owner.AnimState:Show("HAIR")
     end
     owner:AddTag("has_gasmask")
     
@@ -30,7 +32,7 @@ end
 
 local function OnUnequip(inst, owner) 
 	owner.AnimState:ClearOverrideSymbol("swap_hat")
-    owner.AnimState:SetSymbolMultColour("headbase_hat", 1,1,1,1)
+    --owner.AnimState:SetSymbolMultColour("headbase", 1,1,1,1)
 
     if inst.fx ~= nil then
         inst.fx:Remove()
@@ -39,7 +41,7 @@ local function OnUnequip(inst, owner)
 
 	owner.AnimState:Hide("HAT")
 	owner:RemoveTag("has_gasmask")
-    owner.AnimState:UseHeadHatExchange(false)
+    --owner.AnimState:UseHeadHatExchange(false)
 
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StopConsuming()
@@ -132,7 +134,7 @@ local function FollowFx_ColourChanged(inst, r, g, b, a)
 end
 
 local function SpawnFollowFxForOwner(inst, owner)
-	local follow_symbol = owner:HasTag("player") and owner.AnimState:BuildHasSymbol("headbase_hat") and "headbase_hat" or "swap_hat"
+	local follow_symbol = owner:HasTag("player") and owner.AnimState:BuildHasSymbol("headbase") and "headbase" or "swap_hat"
 	inst.fx = {}
 	local frame
 	for i = 1, 3 do        

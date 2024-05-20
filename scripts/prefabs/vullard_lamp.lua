@@ -1,7 +1,6 @@
 local assets =
 {
-    Asset("ANIM", "anim/vullard_post.zip"),
-    Asset("ANIM", "anim/vullard_post_build.zip"),   
+    Asset("ANIM", "anim/vullard_lamp.zip"),
 }
 
 local INTENSITY = 0.6
@@ -93,7 +92,7 @@ local function fn(Sim)
     inst.AnimState:Hide("FIRE")
     inst.AnimState:Hide("GLOW")
     inst.AnimState:PlayAnimation("idle", true)
-	inst.AnimState:SetBuild("lamp_post2_city_build")
+	inst.AnimState:SetBuild("vullard_lamp")
 
     inst.AnimState:SetBank("lamp_post")
     inst.AnimState:SetRayTestOnBB(true)
