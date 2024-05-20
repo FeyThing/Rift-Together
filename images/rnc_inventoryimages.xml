@@ -5,8 +5,8 @@
 		<Element name="commando_helmet.tex" u1="0.001" u2="0.124" v2="0.999" v1="0.751" variant="" />
 		<Element name="cryomod.tex" u1="0.126" u2="0.23728125" v2="0.999" v1="0.7588125" variant="" />
 		<Element name="gold_bar.tex" u1="0.126" u2="0.249" v2="0.7568125" v1="0.5088125" variant="" />
-		<Element name="luminousfruit.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
-		<Element name="luminousfruit_cooked.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
+		<Element name="luminous_fruit.tex" u1="0.001" u2="0.124" v2="0.749" v1="0.501" variant="" />
+		<Element name="luminous_fruit_cooked.tex" u1="0.251" u2="0.374" v2="0.999" v1="0.751" variant="" />
 		<Element name="moonglass_bar.tex" u1="0.376" u2="0.499" v2="0.999" v1="0.751" variant="" />
 		<Element name="ms_owrench_hammer.tex" u1="0.251" u2="0.374" v2="0.749" v1="0.501" variant="" />
 		<Element name="nanoboost.tex" u1="0.376" u2="0.499" v2="0.749" v1="0.501" variant="" />
@@ -23,12 +23,12 @@
 		<Element name="shockmod.tex" u1="0.751" u2="0.860328125" v2="0.999" v1="0.76271875" variant="" />
 		<Element name="shoes_hover.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
 		<Element name="shoes_radiation.tex" u1="0.501" u2="0.624" v2="0.749" v1="0.501" variant="" />
-		<Element name="spaceshake.tex" u1="0.876" u2="0.999" v2="0.499" v1="0.251" variant="" />
-		<Element name="starfruit.tex" u1="0.626" u2="0.749" v2="0.749" v1="0.501" variant="" />
-		<Element name="starfruit_cooked.tex" u1="0.751" u2="0.874" v2="0.749" v1="0.501" variant="" />
-		<Element name="turf_desertsand.tex" u1="0.876" u2="0.999" v2="0.749" v1="0.501" variant="" />
-		<Element name="turf_junk.tex" u1="0.501" u2="0.624" v2="0.499" v1="0.251" variant="" />
-		<Element name="turf_lush.tex" u1="0.626" u2="0.749" v2="0.499" v1="0.251" variant="" />
-		<Element name="wx78module_maxresist.tex" u1="0.751" u2="0.874" v2="0.499" v1="0.251" variant="" />
+		<Element name="spaceshake.tex" u1="0.626" u2="0.749" v2="0.749" v1="0.501" variant="" />
+		<Element name="starfruit.tex" u1="0.751" u2="0.874" v2="0.749" v1="0.501" variant="" />
+		<Element name="starfruit_cooked.tex" u1="0.876" u2="0.999" v2="0.749" v1="0.501" variant="" />
+		<Element name="turf_desertsand.tex" u1="0.501" u2="0.624" v2="0.499" v1="0.251" variant="" />
+		<Element name="turf_junk.tex" u1="0.626" u2="0.749" v2="0.499" v1="0.251" variant="" />
+		<Element name="turf_lush.tex" u1="0.751" u2="0.874" v2="0.499" v1="0.251" variant="" />
+		<Element name="wx78module_maxresist.tex" u1="0.876" u2="0.999" v2="0.499" v1="0.251" variant="" />
 	</Elements>
 </Atlas>
