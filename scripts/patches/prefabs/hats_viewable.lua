@@ -1,8 +1,6 @@
 return function(inst, owner)
-		
-	    if not TheWorld.ismastersim then
-
-        return inst
+	    if not _G.TheWorld.ismastersim then
+			return inst
         end
 
         local OldEquip = inst.components.equippable.onequipfn			

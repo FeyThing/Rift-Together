@@ -1,13 +1,17 @@
 --- Setting radiation value for IA characters
 local characters = {
-    WALANI = 100,
-    WILBER = 100,
-    WOODLEGS = 150
+    "walani",
+    "wilbur",
+    "woodlegs"
 }
 
-for k, v in pairs(characters) do
-    AddPrefabPostInit(v, function(inst)
-        inst.components.radiation:SetMax(TUNING.CHARACTERS_RADIATION.characters)
+for i, prefab in ipairs(characters) do
+    AddPrefabPostInit(prefab, function(inst)
+        if not _G.TheWorld.ismastersim then
+            return
+        end
+
+        inst.components.radiation:SetMax(TUNING.CHARACTERS_MAX_RADIATION[string.upper(prefab)])
     end)
 end
 
@@ -16,6 +20,7 @@ AddPrefabPostInit("bananapop", function(inst)
     if not _G.TheWorld.ismastersim then
         return inst
     end
+
     inst.components.edible.radiationvalue = 5
 end)	
 

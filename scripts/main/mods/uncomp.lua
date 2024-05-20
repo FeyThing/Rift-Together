@@ -1,13 +1,17 @@
 --- Setting radiation value for UM characters
 local characters = {
-    WINKY = 120,
-    WATHOM = 150,
-    WIXIE = 100
+    "winky",
+    "wathom",
+    "wixie"
 }
 
-for k, v in pairs(characters) do
-    AddPrefabPostInit(v, function(inst)
-        inst.components.radiation:SetMax(TUNING.CHARACTERS_RADIATION.characters)
+for i, prefab in ipairs(characters) do
+    AddPrefabPostInit(prefab, function(inst)
+        if not _G.TheWorld.ismastersim then
+            return
+        end
+
+        inst.components.radiation:SetMax(TUNING.CHARACTERS_MAX_RADIATION[string.upper(prefab)])
     end)
 end
 

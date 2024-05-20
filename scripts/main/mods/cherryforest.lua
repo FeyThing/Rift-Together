@@ -1,8 +1,17 @@
 -- Adding Radiation to Cherry Forest.
+local characters = {
+    "whirlywings"
+}
 
-AddPrefabPostInit("whirlywings", function(inst)
-   inst.components.radiation:SetMax(150)
-end)
+for i, prefab in ipairs(characters) do
+    AddPrefabPostInit(prefab, function(inst)
+        if not _G.TheWorld.ismastersim then
+            return
+        end
+
+        inst.components.radiation:SetMax(TUNING.CHARACTERS_MAX_RADIATION[string.upper(prefab)])
+    end)
+end
 
 AddPrefabPostInit("bismuthhat", function(inst)
     if not _G.TheWorld.ismastersim then
