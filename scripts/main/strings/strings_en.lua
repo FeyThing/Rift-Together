@@ -124,6 +124,8 @@ local strings = {
 				LUMINOUSTREE_SAPLING = "It's starting to grow.",
 				LUMINOUS_FRUIT = "Doesn't look too appetizing.",
 				LUMINOUS_FRUIT_COOKED = "It may taste better now that it's cooked.",
+				STARFRUIT = "Is it a fallen star?",
+				STARFRUIT_COOKED = "That's one burnt out star.",
 
 				NANOBOOST = "Looks refreshing.",
 
@@ -246,6 +248,8 @@ local strings = {
 		LUMINOUSTREE_SAPLING = "Luminous Sapling",
 		LUMINOUS_FRUIT = "Luminous Fruit",
 		LUMINOUS_FRUIT_COOKED = "Roasted Luminous Fruit",
+		STARFRUIT = "Starfruit",
+		STARFRUIT_COOKED = "Roasted Starfruit",
 
 		NANOBOOST = "Nanotech Boost",
 

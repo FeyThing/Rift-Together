@@ -5,6 +5,8 @@ local INVENTORY_ITEMS = {
 	"turf_junk",
 	"luminous_fruit",
 	"luminous_fruit_cooked",
+	"starfruit",
+	"starfruit_cooked",
 	"turf_lush",
 	"wx78module_maxresist",
 	"ms_owrench_hammer",
@@ -73,9 +75,10 @@ return {
 		"dustdevilspawner",
 		"dustdevil_fx",
 		"rt_pawn",
-		"rt_pawn_trap",
+		"rt_tarp",
 		"rt_alloys",
 		"rt_anvil",
+		"starfruit",
 	},
 
 	Assets = {
