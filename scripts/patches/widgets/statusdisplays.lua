@@ -101,7 +101,7 @@ return function(self)
     end
 
     local old_ShowStatusNumbers = self.ShowStatusNumbers
-    function self:ShowStatusNumbers(self, ...)
+    function self:ShowStatusNumbers(...)
         old_ShowStatusNumbers(self, ...)
     
         if self.radiation then
@@ -110,7 +110,7 @@ return function(self)
     end
     
     local old_HideStatusNumbers = self.HideStatusNumbers
-    function self:HideStatusNumbers(self, ...)
+    function self:HideStatusNumbers(...)
         old_HideStatusNumbers(self, ...)
     
         if self.radiation then
