@@ -24,6 +24,7 @@ local inits = {
     "tuning",
     "languages",
     "recipes",
+    "cooking",
     "patches",
     "retrofit",
     "actions",

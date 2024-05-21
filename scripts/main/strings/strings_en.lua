@@ -250,6 +250,8 @@ local strings = {
 		LUMINOUS_FRUIT_COOKED = "Roasted Luminous Fruit",
 		STARFRUIT = "Starfruit",
 		STARFRUIT_COOKED = "Roasted Starfruit",
+		
+		RT_SPACESHAKE = "Space Shake",
 
 		NANOBOOST = "Nanotech Boost",
 
@@ -373,7 +375,11 @@ local strings = {
 			BIOMES = "Are you tired of traveling to the island smelter? Fear not, you can always toggle Rift Together's biomes to generate on the mainland instead.",
 			WIKI = "Having trouble with finding something? Don't know what something does? Check out Rift Together's wiki found on the mod page!",	
 			COMPAT = "To activate Rift Together's effects in other mods. Make sure compatibility is toggled on in configs.",
-		},				
+		},
+		COOKBOOK = {
+			FOOD_EFFECTS_RADIATION_DECREASE = "Decreases radiation",
+			FOOD_EFFECTS_RADIATION_INCREASE = "Increases radiation",
+		},
 	},
 	
 }

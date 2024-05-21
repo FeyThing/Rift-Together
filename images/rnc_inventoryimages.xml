@@ -23,7 +23,7 @@
 		<Element name="shockmod.tex" u1="0.751" u2="0.860328125" v2="0.999" v1="0.76271875" variant="" />
 		<Element name="shoes_hover.tex" u1="0.862328125" u2="0.985328125" v2="0.999" v1="0.751" variant="" />
 		<Element name="shoes_radiation.tex" u1="0.501" u2="0.624" v2="0.749" v1="0.501" variant="" />
-		<Element name="spaceshake.tex" u1="0.626" u2="0.749" v2="0.749" v1="0.501" variant="" />
+		<Element name="rt_spaceshake.tex" u1="0.626" u2="0.749" v2="0.749" v1="0.501" variant="" />
 		<Element name="starfruit.tex" u1="0.751" u2="0.874" v2="0.749" v1="0.501" variant="" />
 		<Element name="starfruit_cooked.tex" u1="0.876" u2="0.999" v2="0.749" v1="0.501" variant="" />
 		<Element name="turf_desertsand.tex" u1="0.501" u2="0.624" v2="0.499" v1="0.251" variant="" />

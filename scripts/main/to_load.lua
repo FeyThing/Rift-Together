@@ -20,6 +20,7 @@ local INVENTORY_ITEMS = {
 	"raritaniumore",
 	"respiratormask",
 	"shockmod",
+	"rt_spaceshake",
 	"shoes_hover",
 	"shoes_radiation",
 }
@@ -86,6 +87,7 @@ return {
 		Asset( "ANIM", "anim/player_shoeshover.zip"),
 		Asset( "ANIM", "anim/player_drink.zip"),
 		Asset( "ANIM", "anim/winterfood.zip"),
+		Asset( "ANIM", "anim/rt_crockpotfood.zip"),
 		Asset( "ANIM", "anim/rnc_turf.zip"),
 		Asset( "ANIM", "anim/rtstatus_wx.zip"),
 		Asset( "ANIM", "anim/rt_chips.zip"),
@@ -161,6 +163,9 @@ return {
 		Asset("ATLAS", "images/rnc_inventoryimages.xml"),
 		Asset("IMAGE", "images/rnc_inventoryimages.tex"),
 		Asset("ATLAS_BUILD", "images/rnc_inventoryimages.xml", 256),
+
+		Asset("ATLAS", "images/rt_cookbook.xml"),
+		Asset("IMAGE", "images/rt_cookbook.tex"),
 
 		Asset("ATLAS", "images/rnc_ui_images.xml"),
 		Asset("IMAGE", "images/rnc_ui_images.tex"),
