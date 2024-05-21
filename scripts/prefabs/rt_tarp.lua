@@ -50,6 +50,7 @@ local function OnInit(inst)
 		inst._back.entity:SetParent(inst.entity)
 		inst._back.entity:AddFollower()
 		inst._back.Follower:FollowSymbol(inst.GUID, "tent_front", -1, 0, -2)
+		table.insert(inst.highlightchildren, inst._back)
 	end
     if inst._stick == nil then
 		inst._stick = SpawnPrefab("rt_tarp_stick")
@@ -57,7 +58,16 @@ local function OnInit(inst)
 		inst._stick.entity:SetParent(inst.entity)
 		inst._stick.entity:AddFollower()
 		inst._stick.Follower:FollowSymbol(inst.GUID, "tent_front", 0, 0, -0.6)
+		table.insert(inst.highlightchildren, inst._stick)
 	end		
+end
+
+local function OnEntityReplicated(inst)
+	local parent = inst.entity:GetParent()
+	if parent ~= nil and parent.prefab == "rt_tarp" then
+		parent.highlightchildren = parent.highlightchildren or {}
+		table.insert(parent.highlightchildren, inst)
+	end
 end
 
 local function tarp_back()
@@ -79,6 +89,7 @@ local function tarp_back()
 	inst.entity:SetPristine()
 	
 	if not TheWorld.ismastersim then
+		inst.OnEntityReplicated = OnEntityReplicated
 		return inst
 	end
 	
@@ -106,6 +117,7 @@ local function tarp_stick()
 	inst.entity:SetPristine()
 	
 	if not TheWorld.ismastersim then
+		inst.OnEntityReplicated = OnEntityReplicated
 		return inst
 	end
 	
@@ -159,7 +171,9 @@ local function common_fn(onbuiltfn)
 
     inst.OnSave = onsave
     inst.OnLoad = onload
-
+	
+	inst.highlightchildren = {}
+	
     inst:DoTaskInTime(0, OnInit)
 
     MakeHauntableWork(inst)
