@@ -14,6 +14,7 @@ _G.USE_DRINK_ANIM = {
 	winter_food7 = {build = "winterfood", sym = "cider"},
 	winter_food9 = {build = "winterfood", sym = "eggnog"},
 	nanoboost = {build = "nanoboost", sym = "nanoboost"},
+    rt_spaceshake = {build = "rt_crockpotfood", sym = "rt_spaceshake"},
 }
 
 local function GetFoodBuild(foodname) -- foodname is prefab

@@ -222,6 +222,8 @@ end
 
 Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
 Layouts["lonely_depot"] = StaticLayout.Get("map/static_layouts/lonely_depot")
+Layouts["desertpillar_big"] = StaticLayout.Get("map/static_layouts/desertpillar_big")
+Layouts["desertpillar_small"] = StaticLayout.Get("map/static_layouts/desertpillar_small")
 
 Layouts["gunkywateringhole"].ground_types = TORRENIV_GROUND_TYPES
 Layouts["lonely_depot"].ground_types = TORRENIV_GROUND_TYPES
