@@ -306,6 +306,7 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
 	inst:AddTag("lightningrod")
 	inst:AddTag("radiationimmunity")
 	inst:AddTag("soulless")
+	inst:AddTag("armoredbody")
 
     if tag ~= nil then
         inst:AddTag(tag)
@@ -344,8 +345,6 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
 
     inst:AddComponent("sanityaura")
     inst.components.sanityaura.aura = -TUNING.SANITYAURA_MED
-	
-	inst:AddComponent("armoredbody")
 
     inst:AddComponent("combat")
     inst.components.combat:SetDefaultDamage(TUNING.FIREHOUND_DAMAGE)

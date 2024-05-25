@@ -189,6 +189,8 @@ local tunings = {
 		},
 	},
 	
+	ARMOREDBODY_ATTACKWEAR_MULT = 4,
+	
 	--- Biomes
 
 

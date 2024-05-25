@@ -27,6 +27,7 @@ local PATCHES =
 		"carefulwalker",
 		"damagetypebonus",
 		"damagetyperesist",
+		"weapon",
 	},
 	
 	REPLICAS = {

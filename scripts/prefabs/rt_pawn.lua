@@ -112,6 +112,7 @@ local function fn_common(build, tag)
     inst:AddTag("monster")
 	inst:AddTag("soulless")
 	inst:AddTag("radiationimmunity")
+	inst:AddTag("armoredbody")
 
     if tag ~= nil then
         inst:AddTag(tag)
@@ -123,8 +124,6 @@ local function fn_common(build, tag)
     end
 
     --inst.kind = ""
-
-	inst:AddComponent("armoredbody")
 
     --
     local combat = inst:AddComponent("combat")

@@ -197,6 +197,82 @@ end
 local function ArmorDefenseModifiers(inst, armor_cmp)
 end
 
+local function IsLarge(inst)
+	return inst:HasTag("large")
+		or inst:HasTag("largecreature")
+		or inst:HasTag("epic") -- Bosses
+end
+
+local function IsTiny(inst)
+	return not IsLarge(inst)
+		and (inst.prefab == "mandrake_active"
+		or inst:HasTag("insect")
+		or inst:HasTag("NET_workable") -- Catchable by a Bug Net
+		or inst:HasTag("stunnedbybomb") -- Stunned by a Seed Shell, typically only catchable critters
+		or inst:HasTag("frog")
+		or inst:HasTag("smallbird"))
+end
+
+local function IsScaled(inst)
+	return inst.prefab == "wormwood_fruitdragon"
+		or inst:HasTag("fish")
+		or inst:HasTag("pondfish")
+		or inst:HasTag("oceanfish")
+		or inst:HasTag("merm")
+		or inst:HasTag("fruitdragon")
+		or inst:HasTag("gnarwail")
+		or inst:HasTag("dragonfly")
+		or inst:HasTag("malbatross")
+		or inst:HasTag("hutch")
+end
+
+local function IsShelled(inst)
+	return inst.prefab == "lightcrab"
+		or inst:HasTag("cookiecutter")
+		or inst:HasTag("crabking")
+		or inst:HasTag("rocky") -- Rock Lobster
+end
+
+local function IsMetal(inst)
+	return inst:HasTag("chess")
+		or inst:HasTag("mech")
+		or inst:HasTag("engineering")
+end
+
+local function IsPlant(inst)
+	return inst.prefab == "carrat"
+		or inst.prefab == "wormwood_carrat"
+		or inst.prefab == "wormwood_fruitdragon"
+		or inst.prefab == "mandrake_active"
+		or inst:HasTag("veggie")
+		or inst:HasTag("plant")
+		or inst:HasTag("tree")
+		or inst:HasTag("fruitdragon")
+		or inst:HasTag("lightflier")
+		or inst:HasTag("grassgekko")
+		or inst:HasTag("grassgator")
+		or inst:HasTag("fruitfly")
+		or inst:HasTag("friendlyfruitfly")
+end
+
+local function IsHideThick(inst)
+	return inst:HasTag("merm")
+		or inst:HasTag("walrus")
+		or inst:HasTag("gnarwail")
+		or inst:HasTag("bearger")
+		or inst:HasTag("minotaur")
+		or inst:HasTag("toadstool")
+end
+
+local function IsShadow(inst)
+	return inst:HasTag("shadow")
+		or inst:HasTag("shadowminion")
+		or inst:HasTag("shadowchesspiece")
+		or inst:HasTag("stalker")
+		or inst:HasTag("stalkerminion")
+		or inst:HasTag("shadowthrall")
+end
+
 local function EntityAttackModifiers(inst, combat_cmp)
 	if inst:HasTag("player") then
 		return
@@ -204,17 +280,30 @@ local function EntityAttackModifiers(inst, combat_cmp)
 end
 
 local function EntityDefenseModifiers(inst, combat_cmp)
+	if inst:HasTag("player") then
+		return
+	end
+
 	-- Bludgeoning
-	if inst:HasTag("shadow") or inst:HasTag("shadowminion") or inst:HasTag("shadowchesspiece")
-	or inst:HasTag("large") or inst:HasTag("largecreature") then
+	if IsLarge(inst) or IsShadow(inst) then
 		AddResistance(inst, "bludgeoning")
-	elseif inst:HasTag("smallcreature") or inst:HasTag("small") then
+	elseif IsTiny(inst) or inst:HasTag("spider") then
 		AddVulnerability(inst, "bludgeoning")
 	end
 	
 	-- Piercing
+	if IsTiny(inst) or IsShadow(inst) then
+		AddResistance(inst, "piercing")
+	elseif IsScaled(inst) or IsShelled(inst) then
+		AddVulnerability(inst, "piercing")
+	end
 	
 	-- Slashing
+	if IsShelled(inst) or IsHideThick(inst) or IsMetal(inst) or IsShadow(inst) then
+		AddResistance(inst, "slashing")
+	elseif IsPlant(inst) or inst:HasTag("beaverchewable") then
+		AddVulnerability(inst, "slashing")
+	end
 end
 
 
