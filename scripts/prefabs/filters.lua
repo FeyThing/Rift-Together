@@ -1,6 +1,6 @@
-local function MakeAlloy(name, anim)
+local function MakeFilter(name, anim)
     local assets = {
-        Asset("ANIM", "anim/rt_alloys.zip"),
+        Asset("ANIM", "anim/rt_filter.zip"),
     }
     local function fn()
     local inst = CreateEntity()
@@ -11,11 +11,11 @@ local function MakeAlloy(name, anim)
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBuild("rt_alloys")
-    inst.AnimState:SetBank("rt_alloys")
+    inst.AnimState:SetBuild("rt_filter")
+    inst.AnimState:SetBank("rt_filter")
     inst.AnimState:PlayAnimation(anim)
 
-    inst:AddTag("alloy")
+    inst:AddTag("filter")
 
     inst.entity:SetPristine()
 
@@ -26,7 +26,6 @@ local function MakeAlloy(name, anim)
     inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_MEDITEM
 
-    inst:AddComponent("tradable")
 
     inst:AddComponent("inspectable")
 
@@ -41,11 +40,5 @@ local function MakeAlloy(name, anim)
 return Prefab(name, fn, assets)
 end
 
-return MakeAlloy("raritanium_bar", "idle_raritanium"),
-       MakeAlloy("gold_bar", "idle_gold"),
-       MakeAlloy("scrap_bar", "idle_scrap"),
-       MakeAlloy("moonglass_bar", "idle_moonglass")
-
-
-
-
+return MakeFilter("rt_filter_small", "filter_small"),
+       MakeFilter("rt_filter_large", "filter_large")

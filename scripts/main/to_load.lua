@@ -17,12 +17,19 @@ local INVENTORY_ITEMS = {
 	"rarispear",
 	"rarisword",
 	"raritanium_bar",
+	"gold_bar",
+	"scrap_bar",
+	"moonglass_bar",
 	"raritaniumore",
 	"respiratormask",
 	"shockmod",
-	"rt_spaceshake",
+	"scrapbits",
 	"shoes_hover",
 	"shoes_radiation",
+	"rt_spaceshake",
+	"rt_fabric",
+	"rt_filter_small",
+	"rt_filter_large",
 }
 
 for i,v in ipairs(INVENTORY_ITEMS) do
@@ -52,6 +59,7 @@ return {
 		"vullard_smelter",
 		"scraprock",
 		"scrapmetal",
+		"scrapbits",
 		"junkpile",
 		"torren_pillars",
 		"torren_grass",
@@ -79,6 +87,8 @@ return {
 		"rt_tarp",
 		"rt_alloys",
 		"rt_anvil",
+		"rt_fabric",
+		"filters",	
 		"starfruit",
 	},
 
@@ -110,11 +120,7 @@ return {
 		Asset( "IMAGE", "bigportraits/ms_rivet.tex" ),
 		Asset( "ATLAS", "bigportraits/ms_rivet.xml" ),
 		
-		--Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
-		--Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
-
-		
-		--[[Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
+		Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
 		Asset( "ATLAS", "images/avatars/avatar_ratchet.xml" ),
 		
 		Asset( "IMAGE", "images/avatars/avatar_ghost_ratchet.tex" ),
@@ -126,6 +132,11 @@ return {
 		Asset( "IMAGE", "images/names_gold_ratchet.tex" ),
 		Asset( "ATLAS", "images/names_gold_ratchet.xml" ),
 		
+		--[[
+		
+		--Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
+		--Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
+
 		--Nefarious
 		Asset( "IMAGE", "images/saveslot_portraits/nefarious.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/nefarious.xml" ),

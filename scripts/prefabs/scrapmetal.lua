@@ -6,7 +6,7 @@ local assets =
 local prefabs =
 {
     "goldnugget",
-    "raritaniumore",
+    "scrapbits",
     "collapse_small",
 }
 
@@ -75,7 +75,7 @@ local function fn()
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:SetChanceLootTable('scrapmetal')
     if scraptype == 3 then
-        inst.components.lootdropper:AddChanceLoot("raritaniumore", .3)
+        inst.components.lootdropper:AddChanceLoot("scrapbits", .3)
     end
 
     MakeHauntableLaunch(inst)

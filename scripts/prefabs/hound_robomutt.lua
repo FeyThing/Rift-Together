@@ -9,7 +9,7 @@ local assets =
 local prefabs =
 { 
     "gears",
-	"raritaniumore",
+	"scrapbits",
 	"electrichitsparks",
 }
 
@@ -31,7 +31,7 @@ local sounds =
 SetSharedLootTable( 'hound_robomutt',
 {
     {'trinket_6', 		0.5},
-	{'raritaniumore', 0.325},
+	{'scrapbits', 0.325},
     
 })
 
@@ -306,7 +306,7 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
 	inst:AddTag("lightningrod")
 	inst:AddTag("radiationimmunity")
 	inst:AddTag("soulless")
-	inst:AddTag("armoredbody")
+    inst:AddTag("armoredbody")
 
     if tag ~= nil then
         inst:AddTag(tag)

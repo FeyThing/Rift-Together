@@ -1,12 +1,12 @@
-name = "Ratchet and Clank: Rift Together"
---description = "Experience the world of the Ratchet and Clank series crashing straight into the constant."
+name = "Rift Together: Industrial Mayhem"
+
 author = "XenoMind, Asura"
 version = "Beta 1.1.2"
 local info_version = "󰀔 [ Version "..version.." ]\n"
 
 description = info_version..[[
 Rift Together, shortened to RT is an open source expansion of Don't Starve Together based off the Ratchet and Clank series. 
-With an emphasis on combating a new kind of survival threat, it's up to you to gather up your buddies or struggle to stay alive on your own and get ready to explore a familiar world ravaged by the debris of alien industrialization, as the thread keeping together the dimensions begins to unfurl and crack. Empowering and inflicting devestation upon the very reality you stand.  
+With an emphasis on combating new kinds of survival threat, it's up to you to gather up your buddies or struggle to stay alive on your own and get ready to explore a familiar world ravaged by the debris of alien industrialization, as the thread keeping together the dimensions begins to unfurl and crack. Empowering and inflicting devestation upon the very reality you stand.  
 
 󰀛 Explore :
 Travel to new biomes polluted from worlds crossing over, discover new modular weapons, find the smelter to forge new gear, fight against empowered lunar threats, face new mobs, endure against a world where everything is tainted and very much wants you dead.
