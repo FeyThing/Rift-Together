@@ -35,7 +35,13 @@ AddRecipe2("rarisword",
 		{"WEAPONS"})
 		
 AddRecipe2("respiratormask", 
-		{ Ingredient("transistor", 4), Ingredient("raritanium_bar", 1), Ingredient("gears", 2) }, 
+		{ Ingredient("rt_filter_small", 1), Ingredient("raritanium_bar", 1), Ingredient("gears", 2) }, 
+		_G.TECH.LOST, 
+        {},
+		{"ARMOUR"})
+
+AddRecipe2("armor_raritanium", 
+		{ Ingredient("rt_fabric", 1), Ingredient("raritanium_bar", 4), Ingredient("scrapbits", 2) }, 
 		_G.TECH.LOST, 
         {},
 		{"ARMOUR"})
@@ -57,6 +63,36 @@ AddCharacterRecipe("wx78module_maxresist",
 		_G.TECH.ROBOTMODULECRAFT_ONE,
 		{builder_tag="upgrademoduleowner"})
 
+AddRecipe2("hazhat", 
+		{ Ingredient("tentaclespots", 2), Ingredient("moonglass", 4), Ingredient("rt_filter_large", 2) }, 
+		_G.TECH.SCIENCE_TWO, 
+        {},
+		{"CLOTHING"})
+
+AddRecipe2("hazmat", 
+		{ Ingredient("tentaclespots", 4), Ingredient("rt_fabric", 3), Ingredient("scrapbits", 4) }, 
+		_G.TECH.SCIENCE_TWO, 
+        {},
+		{"CLOTHING"})
+
+AddRecipe2("rt_filter_large", 
+		{ Ingredient("luminous_fruit", 2), Ingredient("rt_fabric", 1), Ingredient("scrapbits", 2) }, 
+		_G.TECH.SCIENCE_TWO, 
+        {},
+		{"REFINE"})
+
+AddRecipe2("rt_filter_small", 
+		{ Ingredient("petals", 6), Ingredient("papyrus", 1), Ingredient("scrapbits", 2) }, 
+		_G.TECH.SCIENCE_TWO, 
+        {},
+		{"REFINE"})
+
+AddRecipe2("rt_fabric", 
+		{ Ingredient("silk", 10) }, 
+		_G.TECH.SCIENCE_ONE, 
+        {},
+		{"REFINE"})
+
 if _G.EQUIPSLOTS.SHOES then		
 AddRecipe2("shoes_hover", 
 		{Ingredient("shoes_radiation", 1), Ingredient("shoes_slurper", 1), Ingredient("gears", 4)}, 
@@ -65,7 +101,7 @@ AddRecipe2("shoes_hover",
 		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})
 		
 AddRecipe2("shoes_radiation", 
-		{Ingredient("goldnugget", 1), Ingredient("raritanium_bar", 1), Ingredient("pigskin", 2)}, 
+		{Ingredient("goldnugget", 1), Ingredient("scrapbits", 1), Ingredient("pigskin", 2)}, 
 		_G.TECH.SHOES_ONE, 
 		{},  
 		{"CRAFTING_STATION"} or {"CLOTHING", "MAGIC"})

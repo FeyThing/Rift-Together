@@ -1,5 +1,6 @@
 local INVENTORY_ITEMS = {
 	"commando_helmet",
+	"armor_raritanium",
 	"cryomod",
 	"turf_desertsand",
 	"turf_junk",
@@ -30,6 +31,8 @@ local INVENTORY_ITEMS = {
 	"rt_fabric",
 	"rt_filter_small",
 	"rt_filter_large",
+	"hazhat",
+	"hazmat",
 }
 
 for i,v in ipairs(INVENTORY_ITEMS) do
@@ -80,6 +83,7 @@ return {
 		"irradiated_pond",
 		"luminoustree_sapling",
 		"commando_helmet",
+		"armor_raritanium",
 		"dustdevil",
 		"dustdevilspawner",
 		"dustdevil_fx",
@@ -90,6 +94,8 @@ return {
 		"rt_fabric",
 		"filters",	
 		"starfruit",
+		"hazhat",
+		"hazmat",
 	},
 
 	Assets = {

@@ -36,6 +36,7 @@ local loots =
     {'trinket_3', 0.04},
 	{'trinket_8', 0.04},
     {'rarisword_blueprint',     0.1},
+    {'armor_raritanium_blueprint',     0.1},
 	{'respiratormask_blueprint',     0.1},
     {'cryomod_blueprint',     0.2},
     {'napalmod_blueprint',     0.2},

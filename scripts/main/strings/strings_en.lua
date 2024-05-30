@@ -108,6 +108,9 @@ local strings = {
 				RARISWORD = "I could slice through metal with this!",
 				RARISPEAR = "I could poke through metal with this.",
 				COMMANDO_HELMET = "It's a strange helmet with holes on the sides. I don't think I can wear this.",
+				ARMOR_RARITANIUM = "Maybe it's strong enough to block even explosions.",
+				HAZHAT = "It makes breathing so much easier.",
+				HAZMAT = "Half protection but better paired with a mask.",
 				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
@@ -240,6 +243,9 @@ local strings = {
 		RARISWORD = "Crystalass",
 		RARISPEAR = "Reinforced Spear",
 		COMMANDO_HELMET = "Megacorp Helmet",
+		ARMOR_RARITANIUM = "Reinforced Armor",
+		HAZHAT = "Hazmat Mask",
+		HAZMAT = "Hazmat Suit",
 		
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
