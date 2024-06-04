@@ -83,7 +83,7 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
-	inst.components.equippable:SetRadiationProtectPercent(0.5) -- from .2 to .5 temporarily until more rad combating equipment is created
+	inst.components.equippable:SetRadiationProtectPercent(0.2) -- from .2 to .5 temporarily until more rad combating equipment is created
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 

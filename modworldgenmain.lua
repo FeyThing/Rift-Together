@@ -61,15 +61,13 @@ local function GenerateCrystalsForRoom(room, factor)
 end
 
 local rari_amount = GetModConfigData("raritanium_crystals")
+local rari_rooms = { "JungleClearing", "VolcanoObsidian", "VolcanoCage", "MagmaHomeBoon", "MoonIsland_Mine", "TidalMarsh" }
 
 if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
-GenerateCrystalsForRoom("JungleClearing", rari_amount)
-GenerateCrystalsForRoom("VolcanoObsidian", rari_amount)	
-GenerateCrystalsForRoom("VolcanoCage", rari_amount)
-GenerateCrystalsForRoom("MagmaHomeBoon", rari_amount)
-GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
-GenerateCrystalsForRoom("TidalMarsh", rari_amount)
 
+	for i, room in ipairs(rari_rooms) do
+		GenerateCrystalsForRoom(room, rari_amount)
+	end
 else
 GenerateCrystalsForRoom("MoonIsland_Mine", rari_amount)
 end
@@ -121,7 +119,7 @@ if GetModConfigData("Dust Devils") == 1 then
 	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
 	GeneratedustdevilsForRoom("MeadowRocky", 0.035)
 	GeneratedustdevilsForRoom("VolcanoRock", 0.035)	
-	else
+	else	
 	GeneratedustdevilsForRoom("BGBadlands", 0.035)
 	GeneratedustdevilsForRoom("Lightning", 0.015)
 	GeneratedustdevilsForRoom("Badlands", 0.035)
@@ -143,8 +141,6 @@ local function GenerateBarrelsForRoom(room, factor)
 	end)
 end
 
-
---local barrel_amount = GetModConfigData("Barrels")
 
 
 if GetModConfigData("Barrels") == 75 then
@@ -173,8 +169,6 @@ end
 end
 
 
-
-
 local function GenerateRariMeteorsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
 		if room.contents.countprefabs then
@@ -198,6 +192,7 @@ if GetModConfigData("Raritanium Meteors") == 1 then
 end
 end
 
+--- Setting up tasks
 
 local TORRENIV_GROUND_TYPES =
 {
@@ -220,24 +215,28 @@ for k, v in pairs(filters) do
 	_G.terrain.filter[k] = v
 end
 
-Layouts["gunkywateringhole"] = StaticLayout.Get("map/static_layouts/gunkywateringhole")
-Layouts["lonely_depot"] = StaticLayout.Get("map/static_layouts/lonely_depot")
-Layouts["desertpillar_big"] = StaticLayout.Get("map/static_layouts/desertpillar_big")
-Layouts["desertpillar_small"] = StaticLayout.Get("map/static_layouts/desertpillar_small")
+
+local rt_layouts = {"gunkywateringhole", "lonely_depot", "desertpillar_big", "desertpillar_small"}
+
+for _, layout in ipairs(rt_layouts) do
+	Layouts[layout] = StaticLayout.Get("map/static_layouts/"..string.lower(layout))
+	Layouts[layout].ground_types = TORRENIV_GROUND_TYPES
+end
 
 Layouts["gunkywateringhole"].ground_types = TORRENIV_GROUND_TYPES
 Layouts["lonely_depot"].ground_types = TORRENIV_GROUND_TYPES
 
 
+local rt_setpieces = {"Torren IV", "Torren Wastes", "Torren Wastes Crags", "Torren Wastes Fertile"}
+
 if GetModConfigData("Torren IV") == 1 then
-AddTaskSetPreInitAny(function(tasksetdata)
-    if tasksetdata.location == "forest" and tasksetdata.tasks and #tasksetdata.tasks > 1 then
-        table.insert(tasksetdata.tasks, "Torren IV")
-        table.insert(tasksetdata.tasks, "Torren Wastes")
-        table.insert(tasksetdata.tasks, "Torren Wastes Crags")
-        table.insert(tasksetdata.tasks, "Torren Wastes Fertile")
-    end
-end)
+	AddTaskSetPreInitAny(function(tasksetdata)
+   		if tasksetdata.location == "forest" and tasksetdata.tasks and #tasksetdata.tasks > 1 then
+			for i, setpieces in ipairs(rt_setpieces) do
+			table.insert(tasksetdata.tasks, setpieces)
+			end	
+   		end
+	end)
 end
 
 -----------------------------------

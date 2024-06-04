@@ -137,6 +137,8 @@ return {
 		
 		Asset( "IMAGE", "images/names_gold_ratchet.tex" ),
 		Asset( "ATLAS", "images/names_gold_ratchet.xml" ),
+
+		Asset( "IMAGE", "images/rtjunkpillar.tex" ),
 		
 		--[[
 		

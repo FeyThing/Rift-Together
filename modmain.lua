@@ -7,6 +7,7 @@ local require = require
 local STRINGS = _G.STRINGS
 local containers = require "containers"
 
+local AddSimPostInit = AddSimPostInit
 
 local ToLoad = require("main/to_load")
 PrefabFiles = ToLoad.Prefabs
@@ -32,7 +33,7 @@ local inits = {
     "containers",
 	"wxmodules",
     "skins",
-    "mod_compatibility",
+    "mod_compatibility",  
 }
 
 for _, v in pairs(inits) do
@@ -41,8 +42,11 @@ end
 
 AddReplicableComponent("radiation")
 
-
-
 -----------------------
+
+AddSimPostInit(function()
+modimport("scripts/main/shadeeffects")
+end)
+
 modimport("scripts/stategraphs/SGratchet")
 
