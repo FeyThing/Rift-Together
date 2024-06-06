@@ -76,7 +76,7 @@ local tunings = {
         WOODLEGS = 150,
 
         -- Uncompromising Mode characters
-        WINKY = 120,
+        WINKY = 200,
         WATHOM = 150,
         WIXIE = 100
     },

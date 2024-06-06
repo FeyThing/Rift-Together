@@ -131,7 +131,7 @@ AddPrefabPostInit("um_pawn_nightmare", function(inst)
 	inst:AddTag("armoredbody")
 end)
 
-AddPrefabPostInit("hound_magma", function(inst)
+AddPrefabPostInit("magmahound", function(inst)
 	inst:AddTag("armoredbody")
 end)
 

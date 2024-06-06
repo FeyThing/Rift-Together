@@ -28,6 +28,7 @@ local PATCHES =
 		"damagetypebonus",
 		"damagetyperesist",
 		"weapon",
+		"moisture",
 	},
 	
 	REPLICAS = {

@@ -72,4 +72,5 @@ end
 
 return MakePillar("torrenivdesert_pillar", "pillar_torrenivdesert", "pillar_torrenivdesert", "idle", true, 2, "pillar_torrenivdesert"),
     MakePillar("torrenivdesert_pillar_small", "pillar_torrenivdesert_small", "pillar_torrenivdesert_small", "idle", true, 2.5, "pillar_torrenivdesert"),
+    MakePillar("torrenivlush_pillar_small", "pillar_torrenivlush_small", "pillar_torrenivlush_small", "idle", true, 2.5, "pillar_torrenivdesert"),
     MakeJunkPillar("junk_pillar", "pillar_junk", "pillar_junk", "idle", true, 2, "pillar_junk")

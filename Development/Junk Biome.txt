@@ -6,3 +6,6 @@ Currently since the NPC isn't available, the smelter is open for all players to 
 The NPC is supposed to trade and provide new blueprints that are currently found in the junkpiles for the time being.
 
 The smelter setpiece "The lonely depot" is supposed to be dark (a type of canopy above it) and spew lavafalls in places near the smelter setpiece to give it a more grand look.
+
+---
+Canopies have been applied to the junk pillar structures. The junk biome just needs to block nuclear winter fallout from landing on players once weather is finished.

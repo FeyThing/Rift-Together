@@ -252,7 +252,7 @@ AddRoom("Torren IV Fertile",  {
 		contents = {
 			countstaticlayouts =
 			{
-				["desertpillar_small"] = math.random(0, 3),
+				["lushpillar_small"] = math.random(0, 3),
 				["desertpillar_big"] = math.random(0, 2),
 			},
 			distributepercent = 0.23,
