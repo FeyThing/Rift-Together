@@ -1,0 +1,19 @@
+Hostile Mobs
+-------------------
+
+Pawn
+
+- As of now the pawn does AOE damage by injecting it's body into the ground which slightly knockbacks the player and does unreasonably massive damage. Clockworks are immune to this. This attack is temporary and I would like if it created an aoe or electromagnetic pulse with no knockback that attaches to the ground similar to the moon towers pulse the celestial champion creates. 
+
+-Instead of putting players to sleep, I want this aoe to damage players health slowly over time if they stand in it and buff nearby clockworks by increasing their defense, speeding up their attack rate or giving them electrical elemental damage to be applied to their attacks.
+
+Being insulated should help lower the rate of damage over time by the pawn if caught inside of the electromagnetic pulse.
+ 
+You can find the attack data in the pawn's stategraph.
+
+I want the none damaged pawns to have a rare but random chance of duplicating itself if it's aggroed by the player and has low health. 
+
+
+RoboMutts
+
+The electrical charge on these guys needs to be reduced to 30 seconds instead of 3 whole days. These hounds are death sentences as they are now because of this.

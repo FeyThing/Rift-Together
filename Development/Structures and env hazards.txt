@@ -1,0 +1,48 @@
+Structures
+
+Air purification device
+
+-This structure should have a singular container slot in which filters can be placed. This device can be fueled with wood, charcoal, and your typical fuel based items. Once these things are applied it should prevent or rid radiation in a large radius being perfect for keeping bases and hostile environments radiation free.
+-When UM is active it should be able to prevent smog from entering the area as well.
+
+- This structure also has not been made yet but you can find it's assets and inv images in the mod.
+
+Recipes for this device is:
+1x rt_filter_large
+4x gears
+4x bar_scrap
+
+It should be a tier 2 science, and labeled as structure/survival.
+
+
+Naturally occurring structures/objects
+
+
+Star Fruit Vines
+
+-Moon rocks should have starfruit vines start to grow on them after a 1-3 days has passed. After the vines has spawned, the fruit should grow after a day has passed and stay there until picked. When picked, the vines completely disappears and the vines give the player the amount of fruit displayed based on the state of the rock. 
+3 on highest
+3 on med
+2 on low
+
+- The vines will always break completely off if the player mines the rock to it's next state or if it's destroyed by a mob or outside force. Fruit should fall onto the ground but instead of 3 or 2 fruits, only 1 will drop if destroyed this way.
+
+
+- This structure also has not been made yet but you can find it's assets and inv images in the mod.
+
+Irradiated pools
+
+- These pools need their moisture radius fixed. You can find my attempt in patches/components/moisture
+- They also need fx for when a player walks inside of them and the sound of wet footsteps.
+- It also needs temporary plants or rocks surrounding them. Either marsh or the scorched rocks found on magma pools.
+- Adding some bubbling SFX would be nice too
+
+
+Radiation Barrels
+
+- The tiles it spawns when it hits the water is in a giant square pattern. Please if you can turn this into a circle type radius instead of a square that would be wonderful.
+
+
+
+
+

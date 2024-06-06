@@ -1,0 +1,32 @@
+Armors
+-------------
+Raritanium armor should not break and should work like brightshade or shadow gear except it should be repairable with raritanium instead. It should be explosion resistant or completely negate explosions entirely, as explosive enemies will start to become eventually common for future plans.
+
+-The armor has not been made into a prefab yet but has all assets inside of the mod ready to me created.
+
+-This armor will be modular and should have a 1x1 container slot. But for now it's modular effects are unimplemented. Leave it as an empty container that doesn't allow anything inside for now or wait until we start making the elemental mods process.
+
+Recipes for this device is:
+1x bar_raritanium
+3x scrapbits
+1x iridescent gem
+
+It should be a lost science and should be added into the junkpiles pool as a potential blueprint drop.
+
+
+
+----------------
+Clothing
+----------------
+
+The respirator, Haz-hat, and Hazmat suit all have most of their values set. But since we have filters now, both small and large. These items radiation shielding properties should only be active if they have a filter in their slots.
+
+- The respirator should be changed to work like the miners hat. Use filters, big and small to fuel to get it to work. Bigger filters fuel it better and smaller filters are quicker solutions.
+
+- The Haz-hat and haz-mat suit is supposed to provide full protection 100% against radiation when paired together but only if the haz-hat has a filter in a 1x1 container slot. The haz-mat suit by itself should be exactly like a raincoat and should be excellent again wetness and rain. But should not provide protection against radiation unless you have a haz-hat equipped with a filter in it's slot.
+
+-Haz-hat and Hazmat gear should have durability and be repairable with a sewing kit like any other clothing item.
+
+
+
+
