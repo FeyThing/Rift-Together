@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="turf01">
+        <file id="0" name="turf01/turf01-0.png" width="215" height="154" pivot_x="0.499884" pivot_y="0.533279"/>
+        <file id="1" name="turf01/turf01-5.png" width="202" height="148" pivot_x="0.512005" pivot_y="0.554054"/>
+        <file id="2" name="turf01/turf01-10.png" width="199" height="153" pivot_x="0.504523" pivot_y="0.535948"/>
+    </folder>
+    <entity id="0" name="rnc_turf">
+        <animation id="0" name="desertsand" length="99" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="turf01-5">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-8.4" y="17.55"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="junk" length="99" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="turf01-10">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-8.4" y="17.55"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="lush" length="99" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="turf01-0">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-8.4" y="17.55"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

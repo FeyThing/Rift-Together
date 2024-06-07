@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="frame">
+        <file id="0" name="frame/frame-0.png" width="133" height="127" pivot_x="0.514474" pivot_y="0.57815"/>
+    </folder>
+    <entity id="0" name="ui_ratchet_1x1">
+        <animation id="0" name="close" length="167" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="34">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="67">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="100">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+                <key id="4" time="134"/>
+                <key id="5" time="167"/>
+            </mainline>
+            <timeline id="0" name="frame">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.934753"/>
+                </key>
+                <key id="1" time="34" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.846609"/>
+                </key>
+                <key id="2" time="67" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.57546"/>
+                </key>
+                <key id="3" time="100" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.051514"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="open" length="234" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="34">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="67">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="100">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+                <key id="4" time="134">
+                    <object_ref id="0" timeline="0" key="4" z_index="0"/>
+                </key>
+                <key id="5" time="167">
+                    <object_ref id="0" timeline="0" key="5" z_index="0"/>
+                </key>
+                <key id="6" time="200">
+                    <object_ref id="0" timeline="0" key="6" z_index="0"/>
+                </key>
+                <key id="7" time="234">
+                    <object_ref id="0" timeline="0" key="7" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="frame">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.075928"/>
+                </key>
+                <key id="1" time="34" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="1.01954" scale_y="0.290427"/>
+                </key>
+                <key id="2" time="67" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="1.08684" scale_y="1.02919"/>
+                </key>
+                <key id="3" time="100" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="1.03533" scale_y="1.01173"/>
+                </key>
+                <key id="4" time="134" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="1.00867" scale_y="1.00269"/>
+                </key>
+                <key id="5" time="167" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.999756"/>
+                </key>
+                <key id="6" time="200" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.999756"/>
+                </key>
+                <key id="7" time="234" spin="0">
+                    <object folder="0" file="0" angle="0" scale_y="0.999756"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
