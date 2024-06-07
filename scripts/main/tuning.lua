@@ -191,6 +191,10 @@ local tunings = {
 	
 	ARMOREDBODY_ATTACKWEAR_MULT = 4,
 	
+	ARMOR_RARITANIUM = wilson_health * 6 * multiplayer_armor_durability_modifier,
+	ARMOR_RARITANIUM_ABSORPTION = 0.8 * multiplayer_armor_absorption_modifier,
+	ARMOR_RARITANIUM_EXPLOSIVE_RESIST = 0.2,
+	
 	--- Biomes
 
 

@@ -15,9 +15,7 @@ MOD = {
 -- 	RARITANIUMORE = "raritaniumore",
 -- }
 
--- --- Forge Materials
--- FORGEMATERIALS = {
--- 	RARITANIUM_BAR = "raritanium_bar",
--- }
+--- Forge Materials
+_G.FORGEMATERIALS.RARITANIUM_BAR = "raritanium_bar"
 
 
