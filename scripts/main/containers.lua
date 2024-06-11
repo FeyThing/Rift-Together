@@ -29,7 +29,7 @@ local params = {
             return item:HasTag("rnc_mod") --item.prefab == "cryomod" or item.prefab == "napalmmod" or item.prefab == "shockmod"
         end,
     },
-	    rarisword =
+	rarisword =
     {
         widget =
         {
@@ -131,6 +131,23 @@ local params = {
 			return false
         end,
     },
+	hazhat =
+	{
+		widget =
+		{
+			slotpos = {
+				_G.Vector3(0, 32 + 4, 0),
+			},
+			animbank = "ui_cookpot_1x2",
+			animbuild = "ui_cookpot_1x2",
+			pos = _G.Vector3(106, 15, 0),
+		},
+		type = "hand_inv",
+		excludefromcrafting = true,
+		itemtestfn = function(container, item, slot)
+			return item:HasTag("filter")
+		end,
+	},
 }
 
 for k, v in pairs(params) do

@@ -3,19 +3,27 @@ local assets =
     Asset("ANIM", "anim/armor_hazmat.zip"),
 }
 
-local function onequip(inst, owner)
+local function OnEquip(inst, owner)
 	owner.AnimState:OverrideSymbol("swap_body", "armor_hazmat", "swap_body")
-
+	
+	if inst.components.fueled ~= nil then
+		inst.components.fueled:StartConsuming()
+	end
 end
 
-local function onunequip(inst, owner)
+local function OnUnequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
+	
+	if inst.components.fueled ~= nil then
+		inst.components.fueled:StopConsuming()
+	end
 end
 
-local function onequiptomodel(inst)
-    inst.components.fueled:StopConsuming()
+local function OnEquipToModel(inst)
+	if inst.components.fueled ~= nil then
+		inst.components.fueled:StopConsuming()
+	end
 end
-
 
 local function fn()
     local inst = CreateEntity()
@@ -51,19 +59,21 @@ local function fn()
 
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = FUELTYPE.USAGE
-    inst.components.fueled:InitializeFuelLevel(TUNING.RAINCOAT_PERISHTIME)
+    inst.components.fueled:InitializeFuelLevel(TUNING.HAZMAT_PERISHTIME)
     inst.components.fueled:SetDepletedFn(inst.Remove)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable.insulated = true
-    inst.components.equippable:SetRadiationProtectPercent(0.5)
-    inst.components.equippable:SetOnEquip(onequip)
-    inst.components.equippable:SetOnUnequip(onunequip)
-    inst.components.equippable:SetOnEquipToModel(onequiptomodel)
+    inst.components.equippable:SetOnEquip(OnEquip)
+    inst.components.equippable:SetOnUnequip(OnUnequip)
+    inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
 
     inst:AddComponent("insulator")
     inst.components.insulator:SetInsulation(TUNING.INSULATION_SMALL)
+	
+	inst:AddComponent("setbonus")
+	inst.components.setbonus:SetSetName(EQUIPMENTSETNAMES.RT_HAZMAT)
 
     MakeHauntableLaunch(inst)
 

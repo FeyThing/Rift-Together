@@ -1,4 +1,4 @@
-local function MakeFilter(name, anim)
+local function MakeFilter(name, anim, fuelvalue)
     local assets = {
         Asset("ANIM", "anim/rt_filter.zip"),
     }
@@ -23,15 +23,20 @@ local function MakeFilter(name, anim)
         return inst
     end
 
-    inst:AddComponent("stackable")
-    inst.components.stackable.maxsize = TUNING.STACK_SIZE_MEDITEM
-
-
     inst:AddComponent("inspectable")
 
-
     inst:AddComponent("inventoryitem")
-
+	
+	inst:AddComponent("fueled")
+	inst.components.fueled.fueltype = FUELTYPE.USAGE
+	inst.components.fueled.no_sewing = true
+	inst.components.fueled:InitializeFuelLevel(fuelvalue)
+	inst.components.fueled:SetDepletedFn(inst.Remove)
+	
+	inst:AddComponent("fuel")
+	inst.components.fuel.fuelvalue = fuelvalue
+	inst.components.fuel.fueltype = FUELTYPE.RT_FILTER
+	
     MakeHauntableLaunch(inst)
 
     return inst
@@ -40,5 +45,5 @@ local function MakeFilter(name, anim)
 return Prefab(name, fn, assets)
 end
 
-return MakeFilter("rt_filter_small", "filter_small"),
-       MakeFilter("rt_filter_large", "filter_large")
+return MakeFilter("rt_filter_small", "filter_small", TUNING.RT_FILTER_SMALL_PERISHTIME),
+       MakeFilter("rt_filter_large", "filter_large", TUNING.RT_FILTER_LARGE_PERISHTIME)

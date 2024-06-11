@@ -75,9 +75,9 @@ AddRecipe2("hazmat",
         {},
 		{"CLOTHING"})
 
-AddRecipe2("rt_filter_large", 
-		{ Ingredient("luminous_fruit", 2), Ingredient("rt_fabric", 1), Ingredient("scrapbits", 2) }, 
-		_G.TECH.SCIENCE_TWO, 
+AddRecipe2("rt_fabric", 
+		{ Ingredient("silk", 10) }, 
+		_G.TECH.SCIENCE_ONE, 
         {},
 		{"REFINE"})
 
@@ -87,9 +87,9 @@ AddRecipe2("rt_filter_small",
         {},
 		{"REFINE"})
 
-AddRecipe2("rt_fabric", 
-		{ Ingredient("silk", 10) }, 
-		_G.TECH.SCIENCE_ONE, 
+AddRecipe2("rt_filter_large", 
+		{ Ingredient("luminous_fruit", 2), Ingredient("rt_fabric", 1), Ingredient("scrapbits", 2) }, 
+		_G.TECH.SCIENCE_TWO, 
         {},
 		{"REFINE"})
 

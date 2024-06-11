@@ -48,6 +48,12 @@ local function OnUnequip(inst, owner)
 	end
 end
 
+local function OnEquipToModel(inst)
+	if inst.components.fueled ~= nil then
+		inst.components.fueled:StopConsuming()
+	end
+end
+
 local function fn()
     local inst = CreateEntity()
     
@@ -83,17 +89,19 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
-	inst.components.equippable:SetRadiationProtectPercent(0.2) -- from .2 to .5 temporarily until more rad combating equipment is created
+	inst.components.equippable:SetRadiationProtectPercent(TUNING.RESPIRATORMASK_RAD_PROTECTION)
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+	inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
 
 	inst:AddComponent("fueled")
-	inst.components.fueled.fueltype = FUELTYPE.USAGE
-	inst.components.fueled:InitializeFuelLevel(480*5)
+	inst.components.fueled.fueltype = FUELTYPE.RT_FILTER
+	inst.components.fueled:InitializeFuelLevel(TUNING.RESPIRATORMASK_PERISHTIME)
 	inst.components.fueled:SetDepletedFn(inst.Remove)
+	inst.components.fueled.accepting = true
 
 	inst:AddComponent("waterproofer")
-    inst.components.waterproofer:SetEffectiveness(0.5) -- supposed to match rad absorbtion, temp increase
+    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
 	
     MakeHauntableLaunch(inst)
 

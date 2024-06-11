@@ -195,6 +195,15 @@ local tunings = {
 	ARMOR_RARITANIUM_ABSORPTION = 0.8 * multiplayer_armor_absorption_modifier,
 	ARMOR_RARITANIUM_EXPLOSIVE_RESIST = 0.2,
 	
+	RT_FILTER_SMALL_PERISHTIME = total_day_time * 1,
+	RT_FILTER_LARGE_PERISHTIME = total_day_time * 6,
+	
+	RESPIRATORMASK_PERISHTIME = total_day_time * 5,
+	RESPIRATORMASK_RAD_PROTECTION = 0.2,
+	
+	HAZHAT_PERISHTIME = total_day_time * 10,
+	HAZMAT_PERISHTIME = total_day_time * 10,
+	
 	--- Biomes
 
 

@@ -10,6 +10,9 @@ MOD = {
 
 }
 
+--- Fuel types
+_G.FUELTYPE.RT_FILTER = "rt_filter"
+
 -- --- Materials
 -- MATERIALS = {
 -- 	RARITANIUMORE = "raritaniumore",
@@ -18,4 +21,5 @@ MOD = {
 --- Forge Materials
 _G.FORGEMATERIALS.RARITANIUM_BAR = "raritanium_bar"
 
-
+--- Set bonuses
+_G.EQUIPMENTSETNAMES.RT_HAZMAT = "rt_hazmat"

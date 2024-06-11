@@ -365,7 +365,17 @@ local strings = {
 
 		NANOBOOST = "An energy restoring drink!",
 		
-		WX78MODULE_MAXRESIST = "someone else come up with a description please",
+		WX78MODULE_MAXRESIST = "to-do",
+		
+		ARMOR_RARITANIUM = "to-do",
+		
+		HAZHAT = "to-do",
+		HAZMAT = "to-do",
+		
+		RT_FABRIC = "to-do",
+		
+		RT_FILTER_SMALL = "to-do",
+		RT_FILTER_LARGE = "to-do",
 		
 		--- Shoetime mod
 		SHOES_HOVER = "The terrain is the thing of the past with these!",
