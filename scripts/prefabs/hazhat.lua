@@ -4,24 +4,26 @@ local Assets = {
 }
 
 local function OnEquip(inst, owner)
-	owner.AnimState:OverrideSymbol("swap_hat", "hazhat", "swap_hat")      
+	owner.AnimState:OverrideSymbol("swap_hat", "hazhat", "swap_hat")
+	
 	owner.AnimState:Show("HAT")
 	owner.AnimState:Hide("HAIR_HAT")
 	owner.AnimState:Hide("HAIR_NOHAT")
 	owner.AnimState:Hide("HAIR")
-
-	owner.AnimState:Hide("HEAD")
-	owner.AnimState:Show("HEAD_HAT")
-	--owner.AnimState:Hide("HEAD_HAT_NOHELM")
-	--owner.AnimState:Show("HEAD_HAT_HELM")
-
-	--owner.AnimState:HideSymbol("face")
-	--owner.AnimState:HideSymbol("swap_face")
-	owner.AnimState:HideSymbol("beard")
-	owner.AnimState:HideSymbol("cheeks")
-
+	
+	if owner:HasTag("player") then
+		owner.AnimState:Hide("HEAD")
+		owner.AnimState:Show("HEAD_HAT")
+		owner.AnimState:Hide("HEAD_HAT_NOHELM")
+		owner.AnimState:Show("HEAD_HAT_HELM")
+		
+		owner.AnimState:HideSymbol("face")
+		owner.AnimState:HideSymbol("swap_face")
+		--owner.AnimState:HideSymbol("beard")
+		owner.AnimState:HideSymbol("cheeks")
+	end
+	
     owner:AddTag("has_gasmask")
-	--owner.AnimState:UseHeadHatExchange(true)
 	
 	if inst.components.container ~= nil then
 		inst.components.container:Open(owner)
@@ -34,24 +36,25 @@ end
 
 local function OnUnequip(inst, owner) 
 	owner.AnimState:ClearOverrideSymbol("swap_hat")
-
+	
     owner.AnimState:Hide("HAT")
-    owner.AnimState:Show("HAIR_HAT")
+    owner.AnimState:Hide("HAIR_HAT")
     owner.AnimState:Show("HAIR_NOHAT")
     owner.AnimState:Show("HAIR")
-
-    owner.AnimState:Show("HEAD")
-    owner.AnimState:Hide("HEAD_HAT")
-    --owner.AnimState:Show("HEAD_HAT_NOHELM")
-    --owner.AnimState:Hide("HEAD_HAT_HELM")
-
-    --owner.AnimState:ShowSymbol("face")
-    --owner.AnimState:ShowSymbol("swap_face")
-    owner.AnimState:ShowSymbol("beard")
-    owner.AnimState:ShowSymbol("cheeks")
-
+	
+	if owner:HasTag("player") then
+		owner.AnimState:Show("HEAD")
+		owner.AnimState:Hide("HEAD_HAT")
+		owner.AnimState:Hide("HEAD_HAT_NOHELM")
+		owner.AnimState:Hide("HEAD_HAT_HELM")
+		
+		owner.AnimState:ShowSymbol("face")
+		owner.AnimState:ShowSymbol("swap_face")
+		--owner.AnimState:ShowSymbol("beard")
+		owner.AnimState:ShowSymbol("cheeks")
+	end
+	
     owner:RemoveTag("has_gasmask")
-    --owner.AnimState:UseHeadHatExchange(false)
 	
 	if inst.components.container ~= nil then
 		inst.components.container:Close()
