@@ -3,6 +3,22 @@ local Assets = {
     
 }
 
+local function EnableRadProtection(inst)
+	local owner = inst.components.inventoryitem.owner
+	
+	if owner ~= nil and owner.components.radiation ~= nil then
+		owner.components.radiation:AddPenalty(inst, TUNING.RESPIRATORMASK_RAD_PROTECTION)
+	end
+end
+
+local function DisableRadProtection(inst)
+	local owner = inst.components.inventoryitem.owner
+	
+	if owner ~= nil and owner.components.radiation ~= nil then
+		owner.components.radiation:RemovePenalty(inst)
+	end
+end
+
 local function OnEquip(inst, owner)
     if owner:HasTag("player") then
         owner.AnimState:Show("HEAD")
@@ -28,6 +44,8 @@ local function OnEquip(inst, owner)
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StartConsuming()
 	end
+	
+	EnableRadProtection(inst)
 end
 
 local function OnUnequip(inst, owner) 
@@ -46,11 +64,23 @@ local function OnUnequip(inst, owner)
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StopConsuming()
 	end
+	
+	DisableRadProtection(inst)
 end
 
 local function OnEquipToModel(inst)
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StopConsuming()
+	end
+end
+
+local function OnPerish(inst)
+	DisableRadProtection(inst)
+end
+
+local function OnTakeFuel(inst)
+	if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+		EnableRadProtection(inst)
 	end
 end
 
@@ -89,7 +119,7 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
-	inst.components.equippable:SetRadiationProtectPercent(TUNING.RESPIRATORMASK_RAD_PROTECTION)
+	--inst.components.equippable:SetRadiationProtectPercent(TUNING.RESPIRATORMASK_RAD_PROTECTION)
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 	inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
@@ -97,7 +127,8 @@ local function fn()
 	inst:AddComponent("fueled")
 	inst.components.fueled.fueltype = FUELTYPE.RT_FILTER
 	inst.components.fueled:InitializeFuelLevel(TUNING.RESPIRATORMASK_PERISHTIME)
-	inst.components.fueled:SetDepletedFn(inst.Remove)
+	inst.components.fueled:SetDepletedFn(OnPerish)
+	inst.components.fueled:SetTakeFuelFn(OnTakeFuel)
 	inst.components.fueled.accepting = true
 
 	inst:AddComponent("waterproofer")

@@ -105,7 +105,7 @@ local function OnEnabledSetBonus(inst)
 	local owner = inst.components.inventoryitem.owner
 	local container = inst.components.container
 	
-	if owner ~= nil and container ~= nil then
+	if owner ~= nil and owner.components.radiation ~= nil and container ~= nil then
 		if HasFilter(inst) then
 			owner.components.radiation:AddPenalty(inst, 1)
 			inst.components.container:ForEachItem(StartConsumingFilter)
@@ -117,7 +117,7 @@ local function OnDisabledSetBonus(inst)
 	local owner = inst.components.inventoryitem.owner
 	local container = inst.components.container
 	
-	if owner ~= nil and container ~= nil then
+	if owner ~= nil and owner.components.radiation ~= nil and container ~= nil then
 		owner.components.radiation:RemovePenalty(inst)
 		inst.components.container:ForEachItem(StopConsumingFilter)
 	end
