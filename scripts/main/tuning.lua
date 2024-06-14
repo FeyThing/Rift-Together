@@ -204,6 +204,9 @@ local tunings = {
 	HAZHAT_PERISHTIME = total_day_time * 10,
 	HAZMAT_PERISHTIME = total_day_time * 10,
 	
+	RT_AIR_PURIFIER_MAX_FUEL_TIME = total_day_time * 5,
+	RT_AIR_PURIFIER_RADIUS = 10,
+	
 	--- Biomes
 
 

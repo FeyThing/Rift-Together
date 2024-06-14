@@ -96,6 +96,7 @@ return {
 		"starfruit",
 		"hazhat",
 		"hazmat",
+		"rt_air_purifier",
 	},
 
 	Assets = {
@@ -107,6 +108,7 @@ return {
 		Asset( "ANIM", "anim/rnc_turf.zip"),
 		Asset( "ANIM", "anim/rtstatus_wx.zip"),
 		Asset( "ANIM", "anim/rt_chips.zip"),
+		Asset( "ANIM", "anim/rt_air_purifier.zip"),
 		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),

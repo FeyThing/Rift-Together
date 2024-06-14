@@ -292,6 +292,8 @@ local strings = {
 		
 		WX78MODULE_MAXRESIST = "Radioshielding Circuit",
 		
+		RT_AIR_PURIFIER = "Air Purifier",
+		
 		--- Turfs
 		TURF_JUNK = "Junk Turf",
 		TURF_LUSH = "Lush Turf",
@@ -366,6 +368,8 @@ local strings = {
 		NANOBOOST = "An energy restoring drink!",
 		
 		WX78MODULE_MAXRESIST = "to-do",
+		
+		RT_AIR_PURIFIER = "to-do",
 		
 		ARMOR_RARITANIUM = "to-do",
 		

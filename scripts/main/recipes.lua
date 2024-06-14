@@ -93,6 +93,12 @@ AddRecipe2("rt_filter_large",
         {},
 		{"REFINE"})
 
+AddRecipe2("rt_air_purifier",
+		{ Ingredient("rt_filter_large", 1), Ingredient("gears", 4), Ingredient("scrapbits", 4) },
+		_G.TECH.SCIENCE_TWO,
+		{placer = "rt_air_purifier_placer"},
+		{"STRUCTURES"})
+
 if _G.EQUIPSLOTS.SHOES then		
 AddRecipe2("shoes_hover", 
 		{Ingredient("shoes_radiation", 1), Ingredient("shoes_slurper", 1), Ingredient("gears", 4)}, 
