@@ -44,12 +44,19 @@ local function onload(inst, data)
 end
 
 local function OnInit(inst)
+    if inst._front == nil then
+		inst._front = SpawnPrefab("rt_tarp_front")
+		inst._front.Transform:SetScale(1, 1, 1)
+		inst._front.entity:SetParent(inst.entity)
+		inst._front.Transform:SetPosition(0, 0, 3) 
+		table.insert(inst.highlightchildren, inst._front)
+        
+	end
 	if inst._back == nil then
 		inst._back = SpawnPrefab("rt_tarp_back")
 		inst._back.Transform:SetScale(1, 1, 1)
 		inst._back.entity:SetParent(inst.entity)
-		inst._back.entity:AddFollower()
-		inst._back.Follower:FollowSymbol(inst.GUID, "tent_front", -1, 0, -2)
+		inst._back.Transform:SetPosition(0, 0, -3) 
 		table.insert(inst.highlightchildren, inst._back)
 	end
     if inst._stick == nil then
@@ -57,7 +64,7 @@ local function OnInit(inst)
 		inst._stick.Transform:SetScale(1, 1, 1)
 		inst._stick.entity:SetParent(inst.entity)
 		inst._stick.entity:AddFollower()
-		inst._stick.Follower:FollowSymbol(inst.GUID, "tent_front", 0, 0, -0.6)
+		inst._stick.Follower:FollowSymbol(inst.GUID, "shadow", 0, 0, 0)
 		table.insert(inst.highlightchildren, inst._stick)
 	end		
 end
@@ -77,14 +84,55 @@ local function tarp_back()
 	inst.entity:AddAnimState()
 	inst.entity:AddNetwork()
 	
-    inst.Transform:SetFourFaced()
 
 	inst:AddTag("NOBLOCK")
 	inst:AddTag("NOCLICK")
 	
 	inst.AnimState:SetBuild("rt_tarp")
 	inst.AnimState:SetBank("rt_tarp")
-	inst.AnimState:PlayAnimation("back", true)
+	inst.AnimState:PlayAnimation("idle2")
+    inst.AnimState:SetDefaultEffectHandle(resolvefilepath("shaders/tarpslant.ksh"))
+    inst.AnimState:SetOrientation( ANIM_ORIENTATION.OnGround )
+    inst:DoTaskInTime(0, function() 
+        local x,y,z = inst.Transform:GetWorldPosition()
+        inst.Transform:SetRotation(0)
+        inst.AnimState:SetFloatParams(x, y, z)
+    end)
+	
+	inst.entity:SetPristine()
+	
+	if not TheWorld.ismastersim then
+		inst.OnEntityReplicated = OnEntityReplicated
+		return inst
+	end
+	
+	inst.persists = false
+	
+	return inst
+end
+
+local function tarp_front()
+	local inst = CreateEntity()
+	
+	inst.entity:AddTransform()
+	inst.entity:AddAnimState()
+	inst.entity:AddNetwork()
+	
+
+	inst:AddTag("NOBLOCK")
+	inst:AddTag("NOCLICK")
+	
+	inst.AnimState:SetBuild("rt_tarp")
+	inst.AnimState:SetBank("rt_tarp")
+	inst.AnimState:PlayAnimation("idle2")
+    inst.AnimState:SetDefaultEffectHandle(resolvefilepath("shaders/tarpslant_r.ksh"))
+    inst.AnimState:SetOrientation( ANIM_ORIENTATION.OnGround )
+    inst:DoPeriodicTask(0, function() 
+        local x,y,z = inst.Transform:GetWorldPosition()
+        inst.Transform:SetRotation(0)
+        inst.Transform:SetPosition(0, 0, 20)      
+        inst.AnimState:SetFloatParams(x, y, z)
+    end)
 	
 	inst.entity:SetPristine()
 	
@@ -104,15 +152,13 @@ local function tarp_stick()
 	inst.entity:AddTransform()
 	inst.entity:AddAnimState()
 	inst.entity:AddNetwork()
-	
-    inst.Transform:SetFourFaced()
 
 	inst:AddTag("NOBLOCK")
 	inst:AddTag("NOCLICK")
 	
 	inst.AnimState:SetBuild("rt_tarp")
 	inst.AnimState:SetBank("rt_tarp")
-	inst.AnimState:PlayAnimation("stick", true)
+	inst.AnimState:PlayAnimation("stick1")
 	
 	inst.entity:SetPristine()
 	
@@ -135,14 +181,14 @@ local function common_fn(onbuiltfn)
     inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
 
-    inst.Transform:SetFourFaced()
-
     inst:AddTag("shelter")
     inst:AddTag("structure")
 
     inst.AnimState:SetBank("rt_tarp")
     inst.AnimState:SetBuild("rt_tarp")
-    inst.AnimState:PlayAnimation("idle", true)
+    inst.AnimState:PlayAnimation("shadow")
+    inst.AnimState:SetOrientation( ANIM_ORIENTATION.OnGround )
+ 
 
     --inst.MiniMapEntity:SetIcon(icon)
 
@@ -183,5 +229,6 @@ end
 
 return Prefab("rt_tarp", common_fn, assets),
        Prefab("rt_tarp_back", tarp_back, assets),
+       Prefab("rt_tarp_front", tarp_front, assets),
        Prefab("rt_tarp_stick", tarp_stick, assets),
     MakePlacer("rt_tarp_placer", "rt_tarp", "rt_tarp", "idle")
