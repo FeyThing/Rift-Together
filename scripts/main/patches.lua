@@ -70,6 +70,7 @@ local PATCHES =
 		player_classified = "player_classified",
 		pocketwatch_weapon = "pocketwatch_weapon",
 		rabbithole = "rabbithole",
+		rock_moon = "rock_moon",
 		rocky = "rocky",
 		slurtle = {"slurtle", "snurtle"},
 		spider = "spider_moon",

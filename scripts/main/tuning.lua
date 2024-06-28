@@ -207,6 +207,10 @@ local tunings = {
 	RT_AIR_PURIFIER_MAX_FUEL_TIME = total_day_time * 5,
 	RT_AIR_PURIFIER_RADIUS = 10,
 	
+	STARFRUITVINE_SPAWN_TIME_MIN = total_day_time,
+	STARFRUITVINE_SPAWN_TIME_VARIANCE = total_day_time * 2,
+	STARFRUITVINE_GROW_TIME = total_day_time,
+	
 	--- Biomes
 
 

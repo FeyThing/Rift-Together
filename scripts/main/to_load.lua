@@ -97,6 +97,7 @@ return {
 		"hazhat",
 		"hazmat",
 		"rt_air_purifier",
+		"starfruitvine",
 	},
 
 	Assets = {
