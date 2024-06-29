@@ -5,6 +5,6 @@ return function(inst)
 		return
 	end
 	--SERVER
-	inst:AddComponent("radiation_manager")
+	inst:AddComponent("radiationmanager")
 	inst:AddComponent("dimensionalrifts")
 end

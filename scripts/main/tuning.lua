@@ -211,40 +211,6 @@ local tunings = {
 	---Shoes Mod
 	SHOES_HOVER_SPEED = 1 + ((GetModConfigData("shoes_hover_speed") or 20) * 0.01),
 	SHOES_HOVER_COMBAT_TIME = GetModConfigData("shoes_hover_speed_combat") or 5,
-	
-    RAD_TOTAL = 100,
-    
-    RAD_EFFECT_RANGE = 5,
-    RAD_AURA_SEARCH_RANGE = 10,
-    
-    RADIATION_SMALL = 2,
-    RADIATION_MED = 5,
-    RADIATION_LARGE = 10,
-    RADIATION_HUGE = 20,
-    RADIATION_GIANT = 30,
-    
-    RAD_THRESH = .6,
-	
-	RAD_CORRODE_DAMAGE_TIME = 1.5, -- How quickly the game polls to deal acidrain damage.
-    RAD_CORRODE_DAMAGE_PER_SECOND = 2.0,
-	RAD_CORRODE_DAMAGE_FUELED_SCALER = 2.0,
-    
-    IRRADIATED = 1,
-    
-    RAD_INJECT_DAMAGE = 75,
-    RAD_INJECT_MIN_HEALTH = 5,
-    
-    RAD_IMMUNE_DURATION = total_day_time, -- the time you are immune to radiation 
-    RAD_DAMAGE_PER_INTERVAL = 2, -- the amount of health damage radiation causes per interval
-    RAD_INTERVAL = 10, -- how frequently damage is applied
-
-    RAD_DAMAGE_MOD = -.25,
-    RAD_ATTACK_PERIOD_MOD = .25,
-    RAD_SPEED_MOD = .75,
-    
-    AREA_RAD_CHECK_INTERVAL = .5, -- How frequently radiation checks for nearby entities to infect
-    
-    RAD_SANITY_SCALE = .05, -- sanity hit = radiation hit * RAD_SANITY_SCALE  set to 0 to turn off
 
 	---- Ocean
 	
@@ -283,9 +249,21 @@ local tunings = {
             ENTER = .925,
             LEAVE = .90,
         }
-    },
+    },    
 
-    RADIATION_AURA_SEACH_RANGE = 16,
+    -- RAD_CORRODE_DAMAGE_TIME = 1.5, -- How quickly the game polls to deal acidrain damage.
+    -- RAD_CORRODE_DAMAGE_PER_SECOND = 2.0,
+    -- RAD_CORRODE_DAMAGE_FUELED_SCALER = 2.0,
+    
+    -- RAD_INJECT_DAMAGE = 75,
+    -- RAD_INJECT_MIN_HEALTH = 5,
+
+    -- RAD_DAMAGE_MOD = -.25,
+    -- RAD_ATTACK_PERIOD_MOD = .25,
+    -- RAD_SPEED_MOD = .75,
+
+    MAX_TILE_RAD = 100,
+    TILE_RAD_INTAKE_FACTOR = 1/25;
 
     ROBOMUTTHERD = {
         MAX = 3,

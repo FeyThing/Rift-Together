@@ -111,7 +111,7 @@ local function fn_common(build, tag)
     inst:AddTag("pawn")
     inst:AddTag("monster")
 	inst:AddTag("soulless")
-	inst:AddTag("radiationimmunity")
+	inst:AddTag("noradiation")
 
     if tag ~= nil then
         inst:AddTag(tag)

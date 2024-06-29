@@ -13,7 +13,7 @@ return function(inst)
     end
 	
 	inst:ListenForEvent("onattackother", function(inst, data)	
-        if math.random() <= 0.7 and data.target and not data.target:HasTag("radiationimmunity")  then
+        if math.random() <= 0.7 and data.target and data.target.components.radiation then
             inst:inflictvictim(data.target)
 			data.target.components.radiation:DoDelta(50)
         end

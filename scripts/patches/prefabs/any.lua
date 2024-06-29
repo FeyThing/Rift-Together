@@ -1,19 +1,27 @@
+local function IsValidRadiationEntity(inst)
+    return not (inst:HasTag("boat") or
+                inst:HasTag("wall") or
+                inst:HasTag("noradiation"))
+end
+
+local function ShouldStartWithRadiationIgnored(inst)
+    return inst:HasTag("lunar_aligned")
+end
+
 local DamageTypesUtil = require("main/damagetypesutil")
 return function(inst)
-    -- CLIENT
-    -- Radiation immunity
-    if inst:IsValid() and inst.components and inst.components.health and inst:HasTag("lunar_aligned") then
-        inst:AddTag("radiationimmunity")
-    end
-
+    -- SERVER & CLIENT
     if not _G.TheWorld.ismastersim then
         return
     end
     -- SERVER
     -- Radiation
-    if inst:IsValid() and inst.components and inst.components.health and not inst.components.radiation then
+    if inst:IsValid() and inst.components and not inst.components.radiation and inst.components.health and IsValidRadiationEntity(inst) then
         inst:AddComponent("radiation")
         inst.components.radiation:SetMax(TUNING.MAX_RADIATION_DEFAULT)
+        if ShouldStartWithRadiationIgnored(inst) then
+            inst.components.radiation:SetIgnore(true)
+        end
     end
   
     -- Damage types

@@ -16,33 +16,27 @@ local function onpenalty(self, penalty)
     self.inst.replica.radiation:SetPenalty(penalty)
 end
 
-local function onignore(self, val)
-    if val then
-        self.inst:AddTag("radiationimmunity")
-    else
-        self.inst:RemoveTag("radiationimmunity")
-    end
-end
-
 local Radiation = Class(function(self, inst)
     self.inst = inst
     self.max = 100
     self.current = 0
 
     self.rate = 0
-	self.externalmodifiers_multiply = SourceModifierList(self.inst, 1, SourceModifierList.multiply)
-	self.externalmodifiers_additive = SourceModifierList(self.inst, 1, SourceModifierList.additive)
-    self.ratescale = RATE_SCALE.NEUTRAL
+    self.falloff = -0.04
+    self.externalmodifiers_multiply = SourceModifierList(self.inst, 1, SourceModifierList.multiply)
+    self.ratescale = RATE_SCALE.NEUTRAL 
     self.resistance = 0
-	
+    self.radiation_sources = {  } -- To calculate self.rate
+
+    self.ignore = false
+
     self.penalty = 0
     self.radiation_penalties = {  }
 
-    self.custom_rate_fn = nil
-    self.redirect = nil
+    self._oldpercent = self:GetPercent()
 
-    self._oldpercent = self:GetPercent();
-    
+    self.inst:AddTag("radiation")
+
     self.inst:StartUpdatingComponent(self)
 end,
 nil,
@@ -50,9 +44,16 @@ nil,
     max = onmax,
     current = oncurrent,
     ratescale = onratescale,
-    penalty = onpenalty,
-    ignore = onignore,
+    penalty = onpenalty
 })
+
+function Radiation:OnRemoveFromEntity()
+    if self.inst.AnimState then
+        self.inst.AnimState:SetAddColour(0, 0, 0, 1)
+        self.inst.AnimState:ClearBloomEffectHandle()
+        self.inst.AnimState:SetLightOverride(0)
+    end
+end
 
 function Radiation:AddPenalty(key, mod)
     mod = math.clamp(mod, 0, 1)
@@ -94,11 +95,11 @@ function Radiation:GetPercent()
 end
 
 function Radiation:GetPercentWithPenalty()
-    return self.current / (self.max - (self.max * self.penalty))
+    return self.current / (self.max - (self.max*self.penalty))
 end
 
 function Radiation:SetPercent(per, overtime)
-    local delta = per * self.max - self.current
+    local delta = per*self.max - self.current
     self:DoDelta(delta, overtime)
 end
 
@@ -126,17 +127,12 @@ function Radiation:GetRateScale()
 end
 
 function Radiation:DoDelta(delta, overtime)
-    if self.redirect then
-        self.redirect(self.inst, delta, overtime)
-        return
-    end
-
     if self.ignore then
         return
     end
 
     self._oldpercent = self:GetPercent()
-    self.current = math.clamp(self.current + delta, 0, self.max - (self.max * self.penalty))
+    self.current = math.clamp(self.current + delta, 0, self.max - (self.max*self.penalty))
 
     self:TryAnnounce()
 
@@ -170,52 +166,70 @@ function Radiation:TryAnnounce()
 end
 
 function Radiation:OnUpdate(dt)
-	local map = TheWorld.Map
-	
-    if not map then 
-        return 
-    end
-
-	local x, y, z = self.inst.Transform:GetWorldPosition()
-    local radiation = TheWorld.components.radiation_manager:GetRadiationAtPoint(x, y, z)
-    if not (self.inst.components.health:IsInvincible() or
+    if not (self.inst.components.health and self.inst.components.health:IsInvincible() or
     self.inst:HasTag("spawnprotection") or
-    self.inst:HasTag("radiationimmunity") or
-    self.inst:HasTag("boat") or
-    self.inst:HasTag("wall") or
-    (self.inst.sg and self.inst.sg:HasStateTag("sleeping")) or -- Need this now because you are no longer invincible during sleep
     self.inst.is_teleporting or -- Teleportato ?
-    (self.ignore and self.redirect == nil)) then
-        self:Recalc(dt, radiation)
+    self.ignore) then
+        self:Recalc(dt)
         
-        if self.inst.components.health and not self.inst.components.health:IsDead() then
-            -- LukaS: -[TODO]- Revamp the radiation DOT
-            -- if self:GetPercent() >= TUNING.RADIATION_THRESH.HIGH.POST then
-            --     self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
-            -- end
-        end
+        -- if self.inst.components.health and not self.inst.components.health:IsDead() then
+        --     -- LukaS: -[TODO]- Revamp the radiation DOT
+        --     if self:GetPercent() >= TUNING.RADIATION_THRESH.HIGH.POST then
+        --         self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
+        --     end
+        -- end
     else
         self.rate = 0
         self.ratescale = RATE_SCALE.NEUTRAL -- Disable arrows
     end
 end
 
-function Radiation:Recalc(dt, radiation)
-    self.rate = (radiation*self.externalmodifiers_multiply:Get()*self.externalmodifiers_additive:Get())
-    if self.rate > 0 then
-        self.rate = self.rate*(1 - self.resistance)
+function Radiation:Recalc(dt)
+    local rad_aura = 0
+
+    -- Per tile radiation delta
+    local x, y, z = self.inst.Transform:GetWorldPosition()
+    local tile_rad = TheWorld.components.radiationmanager:GetAtPoint(x, y, z)
+    if tile_rad > 0 and self.current < tile_rad then
+        local diff_factor = 1 - (self.current/tile_rad)*0.75
+        rad_aura = rad_aura + tile_rad*TUNING.TILE_RAD_INTAKE_FACTOR*diff_factor
     end
 
-    self.ratescale =
-        (self.rate > 0.2 and RATE_SCALE.INCREASE_HIGH) or
-        (self.rate > 0.1 and RATE_SCALE.INCREASE_MED) or
-        (self.rate > 0.01 and RATE_SCALE.INCREASE_LOW) or
-        (self.rate < -0.3 and RATE_SCALE.DECREASE_HIGH) or
-        (self.rate < -0.1 and RATE_SCALE.DECREASE_MED) or
-        (self.rate < -0.02 and RATE_SCALE.DECREASE_LOW) or
-        RATE_SCALE.NEUTRAL
+    -- Per source radiation delta
+    for source, _ in pairs(self.radiation_sources) do
+        if source:IsValid() then -- Can be invalid if it gets removed
+            local distsq = self.inst:GetDistanceSqToInst(source)
+            local radiussq = source.components.radiationsource.radius*source.components.radiationsource.radius
+            if distsq <= radiussq then
+                local dist_factor = 1 - (distsq/radiussq)
+                rad_aura = rad_aura + source.components.radiationsource.radiation_amount*dt*dist_factor
+            end
+        end
+    end
 
-    self:DoDelta(self.rate*dt, true)
+    self.rate = rad_aura*self.externalmodifiers_multiply:Get()
+
+    if self.rate > 0 then
+        self.rate = self.rate*(1 - self.resistance)
+    elseif self.current > 0 then
+        self.rate = self.rate + self.falloff
+    end
+
+    local new_ratescale = (self.rate > 0.4 and RATE_SCALE.INCREASE_HIGH) or
+                          (self.rate > 0.2 and RATE_SCALE.INCREASE_MED) or
+                          (self.rate > 0.05 and RATE_SCALE.INCREASE_LOW) or
+                          (self.rate < -0.8 and RATE_SCALE.DECREASE_HIGH) or
+                          (self.rate < -0.3 and RATE_SCALE.DECREASE_MED) or
+                          (self.rate < -0.1 and RATE_SCALE.DECREASE_LOW) or -- LukaS: -0.09 to catch the self.falloff decrease
+                           RATE_SCALE.NEUTRAL
+
+    if self.ratescale ~= new_ratescale then
+        self.ratescale = new_ratescale
+    end
+
+    if self.rate ~= 0 then
+        self:DoDelta(self.rate*dt, true)
+    end
 end
 
 function Radiation:OnSave()

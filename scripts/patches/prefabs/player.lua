@@ -13,7 +13,10 @@ return function(inst)
     end
     
     --SERVER
-    inst:AddComponent("radiation")
+    if not inst.components.radiation then
+        inst:AddComponent("radiation")
+    end
+    
     inst.components.radiation:SetMax(TUNING.CHARACTERS_MAX_RADIATION[string.upper(inst.prefab)] or TUNING.CHARACTERS_MAX_RADIATION.WILSON)
     if inst:HasTag("robot") or inst:HasTag("lunar_touched") then
         inst.components.radiation:SetResistance(TUNING.ROBOT_RADIATION_RESISTANCE)
