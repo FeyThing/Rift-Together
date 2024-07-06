@@ -443,7 +443,7 @@ local function portalfn()
 	inst:AddComponent("radiationsource")
     inst.components.radiationsource:SetRadius(24)
     inst.components.radiationsource:SetContaminationAmount(0.5)
-    inst.components.radiationsource:SetRadiationAmount(20)
+    inst.components.radiationsource:SetRadiationAmount(14)
     inst.components.radiationsource:ShouldContaminateTiles(true)
 
     inst:WatchWorldState("cycles", on_cycles_changed)

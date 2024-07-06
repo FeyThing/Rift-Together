@@ -202,7 +202,16 @@ function Radiation:Recalc(dt)
             local radiussq = source.components.radiationsource.radius*source.components.radiationsource.radius
             if distsq <= radiussq then
                 local dist_factor = 1 - (distsq/radiussq)
-                rad_aura = rad_aura + source.components.radiationsource.radiation_amount*dt*dist_factor
+                rad_aura = rad_aura + source.components.radiationsource.radiation_amount*dist_factor
+            end
+        end
+    end
+
+    -- Per radioactive inventory item
+    if self.inst.components.inventory then
+        for i, item in ipairs(self.inst.components.inventory:ReferenceAllItems()) do
+            if item:IsValid() and item.components.radiationsource then
+                rad_aura = rad_aura + item.components.radiationsource.radiation_amount
             end
         end
     end

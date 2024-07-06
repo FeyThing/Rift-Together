@@ -40,6 +40,9 @@ local RadiationSource = Class(function(self, inst)
     self.affected_ents = {  } -- A list of entites currently in the radiation radius
     self.spread_task = nil
 
+    self.inst:ListenForEvent("onputininventory", function() self:OnPutInInventory() end)
+    self.inst:ListenForEvent("ondropped", function() self:OnDropped() end)
+
     self.inst:StartUpdatingComponent(self)
 end)
 
@@ -51,7 +54,7 @@ function RadiationSource:OnRemoveFromEntity()
 
     for ent, _ in pairs(self.affected_ents) do
         if ent then
-            ent.components.radiation_sources[self.inst] = nil
+            ent.components.radiation.radiation_sources[self.inst] = nil
         end
     end
 end
@@ -81,6 +84,22 @@ function RadiationSource:ShouldContaminateTiles(contaminate)
             self.spread_task = nil
         end
     end
+end
+
+function RadiationSource:OnPutInInventory()
+    for ent, _ in pairs(self.affected_ents) do
+        if ent then
+            ent.components.radiation.radiation_sources[self.inst] = nil
+        end
+    end
+
+    self.affected_ents = {  }
+
+    self.inst:StopUpdatingComponent(self)
+end
+
+function RadiationSource:OnDropped()
+    self.inst:StartUpdatingComponent(self)
 end
 
 function RadiationSource:OnUpdate()

@@ -65,7 +65,7 @@ local function fn()
     inst:AddComponent("radiationsource")
     inst.components.radiationsource:SetRadius(18)
     inst.components.radiationsource:SetContaminationAmount(0.2)
-    inst.components.radiationsource:SetRadiationAmount(12)
+    inst.components.radiationsource:SetRadiationAmount(8)
     inst.components.radiationsource:ShouldContaminateTiles(true)
 
 	inst:DoPeriodicTask(0.5, CreateBubbles)
