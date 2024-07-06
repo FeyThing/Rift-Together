@@ -163,6 +163,14 @@ function RadiationBadge:OnUpdate(dt)
 		self.arrowdir = anim
 		self.arrow:GetAnimState():PlayAnimation(anim, true)
 	end
+
+	if radiation:GetPercentWithPenalty() <= 0 then
+		if self.active and anim == "neutral" then
+			self:Deactivate()
+		elseif not self.active and anim ~= "neutral" then
+			self:Activate()
+		end
+	end
 end
 
 return RadiationBadge
