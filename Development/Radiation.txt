@@ -6,7 +6,6 @@ In this case, the toxic caves which is a rift dumping ground of toxic material t
   Most entities have their own max radiation value.
   Most entities have their own resistance to radiation, which is a percentage reduction to radiation gain.
 
-- Radiation dropoff = 1/2 per sec.
 - Radiation states an entity can be in (alive entities only):
   * LOW - starts >37.5%, stops <35% - entity announces they feel irradiated, no other negative effects
   * MED - starts >57.5%, stops <55% - entity announces they feel sick, slight green glow
