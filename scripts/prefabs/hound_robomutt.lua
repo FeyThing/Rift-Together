@@ -304,7 +304,7 @@ local function fncommon(bank, build, morphlist, custombrain, tag, data)
     inst:AddTag("hound")
     inst:AddTag("canbestartled")
 	inst:AddTag("lightningrod")
-	inst:AddTag("radiationimmunity")
+	inst:AddTag("noradiation")
 	inst:AddTag("soulless")
     inst:AddTag("armoredbody")
 

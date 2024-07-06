@@ -62,8 +62,11 @@ local function fn()
 	inst:AddComponent("unevenground")
     inst.components.unevenground.radius = 2
 
-    inst:AddComponent("radiationspreader")
-    inst.components.radiationspreader:SetRadius(1)
+    inst:AddComponent("radiationsource")
+    inst.components.radiationsource:SetRadius(18)
+    inst.components.radiationsource:SetContaminationAmount(0.2)
+    inst.components.radiationsource:SetRadiationAmount(8)
+    inst.components.radiationsource:ShouldContaminateTiles(true)
 
 	inst:DoPeriodicTask(0.5, CreateBubbles)
 

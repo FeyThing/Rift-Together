@@ -106,9 +106,11 @@ local function MakeBarrel(name)
 		inst.components.workable:SetWorkLeft(5)
 		inst.components.workable:SetOnFinishCallback(onhammered)
 
-		inst:AddComponent("radiationspreader")
-        inst.components.radiationspreader:SetRadius(2)
-
+		inst:AddComponent("radiationsource")
+        inst.components.radiationsource:SetRadius(12)
+        inst.components.radiationsource:SetContaminationAmount(0.1)
+        inst.components.radiationsource:SetRadiationAmount(4)
+        inst.components.radiationsource:ShouldContaminateTiles(true)
 
         inst:ListenForEvent("floater_startfloating", function(inst) inst.AnimState:PlayAnimation("idle_water", true) end)
 		inst:ListenForEvent("floater_startfloating", OnInit)

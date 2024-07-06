@@ -243,7 +243,7 @@ for _, state in pairs(states) do
 	local oldrun_startenter2 = sg.states["run_start"].onenter
 	sg.states["run_start"].onenter = function(inst, ...)
 		oldrun_startenter2(inst, ...)
-		print("Run_Start:", inst:HasTag("hovershoed"))
+		-- print("Run_Start:", inst:HasTag("hovershoed"))
 		if inst:HasTag("hovershoed") and inst.AnimState:IsCurrentAnimation("run_start") then
 			inst.AnimState:PlayAnimation("shoeshover_pre")
 		end

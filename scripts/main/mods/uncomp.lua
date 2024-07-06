@@ -28,7 +28,7 @@ AddPrefabPostInit("moonmaw_dragonfly", function(inst)
     end	 	
     
     inst:ListenForEvent("onattackother", function(inst, data)
-        if math.random() <= 0.75 and data.target and not data.target:HasTag("radiationimmunity") then
+        if math.random() <= 0.75 and data.target and data.target.components.radiation then
             inst:inflictvictim(data.target)
             data.target.components.radiation:DoDelta(25)
         end
@@ -48,7 +48,7 @@ AddPrefabPostInit("moonmaw_larvae", function(inst)
     end
     
     inst:ListenForEvent("onattackother", function(inst, data)
-        if math.random() <= 0.9 and data.target and not data.target:HasTag("radiationimmunity") then
+        if math.random() <= 0.9 and data.target and data.target.components.radiation then
             inst:inflictvictim(data.target)
             data.target.components.radiation:DoDelta(10)
         end
@@ -60,8 +60,10 @@ AddPrefabPostInit("moonmaw_glass", function(inst)
         return inst
     end
     
-    inst:AddComponent("radiationspreader")
-    inst.components.radiationspreader:SetRadius(1)
+    inst:AddComponent("radiationsource")
+    inst.components.radiationsource:SetRadius(4)
+    inst.components.radiationsource:SetContaminationAmount(0.5)
+    inst.components.radiationsource:SetRadiationAmount(2)
 end)
 
 AddPrefabPostInit("moonmaw_trap", function(inst)
@@ -69,8 +71,10 @@ AddPrefabPostInit("moonmaw_trap", function(inst)
         return inst
     end
     
-    inst:AddComponent("radiationspreader")
-    inst.components.radiationspreader:SetRadius(2)
+    inst:AddComponent("radiationsource")
+    inst.components.radiationsource:SetRadius(4)
+    inst.components.radiationsource:SetContaminationAmount(0.5)
+    inst.components.radiationsource:SetRadiationAmount(2)
 end)
 
 AddPrefabPostInit("moonmaw_glasshards", function(inst)
@@ -85,7 +89,7 @@ AddPrefabPostInit("moonmaw_glasshards", function(inst)
     end
     
     inst:ListenForEvent("onattackother", function(inst, data)
-        if math.random() <= 0.9 and data.target and not data.target:HasTag("radiationimmunity") then
+        if math.random() <= 0.9 and data.target and data.target.components.radiation then
             inst:inflictvictim(data.target)
             data.target.components.radiation:DoDelta(1)
         end
@@ -101,7 +105,7 @@ AddPrefabPostInit("hound", function(inst)
         end
         
         inst:ListenForEvent("onattackother", function(inst, data)
-            if math.random() <= 0.9 and data.target and not data.target:HasTag("radiationimmunity") then
+            if math.random() <= 0.9 and data.target and data.target.components.radiation then
                 inst:inflictvictim(data.target)
                 data.target.components.radiation:DoDelta(10)
             end

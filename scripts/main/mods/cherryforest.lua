@@ -16,7 +16,7 @@ end
 AddPrefabPostInit("bismuthhat", function(inst)
     if not _G.TheWorld.ismastersim then
         return inst
-    end	
+    end
     inst.components.equippable:SetRadiationProtectPercent(0.15)
 end)
 
@@ -48,5 +48,5 @@ end)
 
 -- Immune
 AddPrefabPostInit("cherry_daylily", function(inst)
-    inst:AddTag("radiationimmunity")			
+    inst:AddTag("noradiation")
 end)

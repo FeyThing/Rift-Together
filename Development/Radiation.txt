@@ -2,32 +2,36 @@ Radiation is the biggest hazard in Rift together for the time being. As mentione
 Radiation is spatial in nature and comes from those lunar aligned or is spewed through rifts into the constant from a tainted source.
 In this case, the toxic caves which is a rift dumping ground of toxic material that is redirected onto the surface.
 
-- Most entities can become irradiated. This includes playable characters (+modded), mobs and non-alive entities.
+- Playable characters (+modded) and mobs can become irradiated.
   Most entities have their own max radiation value.
   Most entities have their own resistance to radiation, which is a percentage reduction to radiation gain.
 
-- Reaching 50 radiation (for any entity) causes radiation emission, emission radius equals (CURRENT_RAD - 50)/4.
-- Radiation dropoff = 1/2 per sec.
-- Radiation states an entity can be in (alive entities only): TODO - RENAME RADIATION STATES TO LOW, MED, HIGH, CRITICAL.
-  - LOW - starts >37.5%, stops <35% - entity announces they feel irradiated, no other negative effects
-  - MED - starts >57.5%, stops <55% - entity announces they feel sick, slight green glow
-  - HIGH - starts >77.5%, stops <75% - entity announces they feel strong pain, stronger glow, irradiated overlay starts to appear,
-    slight health loss (1 per 5 sec)
-  - CRITICAL - starts >92.5%, stops <90% - entity announces they feel extreme pain, overlay is well visible, strong health loss (1-2 per sec)
+- Radiation states an entity can be in (alive entities only):
+  * LOW - starts >37.5%, stops <35% - entity announces they feel irradiated, no other negative effects
+  * MED - starts >57.5%, stops <55% - entity announces they feel sick, slight green glow
+  * HIGH - starts >77.5%, stops <75% - entity announces they feel strong pain, stronger glow, irradiated overlay starts to appear,
+           slight health loss (1 per 5 sec)
+  * CRITICAL - starts >92.5%, stops <90% - entity announces they feel extreme pain, overlay is well visible, strong health loss (1-2 per sec)
 
 - When a mob dies from radiation poisoning, it has a chance to mutate. In this case using current assets,
   hounds should have a chance to turn into a horror hound, pengulls into a moon pengull, and the birds into their moon-infected counterparts.
   The rest of the mutants will be custom made.
 
-- Entities can be radiation sources (separate component from radiation.lua) making their radiation effectively infinite.
-  Around these entities tiles can become irradiated after some time. These entities can be removed/destroyed but the area around them
-  will stay irradiated for a moderate amount of time before decaying.
+- Entities can be radiation sources (radiationsource.lua) making their radiation emission effectively infinite with variable range.
+  Tiles around these entities will slowly become irradiated. Radiation sources can be removed. Tile radiation will slowly decay after the source
+  has been removed. During a nuclear winter most tiles in the world will start increasing in radiation although at a lower pace.
+  Air purifiers can be built to greatly increase the speed at which radiation decays in a decently large radius, nearby tiles will also be immune to
+  radiation.
 
-- Pickable items can become irradiated. Keeping them in your inventory will increase radiation by 0.2*RAD_PERCENT per sec per irradiated item.
+- Radiation can be detectable with:
+  * The radiation meter, it will go up when in an irradiated area
+  * Your very own eyes, when the radiation is very high the surrounding area will have a visual effect
+  * Using the hazmat suit radiation vision (TO BE IMPLEMENTED)
+
+- Some items can be inherently irradiated. Keeping them in your inventory will increase radiation by a set amount.
   This effect can be mitigated by wearing protective clothing. Some foods have natural radiation values such as bananas that
   would only affect the player when eaten.
-  If a nuclear winter occurs (cannot occur on the first winter), keeping stuff in fridges, under the tarp or inside other containers
-  will keep items contamination free. Moonrocks should be radioactive (soft radiation source, cannot spread to tiles).
+  Moonrocks should be radioactive (soft radiation source, cannot spread to tiles).
 
 - Some creatures are naturally immune to radiation. These include the lunar aligned and robots that have extra protective shells.
   These count as soft radiation sources, cannot spread to tiles.
