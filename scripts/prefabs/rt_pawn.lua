@@ -89,7 +89,7 @@ local function fn_common(build, tag)
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
     inst.entity:AddSoundEmitter()
-	inst.entity:AddLight()
+    inst.entity:AddLight()
     inst.entity:AddDynamicShadow()
     inst.entity:AddNetwork()
 
@@ -103,15 +103,16 @@ local function fn_common(build, tag)
 	
 
 	
-	inst.Light:SetColour(.65, .65, .5) 
+    inst.Light:SetColour(.65, .65, .5) 
     --inst.Light:Enable(true)
 
     inst:AddTag("chess")
     inst:AddTag("hostile")
     inst:AddTag("pawn")
     inst:AddTag("monster")
-	inst:AddTag("soulless")
-	inst:AddTag("noradiation")
+    inst:AddTag("soulless")
+    inst:AddTag("noradiation")
+    inst:AddTag("armoredbody")
 
     if tag ~= nil then
         inst:AddTag(tag)
@@ -123,8 +124,6 @@ local function fn_common(build, tag)
     end
 
     --inst.kind = ""
-
-	inst:AddComponent("armoredbody")
 
     --
     local combat = inst:AddComponent("combat")

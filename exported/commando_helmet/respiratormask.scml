@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="swap_hat">
+        <file id="0" name="swap_hat/swap_hat-0.png" width="248" height="212" pivot_x="0.501613" pivot_y="-0.0954009"/>
+        <file id="1" name="swap_hat/swap_hat-1.png" width="216" height="224" pivot_x="0.66331" pivot_y="-0.0166295"/>
+        <file id="2" name="swap_hat/swap_hat-2.png" width="240" height="220" pivot_x="0.523438" pivot_y="0.0269318"/>
+        <file id="3" name="swap_hat/swap_hat-3.png" width="244" height="232" pivot_x="0.528689" pivot_y="0.310345"/>
+    </folder>
+    <entity id="0" name="respiratormask">
+        <animation id="0" name="anim" length="34" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="34">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="swap_hat">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-0.2" y="6.6" angle="0" scale_x="0.797775" scale_y="0.79776"/>
+                </key>
+                <key id="1" time="34" spin="0">
+                    <object folder="0" file="3" x="-0.2" y="6.6" angle="0" scale_x="0.797775" scale_y="0.79776"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

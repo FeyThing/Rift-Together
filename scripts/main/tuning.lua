@@ -76,7 +76,7 @@ local tunings = {
         WOODLEGS = 150,
 
         -- Uncompromising Mode characters
-        WINKY = 120,
+        WINKY = 200,
         WATHOM = 150,
         WIXIE = 100
     },
@@ -189,6 +189,28 @@ local tunings = {
 		},
 	},
 	
+	ARMOREDBODY_ATTACKWEAR_MULT = 4,
+	
+	ARMOR_RARITANIUM = wilson_health * 6 * multiplayer_armor_durability_modifier,
+	ARMOR_RARITANIUM_ABSORPTION = 0.8 * multiplayer_armor_absorption_modifier,
+	ARMOR_RARITANIUM_EXPLOSIVE_RESIST = 0.2,
+	
+	RT_FILTER_SMALL_PERISHTIME = total_day_time * 1,
+	RT_FILTER_LARGE_PERISHTIME = total_day_time * 6,
+	
+	RESPIRATORMASK_PERISHTIME = total_day_time * 5,
+	RESPIRATORMASK_RAD_PROTECTION = 0.2,
+	
+	HAZHAT_PERISHTIME = total_day_time * 10,
+	HAZMAT_PERISHTIME = total_day_time * 10,
+	
+	RT_AIR_PURIFIER_MAX_FUEL_TIME = total_day_time * 5,
+	RT_AIR_PURIFIER_RADIUS = 10,
+	
+	STARFRUITVINE_SPAWN_TIME_MIN = total_day_time,
+	STARFRUITVINE_SPAWN_TIME_VARIANCE = total_day_time * 2,
+	STARFRUITVINE_GROW_TIME = total_day_time,
+	
 	--- Biomes
 
 
@@ -222,6 +244,14 @@ local tunings = {
 	DUSTDEVIL_LIFETIME = 50,
 	DUSTDEVIL_DAMAGE = 27,
 	
+    --Pillar
+    JUNK_SHADE_MAX_ROTATION = 0,
+    JUNK_SHADE_ROTATION_SPEED = 0,
+    JUNK_SHADE_MAX_TRANSLATION = 0,
+    JUNK_SHADE_TRANSLATION_SPEED = 0,
+    JUNK_SHADE_SCALE = 1,
+    JUNK_SHADE_MIN_STRENGTH = 0.2,
+    JUNK_SHADE_MAX_STRENGTH = 0.5,
 
 	--- Creatures
 	RT_PAWN_HEALTH = 200,

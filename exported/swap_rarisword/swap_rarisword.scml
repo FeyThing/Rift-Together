@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="swap_rarisword">
+        <file id="0" name="swap_rarisword/swap_rarisword.png" width="112" height="262" pivot_x="0.483458" pivot_y="0.143156"/>
+    </folder>
+    <entity id="0" name="swap_rarisword">
+        <animation id="0" name="BUILD" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="swap_rarisword">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="2.887863" y="29.617477"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

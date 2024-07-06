@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="fruit">
+        <file id="0" name="fruit/fruit1-3.png" width="228" height="203" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="fruit/fruit1-1.png" width="228" height="203" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="fruit/fruit1-2.png" width="308" height="352" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="luminous_fruit">
+        <animation id="0" name="cooked" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="1000">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="fruit1-3">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-110.705473" y="163.915258" angle="0"/>
+                </key>
+                <key id="1" time="1000" spin="0">
+                    <object folder="0" file="0" x="-110.705473" y="163.915258" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idle" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="1000">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="fruit1-1">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-117.543168" y="153.767658" angle="0"/>
+                </key>
+                <key id="1" time="1000" spin="0">
+                    <object folder="0" file="1" x="-117.543168" y="153.767658" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="idle_planted" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="1000">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="fruit1-2">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="-143.10345" y="298.27586" angle="0"/>
+                </key>
+                <key id="1" time="1000" spin="0">
+                    <object folder="0" file="2" x="-143.10345" y="298.27586" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="rt_spaceshake">
+        <file id="0" name="rt_spaceshake/rt_spaceshake-0.png" width="145" height="182" pivot_x="0.524138" pivot_y="0.186813"/>
+    </folder>
+    <entity id="0" name="rt_crockpotfood">
+        <animation id="0" name="idle" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="food-0">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" pivot_x="0.523792" pivot_y="0.16681" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

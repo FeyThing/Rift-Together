@@ -586,7 +586,6 @@ local function luminoustree(name, stage, data)
         inst.AnimState:SetBuild("luminoustree_build")
 		inst.AnimState:SetSymbolBloom("coconut")
 		inst.AnimState:SetSymbolLightOverride("coconut", .5)
-		inst.AnimState:SetLightOverride(.1)
         inst:SetPrefabName("luminoustree")
         inst:AddTag("luminoustree") -- for plantregrowth
 		

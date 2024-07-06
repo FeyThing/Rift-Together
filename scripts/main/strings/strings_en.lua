@@ -108,13 +108,23 @@ local strings = {
 				RARISWORD = "I could slice through metal with this!",
 				RARISPEAR = "I could poke through metal with this.",
 				COMMANDO_HELMET = "It's a strange helmet with holes on the sides. I don't think I can wear this.",
+				ARMOR_RARITANIUM = "Maybe it's strong enough to block even explosions.",
+				HAZHAT = "It makes breathing so much easier.",
+				HAZMAT = "Half protection but better paired with a mask.",
 				
 				NANOTECH = "It emits some sort of aura.",
 				NANOCRATE = "It glows faintly.",
 				RARITANIUMORE = "Hey, this could help!",
+				GOLD_BAR= "It's solid gold.",
+				SCRAP_BAR= "Lots of scrap melted together.",
+				MOONGLASS_BAR= "One would think it's fragile.",
 				RARITANIUM_BAR= "Now it's useful!",
 				RARITANIUM_CRYSTALS = "Looks like some sort of crystal formation.",
 				SCRAPMETAL = "Pieces of metal litter the ground.",
+				SCRAPBITS = "Bits and pieces of scrap.",
+				RT_FABRIC = "Nice and sturdy pieces of cloth.",
+				RT_FILTER_SMALL = "Slightly helps with breathing easy.",
+				RT_FILTER_LARGE = "It really helps with breathing easier.",
 				BARREL_RADIOACTIVE = "I don't want to get too close.",
 				DIMENSIONAL_RIFT = "Oh no, there must be a way to close it...",
 
@@ -124,6 +134,8 @@ local strings = {
 				LUMINOUSTREE_SAPLING = "It's starting to grow.",
 				LUMINOUS_FRUIT = "Doesn't look too appetizing.",
 				LUMINOUS_FRUIT_COOKED = "It may taste better now that it's cooked.",
+				STARFRUIT = "Is it a fallen star?",
+				STARFRUIT_COOKED = "That's one burnt out star.",
 
 				NANOBOOST = "Looks refreshing.",
 
@@ -132,7 +144,7 @@ local strings = {
 				RT_PAWN_NIGHTMARE = "That one looks like it has seen better days.",
 
 				VULLARD_LAMP = "Looks like someone made them with scrap.",
-				SCRAPROCK = "I hear something coming from it.",
+				SCRAPROCK = "It's a heap of scrap.",
 				JUNKPILE = "I should be careful touching it with bare hands.",
 				VULLARD_SMELTER = "That's incredibly hot! I could make something useful with this.",
 				RT_ANVIL = "Things could be improved with this.",
@@ -171,6 +183,7 @@ local strings = {
 				RARITANIUMORE = "Raritanium! I wonder if I could use it for upgrades?",
 				RARITANIUM_CRYSTALS = "That looks like raritanium.",
 				SCRAPMETAL = "Maybe I could make use of this scrap.",
+				SCRAPBITS = "I can upgrade my gear with these.",
 				DIMENSIONAL_RIFT = "It must be the work of the dimensionator. I need to find a way to close it.",
 
 				HOUND_ROBOMUTT = "Oh no, not these things again.",
@@ -230,13 +243,23 @@ local strings = {
 		RARISWORD = "Crystalass",
 		RARISPEAR = "Reinforced Spear",
 		COMMANDO_HELMET = "Megacorp Helmet",
+		ARMOR_RARITANIUM = "Reinforced Armor",
+		HAZHAT = "Hazmat Mask",
+		HAZMAT = "Hazmat Suit",
 		
 		NANOTECH = "Nanotech",
 		NANOCRATE = "Nanotech Crate",
 		RARITANIUMORE = "Raritanium Crystal",
+		GOLD_BAR= "Gold Alloy",
+		SCRAP_BAR= "Scrap Alloy",
+		MOONGLASS_BAR= "Moonglass Alloy",
 		RARITANIUM_BAR= "Raritanium Alloy",
 		RARITANIUM_CRYSTALS= "Raritanium",
 		SCRAPMETAL = "Scrap Metal",
+		SCRAPBITS = "Scrap Bits",
+		RT_FABRIC = "Fabric",
+		RT_FILTER_SMALL = "Small Filter",
+		RT_FILTER_LARGE = "Large Filter",
 		BARREL_RADIOACTIVE = "Metal Drum",
 		DIMENSIONAL_RIFT = "Dimensional Rift",
 
@@ -246,6 +269,10 @@ local strings = {
 		LUMINOUSTREE_SAPLING = "Luminous Sapling",
 		LUMINOUS_FRUIT = "Luminous Fruit",
 		LUMINOUS_FRUIT_COOKED = "Roasted Luminous Fruit",
+		STARFRUIT = "Starfruit",
+		STARFRUIT_COOKED = "Roasted Starfruit",
+		
+		RT_SPACESHAKE = "Space Shake",
 
 		NANOBOOST = "Nanotech Boost",
 
@@ -264,6 +291,8 @@ local strings = {
 		RADIATION = "Radiation",
 		
 		WX78MODULE_MAXRESIST = "Radioshielding Circuit",
+		
+		RT_AIR_PURIFIER = "Air Purifier",
 		
 		--- Turfs
 		TURF_JUNK = "Junk Turf",
@@ -338,7 +367,19 @@ local strings = {
 
 		NANOBOOST = "An energy restoring drink!",
 		
-		WX78MODULE_MAXRESIST = "someone else come up with a description please",
+		WX78MODULE_MAXRESIST = "to-do",
+		
+		RT_AIR_PURIFIER = "to-do",
+		
+		ARMOR_RARITANIUM = "to-do",
+		
+		HAZHAT = "to-do",
+		HAZMAT = "to-do",
+		
+		RT_FABRIC = "to-do",
+		
+		RT_FILTER_SMALL = "to-do",
+		RT_FILTER_LARGE = "to-do",
 		
 		--- Shoetime mod
 		SHOES_HOVER = "The terrain is the thing of the past with these!",
@@ -369,7 +410,11 @@ local strings = {
 			BIOMES = "Are you tired of traveling to the island smelter? Fear not, you can always toggle Rift Together's biomes to generate on the mainland instead.",
 			WIKI = "Having trouble with finding something? Don't know what something does? Check out Rift Together's wiki found on the mod page!",	
 			COMPAT = "To activate Rift Together's effects in other mods. Make sure compatibility is toggled on in configs.",
-		},				
+		},
+		COOKBOOK = {
+			FOOD_EFFECTS_RADIATION_DECREASE = "Decreases radiation",
+			FOOD_EFFECTS_RADIATION_INCREASE = "Increases radiation",
+		},
 	},
 	
 }

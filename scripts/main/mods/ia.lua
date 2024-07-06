@@ -24,6 +24,10 @@ AddPrefabPostInit("bananapop", function(inst)
     inst.components.edible.radiationvalue = 5
 end)	
 
+AddPrefabPostInit("knightboat", function(inst)
+	inst:AddTag("armoredbody")
+end)
+
 -- Rift Together Luminous tree compatibility
 TUNING.LUMINOUS_WINDBLOWN_SPEED = 0.2
 TUNING.LUMINOUS_WINDBLOWN_FALL_CHANCE = 0

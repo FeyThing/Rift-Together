@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="shdw">
+        <file id="0" name="shdw/shdw-0.png" width="886" height="304" pivot_x="0.554797" pivot_y="0.373602"/>
+    </folder>
+    <folder id="1" name="pillar">
+        <file id="0" name="pillar/pillar-0.png" width="491" height="652" pivot_x="0.5" pivot_y="0.389247"/>
+    </folder>
+    <entity id="0" name="pillar_torrenivlush_small">
+        <animation id="0" name="idle" length="99" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+                <key id="1" time="33">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+                <key id="2" time="66">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+                <key id="3" time="99">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pillar">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-17.717042" y="377.746116" angle="0" scale_x="2.301374" scale_y="2.301374"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="shdw">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="4.9" y="-55.35" angle="0" scale_x="1.266237"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

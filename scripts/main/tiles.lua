@@ -199,6 +199,7 @@ ChangeTileRenderOrder(WORLD_TILES.OCEAN_TOXIC, WORLD_TILES.OCEAN_HAZARDOUS, true
 ChangeTileRenderOrder(WORLD_TILES.JUNK, WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.LUSH, WORLD_TILES.DIRT)
 ChangeTileRenderOrder(WORLD_TILES.DESERTSAND, WORLD_TILES.DIRT)
+ChangeTileRenderOrder(WORLD_TILES.GRASS, WORLD_TILES.DESERTSAND)
 ChangeTileRenderOrder(WORLD_TILES.METALPLATFORM, WORLD_TILES.DIRT)
 
 --RegisterInventoryItemAtlas(_G.resolvefilepath("images/rnc_inventoryimages.xml"),"turf_lush.tex")

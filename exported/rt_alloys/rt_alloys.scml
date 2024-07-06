@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="alloys">
+        <file id="0" name="alloys/raritanium_alloy.png" width="228" height="124" pivot_x="0.438596" pivot_y="0.298387"/>
+        <file id="1" name="alloys/moonglass_alloy.png" width="228" height="124" pivot_x="0.438596" pivot_y="0.298387"/>
+        <file id="2" name="alloys/gold_alloy.png" width="228" height="124" pivot_x="0.438596" pivot_y="0.298387"/>
+        <file id="3" name="alloys/scrap_alloy.png" width="228" height="124" pivot_x="0.438596" pivot_y="0.298387"/>
+    </folder>
+    <entity id="0" name="rt_alloys">
+        <animation id="0" name="idle_raritanium" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="raritanium_alloy">
+                <key id="0" spin="0">
+                    <object folder="0" file="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idle_gold" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="raritanium_alloy">
+                <key id="0" spin="0">
+                    <object folder="0" file="2"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="idle_scrap" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="raritanium_alloy">
+                <key id="0" spin="0">
+                    <object folder="0" file="3"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="3" name="idle_moonglass" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="raritanium_alloy">
+                <key id="0" spin="0">
+                    <object folder="0" file="1"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

@@ -3,17 +3,35 @@ local Assets = {
     
 }
 
+local function EnableRadProtection(inst)
+	local owner = inst.components.inventoryitem.owner
+	
+	if owner ~= nil and owner.components.radiation ~= nil then
+		owner.components.radiation:AddPenalty(inst, TUNING.RESPIRATORMASK_RAD_PROTECTION)
+	end
+end
+
+local function DisableRadProtection(inst)
+	local owner = inst.components.inventoryitem.owner
+	
+	if owner ~= nil and owner.components.radiation ~= nil then
+		owner.components.radiation:RemovePenalty(inst)
+	end
+end
+
 local function OnEquip(inst, owner)
     if owner:HasTag("player") then
-        owner.AnimState:Show("HEAD_HAT")
-        owner.AnimState:Show("HEAD_HAT_HELM")
-        owner.AnimState:UseHeadHatExchange(true)
-        owner.AnimState:SetSymbolMultColour("headbase_hat", 0,0,0,0)
+        owner.AnimState:Show("HEAD")
+        owner.AnimState:Hide("HEAD_HAT")
+        owner.AnimState:Hide("HEAD_HAT_NOHELM")
+        owner.AnimState:Hide("HEAD_HAT_HELM")
+        --owner.AnimState:UseHeadHatExchange(true)
+        --owner.AnimState:SetSymbolMultColour("headbase", 0,0,0,0)
     else
         owner.AnimState:Show("HAT")
         owner.AnimState:Hide("HAIR_HAT")
-        owner.AnimState:Hide("HAIR_NOHAT")
-        owner.AnimState:Hide("HAIR")
+        owner.AnimState:Show("HAIR_NOHAT")
+        owner.AnimState:Show("HAIR")
     end
     owner:AddTag("has_gasmask")
     
@@ -26,11 +44,13 @@ local function OnEquip(inst, owner)
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StartConsuming()
 	end
+	
+	EnableRadProtection(inst)
 end
 
 local function OnUnequip(inst, owner) 
 	owner.AnimState:ClearOverrideSymbol("swap_hat")
-    owner.AnimState:SetSymbolMultColour("headbase_hat", 1,1,1,1)
+    --owner.AnimState:SetSymbolMultColour("headbase", 1,1,1,1)
 
     if inst.fx ~= nil then
         inst.fx:Remove()
@@ -39,10 +59,28 @@ local function OnUnequip(inst, owner)
 
 	owner.AnimState:Hide("HAT")
 	owner:RemoveTag("has_gasmask")
-    owner.AnimState:UseHeadHatExchange(false)
+    --owner.AnimState:UseHeadHatExchange(false)
 
 	if inst.components.fueled ~= nil then
 		inst.components.fueled:StopConsuming()
+	end
+	
+	DisableRadProtection(inst)
+end
+
+local function OnEquipToModel(inst)
+	if inst.components.fueled ~= nil then
+		inst.components.fueled:StopConsuming()
+	end
+end
+
+local function OnPerish(inst)
+	DisableRadProtection(inst)
+end
+
+local function OnTakeFuel(inst)
+	if inst.components.equippable ~= nil and inst.components.equippable:IsEquipped() then
+		EnableRadProtection(inst)
 	end
 end
 
@@ -81,17 +119,20 @@ local function fn()
 	
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HEAD
-	inst.components.equippable:SetRadiationProtectPercent(0.5) -- from .2 to .5 temporarily until more rad combating equipment is created
+	--inst.components.equippable:SetRadiationProtectPercent(TUNING.RESPIRATORMASK_RAD_PROTECTION)
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
+	inst.components.equippable:SetOnEquipToModel(OnEquipToModel)
 
 	inst:AddComponent("fueled")
-	inst.components.fueled.fueltype = FUELTYPE.USAGE
-	inst.components.fueled:InitializeFuelLevel(480*5)
-	inst.components.fueled:SetDepletedFn(inst.Remove)
+	inst.components.fueled.fueltype = FUELTYPE.RT_FILTER
+	inst.components.fueled:InitializeFuelLevel(TUNING.RESPIRATORMASK_PERISHTIME)
+	inst.components.fueled:SetDepletedFn(OnPerish)
+	inst.components.fueled:SetTakeFuelFn(OnTakeFuel)
+	inst.components.fueled.accepting = true
 
 	inst:AddComponent("waterproofer")
-    inst.components.waterproofer:SetEffectiveness(0.5) -- supposed to match rad absorbtion, temp increase
+    inst.components.waterproofer:SetEffectiveness(TUNING.WATERPROOFNESS_SMALL)
 	
     MakeHauntableLaunch(inst)
 
@@ -132,7 +173,7 @@ local function FollowFx_ColourChanged(inst, r, g, b, a)
 end
 
 local function SpawnFollowFxForOwner(inst, owner)
-	local follow_symbol = owner:HasTag("player") and owner.AnimState:BuildHasSymbol("headbase_hat") and "headbase_hat" or "swap_hat"
+	local follow_symbol = owner:HasTag("player") and owner.AnimState:BuildHasSymbol("headbase") and "headbase" or "swap_hat"
 	inst.fx = {}
 	local frame
 	for i = 1, 3 do        

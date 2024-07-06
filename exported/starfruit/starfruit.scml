@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="starfruit">
+        <file id="0" name="starfruit/starfruit-0.png" width="174" height="163" pivot_x="0.448276" pivot_y="0.177914"/>
+        <file id="1" name="starfruit/starfruit-1.png" width="201" height="136" pivot_x="0.422886" pivot_y="0.330882"/>
+    </folder>
+    <entity id="0" name="starfruit">
+        <animation id="0" name="cooked" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="starfruit-1">
+                <key id="0" spin="0">
+                    <object folder="0" file="1"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idle" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="starfruit-1">
+                <key id="0" spin="0">
+                    <object folder="0" file="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

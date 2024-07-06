@@ -1,21 +1,93 @@
 With space and time becoming so unstable. The weather itself is greatly effected. Winters become harsher, radiation starts to fall, enemies covered in super heated metal in the scorching heat of summer remembered they are scalding hot, dust devils wreck havoc and heavy rains begin to start soaking everything in hard to traverse mud.
 
 
-Nuclear winters, are harsh events that occur during the second year of winter along with bringing in the worst of snowstorms. It's difficult to see without proper gear, and everything dies and or mutates if caught inside of the storms. Standing under shelters or a tarp can help prevent radiation buildup. Air filter machines can prevent radiation from infecting your entire base.
+-----------------
+Winter
+-----------------
 
-Mobs such as pigs during this event should transform into werepigs and gain radiation immunity tags during these storms. Then transform back when the storm is finished.
-Spiderdens should be immune to radiation to prevent mass spider extinction, and beefalo maybe some player made gadgets can be created to preserve and save the herds. Be a hero!
+Nuclear Winter
 
----
+-Nuclear winters, are harsh events that occur during the second year of winter along with bringing in the worst of snowstorms. It's difficult to see without proper gear, and everything dies and or mutates if caught inside of the storms. 
 
-During the summer, dust devils will appear. These miniature tornadoes spawn in the desert and the new canyon biome. They do not have the strength to tear up an entire base. But they do hurt and knock players down if they run into you or living things and can uproot certain plants.
-They're missing the ability to pull on entities that get too close and they spawn in a very inconvenient way using the same method as a tumbleweed spawner except only in summer. Dustdevils leave behind ash, but a much more important custom ingredient I'll want to consider to make storm chasing a thing in summer.
+-Standing under shelters, the shade cast from any canopy (trees or the structures from the junk biome) or a tarp can help prevent radiation buildup. 
 
-Super hot metal creatures. All metal creatures begin to glow scalding red during summer. They themselves don't take damage but they deal extra fire damage when they hit a player and if the player touches them in melee range. Using watering cans on these metal enemies, wearing an ice amulet, or using an ice staff can cool these guys off for you to get a safe hit in up close. Scalding enemies should not freeze, only cool off.
-Mostly clockworks, and robomutts are the creatures who can become balls of hot metal running towards you until further notice.
+-Air filter machines can prevent radiation from infecting your entire base or an area you wish to preserve.
 
+-Mobs such as pigs during this event should transform into werepigs and gain radiation immunity tags during these storms. Then transform back when the storm is finished.
 
----
+-Spiderdens should be immune to radiation to prevent mass spider extinction, and beefalo maybe some player made gadgets/crockpot foods that give radiation immunity for set amount of time can be created to preserve and save the herds/mobs. Be a hero!
+ 
+
+General Winter
+
+With snowstorms in general. I would like there to be regular none radioactive storms.
+
+-I want deep snow to form onto the ground as a tile whenever a storm happens. The tile will change in appearance to a very suspicious looking snow tile and randomly appear will appear in splotches in top of existing tiles similar to how lunar storms terraforms tiles. 
+
+-Whenever a player steps in these tiles the character should sink down a little using transform, and utilizing the z -axis, and force the player into the careful walking animation. The players temperature should drop drastically if they don't get out quick enough, and cool off thermal stones quickly.
+
+-If the player is not near a source of heat or under a tarp then the players vision worsens, a snowy overlay is applied to the screen and the sandstorm slow animation is played.
+
+-wearing appropriate winter clothing and gear should prevent players from sinking into the snow and stops the snowstorms from freezing the player quicker.
+
+-We must be wary of our snowstorms so it doesn't clash with UM when both mods are active.
+
+-----------------
+Spring
+-----------------
+
+Ozone
+
+(For convenience sake we're calling it ozone so not to clash with UMs smog. We'll be expanding on the pollution concept as it's also an aspect of original Ratchet that is important and just fits with the industrial nature of the mod as a general theme anyway.)
+
+- Ozone or smog is a fog event which occurs at any time of the year, but more frequently near the end of spring and within the summer. It effects the entire world. The players screen will be covered by a billowing green/grey smoke effect. 
+
+- Players that inhale this tainted air will get a static smoke_over effect around the screen. Players are debuffed and will become frail as if they are old wanda and cannot carry heavy objects in this state. 
+Only way to cure this effect is with the air purifier or to wait 3 days for the affliction to clear on it's own in ozone free air.
+
+- Pollution/ozone should act similar to naughtiness but is world wide instead of a single player, whenever players set creatures/trees on fire, or runs non-electrical equipment powered by your typical fuel based machines or use a firepit/fire. For each day a fueled machine stays on, 1 tick is added to the pollution percentage until it reaches 100 and an ozone event is triggered which can last around 1-3 days. An auditory warning will sound 30 seconds before an ozone event triggers. In autumn and winter these ticks go up by .5 instead of 1 as it should be harder to get smog in these seasons but still possible.
+
+- Eventually we'll add stuff which will allow more ecofriendly connectors/wires to be attached to a crappier version of winona's generators. All of Winona's machines are considered ecofriendly when powered by her wireless generator. GEMirators dont produce any pollution and she'll get her own equipment from the mod, since they are wireless and far more convenient.
+
+Puddles
 
 During heavy rains, mud puddles should form to slow players down. These aren't very fleshed out, but several ideas comes to mind which may involve radiation sticking to them or dirt build up on the player's screen overlay which causes sanity drain if not wiped off or cleaned.
+
+
+-----------------
+Summer
+-----------------
+
+Dust Devils
+
+- Dust devils will appear. These miniature tornadoes spawn in the desert and the new canyon biome. They do not have the strength to tear up an entire base. But they do hurt and knock players down if they run into you or living things and can uproot certain plants.
+
+- They're missing the ability to pull on entities that get too close. Detecting an entity or object lying on the ground that is about 3-5 radius from them should trigger them to pull on entities and objects towards it eventually knocking the players down, or flinging unstored objects away.
+ 
+- Dust devils spawn in a very inconvenient way using the same method as a tumbleweed spawner except only in summer. I would prefer if they spawned using math.random for quantity of dustdevils and to only spawn on certain tiles on random days in the summer only instead of the tumbleweed method. 
+
+- Dust devils should cause a dirt overlay (sandstorm as temp) to appear on players screens if it's grabbing you.
+
+- Dustdevils leave behind ash when their lifetime is over, but I would prefer a much more important custom ingredient for consideration to make storm chasing a rewarding thing in summer at some point.
+
+
+
+Steaming hot metal
+
+- In the summer all metal objects, robot characters and creatures should be given a "metal" or make use of the "robot" tag for mobs. Whenever a metal creature, object or character isn't cooled by water, magic or isn't in shade, these things should start to overheat as the temperature rises.
+
+-Overheating causes the entity or object to glow a faint scalding red during summer. 
+
+-Mobs themselves don't take damage from this but they deal extra fire damage when they hit a player and if the player touches them in melee range. Player robots still take damage and should not deal fire damage unless they physically punch a mob with their bare hands, otherwise melee ranged mobs attacking the overheated player robot shall also be burned unless they are immune to fire. 
+
+-Make use of watering cans on these metal enemies, wear an ice amulet, use water balloons or an ice staff to cool these guys off for you to get a safe hit in up close. Scalding enemies should not freeze, only cool off.
+
+-Metal armor, and even weapons should become prone to becoming super heated and should burn the wearer if they are holding or equipped with these objects. Shade, wearing ice amulets and being wet should prevent the player from getting burned. Metal weapons if superheated should deal extra fire damage if it strikes a mob that is not immune to fire. 
+
+-Thermal stones won't save you and should heat up fast if you're wearing scalding armor, are hit by these enemies, or if you're holding a hot weapon.
+
+-Characters such as willow with the pyromaniac tag should be immune to scalding hot enemies, armor and weapons.
+
+---
+
 

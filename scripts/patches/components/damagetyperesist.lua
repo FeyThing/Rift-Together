@@ -1,5 +1,6 @@
 local SourceModifierList = require("util/sourcemodifierlist")
 local DamageType = require("main/damagetype")
+local DamageTypesUtil = require("main/damagetypesutil")
 
 return function(self)
 	self.rt_types = {}

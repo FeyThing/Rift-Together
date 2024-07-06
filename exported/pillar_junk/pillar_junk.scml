@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="shdw">
+        <file id="0" name="shdw/shdw-0.png" width="886" height="304" pivot_x="0.554797" pivot_y="0.373602"/>
+    </folder>
+    <folder id="1" name="pillar">
+        <file id="0" name="pillar/pillar-0.png" width="857" height="1429" pivot_x="0.5" pivot_y="0.389247"/>
+        <file id="1" name="pillar/pillar-1.png" width="857" height="1429" pivot_x="0.5" pivot_y="0.05"/>
+    </folder>
+    <entity id="0" name="pillar_junk">
+        <animation id="0" name="idle" length="99" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="1" time="33">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="2" time="66">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+                <key id="3" time="99">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="2" key="0" z_index="2"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="pillar">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" x="-5.9" y="349.3" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="shdw">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="30.9" y="-97.35" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="pillar-1">
+                <key id="0" spin="0">
+                    <object folder="1" file="1" x="-6" y="1130"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

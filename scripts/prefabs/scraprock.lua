@@ -10,7 +10,7 @@ local assets =
 local prefabs =
 {
     "hound_robomutt",
-    "raritaniumore",
+    "scrapbits",
     "trinket_6",
 }
 
@@ -18,7 +18,7 @@ SetSharedLootTable('scrap_mound',
 {
     {'goldnugget', 0.33},
     {'trinket_6', 0.5},
-    {'raritaniumore',   .5},
+    {'scrapbits',   .5},
     {'cutgrass',      0.6},
     {'rocks',   1.00},
 })

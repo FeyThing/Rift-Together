@@ -1,10 +1,13 @@
 local INVENTORY_ITEMS = {
 	"commando_helmet",
+	"armor_raritanium",
 	"cryomod",
 	"turf_desertsand",
 	"turf_junk",
 	"luminous_fruit",
 	"luminous_fruit_cooked",
+	"starfruit",
+	"starfruit_cooked",
 	"turf_lush",
 	"wx78module_maxresist",
 	"ms_owrench_hammer",
@@ -15,11 +18,21 @@ local INVENTORY_ITEMS = {
 	"rarispear",
 	"rarisword",
 	"raritanium_bar",
+	"gold_bar",
+	"scrap_bar",
+	"moonglass_bar",
 	"raritaniumore",
 	"respiratormask",
 	"shockmod",
+	"scrapbits",
 	"shoes_hover",
 	"shoes_radiation",
+	"rt_spaceshake",
+	"rt_fabric",
+	"rt_filter_small",
+	"rt_filter_large",
+	"hazhat",
+	"hazmat",
 }
 
 for i,v in ipairs(INVENTORY_ITEMS) do
@@ -41,7 +54,6 @@ return {
 		"nanotech",
 		"nanoboost",
 		"raritanium_crystals",
-		"raritanium_bar",
 		"raritaniumore",
 		"rnc_mods",
 		"respiratormask",
@@ -50,6 +62,7 @@ return {
 		"vullard_smelter",
 		"scraprock",
 		"scrapmetal",
+		"scrapbits",
 		"junkpile",
 		"torren_pillars",
 		"torren_grass",
@@ -70,12 +83,21 @@ return {
 		"irradiated_pond",
 		"luminoustree_sapling",
 		"commando_helmet",
+		"armor_raritanium",
 		"dustdevil",
 		"dustdevilspawner",
 		"dustdevil_fx",
 		"rt_pawn",
-		"rt_pawn_trap",
+		"rt_tarp",
+		"rt_alloys",
 		"rt_anvil",
+		"rt_fabric",
+		"filters",	
+		"starfruit",
+		"hazhat",
+		"hazmat",
+		"rt_air_purifier",
+		"starfruitvine",
 	},
 
 	Assets = {
@@ -83,9 +105,11 @@ return {
 		Asset( "ANIM", "anim/player_shoeshover.zip"),
 		Asset( "ANIM", "anim/player_drink.zip"),
 		Asset( "ANIM", "anim/winterfood.zip"),
+		Asset( "ANIM", "anim/rt_crockpotfood.zip"),
 		Asset( "ANIM", "anim/rnc_turf.zip"),
 		Asset( "ANIM", "anim/rtstatus_wx.zip"),
 		Asset( "ANIM", "anim/rt_chips.zip"),
+		Asset( "ANIM", "anim/rt_air_purifier.zip"),
 		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),
@@ -105,11 +129,7 @@ return {
 		Asset( "IMAGE", "bigportraits/ms_rivet.tex" ),
 		Asset( "ATLAS", "bigportraits/ms_rivet.xml" ),
 		
-		--Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
-		--Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
-
-		
-		--[[Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
+		Asset( "IMAGE", "images/avatars/avatar_ratchet.tex" ),
 		Asset( "ATLAS", "images/avatars/avatar_ratchet.xml" ),
 		
 		Asset( "IMAGE", "images/avatars/avatar_ghost_ratchet.tex" ),
@@ -120,7 +140,14 @@ return {
 		
 		Asset( "IMAGE", "images/names_gold_ratchet.tex" ),
 		Asset( "ATLAS", "images/names_gold_ratchet.xml" ),
+
+		Asset( "IMAGE", "images/rtjunkpillar.tex" ),
 		
+		--[[
+		
+		--Asset( "IMAGE", "images/ratchet_skilltree.tex" ),
+		--Asset( "ATLAS", "images/ratchet_skilltree.xml" ),
+
 		--Nefarious
 		Asset( "IMAGE", "images/saveslot_portraits/nefarious.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/nefarious.xml" ),
@@ -158,6 +185,9 @@ return {
 		Asset("ATLAS", "images/rnc_inventoryimages.xml"),
 		Asset("IMAGE", "images/rnc_inventoryimages.tex"),
 		Asset("ATLAS_BUILD", "images/rnc_inventoryimages.xml", 256),
+
+		Asset("ATLAS", "images/rt_cookbook.xml"),
+		Asset("IMAGE", "images/rt_cookbook.tex"),
 
 		Asset("ATLAS", "images/rnc_ui_images.xml"),
 		Asset("IMAGE", "images/rnc_ui_images.tex"),

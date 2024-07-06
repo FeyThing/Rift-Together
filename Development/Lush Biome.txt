@@ -5,3 +5,12 @@ The lush biome is where you can find lumionous trees that has radiation curing e
 These trees are essential for making filters and is meant to be used for any recipe that cures radiation.
 
 The biome is supposed to be home to aggressive squirrels. 
+
+
+---
+
+To finish the look and vibe of this biome. I'm looking for small streams that flow here and there from the irradiated pools. These pools should have periods where they're dried up but due to how radiation works at this time, the radiation system should be completed first before streams or pools drying out is implemented. For now trying to figure out how to make water trail and the sound change when you walk on it is ideal. Maybe adjustments to moisture radius too. 
+
+Squrrels I'm putting back to the drawing board so only mob to be anticipated for this update is the pawns and swarmers.
+
+A new pillar will be made which is covered in moss to compliment this biome. It's use is unown for now but I'm thinking about a new anti-radiation source other than just the trees growing off the moss.

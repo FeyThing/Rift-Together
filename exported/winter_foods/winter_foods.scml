@@ -1,0 +1,1348 @@
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+  <folder id="0" name="plain12">
+    <file id="0" name="plain12/plain12-0.png" width="79" height="88" pivot_x="0.5079113924050633" pivot_y="0.8039772727272727" />
+  </folder>
+  <folder id="1" name="plain1">
+    <file id="0" name="plain1/plain1-0.png" width="78" height="86" pivot_x="0.49038461538461536" pivot_y="0.8144622181737146" />
+  </folder>
+  <folder id="2" name="plain2">
+    <file id="0" name="plain2/plain2-0.png" width="77" height="86" pivot_x="0.5012987064463752" pivot_y="0.8066860465116279" />
+  </folder>
+  <folder id="3" name="boss_krampus">
+    <file id="0" name="boss_krampus/boss_krampus-0.png" width="114" height="167" pivot_x="0.49517544581179035" pivot_y="0.592814371257485" />
+  </folder>
+  <folder id="4" name="plain4">
+    <file id="0" name="plain4/plain4-0.png" width="79" height="87" pivot_x="0.5142405063291139" pivot_y="0.810919531460466" />
+  </folder>
+  <folder id="5" name="plain5">
+    <file id="0" name="plain5/plain5-0.png" width="81" height="87" pivot_x="0.49691358024691357" pivot_y="0.8094827498512707" />
+  </folder>
+  <folder id="6" name="plain6">
+    <file id="0" name="plain6/plain6-0.png" width="79" height="88" pivot_x="0.5079113924050633" pivot_y="0.8039772727272727" />
+  </folder>
+  <folder id="7" name="boss_moose">
+    <file id="0" name="boss_moose/boss_moose-0.png" width="125" height="142" pivot_x="0.5003999939262866" pivot_y="0.7100352166404187" />
+  </folder>
+  <folder id="8" name="boss_bearger">
+    <file id="0" name="boss_bearger/boss_bearger-0.png" width="98" height="106" pivot_x="0.5086734732803033" pivot_y="0.7429834941648088" />
+  </folder>
+  <folder id="9" name="plain9">
+    <file id="0" name="plain9/plain9-0.png" width="79" height="87" pivot_x="0.5079113924050633" pivot_y="0.8034482714773594" />
+  </folder>
+  <folder id="10" name="boss_beequeen">
+    <file id="0" name="boss_beequeen/boss_beequeen-0.png" width="148" height="151" pivot_x="0.5087837770178512" pivot_y="0.9380794803038338" />
+  </folder>
+  <folder id="11" name="boss_toadstool">
+    <file id="0" name="boss_toadstool/boss_toadstool-0.png" width="102" height="128" pivot_x="0.5203431470721376" pivot_y="0.7861328125" />
+  </folder>
+  <folder id="12" name="light8_on">
+    <file id="0" name="light8_on/light8_on-0.png" width="108" height="108" pivot_x="0.521759240715592" pivot_y="0.777083326269079" />
+  </folder>
+  <folder id="13" name="light6_on">
+    <file id="0" name="light6_on/light6_on-0.png" width="108" height="108" pivot_x="0.5124999814563327" pivot_y="0.7400462892320421" />
+  </folder>
+  <folder id="14" name="food6">
+    <file id="0" name="food6/food6-0.png" width="90" height="142" pivot_x="0.4736111111111111" pivot_y="0.5697183071727484" />
+  </folder>
+  <folder id="15" name="light2_on">
+    <file id="0" name="light2_on/light2_on-0.png" width="108" height="108" pivot_x="0.5124999814563327" pivot_y="0.7122685114542643" />
+  </folder>
+  <folder id="16" name="light2_off">
+    <file id="0" name="light2_off/light2_off-0.png" width="59" height="68" pivot_x="0.521186440677966" pivot_y="0.7922794117647058" />
+  </folder>
+  <folder id="17" name="plain8">
+    <file id="0" name="plain8/plain8-0.png" width="78" height="87" pivot_x="0.5096153846153846" pivot_y="0.8132183908045977" />
+  </folder>
+  <folder id="18" name="plain10">
+    <file id="0" name="plain10/plain10-0.png" width="79" height="87" pivot_x="0.5142405063291139" pivot_y="0.810919531460466" />
+  </folder>
+  <folder id="19" name="boss_noeyered">
+    <file id="0" name="boss_noeyered/boss_noeyered-0.png" width="103" height="137" pivot_x="0.5364077669902912" pivot_y="0.9056569398754705" />
+  </folder>
+  <folder id="20" name="plain7">
+    <file id="0" name="plain7/plain7-0.png" width="78" height="86" pivot_x="0.5064102564102564" pivot_y="0.8305232469425645" />
+  </folder>
+  <folder id="21" name="plain3">
+    <file id="0" name="plain3/plain3-0.png" width="79" height="87" pivot_x="0.5079113924050633" pivot_y="0.8034482714773594" />
+  </folder>
+  <folder id="22" name="boss_noeyeblue">
+    <file id="0" name="boss_noeyeblue/boss_noeyeblue-0.png" width="103" height="137" pivot_x="0.4898058349646411" pivot_y="0.9065693486345945" />
+  </folder>
+  <folder id="23" name="light4_on">
+    <file id="0" name="light4_on/light4_on-0.png" width="108" height="108" pivot_x="0.5124999814563327" pivot_y="0.7122685114542643" />
+  </folder>
+  <folder id="24" name="boss_deerclops">
+    <file id="0" name="boss_deerclops/boss_deerclops-0.png" width="111" height="149" pivot_x="0.488963982006451" pivot_y="0.8963087197118158" />
+  </folder>
+  <folder id="25" name="light1_off">
+    <file id="0" name="light1_off/light1_off-0.png" width="59" height="68" pivot_x="0.521186440677966" pivot_y="0.7922794117647058" />
+  </folder>
+  <folder id="26" name="boss_klaus">
+    <file id="0" name="boss_klaus/boss_klaus-0.png" width="130" height="190" pivot_x="0.320961541395921" pivot_y="0.8971052470960115" />
+  </folder>
+  <folder id="27" name="light3_off">
+    <file id="0" name="light3_off/light3_off-0.png" width="59" height="68" pivot_x="0.521186440677966" pivot_y="0.7922794117647058" />
+  </folder>
+  <folder id="28" name="boss_dragonfly">
+    <file id="0" name="boss_dragonfly/boss_dragonfly-0.png" width="104" height="136" pivot_x="0.5173077021653836" pivot_y="0.8729779299567728" />
+  </folder>
+  <folder id="29" name="light5_off">
+    <file id="0" name="light5_off/light5_off-0.png" width="64" height="83" pivot_x="0.516015624627471" pivot_y="0.8334337257477175" />
+  </folder>
+  <folder id="30" name="light6_off">
+    <file id="0" name="light6_off/light6_off-0.png" width="64" height="83" pivot_x="0.516015624627471" pivot_y="0.8334337257477175" />
+  </folder>
+  <folder id="31" name="boss_antlion">
+    <file id="0" name="boss_antlion/boss_antlion-0.png" width="108" height="165" pivot_x="0.510879620357796" pivot_y="0.9533333518288352" />
+  </folder>
+  <folder id="32" name="light8_off">
+    <file id="0" name="light8_off/light8_off-0.png" width="64" height="83" pivot_x="0.516015624627471" pivot_y="0.8334337257477175" />
+  </folder>
+  <folder id="33" name="light4_off">
+    <file id="0" name="light4_off/light4_off-0.png" width="59" height="68" pivot_x="0.521186440677966" pivot_y="0.7922794117647058" />
+  </folder>
+  <folder id="34" name="light7_on">
+    <file id="0" name="light7_on/light7_on-0.png" width="112" height="112" pivot_x="0.5118303479892867" pivot_y="0.7671874931880406" />
+  </folder>
+  <folder id="35" name="light5_on">
+    <file id="0" name="light5_on/light5_on-0.png" width="100" height="100" pivot_x="0.505" pivot_y="0.7992499923706055" />
+  </folder>
+  <folder id="36" name="light3_on">
+    <file id="0" name="light3_on/light3_on-0.png" width="112" height="112" pivot_x="0.5118303479892867" pivot_y="0.7046874931880406" />
+  </folder>
+  <folder id="37" name="light1_on">
+    <file id="0" name="light1_on/light1_on-0.png" width="100" height="100" pivot_x="0.5134999799728394" pivot_y="0.7292499923706055" />
+  </folder>
+  <folder id="38" name="winter_ornaments01">
+    <file id="0" name="winter_ornaments01/winter_ornaments01-0.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="1" name="winter_ornaments01/winter_ornaments01-1.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="2" name="winter_ornaments01/winter_ornaments01-2.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="3" name="winter_ornaments01/winter_ornaments01-3.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="4" name="winter_ornaments01/winter_ornaments01-4.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="5" name="winter_ornaments01/winter_ornaments01-5.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="6" name="winter_ornaments01/winter_ornaments01-6.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="7" name="winter_ornaments01/winter_ornaments01-7.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="8" name="winter_ornaments01/winter_ornaments01-8.png" width="137" height="114" pivot_x="0.4760948898148363" pivot_y="0.2923245680959601" />
+    <file id="9" name="winter_ornaments01/winter_ornaments01-9.png" width="164" height="81" pivot_x="0.4678353769023244" pivot_y="0.39012346149962623" />
+    <file id="10" name="winter_ornaments01/winter_ornaments01-10.png" width="121" height="139" pivot_x="0.5111570249904286" pivot_y="0.27715827063690845" />
+    <file id="11" name="winter_ornaments01/winter_ornaments01-11.png" width="132" height="104" pivot_x="0.5679924271323464" pivot_y="0.35390624633202183" />
+    <file id="12" name="winter_ornaments01/winter_ornaments01-12.png" width="165" height="164" pivot_x="0.4821212060523756" pivot_y="0.35396340998207654" />
+    <file id="13" name="winter_ornaments01/winter_ornaments01-13.png" width="102" height="109" pivot_x="0.4963235294117647" pivot_y="0.34999999650027774" />
+    <file id="14" name="winter_ornaments01/winter_ornaments01-14.png" width="164" height="164" pivot_x="0.47652440245558575" pivot_y="0.36570122183823006" />
+    <file id="15" name="winter_ornaments01/winter_ornaments01-15.png" width="102" height="109" pivot_x="0.4963235294117647" pivot_y="0.34999999650027774" />
+    <file id="16" name="winter_ornaments01/winter_ornaments01-16.png" width="165" height="164" pivot_x="0.48166665452899354" pivot_y="0.3655487851398747" />
+    <file id="17" name="winter_ornaments01/winter_ornaments01-17.png" width="102" height="109" pivot_x="0.4963235294117647" pivot_y="0.34999999650027774" />
+    <file id="18" name="winter_ornaments01/winter_ornaments01-18.png" width="164" height="164" pivot_x="0.483536579260012" pivot_y="0.3702743925699373" />
+    <file id="19" name="winter_ornaments01/winter_ornaments01-19.png" width="102" height="109" pivot_x="0.4963235294117647" pivot_y="0.34999999650027774" />
+    <file id="20" name="winter_ornaments01/winter_ornaments01-20.png" width="182" height="116" pivot_x="0.45879120879120877" pivot_y="0.6540948275862069" />
+    <file id="21" name="winter_ornaments01/winter_ornaments01-21.png" width="164" height="100" pivot_x="0.4481707317073171" pivot_y="0.6847500038146973" />
+    <file id="22" name="winter_ornaments01/winter_ornaments01-22.png" width="191" height="78" pivot_x="0.4725130890052356" pivot_y="0.6503205177111504" />
+    <file id="23" name="winter_ornaments01/winter_ornaments01-23.png" width="227" height="133" pivot_x="0.44273127753303965" pivot_y="0.3451127790866938" />
+    <file id="24" name="winter_ornaments01/winter_ornaments01-24.png" width="186" height="135" pivot_x="0.5388440752542147" pivot_y="0.26074074639214406" />
+    <file id="25" name="winter_ornaments01/winter_ornaments01-25.png" width="142" height="142" pivot_x="0.4748239500421873" pivot_y="0.28380281152859543" />
+    <file id="26" name="winter_ornaments01/winter_ornaments01-26.png" width="162" height="118" pivot_x="0.4240740728966984" pivot_y="0.3298728748903436" />
+    <file id="27" name="winter_ornaments01/winter_ornaments01-27.png" width="134" height="151" pivot_x="0.4449626865671642" pivot_y="0.25478067461228526" />
+    <file id="28" name="winter_ornaments01/winter_ornaments01-28.png" width="112" height="144" pivot_x="0.4906250089406967" pivot_y="0.26302083333333337" />
+    <file id="29" name="winter_ornaments01/winter_ornaments01-29.png" width="211" height="147" pivot_x="0.52298579057811" pivot_y="0.27329931453782685" />
+    <file id="30" name="winter_ornaments01/winter_ornaments01-30.png" width="138" height="142" pivot_x="0.5346014637877976" pivot_y="0.2908450650497222" />
+    <file id="31" name="winter_ornaments01/winter_ornaments01-31.png" width="142" height="154" pivot_x="0.5133802672507057" pivot_y="0.2693181719098772" />
+    <file id="32" name="winter_ornaments01/winter_ornaments01-32.png" width="179" height="135" pivot_x="0.4912011117242568" pivot_y="0.37074073508933736" />
+    <file id="33" name="winter_ornaments01/winter_ornaments01-33.png" width="185" height="134" pivot_x="0.46094593615145296" pivot_y="0.2861940326975353" />
+    <file id="34" name="winter_ornaments01/winter_ornaments01-34.png" width="199" height="112" pivot_x="0.4758794008187912" pivot_y="0.3872767857142857" />
+    <file id="35" name="winter_ornaments01/winter_ornaments01-35.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="36" name="winter_ornaments01/winter_ornaments01-36.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="37" name="winter_ornaments01/winter_ornaments01-37.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="38" name="winter_ornaments01/winter_ornaments01-38.png" width="124" height="118" pivot_x="0.4570564454601657" pivot_y="0.31991525423728817" />
+    <file id="39" name="winter_ornaments01/winter_ornaments01-39.png" width="155" height="160" pivot_x="0.5190322645248905" pivot_y="0.36140625476837157" />
+    <file id="40" name="winter_ornaments01/winter_ornaments01-40.png" width="146" height="139" pivot_x="0.44246574297343216" pivot_y="0.3224820198772622" />
+    <file id="41" name="winter_ornaments01/winter_ornaments01-41.png" width="131" height="145" pivot_x="0.5925572519083969" pivot_y="0.3420689681480671" />
+    <file id="42" name="winter_ornaments01/winter_ornaments01-42.png" width="140" height="150" pivot_x="0.42410714285714285" pivot_y="0.28161460876464844" />
+    <file id="43" name="winter_ornaments01/winter_ornaments01-43.png" width="134" height="125" pivot_x="0.4777984921611957" pivot_y="0.3815" />
+    <file id="44" name="winter_ornaments01/winter_ornaments01-44.png" width="165" height="164" pivot_x="0.4942424192573085" pivot_y="0.3844512148601253" />
+    <file id="45" name="winter_ornaments01/winter_ornaments01-45.png" width="134" height="125" pivot_x="0.4777984921611957" pivot_y="0.3815" />
+    <file id="46" name="winter_ornaments01/winter_ornaments01-46.png" width="164" height="164" pivot_x="0.4887195244068053" pivot_y="0.3961890267162788" />
+    <file id="47" name="winter_ornaments01/winter_ornaments01-47.png" width="134" height="125" pivot_x="0.4777984921611957" pivot_y="0.3815" />
+    <file id="48" name="winter_ornaments01/winter_ornaments01-48.png" width="165" height="164" pivot_x="0.4937878666502057" pivot_y="0.39603659001792346" />
+    <file id="49" name="winter_ornaments01/winter_ornaments01-49.png" width="134" height="125" pivot_x="0.4777984921611957" pivot_y="0.3815" />
+    <file id="50" name="winter_ornaments01/winter_ornaments01-50.png" width="164" height="164" pivot_x="0.4957317023015604" pivot_y="0.40076219744798613" />
+    <file id="51" name="winter_ornaments01/winter_ornaments01-51.png" width="164" height="179" pivot_x="0.43079268060079434" pivot_y="0.2527932960893855" />
+    <file id="52" name="winter_ornaments01/winter_ornaments01-52.png" width="148" height="158" pivot_x="0.566722972972973" pivot_y="0.2560126630565788" />
+    <file id="53" name="winter_ornaments01/winter_ornaments01-53.png" width="182" height="158" pivot_x="0.4608516483516484" pivot_y="0.2560126630565788" />
+    <file id="54" name="winter_ornaments01/winter_ornaments01-54.png" width="175" height="184" pivot_x="0.5985714285714285" pivot_y="0.2763841877812925" />
+    <file id="55" name="winter_ornaments01/winter_ornaments01-55.png" width="146" height="169" pivot_x="0.462157520529342" pivot_y="0.30347632233207744" />
+    <file id="56" name="winter_ornaments01/winter_ornaments01-56.png" width="169" height="191" pivot_x="0.6023668593908909" pivot_y="0.25955497781643694" />
+  </folder>
+  <folder id="39" name="light7_off">
+    <file id="0" name="light7_off/light7_off-0.png" width="64" height="83" pivot_x="0.516015624627471" pivot_y="0.8334337257477175" />
+  </folder>
+  <folder id="40" name="fancy1">
+    <file id="0" name="fancy1/fancy1-0.png" width="83" height="106" pivot_x="0.5117469925478281" pivot_y="0.8419028228183962" />
+  </folder>
+  <folder id="41" name="fancy2">
+    <file id="0" name="fancy2/fancy2-0.png" width="55" height="121" pivot_x="0.5029545526612889" pivot_y="0.8588842912153765" />
+  </folder>
+  <folder id="42" name="fancy3">
+    <file id="0" name="fancy3/fancy3-0.png" width="93" height="107" pivot_x="0.5134408602150538" pivot_y="0.8271028037383177" />
+  </folder>
+  <folder id="43" name="fancy4">
+    <file id="0" name="fancy4/fancy4-0.png" width="74" height="110" pivot_x="0.4966216216216216" pivot_y="0.8214772657914595" />
+  </folder>
+  <folder id="44" name="fancy5">
+    <file id="0" name="fancy5/fancy5-0.png" width="127" height="170" pivot_x="0.4879921261719831" pivot_y="0.9025982576258043" />
+  </folder>
+  <folder id="45" name="fancy6">
+    <file id="0" name="fancy6/fancy6-0.png" width="84" height="144" pivot_x="0.4895833333333333" pivot_y="0.8851854271358914" />
+  </folder>
+  <folder id="46" name="fancy7">
+    <file id="0" name="fancy7/fancy7-0.png" width="90" height="135" pivot_x="0.5033333245250914" pivot_y="0.8773459257902922" />
+  </folder>
+  <folder id="47" name="fancy8">
+    <file id="0" name="fancy8/fancy8-0.png" width="113" height="96" pivot_x="0.5" pivot_y="0.8240020871162415" />
+    <file id="1" name="fancy8/fancy8-1(duration'0').png" width="113" height="96" pivot_x="0.5" pivot_y="0.8240020871162415" />
+    <file id="2" name="fancy8/fancy8-2(duration'0').png" width="113" height="96" pivot_x="0.5" pivot_y="0.8240020871162415" />
+  </folder>
+  <folder id="48" name="food1">
+    <file id="0" name="food1/food1-0.png" width="110" height="149" pivot_x="0.47613636363636364" pivot_y="0.7751677852348993" />
+  </folder>
+  <folder id="49" name="food2">
+    <file id="0" name="food2/food2-0.png" width="89" height="108" pivot_x="0.49466291672728036" pivot_y="0.8249999858714916" />
+  </folder>
+  <folder id="50" name="food3">
+    <file id="0" name="food3/food3-0.png" width="80" height="130" pivot_x="0.4740624874830246" pivot_y="0.8282692249004657" />
+  </folder>
+  <folder id="51" name="food4">
+    <file id="0" name="food4/food4-0.png" width="89" height="123" pivot_x="0.49859550561797755" pivot_y="0.7306910569105691" />
+  </folder>
+  <folder id="52" name="food5">
+    <file id="0" name="food5/food5-0.png" width="113" height="123" pivot_x="0.4637168150032516" pivot_y="0.7806910693160887" />
+  </folder>
+  <folder id="53" name="boss_fuelweaver">
+    <file id="0" name="boss_fuelweaver/boss_fuelweaver-0.png" width="153" height="187" pivot_x="0.48937908496732024" pivot_y="0.608422457853103" />
+  </folder>
+  <folder id="54" name="plain11">
+    <file id="0" name="plain11/plain11-0.png" width="79" height="87" pivot_x="0.509493670886076" pivot_y="0.8094827498512707" />
+  </folder>
+  <entity id="0" name="winter_ornaments">
+    <animation id="0" name="plain1" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="1" name="plain2" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="1" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="2" name="plain3" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="2" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="3" name="plain4" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="3" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="4" name="plain5" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="4" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="5" name="plain6" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="5" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="6" name="plain7" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="6" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="7" name="plain8" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="7" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="8" name="plain9" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="35" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="9" name="plain10" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="36" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="10" name="plain11" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="37" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="11" name="plain12" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="38" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="12" name="fancy1" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="8" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="13" name="fancy2" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="9" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="14" name="fancy3" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="10" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="15" name="fancy4" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="11" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="16" name="fancy5" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="39" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="17" name="fancy6" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="40" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="18" name="fancy7" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="41" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="19" name="fancy8" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="42" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="20" name="light1_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="12" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="21" name="light1_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="13" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="22" name="light2_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="14" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="23" name="light2_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="15" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="24" name="light3_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="16" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="25" name="light3_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="17" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="26" name="light4_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="18" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="27" name="light4_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="19" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="28" name="light5_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="43" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="29" name="light5_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="44" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="30" name="light6_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="45" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="31" name="light6_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="46" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="32" name="light7_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="47" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="33" name="light7_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="48" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="34" name="light8_off" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="49" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="35" name="light8_on" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="50" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="36" name="food1" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="20" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="37" name="food2" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="21" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="38" name="food3" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="22" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="39" name="food4" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="23" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="40" name="food5" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="24" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="41" name="food6" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="25" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="42" name="food7" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="26" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="43" name="food8" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="27" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="44" name="food9" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="28" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="45" name="boss_deerclops" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="29" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="46" name="boss_bearger" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="30" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="47" name="boss_moose" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="31" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="48" name="boss_dragonfly" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="32" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="49" name="boss_toadstool" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="33" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="50" name="boss_beequeen" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="34" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="51" name="boss_klaus" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="51" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="52" name="boss_noeyered" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="52" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="53" name="boss_noeyeblue" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="53" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="54" name="boss_krampus" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="54" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="55" name="boss_antlion" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="55" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="56" name="boss_fuelweaver" length="33">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="38" file="56" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+    <animation id="57" name="symbols_hanging" length="1782">
+      <mainline>
+        <key id="0" time="0">
+          <object_ref id="0" timeline="0" key="0" z_index="0" />
+        </key>
+        <key id="1" time="33">
+          <object_ref id="0" timeline="1" key="1" z_index="0" />
+        </key>
+        <key id="2" time="66">
+          <object_ref id="0" timeline="2" key="2" z_index="0" />
+        </key>
+        <key id="3" time="99">
+          <object_ref id="0" timeline="3" key="3" z_index="0" />
+        </key>
+        <key id="4" time="132">
+          <object_ref id="0" timeline="4" key="4" z_index="0" />
+        </key>
+        <key id="5" time="165">
+          <object_ref id="0" timeline="5" key="5" z_index="0" />
+        </key>
+        <key id="6" time="198">
+          <object_ref id="0" timeline="6" key="6" z_index="0" />
+        </key>
+        <key id="7" time="231">
+          <object_ref id="0" timeline="7" key="7" z_index="0" />
+        </key>
+        <key id="8" time="264">
+          <object_ref id="0" timeline="8" key="8" z_index="0" />
+        </key>
+        <key id="9" time="297">
+          <object_ref id="0" timeline="9" key="9" z_index="0" />
+        </key>
+        <key id="10" time="330">
+          <object_ref id="0" timeline="10" key="10" z_index="0" />
+        </key>
+        <key id="11" time="363">
+          <object_ref id="0" timeline="11" key="11" z_index="0" />
+        </key>
+        <key id="12" time="396">
+          <object_ref id="0" timeline="12" key="12" z_index="0" />
+        </key>
+        <key id="13" time="429">
+          <object_ref id="0" timeline="13" key="13" z_index="0" />
+        </key>
+        <key id="14" time="462">
+          <object_ref id="0" timeline="14" key="14" z_index="0" />
+        </key>
+        <key id="15" time="495">
+          <object_ref id="0" timeline="15" key="15" z_index="0" />
+        </key>
+        <key id="16" time="528">
+          <object_ref id="0" timeline="16" key="16" z_index="0" />
+        </key>
+        <key id="17" time="561">
+          <object_ref id="0" timeline="17" key="17" z_index="0" />
+        </key>
+        <key id="18" time="594">
+          <object_ref id="0" timeline="18" key="18" z_index="0" />
+        </key>
+        <key id="19" time="627">
+          <object_ref id="0" timeline="19" key="19" z_index="0" />
+        </key>
+        <key id="20" time="660">
+          <object_ref id="0" timeline="20" key="20" z_index="0" />
+        </key>
+        <key id="21" time="693">
+          <object_ref id="0" timeline="21" key="21" z_index="0" />
+        </key>
+        <key id="22" time="726">
+          <object_ref id="0" timeline="22" key="22" z_index="0" />
+        </key>
+        <key id="23" time="759">
+          <object_ref id="0" timeline="23" key="23" z_index="0" />
+        </key>
+        <key id="24" time="792">
+          <object_ref id="0" timeline="24" key="24" z_index="0" />
+        </key>
+        <key id="25" time="825">
+          <object_ref id="0" timeline="25" key="25" z_index="0" />
+        </key>
+        <key id="26" time="858">
+          <object_ref id="0" timeline="26" key="26" z_index="0" />
+        </key>
+        <key id="27" time="891">
+          <object_ref id="0" timeline="27" key="27" z_index="0" />
+        </key>
+        <key id="28" time="924">
+          <object_ref id="0" timeline="28" key="28" z_index="0" />
+        </key>
+        <key id="29" time="957">
+          <object_ref id="0" timeline="29" key="29" z_index="0" />
+        </key>
+        <key id="30" time="990">
+          <object_ref id="0" timeline="30" key="30" z_index="0" />
+        </key>
+        <key id="31" time="1023">
+          <object_ref id="0" timeline="31" key="31" z_index="0" />
+        </key>
+        <key id="32" time="1056">
+          <object_ref id="0" timeline="32" key="32" z_index="0" />
+        </key>
+        <key id="33" time="1089">
+          <object_ref id="0" timeline="33" key="33" z_index="0" />
+        </key>
+        <key id="34" time="1122">
+          <object_ref id="0" timeline="34" key="34" z_index="0" />
+        </key>
+        <key id="35" time="1155">
+          <object_ref id="0" timeline="35" key="35" z_index="0" />
+        </key>
+        <key id="36" time="1188">
+          <object_ref id="0" timeline="36" key="36" z_index="0" />
+        </key>
+        <key id="37" time="1221">
+          <object_ref id="0" timeline="37" key="37" z_index="0" />
+        </key>
+        <key id="38" time="1254">
+          <object_ref id="0" timeline="38" key="38" z_index="0" />
+        </key>
+        <key id="39" time="1287">
+          <object_ref id="0" timeline="39" key="39" z_index="0" />
+        </key>
+        <key id="40" time="1320">
+          <object_ref id="0" timeline="40" key="40" z_index="0" />
+        </key>
+        <key id="41" time="1353">
+          <object_ref id="0" timeline="41" key="41" z_index="0" />
+        </key>
+        <key id="42" time="1386">
+          <object_ref id="0" timeline="42" key="42" z_index="0" />
+        </key>
+        <key id="43" time="1419">
+          <object_ref id="0" timeline="43" key="43" z_index="0" />
+        </key>
+        <key id="44" time="1452">
+          <object_ref id="0" timeline="44" key="44" z_index="0" />
+        </key>
+        <key id="45" time="1485">
+          <object_ref id="0" timeline="45" key="45" z_index="0" />
+        </key>
+        <key id="46" time="1518">
+          <object_ref id="0" timeline="46" key="46" z_index="0" />
+        </key>
+        <key id="47" time="1551">
+          <object_ref id="0" timeline="47" key="47" z_index="0" />
+        </key>
+        <key id="48" time="1584">
+          <object_ref id="0" timeline="48" key="48" z_index="0" />
+        </key>
+        <key id="49" time="1617">
+          <object_ref id="0" timeline="49" key="49" z_index="0" />
+        </key>
+        <key id="50" time="1650">
+          <object_ref id="0" timeline="50" key="50" z_index="0" />
+        </key>
+        <key id="51" time="1683">
+          <object_ref id="0" timeline="51" key="51" z_index="0" />
+        </key>
+        <key id="52" time="1716">
+          <object_ref id="0" timeline="52" key="52" z_index="0" />
+        </key>
+        <key id="53" time="1749">
+          <object_ref id="0" timeline="53" key="53" z_index="0" />
+        </key>
+        <key id="54" time="1782" />
+      </mainline>
+      <timeline id="0" name="Layer 1_000">
+        <key id="0" time="0" spin="1">
+          <object folder="1" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="1" name="Layer 1_001">
+        <key id="1" time="33" spin="1">
+          <object folder="2" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="2" name="Layer 1_002">
+        <key id="2" time="66" spin="1">
+          <object folder="21" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="3" name="Layer 1_003">
+        <key id="3" time="99" spin="1">
+          <object folder="4" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="4" name="Layer 1_004">
+        <key id="4" time="132" spin="1">
+          <object folder="5" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="5" name="Layer 1_005">
+        <key id="5" time="165" spin="1">
+          <object folder="6" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="6" name="Layer 1_006">
+        <key id="6" time="198" spin="1">
+          <object folder="20" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="7" name="Layer 1_007">
+        <key id="7" time="231" spin="1">
+          <object folder="17" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="8" name="Layer 1_008">
+        <key id="8" time="264" spin="1">
+          <object folder="9" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="9" name="Layer 1_009">
+        <key id="9" time="297" spin="1">
+          <object folder="18" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="10" name="Layer 1_010">
+        <key id="10" time="330" spin="1">
+          <object folder="54" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="11" name="Layer 1_011">
+        <key id="11" time="363" spin="1">
+          <object folder="0" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="12" name="Layer 1_012">
+        <key id="12" time="396" spin="1">
+          <object folder="40" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="13" name="Layer 1_013">
+        <key id="13" time="429" spin="1">
+          <object folder="41" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="14" name="Layer 1_014">
+        <key id="14" time="462" spin="1">
+          <object folder="42" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="15" name="Layer 1_015">
+        <key id="15" time="495" spin="1">
+          <object folder="43" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="16" name="Layer 1_016">
+        <key id="16" time="528" spin="1">
+          <object folder="44" file="0" x="-1.5" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="17" name="Layer 1_017">
+        <key id="17" time="561" spin="1">
+          <object folder="45" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="18" name="Layer 1_018">
+        <key id="18" time="594" spin="1">
+          <object folder="46" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="19" name="Layer 1_019">
+        <key id="19" time="627" spin="1">
+          <object folder="47" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="20" name="Layer 1_020">
+        <key id="20" time="660" spin="1">
+          <object folder="37" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="21" name="Layer 1_021">
+        <key id="21" time="693" spin="1">
+          <object folder="25" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="22" name="Layer 1_022">
+        <key id="22" time="726" spin="1">
+          <object folder="15" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="23" name="Layer 1_023">
+        <key id="23" time="759" spin="1">
+          <object folder="16" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="24" name="Layer 1_024">
+        <key id="24" time="792" spin="1">
+          <object folder="36" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="25" name="Layer 1_025">
+        <key id="25" time="825" spin="1">
+          <object folder="27" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="26" name="Layer 1_026">
+        <key id="26" time="858" spin="1">
+          <object folder="23" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="27" name="Layer 1_027">
+        <key id="27" time="891" spin="1">
+          <object folder="33" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="28" name="Layer 1_028">
+        <key id="28" time="924" spin="1">
+          <object folder="35" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="29" name="Layer 1_029">
+        <key id="29" time="957" spin="1">
+          <object folder="29" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="30" name="Layer 1_030">
+        <key id="30" time="990" spin="1">
+          <object folder="13" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="31" name="Layer 1_031">
+        <key id="31" time="1023" spin="1">
+          <object folder="30" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="32" name="Layer 1_032">
+        <key id="32" time="1056" spin="1">
+          <object folder="34" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="33" name="Layer 1_033">
+        <key id="33" time="1089" spin="1">
+          <object folder="39" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="34" name="Layer 1_034">
+        <key id="34" time="1122" spin="1">
+          <object folder="12" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="35" name="Layer 1_035">
+        <key id="35" time="1155" spin="1">
+          <object folder="32" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="36" name="Layer 1_036">
+        <key id="36" time="1188" spin="1">
+          <object folder="48" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="37" name="Layer 1_037">
+        <key id="37" time="1221" spin="1">
+          <object folder="49" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="38" name="Layer 1_038">
+        <key id="38" time="1254" spin="1">
+          <object folder="50" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="39" name="Layer 1_039">
+        <key id="39" time="1287" spin="1">
+          <object folder="51" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="40" name="Layer 1_040">
+        <key id="40" time="1320" spin="1">
+          <object folder="52" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="41" name="Layer 1_041">
+        <key id="41" time="1353" spin="1">
+          <object folder="14" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="42" name="Layer 1_042">
+        <key id="42" time="1386" spin="1">
+          <object folder="24" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="43" name="Layer 1_043">
+        <key id="43" time="1419" spin="1">
+          <object folder="8" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="44" name="Layer 1_044">
+        <key id="44" time="1452" spin="1">
+          <object folder="7" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="45" name="Layer 1_045">
+        <key id="45" time="1485" spin="1">
+          <object folder="28" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="46" name="Layer 1_046">
+        <key id="46" time="1518" spin="1">
+          <object folder="11" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="47" name="Layer 1_047">
+        <key id="47" time="1551" spin="1">
+          <object folder="10" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="48" name="Layer 1_048">
+        <key id="48" time="1584" spin="1">
+          <object folder="26" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="49" name="Layer 1_049">
+        <key id="49" time="1617" spin="1">
+          <object folder="22" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="50" name="Layer 1_050">
+        <key id="50" time="1650" spin="1">
+          <object folder="19" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="51" name="Layer 1_051">
+        <key id="51" time="1683" spin="1">
+          <object folder="3" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="52" name="Layer 1_052">
+        <key id="52" time="1716" spin="1">
+          <object folder="31" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+      <timeline id="53" name="Layer 1_053">
+        <key id="53" time="1749" spin="1">
+          <object folder="53" file="0" x="0.0" y="-0.05000000074505806" scale_x="1.0" scale_y="1.0" angle="0.0" />
+        </key>
+      </timeline>
+    </animation>
+  </entity>
+</spriter_data>

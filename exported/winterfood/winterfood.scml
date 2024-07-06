@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="cider">
+        <file id="0" name="cider/winter_ornaments01-26.png" width="162" height="118" pivot_x="0.424074" pivot_y="0.329873"/>
+    </folder>
+    <folder id="1" name="coco">
+        <file id="0" name="coco/winter_ornaments01-27.png" width="134" height="151" pivot_x="0.444963" pivot_y="0.254781"/>
+    </folder>
+    <folder id="2" name="eggnog">
+        <file id="0" name="eggnog/winter_ornaments01-28.png" width="112" height="144" pivot_x="0.490625" pivot_y="0.263021"/>
+    </folder>
+    <entity id="0" name="winterfood">
+        <animation id="0" name="idle" length="33" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="winter_ornaments01-27">
+                <key id="0" spin="0">
+                    <object folder="1" file="0" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

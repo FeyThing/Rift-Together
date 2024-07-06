@@ -2,6 +2,10 @@
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.JUNK_NOISE,
 		contents = {
+			{
+				["desertpillar_small"] = 2 + math.random(1, 4),
+				["desertpillar_big"] =1 + math.random(0, 2),
+			},
 			distributepercent = 0.12,
 			distributeprefabs =
 			{
@@ -16,8 +20,6 @@
 				vullard_lamp = 0.1,
 				junkpile = 0.3,
 				junk_pillar = 0.25,
-				torrenivdesert_pillar = 0.15,
-				torrenivdesert_pillar_small = 0.1,
 				mud_puddle = 0.1,
 			},
 		}
@@ -27,6 +29,10 @@
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTSAND,
 		contents = {
+			{
+				["desertpillar_small"] = 2 + math.random(1, 4),
+				["desertpillar_big"] =1 + math.random(0, 2),
+			},
 			distributepercent = 0.1,
 			distributeprefabs =
 			{
@@ -37,8 +43,6 @@
 				driftwood_tall = 0.1,
 				raritanium_crystals = 0.01,
 				scrapmetal = 0.15,
-				torrenivdesert_pillar = 0.15,
-				torrenivdesert_pillar_small = 0.1,
 				marsh_tree = 0.66,
 				mud_puddle = 0.1,
 			},
@@ -49,6 +53,10 @@
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.JUNK_NOISE,
 		contents = {
+			{
+				["desertpillar_small"] = 2 + math.random(1, 4),
+				["desertpillar_big"] =1 + math.random(0, 2),
+			},
 			countprefabs= {
 				hound_robomuttherd = function() return math.random(1,2) end,
 				raritaniumspawner = function() return math.random(1,2) end,
@@ -70,8 +78,6 @@
 				
 				lava_pond = .1,
 				junk_pillar = 1,
-				torrenivdesert_pillar = 0.15,
-				torrenivdesert_pillar_small = 0.5,
 				mud_puddle = 0.1,
 			},
 		},
@@ -83,7 +89,12 @@ AddRoom("Torren IV Depot",  {
 		value = WORLD_TILES.JUNK_NOISE,
 		required_prefabs = {"vullard_smelter"},
 		contents = {
-			countstaticlayouts={["lonely_depot"] = 1},
+			countstaticlayouts =
+			{
+				["lonely_depot"] = 1,
+				["desertpillar_small"] = 2 + math.random(1, 4),
+				["desertpillar_big"] =1 + math.random(0, 2),
+			},
 			distributepercent = 0.07,
 			distributeprefabs =
 			{								
@@ -97,7 +108,7 @@ AddRoom("Torren IV Depot",  {
 				junk_pillar = 1,
 				torrenivdesert_pillar = 0.15,
 				torrenivdesert_pillar_small = 0.5,
-				mud_puddle = 0.1,
+
 			},
 		},
 		
@@ -107,6 +118,11 @@ AddRoom("Torren IV Depot",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTSAND_NOISE,
 		contents = {
+			countstaticlayouts =
+			{
+				["desertpillar_small"] = 3 + math.random(3, 6),
+				["desertpillar_big"] = 1 + math.random(2, 4),
+			},
 			countprefabs= {
 				raritaniumspawner = function() return math.random(1,2) end,
 				burntground_faded = function() return math.random(3,5) end,
@@ -124,10 +140,7 @@ AddRoom("Torren IV Depot",  {
 				torren_cactus = 0.33,
 				marsh_bush = 0.66,
 				succulent_plant = 0.3,				
-		
-				torrenivdesert_pillar = 0.07,
-				torrenivdesert_pillar_small = 1,
-				mud_puddle = 0.5,
+				
 			},
 		},
 		
@@ -137,7 +150,11 @@ AddRoom("Torren IV Depot",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTSAND,
 		contents = {			
-			--countstaticlayouts={["gunkywateringhole"] = 1},
+			countstaticlayouts =
+			{
+				["desertpillar_small"] = 2 + math.random(0, 2),
+				["desertpillar_big"] = 2 + math.random(2, 6),
+			},
 			distributepercent = 0.15,
 			distributeprefabs =
 			{
@@ -157,10 +174,7 @@ AddRoom("Torren IV Depot",  {
 				marsh_bush = 0.66,
 				rabbithole = 0.1,
 				succulent_plant = 0.3,				
-			
-				torrenivdesert_pillar = 0.8,
-				torrenivdesert_pillar_small = 0.4,
-				mud_puddle = 0.6,
+	
 			},
 		},
 		
@@ -169,7 +183,12 @@ AddRoom("Torren IV Depot",  {
 	AddRoom("Torren IV Wastes",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTSAND_NOISE,
-		contents = {						
+		contents = {
+			countstaticlayouts =	
+			{
+				["desertpillar_small"] = 2 + math.random(2, 4),
+				["desertpillar_big"] = 4 + math.random(4, 8),
+			},					
 			distributepercent = 0.15,
 			distributeprefabs =
 			{
@@ -185,9 +204,7 @@ AddRoom("Torren IV Depot",  {
 				marsh_bush = 0.66,
 				succulent_plant = 0.3,
 										
-				torrenivdesert_pillar = 4,					
-				torrenivdesert_pillar_small = 2,
-				mud_puddle = 0.1,
+
 				--rubbish = {weight = 6, prefabs = {"scrapmetal", "junkpile"}}
 			},
 		},
@@ -198,10 +215,12 @@ AddRoom("Torren IV Depot",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTSAND_NOISE,
 		contents = {
+			countstaticlayouts =
+			{
+				["desertpillar_small"] = math.random(0, 2),
+				["desertpillar_big"] = 2 + math.random(0, 4),
+			},
 			distributepercent = 0.23,
-			--countstaticlayouts = {
-				--["ChessSpot1"] = function() return math.random(0,3) end,			
-				--},
 			distributeprefabs =
 			{
 				raritanium_crystals = 0.2,
@@ -217,11 +236,8 @@ AddRoom("Torren IV Depot",  {
 				tumbleweedspawner = .01,
 				dustdevilspawner = .01,
 				marsh_tree = .5,
-				succulent_plant = 0.3,
-												
+				succulent_plant = 0.3,											
 				
-				torrenivdesert_pillar = 0.1,
-				torrenivdesert_pillar_small = 1,
 
 			},
 			countprefabs= {
@@ -234,6 +250,11 @@ AddRoom("Torren IV Fertile",  {
 		colour={r=0.3,g=0.2,b=0.1,a=0.3},
 		value = WORLD_TILES.DESERTFERTILE_NOISE,
 		contents = {
+			countstaticlayouts =
+			{
+				["lushpillar_small"] = math.random(0, 3),
+				["desertpillar_big"] = math.random(0, 2),
+			},
 			distributepercent = 0.23,
 
 			distributeprefabs =
@@ -251,8 +272,6 @@ AddRoom("Torren IV Fertile",  {
 				succulent_plant = 0.3,
 				luminoustree = 6,				
 				
-				torrenivdesert_pillar = 0.1,
-				torrenivdesert_pillar_small = .5,
 
 			},
 		},

@@ -27,6 +27,8 @@ local PATCHES =
 		"carefulwalker",
 		"damagetypebonus",
 		"damagetyperesist",
+		"weapon",
+		"moisture",
 	},
 	
 	REPLICAS = {
@@ -56,7 +58,7 @@ local PATCHES =
 		hats_hideable = {"catcoonhat", "molehat", "footballhat", "wagpunkhat", "watermelonhat", "hivehat", "spiderhat"},
 		hats_viewable = {"rainhat", "tophat", "beehat", "beefalohat", "winterhat", "moonstorm_goggleshat", "dreadstonehat", "plantregistryhat", 
 		"nutrientsgoggleshat", "cookiecutterhat", "woodcarvedhat", "minerhat", "antlionhat", "icehat", "blue_mushroomhat", "green_mushroomhat", 
-		"red_mushroomhat", "skeletonhat", "polly_rogershat", "moon_mushroomhat"},
+		"red_mushroomhat", "skeletonhat", "polly_rogershat", "moon_mushroomhat", "strawhat"},
 		hound = "mutatedhound",
 		lunar_grazer = "lunar_grazer",
 		meats = {"meat","cookedmeat", "meat_dried", "monstermeat", "cookedmonstermeat", "monstermeat_dried", "smallmeat", "cookedsmallmeat",
@@ -68,6 +70,7 @@ local PATCHES =
 		player_classified = "player_classified",
 		pocketwatch_weapon = "pocketwatch_weapon",
 		rabbithole = "rabbithole",
+		rock_moon = "rock_moon",
 		rocky = "rocky",
 		slurtle = {"slurtle", "snurtle"},
 		spider = "spider_moon",

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="foot">
+        <file id="0" name="foot/foot-0.png" width="100" height="100" pivot_x="0.65" pivot_y="0.65"/>
+        <file id="1" name="foot/foot-1.png" width="100" height="100" pivot_x="0.5" pivot_y="0.65"/>
+        <file id="2" name="foot/foot-2.png" width="100" height="100" pivot_x="0.425" pivot_y="0.65"/>
+        <file id="3" name="foot/foot-3.png" width="100" height="100" pivot_x="0.65" pivot_y="0.65"/>
+        <file id="4" name="foot/foot-4.png" width="100" height="100" pivot_x="0.8" pivot_y="0.5"/>
+        <file id="5" name="foot/foot-5.png" width="100" height="100" pivot_x="0.5" pivot_y="0.65"/>
+        <file id="6" name="foot/foot-6.png" width="100" height="100" pivot_x="0.65" pivot_y="0.65"/>
+    </folder>
+    <entity id="0" name="template">
+        <animation id="0" name="BUILD_PLAYER" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="4" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="1" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="3" key="0" z_index="3"/>
+                    <object_ref id="4" timeline="0" key="0" z_index="4"/>
+                    <object_ref id="5" timeline="2" key="0" z_index="5"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="foot_0_6">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-319.8125" y="10.049" angle="0" scale_x="-1"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="foot_0_7">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-332.1115" y="10.049" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="foot_3_22">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-6.699" y="11.699" angle="0"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="foot_3_24">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="4.9" y="11.299" angle="0" scale_x="-1"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="foot_1_47">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="346.701" y="11.499" angle="0" scale_y="1.062897"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="foot_2_49">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="353.9" y="16.349" angle="0" scale_y="1.062897"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
