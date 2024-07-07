@@ -10,7 +10,7 @@ In this case, the toxic caves which is a rift dumping ground of toxic material t
   * LOW - starts >37.5%, stops <35% - entity announces they feel irradiated, no other negative effects
   * MED - starts >57.5%, stops <55% - entity announces they feel sick, slight green glow
   * HIGH - starts >77.5%, stops <75% - entity announces they feel strong pain, stronger glow, irradiated overlay starts to appear,
-           slight health loss (1 per 5 sec)
+           slight health loss (1 per 4 sec)
   * CRITICAL - starts >92.5%, stops <90% - entity announces they feel extreme pain, overlay is well visible, strong health loss (1-2 per sec)
 
 - When a mob dies from radiation poisoning, it has a chance to mutate. In this case using current assets,

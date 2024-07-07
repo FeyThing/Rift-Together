@@ -96,6 +96,7 @@ local PATCHES =
 	WIDGETS = {
 	    
 		"statusdisplays",
+		"healthbadge"
 		
 	},
 	SCREENS = {

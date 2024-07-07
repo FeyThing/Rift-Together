@@ -16,6 +16,10 @@ local function onpenalty(self, penalty)
     self.inst.replica.radiation:SetPenalty(penalty)
 end
 
+local function onstate(self, state)
+    self.inst.replica.radiation:SetState(state)
+end
+
 local Radiation = Class(function(self, inst)
     self.inst = inst
     self.max = 100
@@ -29,6 +33,7 @@ local Radiation = Class(function(self, inst)
     self.radiation_sources = {  } -- To calculate self.rate
 
     self.ignore = false
+    self.state = RADIATION_STATE_NONE
 
     self.penalty = 0
     self.radiation_penalties = {  }
@@ -44,7 +49,8 @@ nil,
     max = onmax,
     current = oncurrent,
     ratescale = onratescale,
-    penalty = onpenalty
+    penalty = onpenalty,
+    state = onstate
 })
 
 function Radiation:OnRemoveFromEntity()
@@ -138,7 +144,7 @@ function Radiation:DoDelta(delta, overtime)
     self._oldpercent = self:GetPercent()
     self.current = math.clamp(self.current + delta, 0, self.max - (self.max*self.penalty))
 
-    self:TryAnnounce()
+    self:CheckState()
 
     -- LukaS: -[TODO]- Revamp the radiation visual effects
     if self.inst.AnimState then
@@ -155,17 +161,35 @@ function Radiation:DoDelta(delta, overtime)
     self.inst:PushEvent("radiationdelta", { oldpercent = self._oldpercent, newpercent = self:GetPercent(), overtime = overtime })
 end
 
-function Radiation:TryAnnounce()
-    if self._oldpercent < self:GetPercent() then
-        if self._oldpercent < TUNING.RADIATION_THRESH.CRITICAL.ENTER and self:GetPercent() >= TUNING.RADIATION_THRESH.CRITICAL.ENTER then
-            self.inst:PushEvent("goingtodie")
-        elseif self._oldpercent < TUNING.RADIATION_THRESH.HIGH.ENTER and self:GetPercent() >= TUNING.RADIATION_THRESH.HIGH.ENTER then
-            self.inst:PushEvent("feelsuffering")
-        elseif self._oldpercent < TUNING.RADIATION_THRESH.MED.ENTER and self:GetPercent() >= TUNING.RADIATION_THRESH.MED.ENTER then
-            self.inst:PushEvent("feelhardpain")
-        elseif self._oldpercent < TUNING.RADIATION_THRESH.LOW.ENTER and self:GetPercent() >= TUNING.RADIATION_THRESH.LOW.ENTER then
-            self.inst:PushEvent("feelirritation")
+function Radiation:CheckState()
+    local newpercent = self:GetPercent()
+
+    if newpercent >= TUNING.RADIATION_THRESH.CRITICAL.ENTER then
+        self.state = RADIATION_STATE_CRITICAL
+
+        if self._oldpercent < TUNING.RADIATION_THRESH.CRITICAL.ENTER then
+            self.inst:PushEvent("irradiated_critical")
         end
+    elseif newpercent >= TUNING.RADIATION_THRESH.HIGH.ENTER then
+        self.state = RADIATION_STATE_HIGH
+
+        if self._oldpercent < TUNING.RADIATION_THRESH.HIGH.ENTER then
+            self.inst:PushEvent("irradiated_high")
+        end
+    elseif newpercent >= TUNING.RADIATION_THRESH.MED.ENTER then
+        self.state = RADIATION_STATE_MED
+
+        if self._oldpercent < TUNING.RADIATION_THRESH.MED.ENTER then
+            self.inst:PushEvent("irradiated_med")
+        end
+    elseif newpercent >= TUNING.RADIATION_THRESH.LOW.ENTER then
+        self.state = RADIATION_STATE_LOW
+
+        if self._oldpercent < TUNING.RADIATION_THRESH.LOW.ENTER then
+            self.inst:PushEvent("irradiated_low")
+        end
+    else
+        self.state = RADIATION_STATE_NONE
     end
 end
 
@@ -176,12 +200,13 @@ function Radiation:OnUpdate(dt)
     self.ignore) then
         self:Recalc(dt)
         
-        -- if self.inst.components.health and not self.inst.components.health:IsDead() then
-        --     -- LukaS: -[TODO]- Revamp the radiation DOT
-        --     if self:GetPercent() >= TUNING.RADIATION_THRESH.HIGH.POST then
-        --         self.inst.components.health:DoDelta(self.maxDamageDeltaPerTick * dt, true, "radiation")
-        --     end
-        -- end
+        if self.inst.components.health and not self.inst.components.health:IsDead() then
+            if self.state == RADIATION_STATE_HIGH then
+                self.inst.components.health:DoDelta(-TUNING.RADIATION_STATE_HIGH_DMG * dt, true, "radiation")
+            elseif self.state == RADIATION_STATE_CRITICAL then
+                self.inst.components.health:DoDelta(-TUNING.RADIATION_STATE_CRITICAL_DMG * dt, true, "radiation")
+            end
+        end
     else
         self.rate = 0
         self.ratescale = RATE_SCALE.NEUTRAL -- Disable arrows

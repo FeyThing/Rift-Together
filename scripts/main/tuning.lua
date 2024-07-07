@@ -264,22 +264,21 @@ local tunings = {
 	
     RADIATION_THRESH = {
         LOW = {
-            ENTER = .375,
-            LEAVE = .35,
+            ENTER = .375
         },
         MED = {
-            ENTER = .575,
-            LEAVE = .55,
+            ENTER = .575
         },
         HIGH = {
-            ENTER = .775,
-            LEAVE = .75,
+            ENTER = .775
         },
         CRITICAL = {
-            ENTER = .925,
-            LEAVE = .90,
+            ENTER = .925
         }
     },
+
+    RADIATION_STATE_HIGH_DMG = 0.25,
+    RADIATION_STATE_CRITICAL_DMG = 1,
 
     RADIATION_SMALL = 2,
     RADIATION_MED = 5,
