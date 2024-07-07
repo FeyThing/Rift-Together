@@ -279,7 +279,13 @@ local tunings = {
             ENTER = .925,
             LEAVE = .90,
         }
-    },    
+    },
+
+    RADIATION_SMALL = 2,
+    RADIATION_MED = 5,
+    RADIATION_LARGE = 10,
+    RADIATION_HUGE = 20,
+    RADIATION_GIANT = 30,
 
     -- RAD_CORRODE_DAMAGE_TIME = 1.5, -- How quickly the game polls to deal acidrain damage.
     -- RAD_CORRODE_DAMAGE_PER_SECOND = 2.0,
