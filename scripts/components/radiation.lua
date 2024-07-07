@@ -55,6 +55,10 @@ function Radiation:OnRemoveFromEntity()
     end
 end
 
+function Radiation:OnRemoveEntity()
+    self.radiation_sources = {  }
+end
+
 function Radiation:AddPenalty(key, mod)
     mod = math.clamp(mod, 0, 1)
     if mod == 0 then
@@ -229,7 +233,7 @@ function Radiation:Recalc(dt)
                           (self.rate > 0.05 and RATE_SCALE.INCREASE_LOW) or
                           (self.rate < -0.8 and RATE_SCALE.DECREASE_HIGH) or
                           (self.rate < -0.3 and RATE_SCALE.DECREASE_MED) or
-                          (self.rate < -0.1 and RATE_SCALE.DECREASE_LOW) or -- LukaS: -0.09 to catch the self.falloff decrease
+                          (self.rate < -0.1 and RATE_SCALE.DECREASE_LOW) or
                            RATE_SCALE.NEUTRAL
 
     if self.ratescale ~= new_ratescale then
