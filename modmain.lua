@@ -18,6 +18,7 @@ end
 
 UpvalueHacker = require("tools/upvaluehacker")
 _G.UpvalueHacker = UpvalueHacker
+_G.inspect = require("tools/inspect")
 
 local inits = {
     "utils",
