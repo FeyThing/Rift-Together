@@ -287,16 +287,6 @@ local tunings = {
     RADIATION_HUGE = 20,
     RADIATION_GIANT = 30,
 
-    -- RAD_CORRODE_DAMAGE_TIME = 1.5, -- How quickly the game polls to deal acidrain damage.
-    -- RAD_CORRODE_DAMAGE_PER_SECOND = 2.0,
-    -- RAD_CORRODE_DAMAGE_FUELED_SCALER = 2.0,
-    
-    -- RAD_INJECT_DAMAGE = 75,
-    -- RAD_INJECT_MIN_HEALTH = 5,
-
-    -- RAD_DAMAGE_MOD = -.25,
-    -- RAD_ATTACK_PERIOD_MOD = .25,
-    -- RAD_SPEED_MOD = .75,
 
     MAX_TILE_RAD = 100,
     TILE_RAD_INTAKE_FACTOR = 1/25;

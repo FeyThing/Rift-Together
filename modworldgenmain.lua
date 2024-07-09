@@ -107,6 +107,8 @@ if GetModConfigData("Roaming RoboMutts") == 1 then
 	end
 end
 
+local dusty_rooms = { "BGBadlands", "Lightning", "Badlands", "HoundyBadlands", "BuzzardyBadlands", "BGLightningBluff", "LightningBluffAntlion", "LightningBluffLightning"}
+
 local function GeneratedustdevilsForRoom(room, factor)
 	AddRoomPreInit(room, function(room)
 		if room.contents.distributeprefabs then
@@ -117,17 +119,12 @@ end
 
 if GetModConfigData("Dust Devils") == 1 then
 	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
-	GeneratedustdevilsForRoom("MeadowRocky", 0.035)
+	GeneratedustdevilsForRoom("MeadowRocky", 0.015)
 	GeneratedustdevilsForRoom("VolcanoRock", 0.035)	
-	else	
-	GeneratedustdevilsForRoom("BGBadlands", 0.035)
-	GeneratedustdevilsForRoom("Lightning", 0.015)
-	GeneratedustdevilsForRoom("Badlands", 0.035)
-	GeneratedustdevilsForRoom("HoundyBadlands", 0.035)
-	GeneratedustdevilsForRoom("BuzzardyBadlands", 0.035)
-	GeneratedustdevilsForRoom("BGLightningBluff", 0.035)
-	GeneratedustdevilsForRoom("LightningBluffAntlion", 0.015)
-	GeneratedustdevilsForRoom("LightningBluffLightning", 0.015)
+	else		
+	for i, room in ipairs(dusty_rooms) do
+		GeneratedustdevilsForRoom(room, 0.015)
+	end	
 	end
 end
 
@@ -140,8 +137,6 @@ local function GenerateBarrelsForRoom(room, factor)
 		room.contents.distributeprefabs["barrel_radioactive"] = factor
 	end)
 end
-
-
 
 if GetModConfigData("Barrels") == 75 then
 
@@ -165,7 +160,6 @@ if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsMo
 	else
 	GenerateBarrelsForRoom("OceanHazardous", .3)		
 end
-
 end
 
 
@@ -178,13 +172,13 @@ local function GenerateRariMeteorsForRoom(room, factor)
 	end)
 end
 
+local rarimeteor_rooms = { "GenericMagmaNoThreat", "MeadowRocky", "MoonIsland_Meadows", "Badlands", "Rocky"}
+
 if GetModConfigData("Raritanium Meteors") == 1 then
 	if _G.KnownModIndex:IsModEnabled("workshop-1467214795") or _G.KnownModIndex:IsModForceEnabled("workshop-1467214795") then
-	GenerateRariMeteorsForRoom("GenericMagmaNoThreat", 1)	
-	GenerateRariMeteorsForRoom("MeadowRocky", 1)
-	GenerateRariMeteorsForRoom("MoonIsland_Meadows", 2)
-	GenerateRariMeteorsForRoom("Badlands", 1)	
-	GenerateRariMeteorsForRoom("Rocky", 1)
+		for i, room in ipairs(rarimeteor_rooms) do
+			GenerateRariMeteorsForRoom(room, 1)
+		end		
 	else
 	GenerateRariMeteorsForRoom("Badlands", 1)	
 	GenerateRariMeteorsForRoom("Rocky", 1)

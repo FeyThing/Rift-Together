@@ -110,6 +110,10 @@ return {
 		Asset( "ANIM", "anim/rtstatus_wx.zip"),
 		Asset( "ANIM", "anim/rt_chips.zip"),
 		Asset( "ANIM", "anim/rt_air_purifier.zip"),
+
+		Asset("SHADER", "shaders/tarpslant.ksh"),
+		Asset("SHADER", "shaders/tarpslant_r.ksh"),
+
 		
 		Asset( "IMAGE", "images/saveslot_portraits/ratchet.tex" ),
 		Asset( "ATLAS", "images/saveslot_portraits/ratchet.xml" ),

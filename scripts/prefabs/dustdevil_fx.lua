@@ -3,43 +3,6 @@ local assets =
     Asset("ANIM", "anim/structure_collapse_fx.zip"),
 }
 
-local function OnStartFade(inst)
-    inst.task = nil
-    inst.AnimState:PlayAnimation("collapse_small")
-end
-
-local function OnAnimOver(inst)
-    if inst.AnimState:IsCurrentAnimation("collapse_large") then
-        inst.AnimState:PlayAnimation(inst.trailname)
-        if inst.task ~= nil then
-            inst.task:Cancel()
-        end
-        inst.task = inst:DoTaskInTime(inst.duration, OnStartFade)
-    elseif inst.AnimState:IsCurrentAnimation("collapse_small") then
-        inst:Remove()
-    end
-end
-
-local function SetVariation(inst, rand, scale, duration)
-    if inst.trailname == nil then
-        inst.task:Cancel()
-        inst.task = nil
-
-        inst.Transform:SetScale(scale, scale, scale)
-
-        inst.trailname = "collapse_large"
-        inst.duration = duration
-        inst.AnimState:PlayAnimation("collapse_large")
-        inst:ListenForEvent("animover", OnAnimOver)
-    end
-end
-
-local function Refresh(inst)
-    if inst.trailname ~= nil and inst.task ~= nil then
-        inst.task:Cancel()
-        inst.task = inst:DoTaskInTime(inst.duration, OnStartFade)
-    end
-end
 
 local function fn()
     local inst = CreateEntity()
