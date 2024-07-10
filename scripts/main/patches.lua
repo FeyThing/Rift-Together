@@ -29,6 +29,7 @@ local PATCHES =
 		"damagetyperesist",
 		"weapon",
 		"moisture",
+		"butterflyspawner"
 	},
 	
 	REPLICAS = {
