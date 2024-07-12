@@ -3,6 +3,12 @@ return function(self)
     function self:OnUpdate(...)
         if _G.TheNet:IsServerPaused() then return end
 
+        if self.owner:HasTag("invincible") then
+            old_OnUpdate(self, ...)
+            
+            return
+        end
+
         local state = self.owner.replica.radiation:GetState()
         local modified = false
 

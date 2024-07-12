@@ -11,7 +11,7 @@ return function(self)
         radiation = radiation or 0
         if radiation >= TUNING.START_MOONMOTH_SPAWN_RADIATION then
             return _G.SpawnPrefab("moonbutterfly")
-        elseif radiation < TUNING.ALLOW_BUTTERFLY_SPAWN_RADIATION then
+        elseif radiation < TUNING.ALLOW_BUTTERFLY_SPAWN_RADIATION_LIMIT then
             return _G.SpawnPrefab("butterfly")
         end
     end
