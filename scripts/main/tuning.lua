@@ -264,22 +264,21 @@ local tunings = {
 	
     RADIATION_THRESH = {
         LOW = {
-            ENTER = .375,
-            LEAVE = .35,
+            ENTER = .375
         },
         MED = {
-            ENTER = .575,
-            LEAVE = .55,
+            ENTER = .575
         },
         HIGH = {
-            ENTER = .775,
-            LEAVE = .75,
+            ENTER = .775
         },
         CRITICAL = {
-            ENTER = .925,
-            LEAVE = .90,
+            ENTER = .925
         }
     },
+
+    RADIATION_STATE_HIGH_DMG = 0.25,
+    RADIATION_STATE_CRITICAL_DMG = 1,
 
     RADIATION_SMALL = 2,
     RADIATION_MED = 5,
@@ -290,6 +289,11 @@ local tunings = {
 
     MAX_TILE_RAD = 100,
     TILE_RAD_INTAKE_FACTOR = 1/25;
+
+    ALLOW_BUTTERFLY_SPAWN_RADIATION_LIMIT = 20, -- The maximum radiation value the tile can have to still allow butterflies to spawn
+    START_MOONMOTH_SPAWN_RADIATION = 60, -- The minimum radiation value the tile has to have to spawn a moon moth
+
+    ALLOW_BIRD_SPAWN_RADIATION_LIMIT = 20, -- The maximum radiation value the tile can have to still allow birds to spawn
 
     ROBOMUTTHERD = {
         MAX = 3,

@@ -40,6 +40,22 @@ end
 
 --------------------------------------------------------------------------
 
+function Radiation:SetState(state)
+    if self.classified then
+        self.classified.radiationstate:set(state)
+    end
+end
+
+function Radiation:GetState()
+    if self.inst.components.radiation then
+        return self.inst.components.radiation.state
+    elseif self.classified then
+        return self.classified.radiationstate:value()
+    else
+        return RADIATION_STATE_NONE
+    end
+end
+
 function Radiation:SetCurrent(current)
     if self.classified then
         self.classified.currentradiation:set(current)

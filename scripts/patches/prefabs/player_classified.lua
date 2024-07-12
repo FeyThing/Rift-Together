@@ -96,6 +96,7 @@ return function(inst)
     inst.radiationratescale = net_tinybyte(inst.GUID, "radiation.ratescale")
     inst.isradiationpulseup = net_bool(inst.GUID, "radiation.dodeltaovertime(up)", "radiationdirty")
     inst.isradiationpulsedown = net_bool(inst.GUID, "radiation.dodeltaovertime(down)", "radiationdirty")
+    inst.radiationstate = net_tinybyte(inst.GUID, "radiation.state")
     inst.currentradiation:set(100)
     inst.maxradiation:set(100)
 

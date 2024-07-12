@@ -159,10 +159,10 @@ local strings = {
 				SHOES_RADIATION = "Keeps the pain at bay.",
 			},
 			
-			ANNOUNCE_IRRITATED = "What's this prickly sensation?",
-			ANNOUNCE_PAIN = "I feel sore.",
-			ANNOUNCE_SUFFERING = "My entire body is in pain.",
-			ANNOUNCE_DYING = "I need medical attention...",
+			ANNOUNCE_LOW_IRRADIATED = "What's this prickly sensation?",
+			ANNOUNCE_MED_IRRADIATED = "I feel sore.",
+			ANNOUNCE_HIGH_IRRADIATED = "My entire body is in pain.",
+			ANNOUNCE_CRITICAL_IRRADIATED = "I need medical attention...",
 		},
 
 		RATCHET = {

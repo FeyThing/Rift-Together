@@ -29,6 +29,8 @@ local PATCHES =
 		"damagetyperesist",
 		"weapon",
 		"moisture",
+		"butterflyspawner",
+		"birdspawner"
 	},
 	
 	REPLICAS = {
@@ -86,16 +88,19 @@ local PATCHES =
 	},
 	STATEGRAPHS = { --it's creating new one
 		"wilson",
+		"bird_mutant"
 	},
 	STATES = { --it's patches
 		--"wilson",
 	},
 	BRAINS = {
 		--brain_template = "powdermonkeybrain",
+		bird_mutant_brain = "bird_mutant_brain"
 	},
 	WIDGETS = {
 	    
 		"statusdisplays",
+		"healthbadge"
 		
 	},
 	SCREENS = {
