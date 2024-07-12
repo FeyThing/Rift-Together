@@ -290,8 +290,10 @@ local tunings = {
     MAX_TILE_RAD = 100,
     TILE_RAD_INTAKE_FACTOR = 1/25;
 
-    ALLOW_BUTTERFLY_SPAWN_RADIATION = 20, -- The maximum radiation value the tile can have to still allow butterflies to spawn
+    ALLOW_BUTTERFLY_SPAWN_RADIATION_LIMIT = 20, -- The maximum radiation value the tile can have to still allow butterflies to spawn
     START_MOONMOTH_SPAWN_RADIATION = 60, -- The minimum radiation value the tile has to have to spawn a moon moth
+
+    ALLOW_BIRD_SPAWN_RADIATION_LIMIT = 20, -- The maximum radiation value the tile can have to still allow birds to spawn
 
     ROBOMUTTHERD = {
         MAX = 3,
