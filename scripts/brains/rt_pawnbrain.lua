@@ -13,59 +13,91 @@ local RUN_AWAY_DIST = 5
 local STOP_RUN_AWAY_DIST = 8
 
 local Rt_PawnBrain = Class(Brain, function(self, inst)
-    Brain._ctor(self, inst)
+	Brain._ctor(self, inst)
 end)
 
 local function GoHomeAction(inst)
-    if inst.components.combat.target ~= nil then
-        return
-    end
-    local homePos = inst.components.knownlocations:GetLocation("home")
-    return homePos ~= nil
-        and BufferedAction(inst, nil, ACTIONS.WALKTO, nil, homePos, nil, .2)
-        or nil
+	if inst.components.combat.target ~= nil then
+		return
+	end
+	local homePos = inst.components.knownlocations:GetLocation("home")
+	return homePos ~= nil
+		and BufferedAction(inst, nil, ACTIONS.WALKTO, nil, homePos, nil, .2)
+		or nil
 end
 
 local function GetFaceTargetFn(inst)
-    local target = FindClosestPlayerToInst(inst, START_FACE_DIST, true)
-    return target ~= nil and not target:HasTag("notarget") and target or nil
+	local target = FindClosestPlayerToInst(inst, START_FACE_DIST, true)
+	return target ~= nil and not target:HasTag("notarget") and target or nil
 end
 
 local function KeepFaceTargetFn(inst, target)
-    return not target:HasTag("notarget") and inst:IsNear(target, KEEP_FACE_DIST)
+	return not target:HasTag("notarget") and inst:IsNear(target, KEEP_FACE_DIST)
 end
 
 local function ShouldGoHome(inst)
-    if inst.components.follower ~= nil and inst.components.follower.leader ~= nil then
-        return false
-    end
-    local homePos = inst.components.knownlocations:GetLocation("home")
-    return homePos ~= nil and inst:GetDistanceSqToPoint(homePos:Get()) > GO_HOME_DIST * GO_HOME_DIST
+	if inst.components.follower ~= nil and inst.components.follower.leader ~= nil then
+		return false
+	end
+	local homePos = inst.components.knownlocations:GetLocation("home")
+	return homePos ~= nil and inst:GetDistanceSqToPoint(homePos:Get()) > GO_HOME_DIST * GO_HOME_DIST
 end
 
+
+
+local CHESS_REACH_DIST = 4
+local CHESS_MUST_TAGS = { "chess", "monster" }
+local CHESS_CANT_TAGS = { "INLIMBO", "FX", "DECOR", "pawn", "player" }
+
+local function IsValidChessGuy(guy, inst)
+	return guy.components.combat ~= nil and guy.components.combat:HasTarget()
+end
+
+local function FindClosestChess(inst)
+	local target = FindEntity(inst, TUNING.RT_PAWN_SEE_CHESS_RANGE, IsValidChessGuy, CHESS_MUST_TAGS, CHESS_CANT_TAGS)
+	
+	if target ~= nil then
+		inst.chess_target = target
+	else
+		inst.chess_target = nil
+	end
+	
+	return target
+end
+
+local function GetChessPos(inst)
+	return inst.chess_target ~= nil and inst.chess_target:GetPosition() or nil
+end
+
+local function ShouldPowerUp(inst)
+	return FindClosestChess(inst) ~= nil and inst.components.combat.target ~= nil
+end
+
+
+
 function Rt_PawnBrain:OnStart()
-    local root = PriorityNode(
-    {
+	local root = PriorityNode(
+	{
 		BrainCommon.PanicTrigger(self.inst),
-        WhileNode(function()
-                        return self.inst.components.combat.target == nil
-                            or not self.inst.components.combat:InCooldown()
-                    end,
-                    "AttackMomentarily",
-                    ChaseAndAttack(self.inst, MAX_CHASE_TIME, MAX_CHASE_DIST)),
-        WhileNode(function() return self.inst.components.combat.target ~= nil and self.inst.components.combat:InCooldown() end, "Dodge",
-            RunAway(self.inst, function() return self.inst.components.combat.target end, RUN_AWAY_DIST, STOP_RUN_AWAY_DIST)),
-        WhileNode(function() return ShouldGoHome(self.inst) end, "ShouldGoHome",
-            DoAction(self.inst, GoHomeAction, "Go Home", true)),
-
-        Follow(self.inst, function() return self.inst.components.follower ~= nil and self.inst.components.follower.leader or nil end,
-            5, 7, 12),
-
-        FaceEntity(self.inst, GetFaceTargetFn, KeepFaceTargetFn),
-        StandStill(self.inst),
-    }, .25)
-
-    self.bt = BT(self.inst, root)
+		WhileNode(function() return ShouldPowerUp(self.inst) end, "Power Up Chess",
+			PriorityNode({
+				FailIfSuccessDecorator(Leash(self.inst, GetChessPos, CHESS_REACH_DIST, CHESS_REACH_DIST - 0.5)),
+				ActionNode(function()
+					self.inst:PushEvent("inject")
+				end)
+			}, .25)
+		),
+		--WhileNode(function() return self.inst.components.combat.target ~= nil and self.inst.components.combat:InCooldown() end, "Dodge",
+			--RunAway(self.inst, function() return self.inst.components.combat.target end, RUN_AWAY_DIST, STOP_RUN_AWAY_DIST)),
+		WhileNode(function() return ShouldGoHome(self.inst) end, "ShouldGoHome",
+			DoAction(self.inst, GoHomeAction, "Go Home", true)),
+		Follow(self.inst, function() return self.inst.components.follower ~= nil and self.inst.components.follower.leader or nil end,
+			5, 7, 12),
+		FaceEntity(self.inst, GetFaceTargetFn, KeepFaceTargetFn),
+		StandStill(self.inst),
+	}, .25)
+	
+	self.bt = BT(self.inst, root)
 end
 
 return Rt_PawnBrain

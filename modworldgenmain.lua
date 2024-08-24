@@ -14,7 +14,9 @@ require("map/torreniv_terrain")
 local Layouts = require("map/layouts").Layouts
 local StaticLayout = require("map/static_layout")
 
-modimport("scripts/main/tiles")
+if WORLD_TILES.OCEAN_RUST == nil then
+	modimport("scripts/main/tiles")
+end
 
 if GetModConfigData("Island Generation") == 1 then
 	print("importing the island")

@@ -88,6 +88,7 @@ return {
 		"dustdevilspawner",
 		"dustdevil_fx",
 		"rt_pawn",
+		"rt_pawn_buffs",
 		"rt_tarp",
 		"rt_alloys",
 		"rt_anvil",
